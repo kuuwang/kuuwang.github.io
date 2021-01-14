@@ -64,16 +64,7 @@ const colors = [
   color: '66533C' },
 
 {
-  color: '173A2F' },
-
-{
-  color: '153944' },
-
-{
-  color: '27548D' },
-
-{
-  color: '438AAC' }];
+  color: '173A2F' }];
 
 
 
