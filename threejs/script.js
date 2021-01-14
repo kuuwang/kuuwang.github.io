@@ -37,7 +37,7 @@ const colors = [
   shininess: 0 },
 
 {
-  color: '131417' },
+  color: 'ffffff' },
 
 {
   color: '374047' },
