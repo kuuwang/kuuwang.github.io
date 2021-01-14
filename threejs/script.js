@@ -40,31 +40,16 @@ const colors = [
   color: '630609' },
 
 {
-  color: 'C9240E' },
+  color: 'f9e076' },
 
 {
-  color: 'EC4B17' },
-
-{
-  color: '281A1C' },
+  color: '90ee90' },
 
 {
   color: '4F556F' },
-
+  
 {
-  color: '64739B' },
-
-{
-  color: 'CDBAC7' },
-
-{
-  color: '946F43' },
-
-{
-  color: '66533C' },
-
-{
-  color: '173A2F' }];
+  color: '281A1C' }];
 
 
 
