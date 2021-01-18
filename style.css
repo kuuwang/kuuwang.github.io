@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.container:before{
+    position: fixed;
+    content: '';
+    height: 50%;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(124, 156, 225, 1);
+}
+
+.businessCard{
+    position: relative;
+    width: 300px;
+    height: 525px;
+
+margin: auto;
+      transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+
+.businessCard .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transform-style: preserve-3d;
+    transition: 1s;
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 1);
+}
+
+
+.businessCard:hover .face.front{
+    transform: rotateY(-180deg);    
+}
+.businessCard .face.back{
+    transform: rotateY(-180deg);
+}
+.businessCard:hover .face.back{
+    transform: rotateY(-360deg);
+}
+
+.businessCard .face.front .frontpic{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(124, 156, 225, 1);
+    font-weight: 900;
+}
+
+
+.businessCard .face.front .frontpic img{
+    display: inline-block;
+    margin: auto;
+    border-radius: 50%;
+    max-width:100px;
+}
+
+
+.businessCard .face.back .bluebar{
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    height: 180px;
+    background-color: rgba(102, 138, 219, 1);
+}
+
+.businessCard .face.back .bluebar .info{
+    font-family: "Roboto";
+    color: white;
+    font-weight: 300;
+    font-size: 1em;
+    height: 100%;
+    line-height: 2.5em;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.businessCard .face.back .bluebar .info i{
+    width: 30px;
+    text-align: center;
+}
+
+.businessCard .face.back .qr{
+    position: relative;
+    left: 77%;
+    top: 69%;
+    
+}
+
+.businessCard .face.back .qr img{
+    display: block;
+    width: 55px;
+}
