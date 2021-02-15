@@ -14,14 +14,14 @@ html, body{
   height: 100vh;
   position: relative;
   overflow: auto;
-  scroll-snap-type: y mandatory;
+  /*scroll-snap-type: y mandatory;*/
 }
 
 .container section{
   position: relative;
   height: 100%;
   width: 100%;
-  scroll-snap-align: start;
+  /*scroll-snap-align: start;*/
   /*-webkit-box-shadow:inset 0px 0px 0px 10px #f00;
 -moz-box-shadow:inset 0px 0px 0px 10px #f00;
 box-shadow:inset 0px 0px 0px 10px #f00;*/
