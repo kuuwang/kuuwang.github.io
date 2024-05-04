@@ -824,7 +824,7 @@ var data = [
         itemsb:{
             cheadt:{
                 name: "",
-                src: "24305",
+                src: "",
                 desc: "",
             },
             cheadm: {
@@ -839,7 +839,7 @@ var data = [
             },
             sarmor: {
                 name: "",
-                src: "24305",
+                src: "",
                 desc: "",
             },
             sweapon: {

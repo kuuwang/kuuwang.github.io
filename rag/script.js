@@ -67,7 +67,7 @@ function generateCharacterInfo(charData) {
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = 'https://static.divine-pride.net/images/items/item/' + item.src + '.png';
+            img.src = item.src ? 'https://static.divine-pride.net/images/items/item/' + item.src + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
             img.className = "itemimg";
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
@@ -101,7 +101,7 @@ function generateCharacterInfo(charData) {
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = 'https://static.divine-pride.net/images/items/item/' + item.src + '.png';
+            img.src = item.src ? 'https://static.divine-pride.net/images/items/item/' + item.src + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
             img.className = "itemimg";
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
