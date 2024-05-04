@@ -3250,8 +3250,8 @@ var data = [
         },
     },
     {
-        charname: "쿠왕인원더",
-        job: "Trouvere",
+        charname: "쿠왕인민스",
+        job: "Troubadour",
         clvl: 230,
         jlvl: 45,
         battlestyle: "로제 블라썸",
@@ -3375,8 +3375,8 @@ var data = [
         },
     },
     {
-        charname: "쿠왕인민스",
-        job: "Troubadour",
+        charname: "쿠왕인원더",
+        job: "Trouvere",
         clvl: 230,
         jlvl: 45,
         battlestyle: "로제 블라썸",
