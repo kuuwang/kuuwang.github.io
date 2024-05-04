@@ -25,7 +25,7 @@ function generateCharacterInfo(charData) {
     battlestyle.className = 'battlestyle';
     var lvltable = document.createElement('section');
     lvltable.className = 'lvltable';
-    lvltable.innerHTML = '<span class="battlestyle">' + charData.battlestyle + '</span> / <span class="lvlname">Lv </span><span class="clvl">' + charData.clvl + '</span> / <span class="lvlname">J.Lv <span class="jlvl">' + charData.jlvl + '</span></span>';
+    lvltable.innerHTML = '<span class="battlestyle">' + charData.battlestyle + '</span> <br> <span class="lvlname">Lv </span><span class="clvl">' + charData.clvl + '</span> / <span class="lvlname">J.Lv <span class="jlvl">' + charData.jlvl + '</span></span>';
     var stattable = document.createElement('section');
     stattable.className = 'stattable';
 
