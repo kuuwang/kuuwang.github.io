@@ -131,6 +131,6 @@ html, body, table{
 .itemdesc { 
     display: none;
 }
-.itemdesc:hover{
+.itemimg:hover + .itemdesc{
     display: block;
 }
