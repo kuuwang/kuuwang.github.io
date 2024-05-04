@@ -68,7 +68,7 @@ function generateCharacterInfo(charData) {
             itembottom.className = "itembottom";
             img.src = 'https://static.divine-pride.net/images/items/item/' + item.src + '.png';
             var itemdesc = document.createElement('div');
-            itemdesc.innterHTML = item.name;
+            itemdesc.innerHTML = item.name;
 
             cell.appendChild(img);
             cell.appendChild(itembottom);
