@@ -1,0 +1,129 @@
+html, body, table{
+    font-family: "Dotum";
+    font-size: 12px;
+}
+.box {
+    width: 365px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    float: left;
+    margin: 2px;
+}
+.title {/* 타이틀바 색상 */
+    height: 16px; 
+    background: linear-gradient(to bottom, 
+        rgb(181, 198, 222),
+        rgb(173, 189, 222),
+        rgb(206, 214, 239),
+        rgb(181, 198, 231),
+        rgb(181, 198, 239),
+        rgb(156, 173, 222),
+        rgb(165, 189, 231),
+        rgb(156, 181, 231),
+        rgb(189, 206, 247),
+        rgb(173, 198, 247),
+        rgb(206, 222, 255),
+        rgb(189, 222, 247),
+        rgb(222, 247, 255),
+        rgb(198, 222, 247),
+        rgb(214, 239, 255),
+        rgb(0, 0, 0)
+    );
+    
+}
+.circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid rgb(41, 67, 121);
+    background: linear-gradient(to bottom, 
+        rgb(217, 226, 244),
+        rgb(134, 162, 220),
+        rgb(67, 111, 201),
+        rgb(126, 156, 218),
+        rgb(146, 172, 223),
+        rgb(182, 199, 234),
+        rgb(173, 193, 232)
+    );
+    float:left;
+    margin: 2px 0px 0px 2px;
+}
+.charname{
+    float:left;
+    text-indent: 2px;
+}
+
+.lvltable{
+    background-color: rgb(231,231,239);
+    border-radius: 5px;
+    padding: 2px;
+    text-align: center;
+}
+.content .charinfo{
+    float: left;
+    width: 150px;
+    padding: 4px;
+}
+.stattable {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.statbox{
+    width: calc(50% - 6px);
+    margin: 3px 0;
+}
+.statbox:nth-child(1) { order: 1; }
+.statbox:nth-child(2) { order: 3; }
+.statbox:nth-child(3) { order: 5; }
+.statbox:nth-child(4) { order: 7; }
+.statbox:nth-child(5) { order: 9; }
+.statbox:nth-child(6) { order: 11; }
+.statbox:nth-child(7) { order: 2; }
+.statbox:nth-child(8) { order: 4; }
+.statbox:nth-child(9) { order: 6; }
+.statbox:nth-child(10) { order: 8; }
+.statbox:nth-child(11) { order: 10; }
+.statbox:nth-child(12) { order: 12; }
+.statname{
+    width: 44%;
+    display: inline-block;
+    font-weight: bold;
+    color: rgb(49, 74, 107);
+    margin-left: 5px;
+}
+.statval{
+    display:  inline-block;
+    width: 38%;
+    font-size: 11px;
+    text-align: right;
+    padding-right: 1px;
+    border: 1px solid rgb(198,198,198);
+    background-color: rgba(247,247,247);
+}
+.iteminfo{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.itembottom{
+    margin-top: -10px;
+    height: 10px;
+    background-color: rgba(182, 199, 234, 0.5);
+    border-radius: 100%;
+}
+.charimg{
+    width : 80px; 
+    height : 100px; 
+    display : block;
+    margin : auto;
+}
+
+#infoBox {
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.5); /* 회색 50% 투명도 */
+    padding: 10px;
+    display: none; /* 기본적으로 숨겨둠 */
+}
