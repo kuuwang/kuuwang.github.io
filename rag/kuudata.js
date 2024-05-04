@@ -251,4 +251,130 @@ var data = [
             },
         },
     },
+    {
+        charname: "쿠왕네비숍",
+        job: "Cardinal",
+        clvl: 260,
+        jlvl: 55,
+        battlestyle: "콤페텐티",
+        stats: {
+            str: 1,
+            agi: 110,
+            vit: 120,
+            int: 120,
+            dex: 90,
+            luk: 100,
+            pow: 0,
+            sta: 80,
+            wis: 90,
+            spl: 0,
+            con: 0,
+            crt: 65
+        },
+        charsrc: "https://imgc1.gnjoy.com/games/ro1/object/201310/job/rolling/18/4256_1_1.gif?v=5",
+        items: {
+            headt:{
+                name : "늘어진 타나토스의 고뇌-LT[1]",
+                src : "400465",
+                desc : "설명1",
+            },
+            headm: {
+                name : "부스터 가면 A타입[1]",
+                src :"410018",
+                desc : "",
+            },
+            headb: {
+                name : "사념의 오오라",
+                src :"19439",
+                desc : "",
+            },
+            armor: {
+                name : "정신의 성운 로브[1]",
+                src :"450174",
+                desc : "",
+            },
+            weapon: {
+                name : "플러시 러버 해머[2]",
+                src :"590049",
+                desc : "",
+            },
+            shield: {
+                name : "약속의 성서 2권[1]",
+                src :"2162",
+                desc : "",
+            },
+            garment: {
+                name : "전사자의 망토[1]",
+                src : "20749",
+                desc : "",
+            },
+            shoose: {
+                name : "영웅의 부츠-LT[1]",
+                src :"470094",
+                desc : "",
+            },
+            accr: {
+                name : "블루 멘탈 펜던트-LT[1]",
+                src :"490383",
+                desc : "",
+            },
+            accl: {
+                name : "글레이시아 이어링[1]",
+                src :"490329",
+                desc : "",
+            },
+        },
+        itemsb:{
+            cheadt:{
+                name : "의상 룬 헬름",
+                src : "31160",
+                desc : "설명1",
+            },
+            cheadm: {
+                name : "의상 깜빡이는 작은 눈",
+                src :"31398",
+                desc : "",
+            },
+            cheadb: {
+                name : "의상 백사요 가발",
+                src :"420201",
+                desc : "",
+            },
+            sarmor: {
+                name : "부스터 아머 쉐도우",
+                src :"24584",
+                desc : "",
+            },
+            sweapon: {
+                name : "아크비숍 부스터 웨폰 쉐도우",
+                src :"24597",
+                desc : "",
+            },
+            sshield: {
+                name : "부스터 쉴드 쉐도우",
+                src :"24585",
+                desc : "",
+            },
+            cgarment: {
+                name : "의상 미카엘의 날개",
+                src : "20516",
+                desc : "",
+            },
+            sshoose: {
+                name : "부스터 슈즈 쉐도우",
+                src :"24586",
+                desc : "",
+            },
+            saccr: {
+                name : "부스터 이어링 쉐도우",
+                src :"24587",
+                desc : "",
+            },
+            saccl: {
+                name : "부스터 펜던트 쉐도우",
+                src :"24588",
+                desc : "",
+            },
+        },
+    },
 ];
