@@ -106,6 +106,8 @@ html, body, table{
     padding-top: 10px;
     display: flex;
     justify-content: space-between;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .itembottom{
@@ -121,16 +123,12 @@ html, body, table{
     margin : auto;
 }
 
-#infoBox {
-    position: absolute;
-    background-color: rgba(128, 128, 128, 0.5); /* 회색 50% 투명도 */
-    padding: 10px;
-    display: none; /* 기본적으로 숨겨둠 */
-}
-
 .itemdesc { 
+    position: absolute;
     display: none;
-}
-.itemimg:hover + .itemdesc{
-    display: block;
+    margin-top: -40px;
+    margin-left: 30px;
+    background-color: rgba(0,0,0,0.5);
+    color:white;
+    padding: 5px;
 }
