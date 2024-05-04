@@ -256,7 +256,7 @@ var data = [
         job: "Cardinal",
         clvl: 260,
         jlvl: 55,
-        battlestyle: "콤페텐티",
+        battlestyle: "콤페텐티아",
         stats: {
             str: 1,
             agi: 110,
