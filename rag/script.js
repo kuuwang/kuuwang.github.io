@@ -127,7 +127,7 @@ function generateCharacterInfo(charData) {
     charimg.className = 'charimg';
 
     iteminfo.appendChild(table1);
-    iteminfo.style.backgroundImage = "url('" + charData.charsrc + "')";
+    iteminfo.style.backgroundImage = "url('https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/char/" + charData.charname + ".gif')";
     iteminfo.appendChild(table2);
     content.appendChild(iteminfo);
     box.appendChild(content);
