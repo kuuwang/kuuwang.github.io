@@ -5250,6 +5250,382 @@ var data = [
         },
     },
     {
+        charname: "쿠왕네소서",
+        job: "Elemental Master",
+        clvl: 215,
+        jlvl: 36,
+        battlestyle: "탱커",
+        stats: {
+            str: 1,
+            agi: 1,
+            vit: 1,
+            int: 1,
+            dex: 1,
+            luk: 1,
+            pow: 0,
+            sta: 0,
+            wis: 0,
+            spl: 0,
+            con: 0,
+            crt: 0
+        },
+        items: {
+            headt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            armor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            weapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            garment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+        itemsb:{
+            cheadt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sarmor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sweapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cgarment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+    },
+
+    {
+        charname: "쿠왕네로가",
+        job: "Imperial Guard",
+        clvl: 215,
+        jlvl: 33,
+        battlestyle: "탱커",
+        stats: {
+            str: 1,
+            agi: 1,
+            vit: 1,
+            int: 1,
+            dex: 1,
+            luk: 1,
+            pow: 0,
+            sta: 0,
+            wis: 0,
+            spl: 0,
+            con: 0,
+            crt: 0
+        },
+        items: {
+            headt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            armor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            weapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            garment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+        itemsb:{
+            cheadt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sarmor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sweapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cgarment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+    },
+    {
+        charname: "쿠왕네수라",
+        job: "Inquisitor",
+        clvl: 215,
+        jlvl: 37,
+        battlestyle: "탱커",
+        stats: {
+            str: 1,
+            agi: 1,
+            vit: 1,
+            int: 1,
+            dex: 1,
+            luk: 1,
+            pow: 0,
+            sta: 0,
+            wis: 0,
+            spl: 0,
+            con: 0,
+            crt: 0
+        },
+        items: {
+            headt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            armor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            weapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            garment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+        itemsb:{
+            cheadt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sarmor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sweapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cgarment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+    },
+    {
         charname: "쿠왕네철호",
         job: "영도사",
         clvl: 215,
