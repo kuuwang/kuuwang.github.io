@@ -5875,6 +5875,131 @@ var data = [
             },
         },
     },
+    {
+        charname: "쿠왕네어크",
+        job: "Assassin Cross",
+        clvl: 99,
+        jlvl: 70,
+        battlestyle: "미로쩔",
+        stats: {
+            str: 1,
+            agi: 1,
+            vit: 1,
+            int: 1,
+            dex: 1,
+            luk: 1,
+            pow: 0,
+            sta: 0,
+            wis: 0,
+            spl: 0,
+            con: 0,
+            crt: 0
+        },
+        items: {
+            headt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            headb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            armor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            weapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            garment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            shoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            accl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+        itemsb:{
+            cheadt:{
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadm: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cheadb: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sarmor: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sweapon: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshield: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            cgarment: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            sshoose: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccr: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+            saccl: {
+                name: "",
+                src: "",
+                desc: "",
+            },
+        },
+    },
 ];
 
 /*
