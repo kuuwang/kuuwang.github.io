@@ -23,7 +23,7 @@ var data = [
         items: {
             headt:{
                 name : "디멘션즈 룬",
-                src : "http://static.kafra.kr/kro/data/texture/%EC%9C%A0%EC%A0%80%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/item/png/time_dimen_r_crown.png",
+                src : "https://static.divine-pride.net/images/items/item/400537.png",
                 desc : "설명1",
             },
             headm: {
@@ -150,7 +150,7 @@ var data = [
         items: {
             headt:{
                 name : "디멘션즈 룬",
-                src : "http://static.kafra.kr/kro/data/texture/%EC%9C%A0%EC%A0%80%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4/item/png/time_dimen_r_crown.png",
+                src : "https://static.divine-pride.net/images/items/item/400537.png",
                 desc : "설명1",
             },
             headm: {
