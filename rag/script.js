@@ -123,7 +123,6 @@ function generateCharacterInfo(charData) {
     }
 
     var charimg = document.createElement('img');
-    charimg.src = charData.charsrc;
     charimg.className = 'charimg';
 
     iteminfo.appendChild(table1);
