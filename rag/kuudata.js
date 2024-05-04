@@ -4,7 +4,7 @@ var data = [
         job: "Cardinal",
         clvl: 260,
         jlvl: 55,
-        battlestyle: "마공",
+        battlestyle: "아르비트리움",
         stats: {
             str: 1,
             agi: 55,
@@ -130,7 +130,7 @@ var data = [
         job: "Cardinal",
         clvl: 260,
         jlvl: 55,
-        battlestyle: "물공",
+        battlestyle: "페티티오",
         stats: {
             str: 120,
             agi: 90,
