@@ -66,7 +66,7 @@ function generateCharacterInfo(charData) {
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = item.src;
+            img.src = 'https://static.divine-pride.net/images/items/item/' + item.src + '.png';
             cell.appendChild(img);
             cell.appendChild(itembottom);
             row.appendChild(cell);
