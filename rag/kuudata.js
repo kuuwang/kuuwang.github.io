@@ -4125,7 +4125,7 @@ var data = [
         },
     },
     {
-        charname: "쿠왕인하노",
+        charname: "쿠왕인슈노",
         job: "Hyper Novice",
         clvl: 215,
         jlvl: 36,
