@@ -52,6 +52,7 @@ function generateCharacterInfo(charData) {
 
     var iteminfo = document.createElement('aside');
     iteminfo.className = 'iteminfo';
+
     var table1 = document.createElement('table');
     table1.className = 'frontitem';
     var items = charData.items;
@@ -69,15 +70,19 @@ function generateCharacterInfo(charData) {
             img.src = 'https://static.divine-pride.net/images/items/item/' + item.src + '.png';
             img.className = "itemimg";
             var itemdesc = document.createElement('div');
-            itemdesc.innerHTML = item.name + '<br>' + item.desc;
+            if (Array.isArray(item.desc)) {
+                itemdesc.innerHTML = item.name + '<br>' + item.desc.join('<br>');
+            } else {
+                // 배열이 아닌 경우에는 기존의 처리 방식으로 진행
+                itemdesc.innerHTML = item.name + '<br>' + item.desc;
+            }
+
             itemdesc.className = "itemdesc";
 
             cell.appendChild(img);
             cell.appendChild(itembottom);
             cell.appendChild(itemdesc);
             row.appendChild(cell);
-            //cell = document.createElement('td');
-            //cell.textContent = item.name + ': ' + item.desc;
             row.appendChild(cell);
         }
         table1.appendChild(row);
@@ -97,11 +102,21 @@ function generateCharacterInfo(charData) {
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
             img.src = 'https://static.divine-pride.net/images/items/item/' + item.src + '.png';
+            img.className = "itemimg";
+            var itemdesc = document.createElement('div');
+            if (Array.isArray(item.desc)) {
+                itemdesc.innerHTML = item.name + '<br>' + item.desc.join('<br>');
+            } else {
+                // 배열이 아닌 경우에는 기존의 처리 방식으로 진행
+                itemdesc.innerHTML = item.name + '<br>' + item.desc;
+            }
+
+            itemdesc.className = "itemdesc";
+
             cell.appendChild(img);
             cell.appendChild(itembottom);
+            cell.appendChild(itemdesc);
             row.appendChild(cell);
-            //cell = document.createElement('td');
-            //cell.textContent = item.name + ': ' + item.desc;
             row.appendChild(cell);
         }
         table2.appendChild(row);
@@ -112,18 +127,37 @@ function generateCharacterInfo(charData) {
     charimg.className = 'charimg';
 
     iteminfo.appendChild(table1);
-    iteminfo.appendChild(charimg);
+    iteminfo.style.backgroundImage = "url('" + charData.charsrc + "')";
     iteminfo.appendChild(table2);
     content.appendChild(iteminfo);
     box.appendChild(content);
 
+
+    // 아이템 이미지에 마우스 이벤트를 추가하여 설명 표시/숨기기
+    var itemImages = box.querySelectorAll('.itemimg');
+    itemImages.forEach(function(img) {
+        img.addEventListener('mouseover', function() {
+            var itemDesc = img.nextElementSibling.nextElementSibling;
+            if (itemDesc && itemDesc.classList.contains('itemdesc')) {
+                itemDesc.style.display = 'block';
+            }
+        });
+
+        img.addEventListener('mouseout', function() {
+            var itemDesc = img.nextElementSibling.nextElementSibling;
+            if (itemDesc && itemDesc.classList.contains('itemdesc')) {
+                itemDesc.style.display = 'none';
+            }
+        });
+    });
+
     return box;
 }
+
 
 // 컨테이너에 캐릭터 정보 추가
 var container = document.getElementById('container');
 data.forEach(function(charData) {
     container.appendChild(generateCharacterInfo(charData));
 });
-
 

@@ -19,37 +19,37 @@ var data = [
             con: 100,
             crt: 0
         },
-        charsrc: "https://imgc1.gnjoy.com/games/ro1/object/201310/job/rolling/18/4256_1_1.gif?v=5",
+        charsrc: "",
         items: {
             headt:{
-                name : "타임 디멘션즈 룬 크라운(카디날)[1]",
+                name : "+12 [A] 타임 디멘션즈 룬 크라운(카디날) 오브 홀리파워[1]",
                 src : "400537",
-                desc : "설명1",
+                desc : ["상급 사나레 카드"],
             },
             headm: {
                 name : "갬블러의 씰[1]",
                 src :"410233",
-                desc : "",
+                desc : ["DEF + 81", "MHP + 896"],
             },
             headb: {
                 name : "입에 문 스페이드 에이스(마법)",
                 src :"420213",
-                desc : "",
+                desc : ["INT + 3", "S.MATK + 5"],
             },
             armor: {
-                name : "지혜의 성운 로브[1]",
+                name : "+12 [A] 하이어레벨 지혜의 성운 로브[1]",
                 src :"450173",
-                desc : "",
+                desc : ["쌍눈 돌로카리스 카드", "지혜의 성단 3Lv", "마력의 성운 1Lv", "VIT+4"],
             },
             weapon: {
-                name : "디멘션즈 세인트 로드[2]",
+                name : "+12 [A] 데드 플랜트 꼬뽀 디멘션즈 세인트 로드[2]",
                 src :"550130",
-                desc : "",
+                desc : ["데드세라 카드", "꼬뽀 카드"],
             },
             shield: {
-                name : "매드바니-LT[1]",
+                name : "+10 마법 기사단의 매드바니-LT[1]",
                 src :"460020",
-                desc : "",
+                desc : ["변이하는 칼리츠버그 카드"],
             },
             garment: {
                 name : "생명의 순환: 가을[1]",
