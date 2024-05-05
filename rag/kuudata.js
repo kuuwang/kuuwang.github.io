@@ -311,10 +311,10 @@ var data = [
         },
         items: {
             headt:{
-                name: "늘어진 타나토스의 고뇌-LT[1]",
+                name: "+11 [C] 늘어진 타나토스의 고뇌-LT[1]",
                 src: "400465",
-                grade: "", 
-                desc: [""],
+                grade: "C", 
+                desc: ["선궁3Lv", "명궁3Lv"],
             },
             headm: {
                 name: "부스터 가면 A타입[1]",
@@ -329,15 +329,15 @@ var data = [
                 desc: [""],
             },
             armor: {
-                name: "정신의 성운 로브[1]",
+                name: "+11 [C] 정신의 성운 로브[1]",
                 src: "450174",
-                grade: "", 
-                desc: [""],
+                grade: "C", 
+                desc: ["회복의 성운 2Lv", "DEX+3"],
             },
             weapon: {
-                name: "플러시 러버 해머[2]",
+                name: "+12 [A] 플러시 러버 해머[2]",
                 src: "590049",
-                grade: "", 
+                grade: "A", 
                 desc: [""],
             },
             shield: {
@@ -347,26 +347,26 @@ var data = [
                 desc: [""],
             },
             garment: {
-                name: "전사자의 망토[1]",
+                name: "+12 전사자의 망토[1]",
                 src: "20749",
                 grade: "", 
                 desc: [""],
             },
             shoose: {
-                name: "영웅의 부츠-LT[1]",
+                name: "+13 [A] 영웅의 부츠-LT[1]",
                 src: "470094",
-                grade: "", 
-                desc: [""],
+                grade: "A", 
+                desc: ["자객의 영민", "마력4Lv", "STR+1"],
             },
             accr: {
-                name: "블루 멘탈 펜던트-LT[1]",
+                name: "프리미티브 블루 멘탈 펜던트-LT[1]",
                 src: "490383",
                 grade: "", 
-                desc: [""],
+                desc: ["원시 르간 카드", "기억의 결정(글로벌 쿨타임)"],
             },
             accl: {
-                name: "글레이시아 이어링[1]",
-                src: "490329",
+                name: "",
+                src: "",
                 grade: "", 
                 desc: [""],
             },
@@ -412,7 +412,7 @@ var data = [
                 name: "의상 미카엘의 날개",
                 src: "20516",
                 grade: "", 
-                desc: [""],
+                desc: ["변동 캐스팅 감소", "변동 캐스팅 감소(듀얼)"],
             },
             sshoose: {
                 name: "부스터 슈즈 쉐도우",
