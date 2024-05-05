@@ -7,7 +7,7 @@ html, body, table{
     flex-wrap : wrap;
 }
 .box {
-    width: 365px;
+    width: 370px;
     border: 1px solid rgb(198,198,198);
     border-radius: 3px;
     float: left;
@@ -106,6 +106,12 @@ html, body, table{
     border: 1px solid rgb(198,198,198);
     background-color: rgba(247,247,247);
 }
+
+.itembox{
+    width: 24px;
+    height: 28px;
+}
+
 .iteminfo{
     padding-top: 10px;
     display: flex;
@@ -113,9 +119,14 @@ html, body, table{
     background-position: center;
     background-repeat: no-repeat;
 }
+.itemgrade{
+    position:absolute;
+    margin-left: -24px;
+    margin-top: 12px;
+}
 
 .itembottom{
-    margin-top: -10px;
+    margin-top: -12px;
     height: 10px;
     background-color: rgba(182, 199, 234, 0.5);
     border-radius: 100%;
