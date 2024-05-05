@@ -64,11 +64,24 @@ function generateCharacterInfo(charData) {
             var itemKey = Object.keys(items)[j];
             var item = items[itemKey];
             var cell = document.createElement('td');
+            var itembox = document.createElement('div')
+            itembox.className = "itembox"
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = item.src ? 'https://static.divine-pride.net/images/items/item/' + item.src + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
             img.className = "itemimg";
+            img.src = item.src ? 'https://static.divine-pride.net/images/items/item/' + item.src + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
+            var itemgradeimg = document.createElement('img')
+            itemgradeimg.className = "itemgrade";
+            if (item.grade == "D"){
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon1.png?raw=true';
+            } else if (item.grade == "C"){
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon2.png?raw=true';
+            } else if (item.grade == "B"){
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon3.png?raw=true';
+            } else if (item.grade == "A"){
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon4.png?raw=true';
+            }
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
                 itemdesc.innerHTML = item.name + '<br>' + item.desc.join('<br>');
@@ -79,9 +92,11 @@ function generateCharacterInfo(charData) {
 
             itemdesc.className = "itemdesc";
 
-            cell.appendChild(img);
-            cell.appendChild(itembottom);
-            cell.appendChild(itemdesc);
+            itembox.appendChild(img);
+            itembox.appendChild(itemgradeimg);
+            itembox.appendChild(itembottom);
+            itembox.appendChild(itemdesc);
+            cell.appendChild(itembox);
             row.appendChild(cell);
             row.appendChild(cell);
         }
@@ -98,6 +113,8 @@ function generateCharacterInfo(charData) {
             var itemKey = Object.keys(items)[j];
             var item = items[itemKey];
             var cell = document.createElement('td');
+            var itembox = document.createElement('div')
+            itembox.className = "itembox"
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
@@ -113,9 +130,10 @@ function generateCharacterInfo(charData) {
 
             itemdesc.className = "itemdesc";
 
-            cell.appendChild(img);
-            cell.appendChild(itembottom);
-            cell.appendChild(itemdesc);
+            itembox.appendChild(img);
+            itembox.appendChild(itembottom);
+            itembox.appendChild(itemdesc);
+            cell.appendChild(itembox);
             row.appendChild(cell);
             row.appendChild(cell);
         }
