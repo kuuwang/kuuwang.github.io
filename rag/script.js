@@ -93,9 +93,10 @@ function generateCharacterInfo(charData) {
             itemdesc.className = "itemdesc";
 
             itembox.appendChild(img);
-            itembox.appendChild(itemgradeimg);
+            
             itembox.appendChild(itembottom);
             itembox.appendChild(itemdesc);
+            itembox.appendChild(itemgradeimg);
             cell.appendChild(itembox);
             row.appendChild(cell);
             row.appendChild(cell);

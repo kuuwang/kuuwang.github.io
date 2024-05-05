@@ -121,8 +121,7 @@ html, body, table{
 }
 .itemgrade{
     position:absolute;
-    margin-left: -24px;
-    margin-top: 12px;
+    margin-top: -12px;
 }
 
 .itembottom{
