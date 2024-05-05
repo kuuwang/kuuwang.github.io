@@ -70,7 +70,7 @@ function generateCharacterInfo(charData) {
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
             img.className = "itemimg";
-            img.src = item.src ? 'https://static.divine-pride.net/images/items/item/' + item.src + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
+            img.src = item.id ? 'https://static.divine-pride.net/images/items/item/' + item.id + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
             var itemgradeimg = document.createElement('img')
             itemgradeimg.className = "itemgrade";
             if (item.grade == "D"){
@@ -119,7 +119,7 @@ function generateCharacterInfo(charData) {
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = item.src ? 'https://static.divine-pride.net/images/items/item/' + item.src + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
+            img.src = item.id ? 'https://static.divine-pride.net/images/items/item/' + item.id + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
             img.className = "itemimg";
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
