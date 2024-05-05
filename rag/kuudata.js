@@ -6817,10 +6817,10 @@ var data = [
     },
     {
         charname: "쿠왕네철호",
-        job: "영도사",
+        job: "Spirit Handler",
         clvl: 215,
         jlvl: 36,
-        battlestyle: "귀설 거칠게 요동치기",
+        battlestyle: "귀설 거칠게 요동치기/물공",
         stats: {
             str: 110,
             agi: 90,
@@ -6962,10 +6962,10 @@ var data = [
     },
     {
         charname: "쿠왕네현록",
-        job: "영도사",
+        job: "Spirit Handler",
         clvl: 215,
         jlvl: 36,
-        battlestyle: "귀설 거칠게 요동치기",
+        battlestyle: "귀설 거칠게 요동치기/마공",
         stats: {
             str: 1,
             agi: 100,
