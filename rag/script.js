@@ -148,7 +148,12 @@ function generateCharacterInfo(charData) {
     iteminfo.style.backgroundImage = "url('https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/char/" + charData.charname + ".gif')";
     iteminfo.appendChild(table2);
     content.appendChild(iteminfo);
+    var split_box = document.createElement('div');
+    split_box.className = "split";
+
+
     box.appendChild(content);
+    box.appendChild(split_box);
 
 
     // 아이템 이미지에 마우스 이벤트를 추가하여 설명 표시/숨기기

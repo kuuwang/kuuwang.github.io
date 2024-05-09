@@ -146,3 +146,47 @@ html, body, table{
     color:white;
     padding: 5px;
 }
+.skillbox{
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.split{
+    margin-top: 10px;
+    height: 20px;
+    background:  linear-gradient(to bottom, 
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247)
+    );
+    border-top: 1px solid rgba(198,198,198,1);
+
+    
+}
+.skContainer{
+    display: inline-block;
+    justify-content: space-between;
+
+    width: 30px;
+    height: 30px;
+}
+
+.skillLv{
+    display: inline-block;
+    width: 12px;
+    font-size: 12px;
+    text-align: right;
+    margin-left: -10px;
+    text-shadow:
+    1px 1px 0 #fff,
+    -1px 1px 0 #fff,
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff;
+}
