@@ -1017,8 +1017,8 @@ var data = [
     {
         charname: "쿠왕인룬나",
         job: "Dragon Knight",
-        clvl: 219,
-        jlvl: 38,
+        clvl: 230,
+        jlvl: 45,
         battlestyle: "서번트웨폰",
         stats: {
             str: 120,
@@ -1027,12 +1027,12 @@ var data = [
             int: 1,
             dex: 1,
             luk: 125,
-            pow: 76,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 14
         },
         items: {
             headt:{
@@ -1307,22 +1307,22 @@ var data = [
     {
         charname: "쿠왕인미케",
         job: "Meister",
-        clvl: 215,
-        jlvl: 36,
+        clvl: 230,
+        jlvl: 45,
         battlestyle: "트리플 레이저",
         stats: {
-            str: 1,
-            agi: 1,
-            vit: 1,
+            str: 120,
+            agi: 85,
+            vit: 110,
             int: 1,
-            dex: 1,
-            luk: 1,
-            pow: 0,
+            dex: 90,
+            luk: 125,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 21
         },
         items: {
             headt:{
