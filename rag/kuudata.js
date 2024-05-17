@@ -1746,18 +1746,18 @@ var data = [
         jlvl: 55,
         battlestyle: "이터널 슬래쉬",
         stats: {
-            str: 1,
-            agi: 1,
-            vit: 1,
-            int: 1,
-            dex: 1,
-            luk: 1,
-            pow: 0,
+            str: 120,
+            agi: 70,
+            vit: 120,
+            int: 40,
+            dex: 60,
+            luk: 125,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 97
         },
         items: {
             headt:{
@@ -1887,22 +1887,22 @@ var data = [
     {
         charname: "쿠왕인길크",
         job: "Shadow Cross",
-        clvl: 215,
-        jlvl: 36,
+        clvl: 230,
+        jlvl: 45,
         battlestyle: "쉐도우 스탭",
         stats: {
-            str: 1,
-            agi: 1,
-            vit: 1,
-            int: 1,
-            dex: 1,
-            luk: 1,
-            pow: 0,
+            str: 120,
+            agi: 70,
+            vit: 120,
+            int: 40,
+            dex: 60,
+            luk: 125,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 21
         },
         items: {
             headt:{
