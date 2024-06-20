@@ -1162,8 +1162,8 @@ var data = [
     {
         charname: "쿠왕의미케",
         job: "Meister",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "마이티 스매쉬",
         stats: {
             str: 120,
@@ -1176,7 +1176,7 @@ var data = [
             sta: 0,
             wis: 0,
             spl: 0,
-            con: 5,
+            con: 59,
             crt: 0
         },
         items: {
