@@ -2322,8 +2322,8 @@ var data = [
     {
         charname: "쿠왕의수라",
         job: "Inquisitor",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "멸화격",
         stats: {
             str: 120,
@@ -5222,8 +5222,8 @@ var data = [
     {
         charname: "쿠왕의리벨",
         job: "Night Watch",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 51,
         battlestyle: "매거진 포 원",
         stats: {
             str: 1,
