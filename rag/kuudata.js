@@ -3482,8 +3482,8 @@ var data = [
     {
         charname: "쿠왕의쉐체",
         job: "Abyss Chaser",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "프롬 디 어비스",
         stats: {
             str: 1,
