@@ -5512,22 +5512,22 @@ var data = [
     {
         charname: "쿠왕의카게",
         job: "Shinkiro",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 52,
         battlestyle: "그림자 일섬",
         stats: {
-            str: 1,
-            agi: 1,
-            vit: 1,
-            int: 1,
-            dex: 1,
-            luk: 1,
-            pow: 0,
+            str: 120,
+            agi: 80,
+            vit: 100,
+            int: 47,
+            dex: 90,
+            luk: 125,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 59
         },
         items: {
             headt:{
@@ -5657,21 +5657,21 @@ var data = [
     {
         charname: "쿠왕의오보",
         job: "Shiranui",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "암전포",
         stats: {
             str: 1,
-            agi: 1,
-            vit: 1,
-            int: 1,
-            dex: 1,
-            luk: 1,
+            agi: 100,
+            vit: 110,
+            int: 125,
+            dex: 60,
+            luk: 100,
             pow: 0,
             sta: 0,
             wis: 0,
-            spl: 0,
-            con: 0,
+            spl: 100,
+            con: 59,
             crt: 0
         },
         items: {
