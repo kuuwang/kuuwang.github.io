@@ -184,3 +184,51 @@ data.forEach(function(charData) {
     container.appendChild(generateCharacterInfo(charData));
 });
 
+
+function getClvlCounts(dataArray) {
+    var clvlCounts = {};
+    dataArray.forEach(function(item) {
+        var clvl = item.clvl;
+        if (clvlCounts[clvl]) {
+            clvlCounts[clvl]++;
+        } else {
+            clvlCounts[clvl] = 1;
+        }
+    });
+    return clvlCounts;
+}
+
+function calculateAverage(clvlCounts) {
+    var total = 0;
+    var count = 0;
+    for (var clvl in clvlCounts) {
+        if (clvlCounts.hasOwnProperty(clvl)) {
+            total += clvl * clvlCounts[clvl];
+            count += clvlCounts[clvl];
+        }
+    }
+    return (total / count).toFixed(2);
+}
+
+function displayClvlCounts(clvlCounts) {
+    var table = document.querySelector('#chartable table');
+    var sortedClvls = Object.keys(clvlCounts).sort(function(a, b) {
+        return b - a;
+    });
+    sortedClvls.forEach(function(clvl) {
+        var row = table.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = clvl;
+        cell2.innerHTML = clvlCounts[clvl];
+    });
+    var average = calculateAverage(clvlCounts);
+    var row = table.insertRow();
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = '<b>Average</b>';
+    cell2.innerHTML = average;
+}
+
+var clvlCounts = getClvlCounts(data);
+displayClvlCounts(clvlCounts);
