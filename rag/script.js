@@ -202,9 +202,11 @@ function calculateAverage(clvlCounts) {
     var total = 0;
     var count = 0;
     for (var clvl in clvlCounts) {
-        if (clvlCounts.hasOwnProperty(clvl)) {
-            total += clvl * clvlCounts[clvl];
-            count += clvlCounts[clvl];
+        if(clvl > 99){
+            if (clvlCounts.hasOwnProperty(clvl)) {
+                total += clvl * clvlCounts[clvl];
+                count += clvlCounts[clvl];
+            }
         }
     }
     return (total / count).toFixed(2);
@@ -216,11 +218,13 @@ function displayClvlCounts(clvlCounts) {
         return b - a;
     });
     sortedClvls.forEach(function(clvl) {
+        if(clvl > 99){
         var row = table.insertRow();
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         cell1.innerHTML = clvl;
         cell2.innerHTML = clvlCounts[clvl];
+        }
     });
     var average = calculateAverage(clvlCounts);
     var row = table.insertRow();

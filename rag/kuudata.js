@@ -7111,7 +7111,6 @@ var data = [
             },
         },
     },
-    /*
     {
         charname: "쿠왕네어크",
         job: "Assassin Cross",
@@ -7257,7 +7256,6 @@ var data = [
             },
         },
     }
-    */
 ];
 
 /*
