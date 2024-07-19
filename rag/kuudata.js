@@ -4352,8 +4352,8 @@ var data = [
     {
         charname: "쿠왕의성제",
         job: "천제",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 237,
+        jlvl: 51,
         battlestyle: "천양",
         stats: {
             str: 1,
