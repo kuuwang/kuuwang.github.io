@@ -21,7 +21,7 @@ function generateCharacterInfo(charData) {
     var job = document.createElement('span');
     job.className = 'job';
     job.textContent = charData.job;
-    var battlestyle = document.createElement('span'); // 새로 추가된 요소
+    var battlestyle = document.createElement('span');
     battlestyle.className = 'battlestyle';
     var lvltable = document.createElement('section');
     lvltable.className = 'lvltable';
@@ -29,7 +29,6 @@ function generateCharacterInfo(charData) {
     var stattable = document.createElement('section');
     stattable.className = 'stattable';
 
-    
     Object.keys(charData.stats).forEach(function(stat) {
         var statbox = document.createElement('span');
         statbox.className = 'statbox';
@@ -45,7 +44,7 @@ function generateCharacterInfo(charData) {
         stattable.appendChild(statbox);
     });
     charinfo.appendChild(job);
-    charinfo.appendChild(battlestyle); // 추가된 요소를 charinfo에 추가
+    charinfo.appendChild(battlestyle);
     charinfo.appendChild(lvltable);
     charinfo.appendChild(stattable);
     content.appendChild(charinfo);
@@ -86,33 +85,30 @@ function generateCharacterInfo(charData) {
             if (Array.isArray(item.desc)) {
                 itemdesc.innerHTML = item.name + '<br>' + item.desc.join('<br>');
             } else {
-                // 배열이 아닌 경우에는 기존의 처리 방식으로 진행
                 itemdesc.innerHTML = item.name + '<br>' + item.desc;
             }
 
             itemdesc.className = "itemdesc";
 
             itembox.appendChild(img);
-            
             itembox.appendChild(itembottom);
             itembox.appendChild(itemdesc);
             itembox.appendChild(itemgradeimg);
             cell.appendChild(itembox);
-            row.appendChild(cell);
             row.appendChild(cell);
         }
         table1.appendChild(row);
     }
     var table2 = document.createElement('table');
     table2.className = 'backitem';
-    var items = charData.itemsb;
+    var itemsb = charData.itemsb;
 
-    for (var i = 0; i < Object.keys(items).length; i += 2) {
+    for (var i = 0; i < Object.keys(itemsb).length; i += 2) {
         var row = document.createElement('tr');
 
-        for (var j = i; j < i + 2 && j < Object.keys(items).length; j++) {
-            var itemKey = Object.keys(items)[j];
-            var item = items[itemKey];
+        for (var j = i; j < i + 2 && j < Object.keys(itemsb).length; j++) {
+            var itemKey = Object.keys(itemsb)[j];
+            var item = itemsb[itemKey];
             var cell = document.createElement('td');
             var itembox = document.createElement('div')
             itembox.className = "itembox"
@@ -125,7 +121,6 @@ function generateCharacterInfo(charData) {
             if (Array.isArray(item.desc)) {
                 itemdesc.innerHTML = item.name + '<br>' + item.desc.join('<br>');
             } else {
-                // 배열이 아닌 경우에는 기존의 처리 방식으로 진행
                 itemdesc.innerHTML = item.name + '<br>' + item.desc;
             }
 
@@ -135,7 +130,6 @@ function generateCharacterInfo(charData) {
             itembox.appendChild(itembottom);
             itembox.appendChild(itemdesc);
             cell.appendChild(itembox);
-            row.appendChild(cell);
             row.appendChild(cell);
         }
         table2.appendChild(row);
@@ -151,12 +145,9 @@ function generateCharacterInfo(charData) {
     var split_box = document.createElement('div');
     split_box.className = "split";
 
-
     box.appendChild(content);
     box.appendChild(split_box);
 
-
-    // 아이템 이미지에 마우스 이벤트를 추가하여 설명 표시/숨기기
     var itemImages = box.querySelectorAll('.itemimg');
     itemImages.forEach(function(img) {
         img.addEventListener('mouseover', function() {
@@ -177,13 +168,43 @@ function generateCharacterInfo(charData) {
     return box;
 }
 
-
-// 컨테이너에 캐릭터 정보 추가
 var container = document.getElementById('container');
+var checkboxContainer = document.getElementById('checkbox-container');
+var uniqueJobs = [...new Set(data.map(charData => charData.job))];
+
+var table = document.getElementById('chk-table');
+
+uniqueJobs.forEach(function(job) {
+    var row = document.createElement('tr');
+    var cell = document.createElement('td');
+
+    var label = document.createElement('label');
+    var checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.value = job;
+    checkbox.addEventListener('change', filterCharacters);
+    label.appendChild(checkbox);
+    label.appendChild(document.createTextNode(job));
+
+    cell.appendChild(label);
+    row.appendChild(cell);
+    table.appendChild(row);
+});
+
+checkboxContainer.appendChild(table);
+function filterCharacters() {
+    var selectedJobs = Array.from(checkboxContainer.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+    container.innerHTML = '';
+    data.forEach(function(charData) {
+        if (selectedJobs.length === 0 || selectedJobs.includes(charData.job)) {
+            container.appendChild(generateCharacterInfo(charData));
+        }
+    });
+}
+
 data.forEach(function(charData) {
     container.appendChild(generateCharacterInfo(charData));
 });
-
 
 function getClvlCounts(dataArray) {
     var clvlCounts = {};
@@ -219,11 +240,11 @@ function displayClvlCounts(clvlCounts) {
     });
     sortedClvls.forEach(function(clvl) {
         if(clvl > 99){
-        var row = table.insertRow();
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = clvl;
-        cell2.innerHTML = clvlCounts[clvl];
+            var row = table.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            cell1.innerHTML = clvl;
+            cell2.innerHTML = clvlCounts[clvl];
         }
     });
     var average = calculateAverage(clvlCounts);

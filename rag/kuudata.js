@@ -3191,7 +3191,7 @@ var data = [
     },
     {
         charname: "쿠왕의소서",
-        job: "Elemenatl Master",
+        job: "Elemental Master",
         clvl: 250,
         jlvl: 52,
         battlestyle: "베놈 스웜프",

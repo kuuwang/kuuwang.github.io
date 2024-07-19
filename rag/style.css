@@ -192,6 +192,10 @@ html, body, table{
     1px -1px 0 #fff;
 }
 
+#left{
+    width: 200px;
+}
+
 #chartable{
     display:flow-root;
     float: left;
@@ -211,4 +215,21 @@ html, body, table{
 
 #chartable tr td{
     text-align: center;
+}
+
+#chk{
+    display:flow-root;
+    float: left;
+    width: 180px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    margin-top: 3px;
+}
+#checkbox-container table{
+    margin: auto;
+    width: 100%;
+}
+
+#checkbox-container table tr:nth-child(even){
+    background-color: rgba(231, 239, 255, 1);
 }
