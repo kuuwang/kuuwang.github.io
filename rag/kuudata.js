@@ -6826,7 +6826,7 @@ var data = [
         job: "Spirit Handler",
         clvl: 215,
         jlvl: 36,
-        battlestyle: "귀설 거칠게 요동치기/물공",
+        battlestyle: "귀설 거칠게 요동치기",
         stats: {
             str: 110,
             agi: 90,
@@ -6971,7 +6971,7 @@ var data = [
         job: "Spirit Handler",
         clvl: 215,
         jlvl: 36,
-        battlestyle: "귀설 거칠게 요동치기/마공",
+        battlestyle: "귀설 거칠게 요동치기",
         stats: {
             str: 1,
             agi: 100,
