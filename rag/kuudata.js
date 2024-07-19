@@ -4787,8 +4787,8 @@ var data = [
     {
         charname: "쿠왕인리퍼",
         job: "영도사",
-        clvl: 215,
-        jlvl: 36,
+        clvl: 230,
+        jlvl: 45,
         battlestyle: "사령정화",
         stats: {
             str: 1,
