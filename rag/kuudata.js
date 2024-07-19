@@ -4352,22 +4352,22 @@ var data = [
     {
         charname: "쿠왕의성제",
         job: "천제",
-        clvl: 237,
-        jlvl: 51,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "천양",
         stats: {
-            str: 1,
-            agi: 1,
-            vit: 1,
-            int: 1,
-            dex: 1,
-            luk: 1,
-            pow: 0,
+            str: 120,
+            agi: 80,
+            vit: 80,
+            int: 75,
+            dex: 90,
+            luk: 125,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 59
         },
         items: {
             headt:{
