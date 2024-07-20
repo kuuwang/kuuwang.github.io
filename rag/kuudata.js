@@ -5512,22 +5512,22 @@ var data = [
     {
         charname: "쿠왕의도람",
         job: "Spirit Handler",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "현록포",
         stats: {
             str: 1,
-            agi: 1,
-            vit: 1,
-            int: 1,
+            agi: 100,
+            vit: 120,
+            int: 120,
             dex: 1,
-            luk: 1,
+            luk: 100,
             pow: 0,
             sta: 0,
             wis: 0,
-            spl: 0,
+            spl: 100,
             con: 0,
-            crt: 0
+            crt: 59
         },
         items: {
             headt:{
