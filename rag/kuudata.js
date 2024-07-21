@@ -2322,22 +2322,22 @@ var data = [
     {
         charname: "쿠왕의제네",
         job: "Biolo",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "메이헤믹 쏜즈",
         stats: {
-            str: 1,
+            str: 120,
             agi: 1,
-            vit: 1,
-            int: 1,
-            dex: 1,
-            luk: 1,
-            pow: 0,
+            vit: 100,
+            int: 90,
+            dex: 100,
+            luk: 125,
+            pow: 100,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 0
+            crt: 59
         },
         items: {
             headt:{
