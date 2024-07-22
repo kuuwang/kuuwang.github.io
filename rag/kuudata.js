@@ -437,8 +437,8 @@ var data = [
     {
         charname: "쿠왕인룬나",
         job: "Dragon Knight",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "서번트웨폰",
         stats: {
             str: 120,
@@ -452,7 +452,7 @@ var data = [
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 14
+            crt: 59
         },
         items: {
             headt:{
