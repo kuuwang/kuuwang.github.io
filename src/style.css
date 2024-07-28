@@ -7,7 +7,7 @@ html, body, table{
     flex-wrap : wrap;
     justify-content: center;
 }
-.box {
+.charbox {
     width: 370px;
     border: 1px solid rgb(198,198,198);
     border-radius: 3px;

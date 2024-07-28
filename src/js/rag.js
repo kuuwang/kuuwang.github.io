@@ -1,6 +1,6 @@
 function generateCharacterInfo(charData) {
     var box = document.createElement('div');
-    box.className = 'box';
+    box.className = 'charbox';
 
     var title = document.createElement('header');
     title.className = 'title';
