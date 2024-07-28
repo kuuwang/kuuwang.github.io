@@ -69,17 +69,17 @@ function generateCharacterInfo(charData) {
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
             img.className = "itemimg";
-            img.src = item.id ? 'https://static.divine-pride.net/images/items/item/' + item.id + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
+            img.src = item.id ? 'https://static.divine-pride.net/images/items/item/' + item.id + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/src/img/none.png';
             var itemgradeimg = document.createElement('img')
             itemgradeimg.className = "itemgrade";
             if (item.grade == "D"){
-                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon1.png?raw=true';
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/src/img/grade/grade_icon1.png?raw=true';
             } else if (item.grade == "C"){
-                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon2.png?raw=true';
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/src/img/grade/grade_icon2.png?raw=true';
             } else if (item.grade == "B"){
-                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon3.png?raw=true';
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/src/img/grade/grade_icon3.png?raw=true';
             } else if (item.grade == "A"){
-                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/grade/grade_icon4.png?raw=true';
+                itemgradeimg.src = 'https://github.com/kuuwang/kuuwang.github.io/blob/main/src/img/grade/grade_icon4.png?raw=true';
             }
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
@@ -115,7 +115,7 @@ function generateCharacterInfo(charData) {
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = item.id ? 'https://static.divine-pride.net/images/items/item/' + item.id + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/none.png';
+            img.src = item.id ? 'https://static.divine-pride.net/images/items/item/' + item.id + '.png' : 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/src/img/none.png';
             img.className = "itemimg";
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
@@ -139,7 +139,7 @@ function generateCharacterInfo(charData) {
     charimg.className = 'charimg';
 
     iteminfo.appendChild(table1);
-    iteminfo.style.backgroundImage = "url('https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/rag/img/char/" + charData.charname + ".gif')";
+    iteminfo.style.backgroundImage = "url('https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/src/img/char/" + charData.charname + ".gif')";
     iteminfo.appendChild(table2);
     content.appendChild(iteminfo);
     var split_box = document.createElement('div');
