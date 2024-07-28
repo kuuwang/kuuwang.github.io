@@ -727,8 +727,8 @@ var data = [
     {
         charname: "쿠왕인미케",
         job: "Meister",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "트리플 레이저",
         stats: {
             str: 120,
