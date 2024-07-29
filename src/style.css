@@ -233,3 +233,88 @@ html, body, table{
 #checkbox-container table tr:nth-child(even){
     background-color: rgba(231, 239, 255, 1);
 }
+
+
+
+.craftbox {
+    width: 300px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    float: left;
+    margin: 3px;
+}
+
+.craftinfo{
+    width: 200px;
+    height: 180px;
+    background-image: url("../src/img/crafting/bg_lapine.png");
+    background-repeat:no-repeat;
+    background-position: center center;
+    float: left;
+}
+
+.craftTable{
+    width: 200px;
+    height: 180px;
+    text-align: center;
+}
+.craftTable tr:nth-child(1) td{
+    padding: 13px;
+}
+.craftTable tr:nth-child(2) td{
+    display: inline-block;
+}
+
+.resultimg{
+    text-align: center;
+}
+
+.resultbox{
+    width: 40px;
+    height: 40px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    background-image: linear-gradient(#fff, #fff), linear-gradient(to bottom, #94bdef 0%, #f7ffff 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.resultbox:before{
+    content: " ";
+    position: absolute;
+}
+
+
+
+
+.resultname{
+    font-weight: 300;
+    display: block;
+    color: rgba(82,123,206,1)
+}
+.skillname{
+    color: rgba(66,74,132,1)
+}
+
+.subcnt{
+    position:absolute;
+    text-align: right;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+
+.subinfo{
+    width: 99px;
+    height: 180px;
+    background-color: rgba(247,247,255,1);
+    border-left: 1px dashed rgba(128,128,128,0.5);
+    display: flex;
+    justify-content: space-between;
+    background-position: center;
+    background-repeat: no-repeat;
+}
