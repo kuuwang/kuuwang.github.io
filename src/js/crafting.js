@@ -56,6 +56,7 @@ function generateCraftingInfo(craftData) {
     
     itembox.appendChild(img);
 
+
     td.appendChild(itembox)
     tr.appendChild(td);
     maintable.appendChild(tr);
@@ -104,60 +105,6 @@ function generateCraftingInfo(craftData) {
     });
 
     sub.appendChild(subtable);
-
-
-/*
-    var tr = document.createElement('tr');
-    ['sub1', 'sub2', 'sub3'].forEach(function(sub){
-        td = document.createElement('td');
-        var itembox = document.createElement('div');
-        itembox.className = "itembox";
-        if(craftData.materials[sub][0] != ""){
-            var img = document.createElement('img');
-            img.className = 'item-image';
-            img.src = craftData.materials[sub][1] ? 'https://static.divine-pride.net/images/items/item/' + craftData.materials[sub][1] + '.png': 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/src/img/none.png';
-            var span = document.createElement('span');
-            span.textContent = craftData.materials[sub][2];
-            span.className = "subcnt";
-            td.appendChild(span);
-            itembox.appendChild(img);
-            
-        }
-        td.appendChild(itembox)
-        var div = document.createElement('div');
-        div.className = "itembottom"
-        td.appendChild(div)
-        tr.appendChild(td);
-        tr.appendChild(td);
-    })
-    table.appendChild(tr);
-
-    var tr = document.createElement('tr');
-    ['sub4', 'sub5', 'sub6'].forEach(function(sub){
-        td = document.createElement('td');
-        var itembox = document.createElement('div');
-        itembox.className = "itembox";
-        if(craftData.materials[sub][0] != ""){
-            var img = document.createElement('img');
-            img.className = 'item-image';
-            img.src = craftData.materials[sub][1] ? 'https://static.divine-pride.net/images/items/item/' + craftData.materials[sub][1] + '.png': 'https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/src/img/none.png';
-            var span = document.createElement('span');
-            span.textContent = craftData.materials[sub][2];
-            span.className = "subcnt";
-            td.appendChild(span);
-            itembox.appendChild(img);
-            
-        }
-        td.appendChild(itembox)
-        var div = document.createElement('div');
-        div.className = "itembottom"
-        td.appendChild(div)
-        tr.appendChild(td);
-        tr.appendChild(td);
-    })
-    table.appendChild(tr);
-*/
-
 
     content.appendChild(craftinfo);
     content.appendChild(sub);

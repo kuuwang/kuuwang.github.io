@@ -130,6 +130,7 @@ html, body, table{
     height: 10px;
     background-color: rgba(182, 199, 234, 0.5);
     border-radius: 100%;
+    display:block;
 }
 .charimg{
     width : 80px; 
@@ -246,7 +247,7 @@ html, body, table{
 
 .craftinfo{
     width: 200px;
-    height: 180px;
+    height: 200px;
     background-image: url("../src/img/crafting/bg_lapine.png");
     background-repeat:no-repeat;
     background-position: center center;
@@ -255,7 +256,7 @@ html, body, table{
 
 .craftTable{
     width: 200px;
-    height: 180px;
+    height: 215px;
     text-align: center;
 }
 .craftTable tr:nth-child(1) td{
@@ -263,6 +264,8 @@ html, body, table{
 }
 .craftTable tr:nth-child(2) td{
     display: inline-block;
+    box-shadow: 0 0 0 1px rgba(138,149,173,1) inset;
+    border-radius: 5px;
 }
 
 .resultimg{
@@ -288,9 +291,6 @@ html, body, table{
     position: absolute;
 }
 
-
-
-
 .resultname{
     font-weight: 300;
     display: block;
@@ -300,19 +300,26 @@ html, body, table{
     color: rgba(66,74,132,1)
 }
 
-.subcnt{
-    position:absolute;
-    text-align: right;
-    margin-left: 15px;
-    margin-top: 15px;
-}
-
-
 .subinfo{
     background-color: rgba(247,247,255,1);
     border-left: 1px dashed rgba(128,128,128,0.5);
     display: flex;
-    justify-content: space-between;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 220px;
+}
+
+.subTable{
+    height: 24px;
+}
+
+.subTable tr td:nth-child(1){
+    width: 24px;
+    height: 26px;
+}
+.subTable tr td:nth-child(2){
+    width: 105px;
+}
+
+.subTable tr td:nth-child(3){
+    width: 30px;
+    text-align: right;
 }
