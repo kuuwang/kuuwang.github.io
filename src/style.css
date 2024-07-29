@@ -237,7 +237,7 @@ html, body, table{
 
 
 .craftbox {
-    width: 300px;
+    width: 370px;
     border: 1px solid rgb(198,198,198);
     border-radius: 3px;
     float: left;
@@ -309,8 +309,6 @@ html, body, table{
 
 
 .subinfo{
-    width: 99px;
-    height: 180px;
     background-color: rgba(247,247,255,1);
     border-left: 1px dashed rgba(128,128,128,0.5);
     display: flex;

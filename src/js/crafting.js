@@ -20,7 +20,7 @@ function generateCraftingInfo(craftData) {
     var craftinfo = document.createElement('article');
     craftinfo.className = 'craftinfo';
 
-    var table = document.createElement('table');
+    var maintable = document.createElement('table');
     var tr = document.createElement('tr');
     var td = document.createElement('td');
     td.colSpan = 3;
@@ -33,11 +33,11 @@ function generateCraftingInfo(craftData) {
 
     var span = document.createElement('span');
     span.className = "skillname"
-    span.textContent = craftData.skill[0];
+    span.textContent = craftData.skill;
     td.appendChild(span);
     
     tr.appendChild(td);
-    table.appendChild(tr);
+    maintable.appendChild(tr);
 
     var tr = document.createElement('tr');
     var td = document.createElement('td');
@@ -58,18 +58,53 @@ function generateCraftingInfo(craftData) {
 
     td.appendChild(itembox)
     tr.appendChild(td);
-    table.appendChild(tr);
-    table.className = "craftTable"
+    maintable.appendChild(tr);
+    maintable.className = "craftTable"
 
     tr.appendChild(td);
-    table.appendChild(tr);
+    maintable.appendChild(tr);
     
-    craftinfo.appendChild(table);
+    craftinfo.appendChild(maintable);
 
 
 
     var sub = document.createElement('aside');
     sub.className = 'subinfo';
+
+    var subtable = document.createElement('table')
+    subtable.className = "subTable"
+
+    craftData.materials.forEach(material => {
+        if (material[0]) { // Check if the material name is not an empty string
+            const row = document.createElement('tr');
+
+            // Add material image
+            const imgCell = document.createElement('td');
+            const img = document.createElement('img');
+            img.src = 'https://static.divine-pride.net/images/items/item/' + material[1] + '.png';
+            img.alt = material[0];
+            imgCell.appendChild(img);
+            var span = document.createElement('span');
+            span.className = "itembottom";
+            imgCell.appendChild(span)
+            row.appendChild(imgCell);
+
+            // Add material name
+            const nameCell = document.createElement('td');
+            nameCell.textContent = material[0];
+            row.appendChild(nameCell);
+
+            // Add material quantity
+            const quantityCell = document.createElement('td');
+            quantityCell.textContent = material[2] + '개';
+            row.appendChild(quantityCell);
+
+            subtable.appendChild(row);
+        }
+    });
+
+    sub.appendChild(subtable);
+
 
 /*
     var tr = document.createElement('tr');
