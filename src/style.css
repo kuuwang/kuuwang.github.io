@@ -219,25 +219,6 @@ html, body, table{
     text-align: center;
 }
 
-#chk{
-    display:flow-root;
-    float: left;
-    width: 180px;
-    border: 1px solid rgb(198,198,198);
-    border-radius: 3px;
-    margin-top: 3px;
-}
-#checkbox-container table{
-    margin: auto;
-    width: 100%;
-}
-
-#checkbox-container table tr:nth-child(even){
-    background-color: rgba(231, 239, 255, 1);
-}
-
-
-
 .craftbox {
     width: 370px;
     border: 1px solid rgb(198,198,198);
@@ -339,4 +320,26 @@ html, body, table{
 .subTable tr td:nth-child(3){
     width: 30px;
     text-align: right;
+}
+
+#chk{
+    display:flow-root;
+    float: left;
+    width: 180px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    margin-top: 3px;
+}
+#checkbox-container table{
+    margin: auto;
+    width: 100%;
+}
+
+#checkbox-container table tr:nth-child(even){
+    background-color: rgba(231, 239, 255, 1);
+}
+
+#craftsearch{
+    width: 97%;
+    border: 0px;
 }
