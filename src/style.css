@@ -343,3 +343,6 @@ html, body, table{
     width: 97%;
     border: 0px;
 }
+#craftsearch::placeholder {
+    font-size: 12px;
+}
