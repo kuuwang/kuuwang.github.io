@@ -362,3 +362,8 @@ html, body, table{
     font-size: 12px;
 }
 
+.resultqty{
+    position: absolute;
+    margin-left: 26px;
+    margin-top: 20px;
+}
