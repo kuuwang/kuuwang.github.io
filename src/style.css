@@ -316,7 +316,7 @@ html, body, table{
 }
 
 .subTable tr td:nth-child(3){
-    width: 30px;
+    width: 35px;
     text-align: right;
 }
 
