@@ -1,5 +1,12 @@
 var data = [
     {
+        result: ["화살", 1750, 4],
+        skill: "화살 만들기",
+        materials: [
+            ["젤로피", 909, 1],
+        ]
+    },
+    {
         result: ["철", 998],
         skill: "철 제조",
         materials: [

@@ -48,6 +48,14 @@ function generateCraftingInfo(craftData) {
     itembox.appendChild(img);
     borderbox.appendChild(itembox);
 
+    var span = document.createElement('span');
+    span.className = "resultqty"
+    if(craftData.result[2]){
+        span.textContent = craftData.result[2];
+    } else {
+        span.textContent = ''
+    }
+    itembox.appendChild(span);
 
     craftinfo.appendChild(borderbox);
 
