@@ -170,8 +170,6 @@ html, body, table{
     rgb(247, 247, 247)
     );
     border-top: 1px solid rgba(198,198,198,1);
-
-    
 }
 .skContainer{
     display: inline-block;
@@ -322,6 +320,23 @@ html, body, table{
     text-align: right;
 }
 
+.craftsplit{
+    height: 20px;
+    background:  linear-gradient(to bottom, 
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247)
+    );
+    border-top: 1px solid rgba(198,198,198,1);
+}
+
 #chk{
     display:flow-root;
     float: left;
@@ -346,3 +361,4 @@ html, body, table{
 #craftsearch::placeholder {
     font-size: 12px;
 }
+
