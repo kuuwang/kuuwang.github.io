@@ -160,7 +160,7 @@ function generateSkillCheckboxes(data) {
     checkboxContainer.appendChild(table);
 }
 
-// Function to filter crafting info based on selected skills
+// Function to filter crafting info based on selected skills and search text
 function filterCraftingInfo() {
     var container = document.getElementById('container');
     var selectedSkills = Array.from(document.querySelectorAll('#checkbox-container input[type="checkbox"]:checked')).map(cb => cb.value);
@@ -169,13 +169,16 @@ function filterCraftingInfo() {
     container.innerHTML = '';
     data.forEach(function(craftData) {
         var matchesSkill = selectedSkills.length === 0 || selectedSkills.includes(craftData.skill);
-        var matchesSearch = craftData.result[0].toLowerCase().includes(searchText);
+
+        // Check if search text matches result name or any material name
+        var matchesSearch = craftData.result[0].toLowerCase().includes(searchText) ||
+            craftData.materials.some(material => material[0].toLowerCase().includes(searchText));
+
         if (matchesSkill && matchesSearch) {
             container.appendChild(generateCraftingInfo(craftData));
         }
     });
 }
-
 // Generate the skill checkboxes
 generateSkillCheckboxes(data);
 
