@@ -366,4 +366,9 @@ html, body, table{
     position: absolute;
     margin-left: 26px;
     margin-top: 20px;
+    z-index: 2;
+}
+
+.cntspan{
+    color: rgba(0,0,0,0.5);
 }

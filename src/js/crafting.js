@@ -120,6 +120,16 @@ function generateSkillCheckboxes(data) {
     var checkboxContainer = document.getElementById('checkbox-container');
     var uniqueSkills = [...new Set(data.map(craftData => craftData.skill))];
 
+    // Calculate the count of results for each skill
+    var skillCounts = {};
+    data.forEach(function(craftData) {
+        if (skillCounts[craftData.skill]) {
+            skillCounts[craftData.skill]++;
+        } else {
+            skillCounts[craftData.skill] = 1;
+        }
+    });
+
     var table = document.getElementById('chk-table');
 
     uniqueSkills.forEach(function(skill) {
@@ -132,7 +142,15 @@ function generateSkillCheckboxes(data) {
         checkbox.value = skill;
         checkbox.addEventListener('change', filterCraftingInfo);
         label.appendChild(checkbox);
-        label.appendChild(document.createTextNode(skill));
+
+        // Add the count of results for this skill in the label text with gray color
+        var skillText = document.createTextNode(`${skill} `);
+        var countSpan = document.createElement('span');
+        countSpan.className = "cntspan";
+        countSpan.textContent = `(${skillCounts[skill]})`;
+
+        label.appendChild(skillText);
+        label.appendChild(countSpan);
 
         cell.appendChild(label);
         row.appendChild(cell);

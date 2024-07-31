@@ -1,11 +1,1518 @@
 var data = [
+    
     {
-        result: ["화살", 1750, 4],
-        skill: "화살 만들기",
+        result: ["화살", 1750, 20], 
+            skill: "화살 만들기", 
+            materials: [
+            ["Barren Trunk", 1068, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 50], 
+        skill: "화살 만들기", 
         materials: [
-            ["젤로피", 909, 1],
+            ["Cactus Needle", 952, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fine-grained Trunk", 1066, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 4], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Jellopy", 909, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Needle of Alarm", 1095, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Piece of Shield", 7108, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 70], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Porcupine Quill", 1027, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Skeletal Armor Piece", 7450, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Solid Trunk", 1067, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Shining Spear Blade", 7109, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 7], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Tree Root", 902, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Trunk", 1019, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 700], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Wooden Mail", 2328, 1]
+        ]
+    }, 
+    {
+        result: ["화살", 1750, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Wooden Mail [1]", 2328, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Armor Piece of Dullahan", 7210, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blade Lost in Darkness", 7023, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 8], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Coal", 1003, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Clattering Skull", 7752, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dark Crystal Fragment", 7315, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Decayed Nail", 957, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 2], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dokebi Horn", 1021, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 2], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Evil Horn", 923, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Horrendous Mouth", 958, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Key of Underground", 7027, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Loki's Whisper", 7019, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rune of the Darkness", 7511, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Skeletal Armor Piece", 7450, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Tangled Chains", 7221, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Tooth of Bat", 913, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Will of the Darkness", 7340, 1]
+        ]
+    }, 
+    {
+        result: ["그림자의 화살", 1767, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Will of the Red Darkness", 7566, 1]
+        ]
+    }, 
+    {
+        result: ["바람의 화살", 1755, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blue Bijou", 7446, 1]
+        ]
+    }, 
+    {
+        result: ["바람의 화살", 1755, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Cat's Eye", 7263, 1]
+        ]
+    }, 
+    {
+        result: ["바람의 화살", 1755, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Matyr Leash", 2618, 1]
+        ]
+    }, 
+    {
+        result: ["바람의 화살", 1755, 450], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rough Wind", 996, 1]
+        ]
+    }, 
+    {
+        result: ["바람의 화살", 1755, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Wind of Verdure", 992, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ancient Tooth", 1053, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blue Bijou", 7446, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blue Gemstone", 717, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Crystal Blue", 991, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fang of Hatii", 7036, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fin Helm", 5014, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Glacial Heart", 7561, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Gill", 956, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ice Cubic", 7066, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ice Scale", 7562, 1]
+        ]
+    }, 
+    {
+        result: ["수정의 화살", 1754, 450], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mystic Frozen", 995, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Amulet", 609, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Bloody Edge", 7024, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Broken Farming Utensil", 7753, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Clattering Skull", 7752, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Cursed Ruby", 724, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Cursed Seal", 7442, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dark Crystal Fragment", 7315, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dragon Skin", 7123, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 2], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Little Evil Horn", 1038, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 2], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mother's Nightmare", 7020, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Red Gemstone", 716, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Will of the Darkness", 7340, 1]
+        ]
+    }, 
+    {
+        result: ["커스 애로우", 1761, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Will of the Red Darkness", 7566, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Burning Heart", 7097, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 250], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Burnt Tree", 7068, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fire Dragon Scale", 7451, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 1800], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Flame Heart", 994, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Live Coal", 7098, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 3000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Matchstick", 7035, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Red Bijou", 7447, 1]
+        ]
+    }, 
+    {
+        result: ["불화살", 1752, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Red Blood", 990, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Crystal Fragment", 7321, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Evil Horn", 923, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Foolishness of Blind", 7021, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Glittering Jacket [1]", 2319, 1]
+        ]
+    }, 
+    
+    {
+        result: ["플래쉬 애로우", 1760, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Gold", 969, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Great Nature", 997, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 80], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Red Bijou", 7447, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rune of the Darkness", 7511, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Star Crumb", 1000, 1]
+        ]
+    }, 
+    {
+        result: ["플래쉬 애로우", 1760, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Star Dust", 1001, 1]
+        ]
+    }, 
+    {
+        result: ["프리징 애로우", 1759, 80], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blue Bijou", 7446, 1]
+        ]
+    }, 
+    {
+        result: ["프리징 애로우", 1759, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blue Gemstone", 717, 1]
+        ]
+    }, 
+    {
+        result: ["프리징 애로우", 1759, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Glacial Heart", 7561, 1]
+        ]
+    }, 
+    {
+        result: ["프리징 애로우", 1759, 400], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ice Scale", 7562, 1]
+        ]
+    }, 
+    {
+        result: ["프리징 애로우", 1759, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mystic Frozen", 995, 1]
+        ]
+    }, 
+    {
+        result: ["성스러운 화살", 1772, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Golden Ornament", 7435, 1]
+        ]
+    }, 
+    {
+        result: ["성스러운 화살", 1772, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Valhala's Flower", 7510, 1]
+        ]
+    }, 
+    {
+        result: ["무형의 화살", 1757, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Emperium", 714, 1]
+        ]
+    }, 
+    {
+        result: ["무형의 화살", 1757, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Piece of Shield", 7108, 1]
+        ]
+    }, 
+    {
+        result: ["무형의 화살", 1757, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Silver Robe [1]", 2333, 1]
+        ]
+    }, 
+    {
+        result: ["무형의 화살", 1757, 500], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Skeletal Armor Piece", 7450, 1]
+        ]
+    }, 
+    {
+        result: ["무형의 화살", 1757, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Valhala's Flower", 7510, 1]
+        ]
+    }, 
+    {
+        result: ["무형의 화살", 1757, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Yellow Bijou", 7448, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dokebi Horn", 1021, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dragon Canine", 1035, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 2], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Empty Bottle", 713, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Emveretarcon", 1011, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 12], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Garlet", 910, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 80], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Gill", 956, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 35], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Horn", 947, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Iron", 998, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Iron Ore", 1002, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 80], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Lantern", 1041, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Little Evil Horn", 1031, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mole Claw", 1018, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Orc's Fang", 922, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Phracon", 1010, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Reins", 1064, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 700], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Shackles", 2408, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 15], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Wolf Claw", 920, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 500], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Wooden Mail", 2328, 1]
+        ]
+    }, 
+    {
+        result: ["철 화살", 1770, 700], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Wooden Mail [1]", 2329, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Cursed Seal", 7442, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dead Branch", 604, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dragon Skin", 7123, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Emperium", 714, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Flame Heart", 994, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ice Scale", 7562, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 400], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Lucifer's Lament", 7025, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Opera Masque", 2281, 1]
+        ]
+    }, 
+    {
+        result: ["사일런스 애로우", 1769, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Young Twig", 7018, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dragon Canine", 1035, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Emperium", 714, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Gold", 969, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Heroic Emblem", 968, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Key of Clock Tower", 7026, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Old Hilt", 7022, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 250], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Oridecon", 984, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Piece of Shield", 7108, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rough Oridecon", 756, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Shining Spear Blade", 7109, 1]
+        ]
+    }, 
+    {
+        result: ["오리데오콘 화살", 1765, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Skeletal Armor Piece", 7450, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 80], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Green Bijou", 7445, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 80], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Insect Leg", 7316, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Poisonous Toad Skin", 7155, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Red Gemstone", 716, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Stinky Scale", 959, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Venom Canine", 937, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Will of the Darkness", 7340, 1]
+        ]
+    }, 
+    {
+        result: ["독화살", 1763, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Will of the Red Darkness", 7566, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Bee Stinger", 939, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Broken Farming Utensil", 7753, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Decayed Nail", 957, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Old Pick", 7318, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ogre Tooth", 7002, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Red Gemstone", 716, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 3], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Scorpion Tail", 904, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Used Iron Plate", 7319, 1]
+        ]
+    }, 
+    {
+        result: ["녹슨 화살", 1762, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Zenorc Fang", 1044, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Blade Lost in Darkness", 7023, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Bloody Edge", 7024, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Broken Farming Utensil", 7753, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 2], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fang", 1063, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Hard Feeler", 7163, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Insect Leg", 7316, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Leopard Claw", 7172, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mantis Scythe", 1031, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Matyr's Leash", 2618, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mr.Scream", 2288, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Old Blue Box", 603, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Sharp Leaf", 7100, 1]
+        ]
+    }, 
+    {
+        result: ["날카로운 화살", 1764, 600], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Valhala's Flower", 7510, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Emveretarcon", 1011, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fang", 1063, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Golden Ornament", 7435, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 700], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Silver Robe", 2332, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Silver Robe [1]", 2333, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Unicorn Horn", 2257, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Yellow Bijou", 7448, 1]
+        ]
+    }, 
+    {
+        result: ["은화살", 1751, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Zargon", 912, 1]
+        ]
+    }, 
+    {
+        result: ["슬립 애로우", 1768, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Crystal Fragment", 7321, 1]
+        ]
+    }, 
+    {
+        result: ["슬립 애로우", 1768, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Cursed Ruby", 724, 1]
+        ]
+    }, 
+    {
+        result: ["슬립 애로우", 1768, 800], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Lucifer's Lament", 7025, 1]
+        ]
+    }, 
+    {
+        result: ["슬립 애로우", 1768, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Needle of Alarm", 1095, 1]
+        ]
+    }, 
+    {
+        result: ["슬립 애로우", 1768, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Old Blue Box", 603, 1]
+        ]
+    }, 
+    {
+        result: ["슬립 애로우", 1768, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rough Wind", 996, 1]
         ]
     },
+    {
+        result: ["슬립 애로우", 1768, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Yellow Bijou", 7448, 1]
+        ]
+    },  
+    {
+        result: ["슬립 애로우", 1768, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Yellow Gemstone", 715, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 20], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ancient Tooth", 1053, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Battered Kettle", 7323, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Burning Horseshoe", 7120, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Destroyed Armor", 7069, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Dragon Skin", 7123, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 1000], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Elunium", 985, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fin Helm", 5014, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Manacles", 1098, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Matyr's Leash", 2618, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mr. Scream", 2288, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Ogre Tooth", 7002, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Old Pick", 7318, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Opera Masque", 2281, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Orc Claw", 1043, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Orc's Fang", 922, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Piece of Shield", 7108, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Reins", 1064, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rough Elunium", 757, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 8], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Scell", 911, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Shackles", 2408, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Steel", 999, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Tangled Chains", 7221, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Used Iron Plate", 7319, 1]
+        ]
+    }, 
+    {
+        result: ["강철의 화살", 1753, 200], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Welding Mask", 2292, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 450], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Great Nature", 997, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 100], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Green Bijou", 7445, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Green Live", 993, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 60], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Mole Claw", 1018, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 1], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Orc's Fang", 922, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Porcupine Quill", 1027, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 150], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Stone Fragment", 7067, 1]
+        ]
+    }, 
+    {
+        result: ["암석 화살", 1756, 10], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Yellow Gemstone", 715, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 50], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Elunium", 985, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Evil Horn", 923, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 300], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Fire Dragon Scale", 7451, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Heroic Emblem", 968, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 800], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Lucifer's Lament", 7025, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 5], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Rough Elunium", 757, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 30], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Solid Peach", 7164, 1]
+        ]
+    }, 
+    {
+        result: ["스턴 애로우", 1758, 40], 
+        skill: "화살 만들기", 
+        materials: [
+            ["Welding Mask", 2292, 1]
+        ]
+    }, 
     {
         result: ["철", 998],
         skill: "철 제조",
