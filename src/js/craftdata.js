@@ -1,5 +1,5 @@
 var data = [
-        {
+    {
 		result: ["화살", 1750, 20],
 		skill: "화살 만들기",
 		materials: [
