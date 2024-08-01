@@ -415,15 +415,12 @@ html, body, table{
     filter: drop-shadow(2px 2px 0 #999);
 }
 
-
-
 .item-desc{
-    width: 175px;
+    width: 182px;
     padding: 5px;
-    float: left;
+    float: right;
     margin-top: -22px;
 }
-
 .item-title{
     padding: 0px 0px 7px 0;
 }
