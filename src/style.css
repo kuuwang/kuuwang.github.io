@@ -374,11 +374,60 @@ html, body, table{
 }
 
 #itemDescript {
-    width: 200px;
-    padding: 10px;
-    padding-left: 90px;
+    width: 280px;
     background-color: white;
     border: 1px solid rgba(198,198,198,1);
     border-radius: 5px;
     z-index: 3;
+    display: flex;
+}
+
+#title-holder{
+    height: 22px;
+    background: linear-gradient(to bottom, 
+    rgb(255, 255, 255),
+    rgb(231, 231, 231),
+    rgb(255, 255, 255),
+    rgb(231, 231, 231),
+    rgb(255, 255, 255),
+    rgb(231, 231, 231),
+    rgb(255, 255, 255),
+    rgb(231, 231, 231),
+    rgb(255, 255, 255),
+    rgb(231, 231, 231),
+    rgb(255, 255, 255),
+    rgb(231, 231, 231),
+    rgb(255, 255, 255),
+    rgb(231, 231, 231)
+    );
+    border-bottom: 1px solid rgb(198,198,198);
+    position: static;
+}
+
+.item-container {
+    padding: 0px
+}
+
+.item-container img{
+    display: block;
+    float: left;
+    padding: 10px 3px 10px 10px;
+    filter: drop-shadow(2px 2px 0 #999);
+}
+
+
+
+.item-desc{
+    width: 175px;
+    padding: 5px;
+    float: left;
+    margin-top: -22px;
+}
+
+.item-title{
+    padding: 0px 0px 7px 0;
+}
+
+.item-desc-text{
+    padding: 5px 0px 0px 5px;
 }
