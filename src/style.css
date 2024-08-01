@@ -380,6 +380,7 @@ html, body, table{
     border-radius: 5px;
     z-index: 3;
     display: flex;
+    min-height: 122px;
 }
 
 #title-holder{
