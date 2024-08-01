@@ -44,7 +44,16 @@ function generateCraftingInfo(craftData) {
     var img = document.createElement('img');
     img.src = 'https://static.divine-pride.net/images/items/item/' + craftData.result[1] + '.png';
     img.alt = craftData.result[0];
-    
+    img.id = craftData.result[1]; // Add id for item description lookup
+
+    // Add event listeners for mouseover and mouseout
+    img.addEventListener('mouseover', function(event) {
+        item_desc_display(event.target);
+    });
+    img.addEventListener('mouseout', function() {
+        display_reset();
+    });
+
     itembox.appendChild(img);
     borderbox.appendChild(itembox);
 
@@ -74,6 +83,16 @@ function generateCraftingInfo(craftData) {
             const img = document.createElement('img');
             img.src = 'https://static.divine-pride.net/images/items/item/' + material[1] + '.png';
             img.alt = material[0];
+            img.id = material[1]; // Add id for item description lookup
+
+            // Add event listeners for mouseover and mouseout
+            img.addEventListener('mouseover', function(event) {
+                item_desc_display(event.target);
+            });
+            img.addEventListener('mouseout', function() {
+                display_reset();
+            });
+
             imgCell.appendChild(img);
             var span = document.createElement('span');
             span.className = "itembottom";
@@ -111,6 +130,7 @@ function generateCraftingInfo(craftData) {
 
     return box;
 }
+
 
 // Assume there is a container element in the DOM with the id 'container'
 var container = document.getElementById('container');
