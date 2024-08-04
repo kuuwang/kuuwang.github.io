@@ -1887,8 +1887,8 @@ var data = [
     {
         charname: "쿠왕인수라",
         job: "Inquisitor",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 235,
+        jlvl: 47,
         battlestyle: "폭화신탄",
         stats: {
             str: 120,
