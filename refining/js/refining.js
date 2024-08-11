@@ -135,10 +135,6 @@ function refineUntil() {
             return;
         }
 
-        if (currentLevel === 0) {  // Safety check to prevent infinite loop
-            clearInterval(refineInterval);
-            return;
-        }
 
         
     }, 10);
