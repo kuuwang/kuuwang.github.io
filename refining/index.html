@@ -11,7 +11,7 @@
 <body>
     <div id="left">
         <a href="https://ro.gnjoy.com/" target="_blank"><img src="../src/img/logo.webp" style="width: 175px; float: left;"></a>
-        <div id="refinetable">
+        <div id="refinetable" class="refinebox">
             <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
             <label for="refineType">이벤트 :</label>
             <div class="radio-group">
@@ -52,10 +52,14 @@
             <button onclick="refineUntil()">목표까지 제련 !!</button>
             <button onclick="resetRefine()">제련도 초기화</button>
         </div>
-        <div id="refineresult">
+        <div id="refineresult" class="refinebox">
             <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
             <div id="stoneUsage">제련석 소모: 0개</div>
             <div id="blessingUsage">대장장이의 축복 사용: 0개</div>
+        </div>
+        <div class="refinebox">
+            <header class="title"><div class="circle"></div><span class="itemname">제련 확률</span></header>
+            <div id="refinerate"></div>
         </div>
     </div>
     <div id="container">

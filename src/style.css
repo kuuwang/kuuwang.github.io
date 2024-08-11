@@ -432,7 +432,7 @@ html, body, table{
 
 
 /* refining style */
-#refinetable{
+.refinebox  {
     display:flow-root;
     float: left;
     width: 180px;
@@ -441,15 +441,11 @@ html, body, table{
     margin-top: 3px;
 }
 
-#refineresult{
-    display:flow-root;
-    float: left;
-    width: 180px;
-    border: 1px solid rgb(198,198,198);
-    border-radius: 3px;
-    margin-top: 3px;
-}
 .radio-group label {
     display: block;
     margin-left: 35px; /* 개별 라벨의 들여쓰기 */
+}
+
+#refinerate{
+    text-align: right;
 }

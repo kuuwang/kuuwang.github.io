@@ -44,3 +44,57 @@ const probabilities = {
         }
     }
 };
+
+// Function to calculate and display the probabilities, total rates, and average used items
+function calculateAndDisplayRefineData() {
+    const refineType = document.querySelector('input[name="refineType"]:checked').value;
+    const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+    const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
+
+    const probArray = probabilities[refineType][stoneType][equipmentType];
+
+    if (!probArray) {
+        document.getElementById('refine-calculation').innerHTML = 'No data available';
+        return;
+    }
+
+    let totalRate = 100; // Start with 100% for the first level
+    let tableHtml = `<table>
+                        <thead>
+                            <tr>
+                                <th>제련도</th>
+                                <th>확률 (%)</th>
+                                <th>실 확률 (%)</th>
+                                <th>평균 소모량</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+    probArray.forEach((refineRate, index) => {
+        if (refineRate === null) return; // Skip levels that are not refinable
+        
+        const level = index + 1;  // Refinement level, starting from +1
+        totalRate *= (refineRate / 100);
+
+        // Average used item is the inverse of the probability for each level
+        const avgUsedItem = (1 / (refineRate / 100)) * (1 / totalRate) * 100;
+
+        tableHtml += `<tr>
+                          <td>+${level}</td>
+                          <td>${refineRate}%</td>
+                          <td>${totalRate.toFixed(2)}%</td>
+                          <td>${avgUsedItem.toFixed(2)}</td>
+                      </tr>`;
+    });
+
+    tableHtml += `</tbody></table>`;
+    document.getElementById('refinerate').innerHTML = tableHtml;
+}
+
+// Add event listeners to radio buttons to update the table on change
+document.querySelectorAll('input[name="refineType"], input[name="stoneType"], input[name="equipmentType"]').forEach((radio) => {
+    radio.addEventListener('change', calculateAndDisplayRefineData);
+});
+
+// Initial table update
+calculateAndDisplayRefineData();
