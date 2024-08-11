@@ -3,9 +3,9 @@ let history = [];
 let refineInterval;
 
 function refine() {
-    const refineType = document.getElementById('refineType').value;
-    const stoneType = document.getElementById('stoneType').value;
-    const equipmentType = document.getElementById('equipmentType').value;
+    const refineType = document.querySelector('input[name="refineType"]:checked').value;
+    const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+    const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
 
     const probArray = probabilities[refineType][stoneType][equipmentType];
 

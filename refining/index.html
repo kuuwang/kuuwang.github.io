@@ -4,44 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Refining Simulator</title>
+    <link rel="stylesheet" href="../src/style.css">
+    <link rel="icon" href="https://github.com/kuuwang/kuuwang.github.io/blob/main/rag/img/favicon.png?raw=true">
+
 </head>
 <body>
-    <h1>Refining Simulator</h1>
+    <div id="left">
 
-    <label for="refineType">Refining Type:</label>
-    <select id="refineType">
-        <option value="normal">일반</option>
-        <option value="event">제련이벤트</option>
-    </select>
+        <label for="refineType">이벤트 :</label><br>
+        <input type="radio" id="normal" name="refineType" value="normal" checked>
+        <label for="normal">일반</label><br>
+        <input type="radio" id="event" name="refineType" value="event">
+        <label for="event">제련이벤트</label><br>
+        
+        <label for="stoneType">제련석 :</label><br>
+        <input type="radio" id="refinestone" name="stoneType" value="refinestone" checked>
+        <label for="refinestone">일반제련석</label><br>
+        <input type="radio" id="refinecash" name="stoneType" value="refinecash">
+        <label for="refinecash">캐시제련석</label><br>
+        
+        <label for="equipmentType">장비 :</label><br>
+        <input type="radio" id="shadow" name="equipmentType" value="shadow" checked>
+        <label for="shadow">쉐도우장비</label><br>
+        <input type="radio" id="armor1" name="equipmentType" value="armor1">
+        <label for="armor1">방어구</label><br>
+        <input type="radio" id="weapon1" name="equipmentType" value="weapon1">
+        <label for="weapon1">무기 (1레벨)</label><br>
+        <input type="radio" id="weapon2" name="equipmentType" value="weapon2">
+        <label for="weapon2">무기 (2레벨)</label><br>
+        <input type="radio" id="weapon3" name="equipmentType" value="weapon3">
+        <label for="weapon3">무기 (3레벨)</label><br>
+        <input type="radio" id="weapon4" name="equipmentType" value="weapon4">
+        <label for="weapon4">무기 (4레벨)</label><br>
+        <input type="radio" id="weapon5" name="equipmentType" value="weapon5">
+        <label for="weapon5">무기 (5레벨)</label><br>
+        <input type="radio" id="armor2" name="equipmentType" value="armor2">
+        <label for="armor2">방어구 (2레벨)</label><br>
 
-    <label for="stoneType">Stone Type:</label>
-    <select id="stoneType">
-        <option value="refinestone">일반제련석</option>
-        <option value="refinecash">캐시제련석</option>
-    </select>
-
-    <label for="equipmentType">Equipment Type:</label>
-    <select id="equipmentType">
-        <option value="shadow">쉐도우장비</option>
-        <option value="armor1">방어구</option>
-        <option value="weapon1">무기 (1레벨)</option>
-        <option value="weapon2">무기 (2레벨)</option>
-        <option value="weapon3">무기 (3레벨)</option>
-        <option value="weapon4">무기 (4레벨)</option>
-        <option value="weapon5">무기 (5레벨)</option>
-        <option value="armor2">방어구 (2레벨)</option>
-    </select>
-
-    <button onclick="refine()">Refine</button>
-    <button onclick="refine100()">Refine 100 Times</button>
-    <input type="number" id="targetLevel" placeholder="Target Level">
-    <button onclick="refineUntil()">Refine Until Target Level</button>
-    <button onclick="resetRefine()">Reset Refining Level</button>
-
-    <h2 id="result">Current Refining Level: +0</h2>
-    <h3>History:</h3>
-    <ul id="historyList"></ul>
-
+        <button onclick="refine()">제련</button>
+        <button onclick="refine100()">100번 제련</button>
+        <input type="number" id="targetLevel" placeholder="목표 제련도">
+        <button onclick="refineUntil()">목표까지 제련 !!</button>
+        <button onclick="resetRefine()">제련도 초기화</button>
+    </div>
+    <div id="container">
+        <div id="refineinfo" style="float: left;">
+            <h2 id="result">Current Refining Level: +0</h2>
+            <h3>History:</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
     <!-- Link to the external JavaScript files -->
     <script src="./js/refinedata.js"></script>
     <script src="./js/refining.js"></script>
