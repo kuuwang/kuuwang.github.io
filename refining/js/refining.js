@@ -67,7 +67,7 @@ function refine() {
 
     totalStoneUsage++;
     document.getElementById('result').innerText = `Current Refining Level: +${currentLevel}`;
-    document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}`;
+    document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
     document.getElementById('blessingUsage').innerText = `대장장이의 축복 사용: ${totalBlessingUsed}개`;
 
     const resultText = success 
@@ -127,7 +127,6 @@ function refineUntil() {
         const refineType = document.querySelector('input[name="refineType"]:checked').value;
         const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
         const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
-        const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
 
         const probArray = probabilities[refineType][stoneType][equipmentType];
         
@@ -157,9 +156,11 @@ function updateHistory() {
 
 function resetRefine() {
     currentLevel = 0;
+    totalStoneUsage = 0;
     totalBlessingUsed = 0;
     history = [];
     document.getElementById('result').innerText = `Current Refining Level: +${currentLevel}`;
+    document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
     document.getElementById('blessingUsage').innerText = `대장장이의 축복 사용: ${totalBlessingUsed}개`;
     updateHistory();
 }
