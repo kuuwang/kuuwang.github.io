@@ -155,7 +155,7 @@ function resetRefine() {
     totalStoneUsage = 0;
     totalBlessingUsed = 0;
     history = [];
-    document.getElementById('result').innerText = `Current Refining Level: +${currentLevel}`;
+    document.getElementById('result').innerText = `현재 제련도: +${currentLevel}`;
     document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
     document.getElementById('blessingUsage').innerText = `대장장이의 축복 사용: ${totalBlessingUsed}개`;
     updateHistory();
