@@ -449,3 +449,7 @@ html, body, table{
     border-radius: 3px;
     margin-top: 3px;
 }
+.radio-group label {
+    display: block;
+    margin-left: 35px; /* 개별 라벨의 들여쓰기 */
+}

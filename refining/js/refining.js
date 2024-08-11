@@ -1,5 +1,6 @@
 let currentLevel = 0;
-let totalBlessingUsed = 0;  // 총 사용된 대장장이의 축복 개수
+let totalBlessingUsed = 0;
+let totalStoneUsage = 0;
 let history = [];
 let refineInterval;
 
@@ -64,7 +65,9 @@ function refine() {
         }
     }
 
+    totalStoneUsage++;
     document.getElementById('result').innerText = `Current Refining Level: +${currentLevel}`;
+    document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}`;
     document.getElementById('blessingUsage').innerText = `대장장이의 축복 사용: ${totalBlessingUsed}개`;
 
     const resultText = success 
