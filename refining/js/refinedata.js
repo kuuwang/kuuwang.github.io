@@ -54,7 +54,7 @@ function calculateAndDisplayRefineData() {
     const probArray = probabilities[refineType][stoneType][equipmentType];
 
     if (!probArray) {
-        document.getElementById('refine-calculation').innerHTML = 'No data available';
+        document.getElementById('refinerate').innerHTML = '정보 없음';
         return;
     }
 
