@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="left">
-
+        
         <label for="refineType">이벤트 :</label><br>
         <input type="radio" id="normal" name="refineType" value="normal" checked>
         <label for="normal">일반</label><br>
@@ -41,9 +41,16 @@
         <input type="radio" id="armor2" name="equipmentType" value="armor2">
         <label for="armor2">방어구 (2레벨)</label><br>
 
+        <div>
+            <input type="checkbox" id="blacksmithBlessing">
+            <label for="blacksmithBlessing">대장장이의 축복</label>
+        </div>
+        
+        <div id="blessingUsage">대장장이의 축복 사용: 0개</div>
+
         <button onclick="refine()">제련</button>
         <button onclick="refine100()">100번 제련</button>
-        <input type="number" id="targetLevel" placeholder="목표 제련도">
+        <input type="number" id="targetLevel" placeholder="목표 제련도" value="10">
         <button onclick="refineUntil()">목표까지 제련 !!</button>
         <button onclick="resetRefine()">제련도 초기화</button>
     </div>
