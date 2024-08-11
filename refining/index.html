@@ -8,46 +8,39 @@
 <body>
     <h1>Refining Simulator</h1>
 
-    <div>
-        <label for="refineType">Refining Type:</label>
-        <select id="refineType">
-            <option value="일반">일반</option>
-            <option value="제련이벤트">제련 이벤트</option>
-        </select>
-    </div>
+    <label for="refineType">Refining Type:</label>
+    <select id="refineType">
+        <option value="normal">일반</option>
+        <option value="event">제련이벤트</option>
+    </select>
 
-    <div>
-        <label for="stoneType">Stone Type:</label>
-        <select id="stoneType">
-            <option value="일반제련석">일반 제련석</option>
-            <option value="캐시제련석">캐시 제련석</option>
-        </select>
-    </div>
+    <label for="stoneType">Stone Type:</label>
+    <select id="stoneType">
+        <option value="refinestone">일반제련석</option>
+        <option value="refinecash">캐시제련석</option>
+    </select>
 
-    <div>
-        <label for="equipmentType">Equipment Type:</label>
-        <select id="equipmentType">
-            <option value="쉐도우장비">쉐도우 장비</option>
-            <option value="방어구1">방어구 (1레벨)</option>
-            <option value="무기1">무기 (1레벨)</option>
-            <option value="무기2">무기 (2레벨)</option>
-            <option value="무기3">무기 (3레벨)</option>
-            <option value="무기4">무기 (4레벨)</option>
-            <option value="무기5">무기 (5레벨)</option>
-            <option value="방어구2">방어구 (2레벨)</option>
-        </select>
-    </div>
+    <label for="equipmentType">Equipment Type:</label>
+    <select id="equipmentType">
+        <option value="shadow">쉐도우장비</option>
+        <option value="armor1">방어구</option>
+        <option value="weapon1">무기 (1레벨)</option>
+        <option value="weapon2">무기 (2레벨)</option>
+        <option value="weapon3">무기 (3레벨)</option>
+        <option value="weapon4">무기 (4레벨)</option>
+        <option value="weapon5">무기 (5레벨)</option>
+        <option value="armor2">방어구 (2레벨)</option>
+    </select>
 
-    <div>
-        <button onclick="refine()">Refine</button>
-    </div>
+    <button onclick="refine()">Refine</button>
+    <button onclick="refine100()">Refine 100 Times</button>
+    <input type="number" id="targetLevel" placeholder="Target Level">
+    <button onclick="refineUntil()">Refine Until Target Level</button>
+    <button onclick="resetRefine()">Reset Refining Level</button>
 
     <h2 id="result">Current Refining Level: +0</h2>
-
-    <h3>Refining History</h3>
-    <ul id="historyList">
-        <!-- History will be populated here -->
-    </ul>
+    <h3>History:</h3>
+    <ul id="historyList"></ul>
 
     <!-- Link to the external JavaScript files -->
     <script src="./js/refinedata.js"></script>
