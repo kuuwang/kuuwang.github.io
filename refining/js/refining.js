@@ -92,9 +92,10 @@ function refine100() {
     for (let i = 0; i < 100; i++) {
         
 
-        const refineType = document.getElementById('refineType').value;
-        const stoneType = document.getElementById('stoneType').value;
-        const equipmentType = document.getElementById('equipmentType').value;
+        const refineType = document.querySelector('input[name="refineType"]:checked').value;
+        const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+        const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
+        const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
 
         const probArray = probabilities[refineType][stoneType][equipmentType];
         
@@ -120,9 +121,10 @@ function refineUntil() {
 
         refine();
         updateHistory();  // Update history every 10ms
-        const refineType = document.getElementById('refineType').value;
-        const stoneType = document.getElementById('stoneType').value;
-        const equipmentType = document.getElementById('equipmentType').value;
+        const refineType = document.querySelector('input[name="refineType"]:checked').value;
+        const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+        const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
+        const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
 
         const probArray = probabilities[refineType][stoneType][equipmentType];
         

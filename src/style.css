@@ -429,3 +429,23 @@ html, body, table{
 .item-desc-text{
     padding: 5px 0px 0px 5px;
 }
+
+
+/* refining style */
+#refinetable{
+    display:flow-root;
+    float: left;
+    width: 180px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    margin-top: 3px;
+}
+
+#refineresult{
+    display:flow-root;
+    float: left;
+    width: 180px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    margin-top: 3px;
+}

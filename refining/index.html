@@ -10,52 +10,63 @@
 </head>
 <body>
     <div id="left">
-        
-        <label for="refineType">이벤트 :</label><br>
-        <input type="radio" id="normal" name="refineType" value="normal" checked>
-        <label for="normal">일반</label><br>
-        <input type="radio" id="event" name="refineType" value="event">
-        <label for="event">제련이벤트</label><br>
-        
-        <label for="stoneType">제련석 :</label><br>
-        <input type="radio" id="refinestone" name="stoneType" value="refinestone" checked>
-        <label for="refinestone">일반제련석</label><br>
-        <input type="radio" id="refinecash" name="stoneType" value="refinecash">
-        <label for="refinecash">캐시제련석</label><br>
-        
-        <label for="equipmentType">장비 :</label><br>
-        <input type="radio" id="shadow" name="equipmentType" value="shadow" checked>
-        <label for="shadow">쉐도우장비</label><br>
-        <input type="radio" id="armor1" name="equipmentType" value="armor1">
-        <label for="armor1">방어구</label><br>
-        <input type="radio" id="weapon1" name="equipmentType" value="weapon1">
-        <label for="weapon1">무기 (1레벨)</label><br>
-        <input type="radio" id="weapon2" name="equipmentType" value="weapon2">
-        <label for="weapon2">무기 (2레벨)</label><br>
-        <input type="radio" id="weapon3" name="equipmentType" value="weapon3">
-        <label for="weapon3">무기 (3레벨)</label><br>
-        <input type="radio" id="weapon4" name="equipmentType" value="weapon4">
-        <label for="weapon4">무기 (4레벨)</label><br>
-        <input type="radio" id="weapon5" name="equipmentType" value="weapon5">
-        <label for="weapon5">무기 (5레벨)</label><br>
-        <input type="radio" id="armor2" name="equipmentType" value="armor2">
-        <label for="armor2">방어구 (2레벨)</label><br>
+        <a href="https://ro.gnjoy.com/" target="_blank"><img src="../src/img/logo.webp" style="width: 175px; float: left;"></a>
+        <div id="refinetable">
+            <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
+            <label for="refineType">이벤트 :</label><br>
+            <input type="radio" id="normal" name="refineType" value="normal" checked>
+            <label for="normal">일반</label><br>
+            <input type="radio" id="event" name="refineType" value="event">
+            <label for="event">제련이벤트</label><br>
+            
+            <label for="stoneType">제련석 :</label><br>
+            <input type="radio" id="refinestone" name="stoneType" value="refinestone" checked>
+            <label for="refinestone">일반제련석</label><br>
+            <input type="radio" id="refinecash" name="stoneType" value="refinecash">
+            <label for="refinecash">캐시제련석</label><br>
+            
+            <label for="equipmentType">장비 :</label><br>
+            <input type="radio" id="shadow" name="equipmentType" value="shadow" checked>
+            <label for="shadow">쉐도우장비</label><br>
+            <br>
+            <input type="radio" id="weapon1" name="equipmentType" value="weapon1">
+            <label for="weapon1">무기 (1레벨)</label><br>
+            <input type="radio" id="weapon2" name="equipmentType" value="weapon2">
+            <label for="weapon2">무기 (2레벨)</label><br>
+            <input type="radio" id="weapon3" name="equipmentType" value="weapon3">
+            <label for="weapon3">무기 (3레벨)</label><br>
+            <input type="radio" id="weapon4" name="equipmentType" value="weapon4">
+            <label for="weapon4">무기 (4레벨)</label><br>
+            <input type="radio" id="weapon5" name="equipmentType" value="weapon5">
+            <label for="weapon5">무기 (5레벨)</label><br>
+            <br>
+            <input type="radio" id="armor1" name="equipmentType" value="armor1">
+            <label for="armor1">방어구 (1레벨)</label><br>
+            <input type="radio" id="armor2" name="equipmentType" value="armor2">
+            <label for="armor2">방어구 (2레벨)</label><br>
+            <br>
+            <br>
+            <div>
+                <input type="checkbox" id="blacksmithBlessing">
+                <label for="blacksmithBlessing">대장장이의 축복</label>
+            </div>
+            
+            
 
-        <div>
-            <input type="checkbox" id="blacksmithBlessing">
-            <label for="blacksmithBlessing">대장장이의 축복</label>
+            <button onclick="refine()">제련</button>
+            <button onclick="refine100()">100번 제련</button>
+            <input type="number" id="targetLevel" placeholder="목표 제련도" value="10">
+            <button onclick="refineUntil()">목표까지 제련 !!</button>
+            <button onclick="resetRefine()">제련도 초기화</button>
         </div>
-        
-        <div id="blessingUsage">대장장이의 축복 사용: 0개</div>
-
-        <button onclick="refine()">제련</button>
-        <button onclick="refine100()">100번 제련</button>
-        <input type="number" id="targetLevel" placeholder="목표 제련도" value="10">
-        <button onclick="refineUntil()">목표까지 제련 !!</button>
-        <button onclick="resetRefine()">제련도 초기화</button>
+        <div id="refineresult">
+            <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
+            <div id="stoneUsage">제련석 소모: 0개</div>
+            <div id="blessingUsage">대장장이의 축복 사용: 0개</div>
+        </div>
     </div>
     <div id="container">
-        <div id="refineinfo" style="float: left;">
+        <div id="refineinfo">
             <h2 id="result">Current Refining Level: +0</h2>
             <h3>History:</h3>
             <ul id="historyList"></ul>
