@@ -145,7 +145,7 @@ function updateHistory() {
     historyContainer.innerHTML = '';
     history.forEach((entry, index) => {
         const historyItem = document.createElement('div');
-        historyItem.innerHTML = `Attempt ${index + 1}: Level ${entry.levelBefore} -> +${entry.currentLevel}  ${entry.result} (Refining Type: ${entry.refineType}, Stone: ${entry.stoneType}, Equipment: ${entry.equipmentType}, Success Rate: ${entry.successRate}%, Roll: ${entry.randomRoll.toFixed(2)}) ${entry.blessingUsed ? ` - Used Blessing: ${entry.blessingUsed}` : ''}`;
+        historyItem.innerHTML = `Attempt ${index + 1}: +${entry.levelBefore} → +${entry.currentLevel}  ${entry.result} (event: ${entry.refineType}, Stone: ${entry.stoneType}, Equipment: ${entry.equipmentType}, Success Rate: ${entry.successRate}%, Roll: ${entry.randomRoll.toFixed(2)}) ${entry.blessingUsed ? ` - Used Blessing: ${entry.blessingUsed}` : ''}`;
         historyContainer.appendChild(historyItem);
     });
 }
