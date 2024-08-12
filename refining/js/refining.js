@@ -71,8 +71,8 @@ function refine() {
     document.getElementById('blessingUsage').innerHTML = `<img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × ${totalBlessingUsed}`;
 
     const resultText = success 
-        ? `<span style="color: blue">제련 성공</span>` 
-        : `<span style="color: red">제련 실패</span>`;
+        ? `<span style="color: blue">성공</span>` 
+        : `<span style="color: red">실패</span>`;
 
     const historyEntry = {
         levelBefore: levelBefore,
@@ -152,6 +152,7 @@ function updateHistory() {
     headerRow.innerHTML = `
         <th>#</th>
         <th>Level</th>
+        <th>result</th>
         <th>Event</th>
         <th>Stone</th>
         <th>Equipment</th>
@@ -168,6 +169,7 @@ function updateHistory() {
         historyRow.innerHTML = `
             <td>${index + 1}</td>
             <td>+${entry.levelBefore} → +${entry.currentLevel}</td>
+            <td>${entry.result}</td>
             <td>${entry.refineType}</td>
             <td>${entry.stoneType}</td>
             <td>${entry.equipmentType}</td>
