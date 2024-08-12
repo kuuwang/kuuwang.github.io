@@ -68,7 +68,7 @@ function refine() {
     totalStoneUsage++;
     document.getElementById('result').innerText = `현재 제련도: +${currentLevel}`;
     document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
-    document.getElementById('blessingUsage').innerText = `대장장이의 축복 사용: ${totalBlessingUsed}개`;
+    document.getElementById('blessingUsage').innerHTML = `<img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × ${totalBlessingUsed}`;
 
     const resultText = success 
         ? `<span style="color: blue">제련 성공</span>` 
@@ -143,11 +143,43 @@ function refineUntil() {
 function updateHistory() {
     const historyContainer = document.getElementById('historyList');
     historyContainer.innerHTML = '';
+    // Create the table structure
+    const table = document.createElement('table');
+    table.className = "history-table"; // Optional: add a class for CSS styling
+
+    // Create the table header
+    const headerRow = document.createElement('tr');
+    headerRow.innerHTML = `
+        <th>#</th>
+        <th>Level</th>
+        <th>Event</th>
+        <th>Stone</th>
+        <th>Equipment</th>
+        <th>Success Rate</th>
+        <th>Roll</th>
+        <th><img src="https://www.divine-pride.net/img/items/item/kROS/6635"></th>
+    `;
+    table.appendChild(headerRow);
+
+    // Add each history entry as a row in the table
     history.forEach((entry, index) => {
-        const historyItem = document.createElement('div');
-        historyItem.innerHTML = `Attempt ${index + 1}: +${entry.levelBefore} → +${entry.currentLevel}  ${entry.result} (event: ${entry.refineType}, Stone: ${entry.stoneType}, Equipment: ${entry.equipmentType}, Success Rate: ${entry.successRate}%, Roll: ${entry.randomRoll.toFixed(2)}) ${entry.blessingUsed ? ` - Used Blessing: ${entry.blessingUsed}` : ''}`;
-        historyContainer.appendChild(historyItem);
+        const historyRow = document.createElement('tr');
+        const blessingText = entry.blessingUsed ? `${entry.blessingUsed}` : '';
+        historyRow.innerHTML = `
+            <td>${index + 1}</td>
+            <td>+${entry.levelBefore} → +${entry.currentLevel}</td>
+            <td>${entry.refineType}</td>
+            <td>${entry.stoneType}</td>
+            <td>${entry.equipmentType}</td>
+            <td>${entry.successRate}%</td>
+            <td>${entry.randomRoll.toFixed(2)}</td>
+            <td>${blessingText}</td>
+        `;
+        table.appendChild(historyRow);
     });
+
+    // Append the table to the history container
+    historyContainer.appendChild(table);
 }
 
 function resetRefine() {
@@ -157,6 +189,6 @@ function resetRefine() {
     history = [];
     document.getElementById('result').innerText = `현재 제련도: +${currentLevel}`;
     document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
-    document.getElementById('blessingUsage').innerText = `대장장이의 축복 사용: ${totalBlessingUsed}개`;
+    document.getElementById('blessingUsage').innerHTML = `<img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × ${totalBlessingUsed}`;
     updateHistory();
 }

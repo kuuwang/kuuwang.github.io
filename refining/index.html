@@ -52,23 +52,28 @@
             <button onclick="refineUntil()">목표까지 제련 !!</button>
             <button onclick="resetRefine()">제련도 초기화</button>
         </div>
-        <div id="refineresult" class="refinebox">
-            <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
-            <div id="stoneUsage">제련석 소모: 0개</div>
-            <div id="blessingUsage">대장장이의 축복 사용: 0개</div>
-        </div>
-        <div class="refinebox">
-            <header class="title"><div class="circle"></div><span class="itemname">제련 확률</span></header>
-            <div id="refinerate"></div>
-        </div>
+
     </div>
-    <div id="container">
+    <div id="refinecontainer">
         <div id="refineinfo">
             <h2 id="result">현재 제련도: +0</h2>
             <h3>히스토리:</h3>
             <ul id="historyList"></ul>
         </div>
+
     </div>
+    <div id="refineresultinfo">
+        <div id="refineresult" class="refineresultinfo">
+            <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
+            <div id="stoneUsage">제련석 소모: 0개</div>
+            <div id="blessingUsage"><img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × 0</div>
+        </div>
+        <div class="refineresultinfo">
+            <header class="title"><div class="circle"></div><span class="itemname">제련 확률</span></header>
+            <div id="refinerate"></div>
+        </div>
+    </div>
+
     <!-- Link to the external JavaScript files -->
     <script src="./js/refinedata.js"></script>
     <script src="./js/refining.js"></script>
