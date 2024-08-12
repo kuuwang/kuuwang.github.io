@@ -82,7 +82,7 @@ function calculateAndDisplayRefineData() {
         tableHtml += `<tr>
                           <td>+${level}</td>
                           <td>${refineRate}%</td>
-                          <td>${totalRate.toFixed(2)}%</td>
+                          <td>${totalRate.toFixed(10)}%</td>
                           <td>${avgUsedItem.toFixed(2)}</td>
                       </tr>`;
     });
