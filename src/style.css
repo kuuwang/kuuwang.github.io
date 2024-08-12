@@ -492,5 +492,5 @@ html, body, table{
 }
 
 .history-table tr td:nth-child(3){
-    width: 80px;
+    width: 0px;
 }
