@@ -141,33 +141,18 @@ function refineUntil() {
 }
 
 function updateHistory() {
-    const historyContainer = document.getElementById('historyList');
-    historyContainer.innerHTML = '';
-    // Create the table structure
-    const table = document.createElement('table');
-    table.className = "history-table"; // Optional: add a class for CSS styling
+    const tableBody = document.getElementById('historyTableBody');
+    
+    // Clear the existing rows
+    tableBody.innerHTML = '';
 
-    // Create the table header
-    const headerRow = document.createElement('tr');
-    headerRow.innerHTML = `
-        <th>#</th>
-        <th>Level</th>
-        <th>result</th>
-        <th>Event</th>
-        <th>Stone</th>
-        <th>Equipment</th>
-        <th>Success Rate</th>
-        <th>Roll</th>
-        <th><img src="https://www.divine-pride.net/img/items/item/kROS/6635"></th>
-    `;
-    table.appendChild(headerRow);
-
-    // Add each history entry as a row in the table
+    // Add each history entry as a row in the table body
     history.forEach((entry, index) => {
         const historyRow = document.createElement('tr');
         const blessingText = entry.blessingUsed ? `${entry.blessingUsed}` : '';
+
         historyRow.innerHTML = `
-            <td>${index + 1}</td>
+            <td>${index+1}</td>
             <td>+${entry.levelBefore} → +${entry.currentLevel}</td>
             <td>${entry.result}</td>
             <td>${entry.refineType}</td>
@@ -177,13 +162,10 @@ function updateHistory() {
             <td>${entry.randomRoll.toFixed(2)}</td>
             <td>${blessingText}</td>
         `;
-        table.appendChild(historyRow);
+        // Prepend the row to the table body so that the latest attempt appears first
+        tableBody.prepend(historyRow);
     });
-
-    // Append the table to the history container
-    historyContainer.appendChild(table);
 }
-
 function resetRefine() {
     currentLevel = 0;
     totalStoneUsage = 0;
@@ -194,3 +176,15 @@ function resetRefine() {
     document.getElementById('blessingUsage').innerHTML = `<img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × ${totalBlessingUsed}`;
     updateHistory();
 }
+
+const checkbox = document.getElementById('blacksmithBlessing');
+const blessingImage = document.getElementById('blessingImage');
+
+checkbox.addEventListener('change', function() {
+    // Change the image based on the checkbox state
+    if (checkbox.checked) {
+        blessingImage.src = '../src/img/refining/slot_select_red.png'; // Change to selected image
+    } else {
+        blessingImage.src = '../src/img/refining/slot_unselect_red.png'; // Change to unselected image
+    }
+});
