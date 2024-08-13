@@ -50,14 +50,14 @@ function refine() {
         if (isBlessingActive && currentLevel >= 7 && currentLevel <= 13) {
             // 대장장이의 축복이 활성화된 경우 실패해도 레벨 유지
         } else if (
-            (equipmentType === 'shadow' && currentLevel >= 5) ||
-            (equipmentType === 'armor1' && currentLevel >= 5) ||
-            (equipmentType === 'weapon4' && currentLevel >= 5) ||
-            (equipmentType === 'weapon3' && currentLevel >= 6) ||
-            (equipmentType === 'weapon2' && currentLevel >= 7) ||
-            (equipmentType === 'weapon1' && currentLevel >= 8) ||
-            (equipmentType === 'armor2' && currentLevel >= 11) ||
-            (equipmentType === 'weapon5' && currentLevel >= 11)
+            (equipmentType === 'shadow' && currentLevel >= 4) ||
+            (equipmentType === 'armor1' && currentLevel >= 4) ||
+            (equipmentType === 'weapon4' && currentLevel >= 4) ||
+            (equipmentType === 'weapon3' && currentLevel >= 5) ||
+            (equipmentType === 'weapon2' && currentLevel >= 6) ||
+            (equipmentType === 'weapon1' && currentLevel >= 7) ||
+            (equipmentType === 'armor2' && currentLevel >= 10) ||
+            (equipmentType === 'weapon5' && currentLevel >= 10)
         ) {
             currentLevel = 0;  // 파괴되어 0제련으로 돌아감
         } else {
