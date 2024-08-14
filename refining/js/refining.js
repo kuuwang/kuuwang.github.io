@@ -200,8 +200,8 @@ const eventImage = document.getElementById('eventImage');
 evtcheckbox.addEventListener('change', function() {
     // Change the image based on the checkbox state
     if (evtcheckbox.checked) {
-        eventImage.src = '../src/img/refining/slot_select_blue0.png'; // Change to selected image
+        eventImage.src = '../src/img/refining/slot_select_green.png'; // Change to selected image
     } else {
-        eventImage.src = '../src/img/refining/slot_unselect_blue0.png'; // Change to unselected image
+        eventImage.src = '../src/img/refining/slot_unselect_green.png'; // Change to unselected image
     }
 });
