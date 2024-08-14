@@ -41,13 +41,11 @@
                 
             <br>
             
-
-            <button onclick="refine()">제련</button>
             <button onclick="refine100()">100번 제련</button>
             <br>
             <input id="targetLevel" placeholder="목표 제련도" value="10" style="width: 30px;">
             <button onclick="refineUntil()">목표까지 제련 !!</button>
-            <button onclick="resetRefine()">제련도 초기화</button>
+            
         </div>
 
     </div>
@@ -84,9 +82,9 @@
                     <td colspan="2"></td>
                 </tr>
                 <tr class="row-2">
-                    <td colspan="2"></td>
-                    <td>Text</td>
-                    <td colspan="2"></td>
+                    <td colspan="2"><button onclick="resetRefine()" class="trybtn">초기화</button></td>
+                    <td></td>
+                    <td colspan="2"><button onclick="refine()" class="trybtn">제련</button></td>
                 </tr>
                 <tr class="row-5">
                     <td colspan="5"></td>

@@ -561,3 +561,29 @@ td {
     left: 0;
     margin: 0;
 }
+
+.trybtn {
+    font-family: "Dotum";
+    font-size: 12px;
+    width: 95px;
+    height: 32px;
+    border: 1px solid rgb(102, 110, 113); /* Border color */
+    border-radius: 3px;
+    background: linear-gradient(to bottom,
+        rgb(255, 255, 255) 0%,
+        rgb(142, 187, 242) 25%,
+        rgb(87, 111, 197) 100%
+    ); /* Gradient from first to last color */
+}
+
+.trybtn:active {
+    width: 95px;
+    height: 32px;
+    border: 1px solid rgb(102, 110, 113); /* Border color */
+    border-radius: 3px;
+    background: linear-gradient(to bottom,
+        rgb(103, 132, 208) 0%,
+        rgb(109, 142, 213) 25%,
+        rgb(118, 156, 219) 100%
+    ); /* Gradient from first to last color */
+}
