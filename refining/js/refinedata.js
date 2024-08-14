@@ -47,9 +47,15 @@ const probabilities = {
 
 // Function to calculate and display the probabilities, total rates, and average used items
 function calculateAndDisplayRefineData() {
-    const refineType = document.querySelector('input[name="refineType"]:checked').value;
+    const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');
     const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
     const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
+
+    let refineType = 'normal'; // Default value if nothing is selected
+
+    if (eventCheckbox.checked) {
+        refineType = eventCheckbox.value; // If checked, use the event type
+    }
 
     const probArray = probabilities[refineType][stoneType][equipmentType];
 

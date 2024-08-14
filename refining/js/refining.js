@@ -16,7 +16,8 @@ const blessingUsageMap = {
 
 
 function refine() {
-    const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');    const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+    const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');
+    const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
     const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
     const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
 
