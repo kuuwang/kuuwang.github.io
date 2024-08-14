@@ -16,10 +16,15 @@ const blessingUsageMap = {
 
 
 function refine() {
-    const refineType = document.querySelector('input[name="refineType"]:checked').value;
-    const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+    const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');    const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
     const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
     const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
+
+    let refineType = 'normal'; // Default value if nothing is selected
+
+    if (eventCheckbox.checked) {
+        refineType = eventCheckbox.value; // If checked, use the event type
+    }
 
     const probArray = probabilities[refineType][stoneType][equipmentType];
 
@@ -186,5 +191,17 @@ checkbox.addEventListener('change', function() {
         blessingImage.src = '../src/img/refining/slot_select_red.png'; // Change to selected image
     } else {
         blessingImage.src = '../src/img/refining/slot_unselect_red.png'; // Change to unselected image
+    }
+});
+
+const evtcheckbox = document.getElementById('eventCheckbox');
+const eventImage = document.getElementById('eventImage');
+
+evtcheckbox.addEventListener('change', function() {
+    // Change the image based on the checkbox state
+    if (evtcheckbox.checked) {
+        eventImage.src = '../src/img/refining/slot_select_blue0.png'; // Change to selected image
+    } else {
+        eventImage.src = '../src/img/refining/slot_unselect_blue0.png'; // Change to unselected image
     }
 });

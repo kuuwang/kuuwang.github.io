@@ -13,11 +13,66 @@
         <a href="https://ro.gnjoy.com/" target="_blank"><img src="../src/img/logo.webp" style="width: 175px; float: left;"></a>
         <div id="refinetable" class="refinebox">
             <header class="title"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
-            <label for="refineType">이벤트 :</label>
-            <div class="radio-group">
-                <label><input type="radio" name="refineType" value="normal" checked> 일반</label>
-                <label><input type="radio" name="refineType" value="event"> 제련이벤트</label>
-            </div>
+
+        </div>
+
+    </div>
+    <div id="refinecontainer" style="float: left; ">
+        <div class="table-container" style="position:fixed;">
+            <header class="title"><div class="circle"></div><span class="itemname">제련</span></header>
+            <table id="refineimg">
+                <tr class="title-row row-1">
+                    <td colspan="5"><span id="result">현재 제련도: +0</span></td>
+                </tr>
+                <tr class="row-2">
+                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
+                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
+                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
+                    <td>
+                        <div class="btn_container">
+                            <input type="checkbox" name="refineType" value="event" id="eventCheckbox" class="topbtn">
+                            <img id="eventImage" src="../src/img/refining/slot_unselect_blue0.png" class="btn_bg">
+                            <img src="../src/img/refining/emotion.gif" class="btn_evt">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn_container">
+                            <input type="checkbox" id="blacksmithBlessing" class="topbtn">
+                            <img id="blessingImage" src="../src/img/refining/slot_unselect_red.png" class="btn_bg">
+                            <img src="https://www.divine-pride.net/img/items/item/kROS/6635" class="btn_blessing">
+                        </div>
+                    </td>
+                </tr>
+                <tr class="row-3">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="row-4">
+                    <td colspan="2"></td>
+                    <td><img src="https://static.divine-pride.net/images/items/item/550130.png"></td>
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="row-5">
+                    <td colspan="2"><button onclick="resetRefine()" class="trybtn">초기화</button></td>
+                    <td></td>
+                    <td colspan="2"><button onclick="refine()" class="trybtn">제련</button></td>
+                </tr>
+                <tr class="row-5">
+                    <td colspan="2"><button onclick="refine100()" class="trybtn">100번 제련</button></td>
+                    <td><input id="targetLevel" placeholder="목표 제련도" value="10" style="width: 30px;"></td>
+                    <td colspan="2"><button onclick="refineUntil()" class="trybtn">까지 제련!!</button></td>
+                </tr>
+                <tr class="row-5">
+                    <td colspan="5"></td>
+                </tr>
+            </table>
+            
+            <div class="split" style="margin-top: 0px;"></div>
+
+                
             
             <label for="stoneType">제련석 :</label><br>
             <div class="radio-group">
@@ -36,61 +91,11 @@
                 <label><input type="radio" id="armor1" name="equipmentType" value="armor1"> 방어구 (1레벨)</label>
                 <label><input type="radio" id="armor2" name="equipmentType" value="armor2"> 방어구 (2레벨)</label>
             </div>
-            <br>
-            <br>
-                
+            
+            
             <br>
             
-            <button onclick="refine100()">100번 제련</button>
-            <br>
-            <input id="targetLevel" placeholder="목표 제련도" value="10" style="width: 30px;">
-            <button onclick="refineUntil()">목표까지 제련 !!</button>
             
-        </div>
-
-    </div>
-    <div id="refinecontainer" style="float: left; ">
-        <div class="table-container" style="position:fixed;">
-            <header class="title"><div class="circle"></div><span class="itemname">제련</span></header>
-            <table id="refineimg">
-                <tr class="title-row row-1">
-                    <td colspan="5"><span id="result">현재 제련도: +0</span></td>
-                </tr>
-                <tr class="row-2">
-                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
-                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
-                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
-                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
-                    <td>
-                        <div class="btn_container">
-                            <input type="checkbox" id="blacksmithBlessing">
-                            <img id="blessingImage" src="../src/img/refining/slot_unselect_red.png" class="btn_bg">
-                            <img src="https://www.divine-pride.net/img/items/item/kROS/6635" class="btn_blessing">
-                        </div>
-                    </td>
-                </tr>
-                <tr class="row-3">
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="row-4">
-                    <td colspan="2"></td>
-                    <td><img src="https://static.divine-pride.net/images/items/item/550130.png"></td>
-                    <td colspan="2"></td>
-                </tr>
-                <tr class="row-2">
-                    <td colspan="2"><button onclick="resetRefine()" class="trybtn">초기화</button></td>
-                    <td></td>
-                    <td colspan="2"><button onclick="refine()" class="trybtn">제련</button></td>
-                </tr>
-                <tr class="row-5">
-                    <td colspan="5"></td>
-                </tr>
-            </table>
-            <div class="split" style="margin-top: 0px;"></div>
         </div>
     </div>
 

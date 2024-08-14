@@ -511,6 +511,7 @@ html, body, table{
     background-image: url('../src/img/refining/bg_refining_wait.png');
     border-collapse: separate;
     border-spacing: 3px; /* Gutter of 5px */
+    
 }
 #refineimg img{
     padding: 0px;
@@ -523,6 +524,7 @@ td {
 
 .title-row td {
     font-weight: bold;
+    
 }
 
 /* Editable row heights */
@@ -530,6 +532,7 @@ td {
 .row-2 { height: 52px; }
 .row-3 { height: 75px; }
 .row-4 { height: 50px; }
+.row-5 td { padding-top: 0}
 
 .btn_container{
     position: relative;
@@ -550,8 +553,14 @@ td {
     left: 10px;
     z-index: 2; /* Higher z-index for the second image */
 }
+.btn_evt{
+    position: absolute;
+    bottom: 11px;
+    left: 1px;
+    z-index: 2; /* Higher z-index for the second image */
+}
 
-#blacksmithBlessing{
+.topbtn{
     opacity: 0; 
     width: 100%; 
     height: 100%; 
@@ -564,8 +573,8 @@ td {
 
 .trybtn {
     font-family: "Dotum";
-    font-weight: bold;
     font-size: 12px;
+    font-weight: bold;
     width: 95px;
     height: 32px;
     border: 1px solid rgb(102, 110, 113); /* Border color */
@@ -578,6 +587,10 @@ td {
 }
 
 .trybtn:active {
+    width: 95px;
+    height: 32px;
+    border: 1px solid rgb(102, 110, 113); /* Border color */
+    border-radius: 3px;
     background: linear-gradient(to bottom,
         rgb(103, 132, 208) 0%,
         rgb(109, 142, 213) 25%,
