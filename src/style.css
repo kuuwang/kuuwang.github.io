@@ -519,7 +519,6 @@ html, body, table{
 td {
     /*background-color: rgba(255, 255, 255, 0.8); /* Optional: background color with transparency */
     text-align: center;
-    padding-top: 9px; /* Optional: padding inside cells */
 }
 
 .title-row td {
