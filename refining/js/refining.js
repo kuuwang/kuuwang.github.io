@@ -4,15 +4,7 @@ let totalStoneUsage = 0;
 let history = [];
 let refineInterval;
 
-const blessingUsageMap = {
-    7: 1,
-    8: 2,
-    9: 4,
-    10: 7,
-    11: 11,
-    12: 16,
-    13: 22
-};
+
 
 
 function refine() {

@@ -2,19 +2,19 @@ function generateCharacterInfo(charData) {
     var box = document.createElement('div');
     box.className = 'charbox';
 
-    var title = document.createElement('header');
-    title.className = 'title';
+    var titlebar = document.createElement('header');
+    titlebar.className = 'titlebar';
     var circle = document.createElement('div');
     circle.className = 'circle';
     var charname = document.createElement('span');
     charname.className = 'charname';
     charname.textContent = charData.charname;
-    title.appendChild(circle);
-    title.appendChild(charname);
-    box.appendChild(title);
+    titlebar.appendChild(circle);
+    titlebar.appendChild(charname);
+    box.appendChild(titlebar);
 
-    var content = document.createElement('main');
-    content.className = 'content';
+    var charcontent = document.createElement('main');
+    charcontent.className = 'charcontent';
 
     var charinfo = document.createElement('article');
     charinfo.className = 'charinfo';
@@ -23,11 +23,11 @@ function generateCharacterInfo(charData) {
     job.textContent = charData.job;
     var battlestyle = document.createElement('span');
     battlestyle.className = 'battlestyle';
-    var lvltable = document.createElement('section');
-    lvltable.className = 'lvltable';
-    lvltable.innerHTML = '<span class="battlestyle">' + charData.battlestyle + '</span> <br> <span class="lvlname">Lv </span><span class="clvl">' + charData.clvl + '</span> / <span class="lvlname">J.Lv <span class="jlvl">' + charData.jlvl + '</span></span>';
-    var stattable = document.createElement('section');
-    stattable.className = 'stattable';
+    var charlvl = document.createElement('section');
+    charlvl.className = 'charlvl';
+    charlvl.innerHTML = '<span class="battlestyle">' + charData.battlestyle + '</span> <br> <span class="lvlname">Lv </span><span class="clvl">' + charData.clvl + '</span> / <span class="lvlname">J.Lv <span class="jlvl">' + charData.jlvl + '</span></span>';
+    var charstat = document.createElement('section');
+    charstat.className = 'charstat';
 
     Object.keys(charData.stats).forEach(function(stat) {
         var statbox = document.createElement('span');
@@ -41,13 +41,13 @@ function generateCharacterInfo(charData) {
         statval.textContent = charData.stats[stat];
         statbox.appendChild(statname);
         statbox.appendChild(statval);
-        stattable.appendChild(statbox);
+        charstat.appendChild(statbox);
     });
     charinfo.appendChild(job);
     charinfo.appendChild(battlestyle);
-    charinfo.appendChild(lvltable);
-    charinfo.appendChild(stattable);
-    content.appendChild(charinfo);
+    charinfo.appendChild(charlvl);
+    charinfo.appendChild(charstat);
+    charcontent.appendChild(charinfo);
 
     var iteminfo = document.createElement('aside');
     iteminfo.className = 'iteminfo';
@@ -141,11 +141,11 @@ function generateCharacterInfo(charData) {
     iteminfo.appendChild(table1);
     iteminfo.style.backgroundImage = "url('https://raw.githubusercontent.com/kuuwang/kuuwang.github.io/main/src/img/char/" + charData.charname + ".gif')";
     iteminfo.appendChild(table2);
-    content.appendChild(iteminfo);
+    charcontent.appendChild(iteminfo);
     var split_box = document.createElement('div');
     split_box.className = "split";
 
-    box.appendChild(content);
+    box.appendChild(charcontent);
     box.appendChild(split_box);
 
     var itemImages = box.querySelectorAll('.itemimg');
@@ -237,7 +237,7 @@ function displayClvlCounts(clvlCounts) {
     var table = document.querySelector('#chartable table');
     var sortedClvls = Object.keys(clvlCounts).sort(function(a, b) {
         return b - a;
-    });
+    });``
     sortedClvls.forEach(function(clvl) {
         if(clvl > 99){
             var row = table.insertRow();

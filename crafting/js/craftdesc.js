@@ -2703,7 +2703,7 @@ const item_description = {
 };
 
 
-var item_desc = document.getElementById('itemDescript');
+var item_desc = document.getElementById('itemdescript');
 
 function item_desc_display(item_db) {
     var item_get_id = item_db.id;
@@ -2715,61 +2715,50 @@ function item_desc_display(item_db) {
     item_desc.style.left = posX;
     item_desc.style.top = posY;
     item_desc.style.display = 'block';
+        
+    var desccontainer = document.createElement('div');
+    desccontainer.className = 'desccontainer';
     
-    var item_desc_html = '';
+    var itemimg = document.createElement('img');
+    itemimg.src = 'https://www.divine-pride.net/img/items/collection/kROM/' + item_get_id; // Ensure correct file extension
+    itemimg.alt = 'Item Image';
+    desccontainer.appendChild(itemimg);
     
-    // Create container for image and description
-    var item_container = document.createElement('div');
-    item_container.className = 'item-container'; // Add a class for styling
-    
-    // Add image to the container
-    var item_img = document.createElement('img');
-    item_img.src = 'https://www.divine-pride.net/img/items/collection/kROM/' + item_get_id; // Ensure correct file extension
-    item_img.alt = 'Item Image';
-    item_container.appendChild(item_img);
-    
-    // Create description div
-    var desc_div = document.createElement('div');
-    desc_div.className = 'item-desc'; // Add a class for styling
+    var descdiv = document.createElement('div');
+    descdiv.className = 'descdiv';
 
     if (item_description[item_get_id]) {
-		  // Add title (first entry in the array)
 		var title = item_description[item_get_id][0];
 	    if (title) {
-				var title_p = document.createElement('div');
-				title_p.className = 'item-title'; // Add a class for styling
-				title_p.textContent = title;
-				desc_div.appendChild(title_p);
+				var desctitle = document.createElement('div');
+				desctitle.className = 'desctitle'; 
+				desctitle.textContent = title;
+				descdiv.appendChild(desctitle);
 		}
 
-		  // Add remaining descriptions
 		item_description[item_get_id].slice(1).forEach(function(description) {
 				var result = description.replace(/\^000000/gi, "</font>").replace(/\^([0-9a-fA-F]{6})/gi, "<font color='#$1'>");
-				var p = document.createElement('div');
-				p.className = 'item-desc-text'; // Add a class for styling
-				p.innerHTML = result;
-				desc_div.appendChild(p);
+				var desctext = document.createElement('div');
+				desctext.className = 'desctext'; 
+				desctext.innerHTML = result;
+				descdiv.appendChild(desctext);
 		});
     } else {
 		var no_desc = document.createElement('p');
-		  no_desc.className = 'item-desc-text'; // Add a class for styling
+		  no_desc.className = 'desctext'; 
 		no_desc.textContent = 'No description available.';
-		desc_div.appendChild(no_desc);
+		descdiv.appendChild(no_desc);
     }
     
-    var title_holder = document.createElement('div')
-    title_holder.id = "title-holder"
-    item_container.appendChild(title_holder);
-    // Append description to the container
-    item_container.appendChild(desc_div);
+    var desctitle = document.createElement('div')
+    desctitle.id = "desctitle"
+    desccontainer.appendChild(desctitle);
+    desccontainer.appendChild(descdiv);
     
-    // Set HTML for item_desc
     item_desc.innerHTML = '';
     
-    item_desc.appendChild(item_container);
+    item_desc.appendChild(desccontainer);
 }
-
-
 
 function display_reset() {
     item_desc.innerHTML = '';

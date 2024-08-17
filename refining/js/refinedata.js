@@ -45,6 +45,16 @@ const probabilities = {
     }
 };
 
+const blessingUsageMap = {
+    7: 1,
+    8: 2,
+    9: 4,
+    10: 7,
+    11: 11,
+    12: 16,
+    13: 22
+};
+
 // Function to calculate and display the probabilities, total rates, and average used items
 function calculateAndDisplayRefineData() {
     const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');

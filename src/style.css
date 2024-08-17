@@ -2,19 +2,15 @@ html, body, table{
     font-family: "Dotum";
     font-size: 12px;
 }
+#left{
+    width: 200px;
+}
 #container{
     display: flex;
     flex-wrap : wrap;
     justify-content: center;
 }
-.charbox {
-    width: 370px;
-    border: 1px solid rgb(198,198,198);
-    border-radius: 3px;
-    float: left;
-    margin: 3px;
-}
-.title {/* 타이틀바 색상 */
+.titlebar {/* 타이틀바 색상 */
     height: 16px; 
     background: linear-gradient(to bottom, 
         rgb(181, 198, 222),
@@ -53,23 +49,74 @@ html, body, table{
     float:left;
     margin: 2px 0px 0px 2px;
 }
+.split{
+    height: 20px;
+    background:  linear-gradient(to bottom, 
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247)
+    );
+    border-top: 1px solid rgba(198,198,198,1);
+}
+
+
+/* ./rag */
+#chartable{
+    display:flow-root;
+    float: left;
+    width: 180px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    margin-top: 3px;
+}
+#chartable table{
+    margin: auto;
+    width: 100%;
+}
+#chartable table tr:nth-child(even){
+    background-color: rgba(231, 239, 255, 1);
+}
+
+#chartable tr td{
+    text-align: center;
+}
+
+.charcontent {
+    margin-bottom: 10px;
+}
+
+.charbox {
+    width: 370px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    float: left;
+    margin: 3px;
+}
+
 .charname{
     float:left;
     text-indent: 2px;
 }
 
-.lvltable{
+.charlvl{
     background-color: rgb(231,231,239);
     border-radius: 5px;
     padding: 2px;
     text-align: center;
 }
-.content .charinfo{
+.charinfo{
     float: left;
     width: 150px;
     padding: 4px;
 }
-.stattable {
+.charstat {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -79,18 +126,19 @@ html, body, table{
     width: calc(50% - 6px);
     margin: 3px 0;
 }
-.statbox:nth-child(1) { order: 1; }
-.statbox:nth-child(2) { order: 3; }
-.statbox:nth-child(3) { order: 5; }
-.statbox:nth-child(4) { order: 7; }
-.statbox:nth-child(5) { order: 9; }
-.statbox:nth-child(6) { order: 11; }
-.statbox:nth-child(7) { order: 2; }
-.statbox:nth-child(8) { order: 4; }
-.statbox:nth-child(9) { order: 6; }
-.statbox:nth-child(10) { order: 8; }
-.statbox:nth-child(11) { order: 10; }
-.statbox:nth-child(12) { order: 12; }
+.statbox:nth-child(1) { order: 1; }     /* STR */
+.statbox:nth-child(2) { order: 3; }     /* AGI */
+.statbox:nth-child(3) { order: 5; }     /* VIT */
+.statbox:nth-child(4) { order: 7; }     /* INT */
+.statbox:nth-child(5) { order: 9; }     /* DEX */
+.statbox:nth-child(6) { order: 11; }    /* LUK */
+.statbox:nth-child(7) { order: 2; }     /* POW */
+.statbox:nth-child(8) { order: 4; }     /* STA */
+.statbox:nth-child(9) { order: 6; }     /* WIS */
+.statbox:nth-child(10) { order: 8; }    /* SPL */
+.statbox:nth-child(11) { order: 10; }   /* CON */
+.statbox:nth-child(12) { order: 12; }   /* CRT */
+
 .statname{
     width: 44%;
     display: inline-block;
@@ -149,54 +197,9 @@ html, body, table{
     color:white;
     padding: 5px;
 }
-.skillbox{
-    margin-top: 5px;
-    padding: 5px;
-}
 
-.split{
-    margin-top: 10px;
-    height: 20px;
-    background:  linear-gradient(to bottom, 
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247)
-    );
-    border-top: 1px solid rgba(198,198,198,1);
-}
-.skContainer{
-    display: inline-block;
-    justify-content: space-between;
-
-    width: 30px;
-    height: 30px;
-}
-
-.skillLv{
-    display: inline-block;
-    width: 12px;
-    font-size: 12px;
-    text-align: right;
-    margin-left: -10px;
-    text-shadow:
-    1px 1px 0 #fff,
-    -1px 1px 0 #fff,
-    -1px -1px 0 #fff,
-    1px -1px 0 #fff;
-}
-
-#left{
-    width: 200px;
-}
-
-#chartable{
+/* ./crafting */
+#chk{
     display:flow-root;
     float: left;
     width: 180px;
@@ -204,17 +207,21 @@ html, body, table{
     border-radius: 3px;
     margin-top: 3px;
 }
-#chartable table{
-    margin :auto;
+#checkbox-container table{
+    margin: auto;
     width: 100%;
 }
 
-#chartable table tr:nth-child(even){
+#checkbox-container table tr:nth-child(even){
     background-color: rgba(231, 239, 255, 1);
 }
 
-#chartable tr td{
-    text-align: center;
+#craftsearch{
+    width: 97%;
+    border: 0px;
+}
+#craftsearch::placeholder {
+    font-size: 12px;
 }
 
 .craftbox {
@@ -234,14 +241,9 @@ html, body, table{
     float: left;
 }
 
-.namecontainer{
+.craftname{
     text-align: center;
     margin-top: 22%;
-}
-
-
-.resultimg{
-    text-align: center;
 }
 
 .borderbox{
@@ -266,7 +268,6 @@ html, body, table{
     align-items: center;
 
 }
-
 .resultbox:before{
     content: " ";
     position: absolute;
@@ -278,14 +279,12 @@ html, body, table{
     display:block;
     z-index: 0;
 }
-
 .resultbox img{
     margin: auto;
     width: 24px;
     height: 24px;
     z-index: 1;
 }
-
 
 .resultname{
     font-weight: 300;
@@ -320,48 +319,6 @@ html, body, table{
     text-align: right;
 }
 
-.craftsplit{
-    height: 20px;
-    background:  linear-gradient(to bottom, 
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247)
-    );
-    border-top: 1px solid rgba(198,198,198,1);
-}
-
-#chk{
-    display:flow-root;
-    float: left;
-    width: 180px;
-    border: 1px solid rgb(198,198,198);
-    border-radius: 3px;
-    margin-top: 3px;
-}
-#checkbox-container table{
-    margin: auto;
-    width: 100%;
-}
-
-#checkbox-container table tr:nth-child(even){
-    background-color: rgba(231, 239, 255, 1);
-}
-
-#craftsearch{
-    width: 97%;
-    border: 0px;
-}
-#craftsearch::placeholder {
-    font-size: 12px;
-}
-
 .resultqty{
     position: absolute;
     margin-left: 26px;
@@ -373,7 +330,7 @@ html, body, table{
     color: rgba(0,0,0,0.5);
 }
 
-#itemDescript {
+#itemdescript {
     width: 280px;
     background-color: white;
     border: 1px solid rgba(198,198,198,1);
@@ -383,7 +340,7 @@ html, body, table{
     min-height: 122px;
 }
 
-#title-holder{
+#desctitle{
     height: 22px;
     background: linear-gradient(to bottom, 
     rgb(255, 255, 255),
@@ -405,28 +362,28 @@ html, body, table{
     position: static;
 }
 
-.item-container {
+.desccontainer {
     padding: 0px
 }
 
-.item-container img{
+.desccontainer img{
     display: block;
     float: left;
     padding: 10px 3px 10px 10px;
     filter: drop-shadow(2px 2px 0 #999);
 }
 
-.item-desc{
+.descdiv{
     width: 182px;
     padding: 5px;
     float: right;
     margin-top: -22px;
 }
-.item-title{
+.desctitle{
     padding: 0px 0px 7px 0;
 }
 
-.item-desc-text{
+.desctext{
     padding: 5px 0px 0px 5px;
 }
 
