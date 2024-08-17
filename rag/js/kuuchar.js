@@ -2,7 +2,7 @@ var data = [
     {
         charname: "쿠왕의비숍",
         job: "Cardinal",
-        clvl: 270,
+        clvl: 275,
         jlvl: 60,
         battlestyle: "아르비트리움",
         stats: {
