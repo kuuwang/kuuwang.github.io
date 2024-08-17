@@ -196,6 +196,7 @@ html, body, table{
     background-color: rgba(0,0,0,0.5);
     color:white;
     padding: 5px;
+    z-index: 10;
 }
 
 /* ./crafting */
@@ -388,7 +389,7 @@ html, body, table{
 }
 
 
-/* refining style */
+/* ./refining */
 .refinebox  {
     display:flow-root;
     float: left;
@@ -400,7 +401,7 @@ html, body, table{
 
 .radio-group label {
     display: block;
-    margin-left: 35px; /* 개별 라벨의 들여쓰기 */
+    margin-left: 35px;
 }
 
 #refinerate{
