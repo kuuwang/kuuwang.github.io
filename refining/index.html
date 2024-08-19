@@ -20,8 +20,24 @@
                     <td colspan="5"><span id="refineresult">현재 제련도: +0</span></td>
                 </tr>
                 <tr class="row-2">
-                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
-                    <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
+                    <td>
+                        <div class="btn_container">
+                            <input type="radio" id="refinestone" name="stoneType" value="refinestone" checked class="topbtn">
+                            <label for="refinestone">
+                                <img src="../src/img/refining/slot_unselect_blue0.png" class="btn_bg">
+                                <img src="../src/img/refining/etherdeocon.png" class="btn_blessing">
+                            </label>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="btn_container">
+                            <input type="radio" id="refinecash" name="stoneType" value="refinecash" class="topbtn">
+                            <label for="refinecash">
+                                <img src="../src/img/refining/slot_unselect_blue0.png" class="btn_bg">
+                                <img src="../src/img/refining/enriched_etherdeocon.png" class="btn_blessing">
+                            </label>
+                        </div>
+                    </td>
                     <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
                     <td>
                         <div class="btn_container">
@@ -64,17 +80,7 @@
                     <td colspan="5"></td>
                 </tr>
             </table>
-            
-            <div class="split" style="margin-top: 0px;"></div>
-
-                
-            
-            <label for="stoneType">제련석 :</label><br>
-            <div class="radio-group">
-                <label><input type="radio" id="refinestone" name="stoneType" value="refinestone" checked> 일반제련석</label>
-                <label><input type="radio" id="refinecash" name="stoneType" value="refinecash"> 캐시제련석</label>
-            </div>
-            
+            <div class="split" style="margin-top: 0px;"></div>            
             <label for="equipmentType">장비 :</label><br>
             <div class="radio-group">
                 <label><input type="radio" id="shadow" name="equipmentType" value="shadow" checked> 쉐도우장비</label>
@@ -86,11 +92,7 @@
                 <label><input type="radio" id="armor1" name="equipmentType" value="armor1"> 방어구 (1레벨)</label>
                 <label><input type="radio" id="armor2" name="equipmentType" value="armor2"> 방어구 (2레벨)</label>
             </div>
-            
-            
             <br>
-            
-            
         </div>
     </div>
 

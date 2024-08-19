@@ -550,3 +550,7 @@ html, body, table{
         rgb(118, 156, 219) 100%
     ); /* Gradient from first to last color */
 }
+
+input[type="radio"]:checked + label .btn_bg {
+    content: url('../src/img/refining/slot_select_blue0.png');
+}
