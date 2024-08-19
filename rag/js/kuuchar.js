@@ -1597,8 +1597,8 @@ var data = [
     {
         charname: "쿠왕인렌져",
         job: "Windhawk",
-        clvl: 230,
-        jlvl: 44,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "트랩",
         stats: {
             str: 120,
@@ -1607,7 +1607,7 @@ var data = [
             int: 90,
             dex: 120,
             luk: 70,
-            pow: 21,
+            pow: 59,
             sta: 0,
             wis: 0,
             spl: 0,
