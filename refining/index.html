@@ -11,18 +11,13 @@
 <body>
     <div id="left">
         <a href="https://ro.gnjoy.com/" target="_blank"><img src="../src/img/logo.webp" style="width: 175px; float: left;"></a>
-        <div id="refinetable" class="refinebox">
-            <header class="titlebar"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
-
-        </div>
-
     </div>
-    <div id="refinecontainer" style="float: left; ">
+    <div id="refinecontainer">
         <div class="table-container" style="position:fixed;">
             <header class="titlebar"><div class="circle"></div><span class="itemname">제련</span></header>
             <table id="refineimg">
                 <tr class="title-row row-1">
-                    <td colspan="5"><span id="result">현재 제련도: +0</span></td>
+                    <td colspan="5"><span id="refineresult">현재 제련도: +0</span></td>
                 </tr>
                 <tr class="row-2">
                     <td><img src="../src/img/refining/slot_unselect_blue0.png"></td>
@@ -39,7 +34,7 @@
                         <div class="btn_container">
                             <input type="checkbox" id="blacksmithBlessing" class="topbtn">
                             <img id="blessingImage" src="../src/img/refining/slot_unselect_red.png" class="btn_bg">
-                            <img src="https://www.divine-pride.net/img/items/item/kROS/6635" class="btn_blessing">
+                            <img src="../src/img/refining/blessing.png" class="btn_blessing">
                         </div>
                     </td>
                 </tr>
@@ -99,20 +94,20 @@
         </div>
     </div>
 
-    <div id="refineinfo" style="float: left; margin-left: 300px;">
+    <div id="refineinfo">
         <header class="titlebar"><div class="circle"></div><span class="itemname">히스토리</span></header>
         <table class="history-table">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>제련도</th>
-                    <th>결과</th>
-                    <th>이벤트</th>
-                    <th>제련석</th>
-                    <th>장비</th>
-                    <th>성공확률</th>
-                    <th>판정</th>
-                    <th><img src="https://www.divine-pride.net/img/items/item/kROS/6635"></th>
+                    <th style="width: 30px;">#</th>
+                    <th style="width: 60px;">제련도</th>
+                    <th style="width: 30px;">결과</th>
+                    <th style="width: 60px;">이벤트</th>
+                    <th style="width: 65px;">제련석</th>
+                    <th style="width: 60px;">장비</th>
+                    <th style="width: 60px;">성공확률</th>
+                    <th style="width: 60px;">판정</th>
+                    <th><img src="../src/img/refining/blessing.png"></th>
                 </tr>
             </thead>
             <tbody id="historyTableBody">
@@ -125,7 +120,7 @@
         <div id="refineresult" class="refineresultinfo">
             <header class="titlebar"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
             <div id="stoneUsage">제련석 소모: 0개</div>
-            <div id="blessingUsage"><img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × 0</div>
+            <div id="blessingUsage"><img src="../src/img/refining/blessing.png"> × 0</div>
         </div>
         <div class="refineresultinfo">
             <header class="titlebar"><div class="circle"></div><span class="itemname">제련 확률</span></header>

@@ -64,9 +64,9 @@ function refine() {
     }
 
     totalStoneUsage++;
-    document.getElementById('result').innerText = `현재 제련도: +${currentLevel}`;
+    document.getElementById('refineresult').innerText = `현재 제련도: +${currentLevel}`;
     document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
-    document.getElementById('blessingUsage').innerHTML = `<img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × ${totalBlessingUsed}`;
+    document.getElementById('blessingUsage').innerHTML = `<img src="../src/img/refining/blessing.png"> × ${totalBlessingUsed}`;
 
     const resultText = success 
         ? `<span style="color: blue">성공</span>` 
@@ -92,11 +92,15 @@ function refine() {
 function refine100() {
     for (let i = 0; i < 100; i++) {
         
-
-        const refineType = document.querySelector('input[name="refineType"]:checked').value;
+        const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');
         const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
         const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
-        const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
+
+        let refineType = 'normal'; // Default value if nothing is selected
+
+        if (eventCheckbox.checked) {
+            refineType = eventCheckbox.value; // If checked, use the event type
+        }
 
         const probArray = probabilities[refineType][stoneType][equipmentType];
         
@@ -169,9 +173,9 @@ function resetRefine() {
     totalStoneUsage = 0;
     totalBlessingUsed = 0;
     history = [];
-    document.getElementById('result').innerText = `현재 제련도: +${currentLevel}`;
+    document.getElementById('refineresult').innerText = `현재 제련도: +${currentLevel}`;
     document.getElementById('stoneUsage').innerText = `제련석 소모: ${totalStoneUsage}개`;
-    document.getElementById('blessingUsage').innerHTML = `<img src="https://www.divine-pride.net/img/items/item/kROS/6635"> × ${totalBlessingUsed}`;
+    document.getElementById('blessingUsage').innerHTML = `<img src="../src/img/refining/blessing.png"> × ${totalBlessingUsed}`;
     updateHistory();
 }
 
