@@ -73,38 +73,65 @@ function calculateAndDisplayRefineData() {
         document.getElementById('refinerate').innerHTML = '정보 없음';
         return;
     }
+    document.getElementById('refinerate').innerHTML = '';
 
     let totalRate = 100; // Start with 100% for the first level
-    let tableHtml = `<table>
-                        <thead>
-                            <tr>
-                                <th>제련도</th>
-                                <th>확률 (%)</th>
-                                <th>실 확률 (%)</th>
-                                <th>평균 소모량</th>
-                            </tr>
-                        </thead>
-                        <tbody>`;
 
+    // Create table element
+    const table = document.createElement('table');
+    table.className = 'refinetable';
+    
+    // Create and append thead element
+    const thead = document.createElement('thead');
+    const headerRow = document.createElement('tr');
+    
+    const headers = ['제련도', '확률 (%)', '실 확률 (%)', '평균 소모량'];
+    headers.forEach(headerText => {
+        const th = document.createElement('th');
+        th.textContent = headerText;
+        headerRow.appendChild(th);
+    });
+    
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    
+    // Create and append tbody element
+    const tbody = document.createElement('tbody');
+    
     probArray.forEach((refineRate, index) => {
         if (refineRate === null) return; // Skip levels that are not refinable
-        
-        const level = index + 1;  // Refinement level, starting from +1
+    
+        const level = index + 1; // Refinement level, starting from +1
         totalRate *= (refineRate / 100);
-
+    
         // Average used item is the inverse of the probability for each level
         const avgUsedItem = (1 / (refineRate / 100)) * (1 / totalRate) * 100;
-
-        tableHtml += `<tr>
-                          <td>+${level}</td>
-                          <td>${refineRate}%</td>
-                          <td>${totalRate.toFixed(10)}%</td>
-                          <td>${avgUsedItem.toFixed(2)}</td>
-                      </tr>`;
+    
+        const row = document.createElement('tr');
+    
+        const levelCell = document.createElement('td');
+        levelCell.textContent = `+${level}`;
+        row.appendChild(levelCell);
+    
+        const refineRateCell = document.createElement('td');
+        refineRateCell.textContent = `${refineRate}%`;
+        row.appendChild(refineRateCell);
+    
+        const totalRateCell = document.createElement('td');
+        totalRateCell.textContent = `${totalRate.toFixed(10)}%`;
+        row.appendChild(totalRateCell);
+    
+        const avgUsedItemCell = document.createElement('td');
+        avgUsedItemCell.textContent = `${avgUsedItem.toFixed(2)}`;
+        row.appendChild(avgUsedItemCell);
+    
+        tbody.appendChild(row);
     });
-
-    tableHtml += `</tbody></table>`;
-    document.getElementById('refinerate').innerHTML = tableHtml;
+    
+    table.appendChild(tbody);
+    
+    // Append the table to the DOM
+    document.getElementById('refinerate').appendChild(table);
 }
 
 // Add event listeners to radio buttons to update the table on change

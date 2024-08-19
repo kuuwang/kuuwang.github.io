@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿠왕의라그 - 제련</title>
+    <title>쿠왕의라그 - 제조</title>
     <link rel="stylesheet" href="../src/style.css">
     <link rel="icon" href="https://github.com/kuuwang/kuuwang.github.io/blob/main/src/img/favicon.png?raw=true">
-
 </head>
 <body>
     <div id="left">
@@ -97,29 +95,8 @@
     </div>
 
     <div id="refineinfo">
-        <header class="titlebar"><div class="circle"></div><span class="itemname">히스토리</span></header>
-        <table class="history-table">
-            <thead>
-                <tr>
-                    <th style="width: 30px;">#</th>
-                    <th style="width: 60px;">제련도</th>
-                    <th style="width: 30px;">결과</th>
-                    <th style="width: 60px;">이벤트</th>
-                    <th style="width: 65px;">제련석</th>
-                    <th style="width: 60px;">장비</th>
-                    <th style="width: 60px;">성공확률</th>
-                    <th style="width: 60px;">판정</th>
-                    <th><img src="../src/img/refining/blessing.png"></th>
-                </tr>
-            </thead>
-            <tbody id="historyTableBody">
-                <!-- History rows will be appended here -->
-            </tbody>
-        </table>
-    </div>
-
-    <div id="refineresultinfo">
-        <div id="refineresult" class="refineresultinfo">
+        
+        <div class="refineresultinfo">
             <header class="titlebar"><div class="circle"></div><span class="itemname">제련 아이템 정보</span></header>
             <div id="stoneUsage">제련석 소모: 0개</div>
             <div id="blessingUsage"><img src="../src/img/refining/blessing.png"> × 0</div>
@@ -127,6 +104,27 @@
         <div class="refineresultinfo">
             <header class="titlebar"><div class="circle"></div><span class="itemname">제련 확률</span></header>
             <div id="refinerate"></div>
+        </div>
+
+        <div class="refinehistory">
+            <header class="titlebar"><div class="circle"></div><span class="itemname">히스토리</span></header>
+            <table class="refinetable">
+                <thead>
+                    <tr>
+                        <th style="width: 30px;">#</th>
+                        <th style="width: 60px;">제련도</th>
+                        <th style="width: 30px;">결과</th>
+                        <th style="width: 60px;">이벤트</th>
+                        <th style="width: 65px;">제련석</th>
+                        <th style="width: 60px;">장비</th>
+                        <th style="width: 60px;">성공확률</th>
+                        <th style="width: 60px;">판정</th>
+                        <th><img src="../src/img/refining/blessing.png"></th>
+                    </tr>
+                </thead>
+                <tbody id="historyTableBody">
+                </tbody>
+            </table>
         </div>
     </div>
 
