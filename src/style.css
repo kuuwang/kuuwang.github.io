@@ -478,9 +478,12 @@ html, body, table{
 }
 
 .row-2 { height: 52px; }
-.row-3 { height: 75px; }
-.row-4 { height: 50px; }
-.row-5 td { padding-top: 0}
+.row-3 { height: 85px; }
+.row-4 { 
+    height: 50px; 
+    text-align: center;
+}
+.row-5 td { text-align: center;}
 
 .btn_container{
     position: relative;
