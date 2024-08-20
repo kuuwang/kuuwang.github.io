@@ -494,7 +494,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -784,7 +784,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -1219,7 +1219,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -1364,7 +1364,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -1509,7 +1509,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -1944,7 +1944,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -2379,7 +2379,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -3104,7 +3104,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -3829,7 +3829,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -4554,7 +4554,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -4699,7 +4699,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -4989,7 +4989,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
@@ -5714,7 +5714,7 @@ var data = [
             garment: {
                 name: "+12 [A] 해적 선장의 코트 오브 하이럭키 [1]",
                 id: "480174",
-                grade: "", 
+                grade: "A", 
                 desc: ["갈렌시스 카드"],
             },
             shoose: {
