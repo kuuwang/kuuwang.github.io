@@ -411,6 +411,7 @@ html, body, table{
 }
 #refinecontainer{
     display: block;
+    margin-left: 170px;
     float: left;
 }
 
