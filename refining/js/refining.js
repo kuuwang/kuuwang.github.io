@@ -9,15 +9,14 @@ let refineInterval;
 
 function refine() {
     const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');
+    let refineType = 'normal'; // Default value if nothing is selected
+    if (eventCheckbox.checked) {
+        refineType = eventCheckbox.value; // If checked, use the event type
+    }
     const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
     const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
     const isBlessingActive = document.getElementById('blacksmithBlessing').checked;
 
-    let refineType = 'normal'; // Default value if nothing is selected
-
-    if (eventCheckbox.checked) {
-        refineType = eventCheckbox.value; // If checked, use the event type
-    }
 
     const probArray = probabilities[refineType][stoneType][equipmentType];
 
@@ -86,6 +85,7 @@ function refine() {
 
     history.push(historyEntry);
     updateHistory();
+    updateImages();
 }
 
 
@@ -93,14 +93,14 @@ function refine100() {
     for (let i = 0; i < 100; i++) {
         
         const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');
-        const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
-        const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
-
         let refineType = 'normal'; // Default value if nothing is selected
-
         if (eventCheckbox.checked) {
             refineType = eventCheckbox.value; // If checked, use the event type
         }
+        const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
+        const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
+
+
 
         const probArray = probabilities[refineType][stoneType][equipmentType];
         
@@ -126,7 +126,11 @@ function refineUntil() {
 
         refine();
         updateHistory();  // Update history every 10ms
-        const refineType = document.querySelector('input[name="refineType"]:checked').value;
+        const eventCheckbox = document.querySelector('input[name="refineType"][value="event"]');
+        let refineType = 'normal'; // Default value if nothing is selected
+        if (eventCheckbox.checked) {
+            refineType = eventCheckbox.value; // If checked, use the event type
+        }
         const stoneType = document.querySelector('input[name="stoneType"]:checked').value;
         const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
 
@@ -202,3 +206,16 @@ evtcheckbox.addEventListener('change', function() {
         eventImage.src = '../src/img/refining/slot_unselect_green.png'; // Change to unselected image
     }
 });
+
+
+function updateImages() {
+    const equipmentType = document.querySelector('input[name="equipmentType"]:checked').value;
+
+    const icon_normal = refinestone['refinestone'][equipmentType];
+    const icon_cash = refinestone['refinecash'][equipmentType];
+    const normal_img = icon_normal[currentLevel] || 'none';
+    const cash_img = icon_cash[currentLevel] || 'none';
+    
+    document.getElementById('icon_normal').src = `../src/img/refining/${normal_img}.png`;
+    document.getElementById('icon_cash').src = `../src/img/refining/${cash_img}.png`;
+}

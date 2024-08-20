@@ -23,7 +23,7 @@
                             <input type="radio" id="refinestone" name="stoneType" value="refinestone" checked class="topbtn">
                             <label for="refinestone">
                                 <img src="../src/img/refining/slot_unselect_blue0.png" class="btn_bg">
-                                <img src="../src/img/refining/etherdeocon.png" class="btn_blessing">
+                                <img src="../src/img/refining/Elunium.png" id="icon_normal" class="btn_blessing">
                             </label>
                         </div>
                     </td>
@@ -32,7 +32,7 @@
                             <input type="radio" id="refinecash" name="stoneType" value="refinecash" class="topbtn">
                             <label for="refinecash">
                                 <img src="../src/img/refining/slot_unselect_blue0.png" class="btn_bg">
-                                <img src="../src/img/refining/enriched_etherdeocon.png" class="btn_blessing">
+                                <img src="../src/img/refining/Enriched_Elunium.png" id="icon_cash" class="btn_blessing">
                             </label>
                         </div>
                     </td>
@@ -81,14 +81,14 @@
             <div class="split" style="margin-top: 0px;"></div>            
             <label for="equipmentType">장비 :</label><br>
             <div class="radio-group">
-                <label><input type="radio" id="shadow" name="equipmentType" value="shadow" checked> 쉐도우장비</label>
-                <label><input type="radio" id="weapon1" name="equipmentType" value="weapon1"> 무기 (1레벨)</label>
-                <label><input type="radio" id="weapon2" name="equipmentType" value="weapon2"> 무기 (2레벨)</label>
-                <label><input type="radio" id="weapon3" name="equipmentType" value="weapon3"> 무기 (3레벨)</label>
-                <label><input type="radio" id="weapon4" name="equipmentType" value="weapon4"> 무기 (4레벨)</label>
-                <label><input type="radio" id="weapon5" name="equipmentType" value="weapon5"> 무기 (5레벨)</label>
-                <label><input type="radio" id="armor1" name="equipmentType" value="armor1"> 방어구 (1레벨)</label>
-                <label><input type="radio" id="armor2" name="equipmentType" value="armor2"> 방어구 (2레벨)</label>
+                <label><input type="radio" id="shadow" name="equipmentType" value="shadow" checked onchange="updateImages()"> 쉐도우장비</label>
+                <label><input type="radio" id="weapon1" name="equipmentType" value="weapon1" onchange="updateImages()"> 무기 (1레벨)</label>
+                <label><input type="radio" id="weapon2" name="equipmentType" value="weapon2" onchange="updateImages()"> 무기 (2레벨)</label>
+                <label><input type="radio" id="weapon3" name="equipmentType" value="weapon3" onchange="updateImages()"> 무기 (3레벨)</label>
+                <label><input type="radio" id="weapon4" name="equipmentType" value="weapon4" onchange="updateImages()"> 무기 (4레벨)</label>
+                <label><input type="radio" id="weapon5" name="equipmentType" value="weapon5" onchange="updateImages()"> 무기 (5레벨)</label>
+                <label><input type="radio" id="armor1" name="equipmentType" value="armor1" onchange="updateImages()"> 방어구 (1레벨)</label>
+                <label><input type="radio" id="armor2" name="equipmentType" value="armor2" onchange="updateImages()"> 방어구 (2레벨)</label>
             </div>
             <br>
         </div>

@@ -2,6 +2,7 @@ const probabilities = {
     normal: {
         refinestone: {
             shadow: [100, 100, 100, 100, 60, 40, 40, 20, 20, 9],
+            shadoww: [100, 100, 100, 100, 60, 40, 40, 20, 20, 9],
             armor1: [100, 100, 100, 100, 60, 40, 40, 20, 20, 9, 8, 8, 8, 8, 7, 7, 7, 7, 5, 5],
             weapon1: [100, 100, 100, 100, 100, 100, 100, 60, 40, 19, 18, 18, 18, 18, 18, 17, 17, 17, 15, 15],
             weapon2: [100, 100, 100, 100, 100, 100, 60, 40, 20, 19, 18, 18, 18, 18, 18, 17, 17, 17, 15, 15],
@@ -12,6 +13,7 @@ const probabilities = {
         },
         refinecash: {
             shadow: [100, 100, 100, 100, 90, 70, 70, 40, 40, 20],
+            shadoww: [100, 100, 100, 100, 90, 70, 70, 40, 40, 20],
             armor1: [100, 100, 100, 100, 90, 70, 70, 40, 40, 20, 8, 8, 8, 8, 7, 7, 7, 7, 5, 5],
             weapon1: [100, 100, 100, 100, 100, 100, 100, 90, 70, 30, 18, 18, 18, 18, 18, 17, 17, 17, 15, 15],
             weapon2: [100, 100, 100, 100, 100, 100, 90, 70, 40, 30, 18, 18, 18, 18, 18, 17, 17, 17, 15, 15],
@@ -24,6 +26,7 @@ const probabilities = {
     event: {
         refinestone: {
             shadow: [100, 100, 100, 100, 60, 40, 40, 20, 20, 9],
+            shadoww: [100, 100, 100, 100, 60, 40, 40, 20, 20, 9],
             armor1: [100, 100, 100, 100, 60, 40, 40, 20, 20, 9, 20, 20, 16, 16, 15, 15, 14, 14, 10, 10],
             weapon1: [100, 100, 100, 100, 100, 100, 100, 60, 50, 35, 40, 40, 35, 35, 30, 30, 20, 20, 15, 15],
             weapon2: [100, 100, 100, 100, 100, 100, 85, 60, 60, 45, 40, 40, 35, 35, 30, 30, 20, 20, 15, 15],
@@ -34,6 +37,7 @@ const probabilities = {
         },
         refinecash: {
             shadow: [100, 100, 100, 100, 95, 80, 80, 60, 50, 35],
+            shadoww: [100, 100, 100, 100, 95, 80, 80, 60, 50, 35],
             armor1: [100, 100, 100, 100, 95, 80, 80, 60, 50, 35, 20, 20, 16, 16, 15, 15, 14, 14, 10, 10],
             weapon1: [100, 100, 100, 100, 100, 100, 100, 95, 85, 55, 40, 40, 35, 35, 30, 30, 20, 20, 15, 15],
             weapon2: [100, 100, 100, 100, 100, 100, 85, 70, 60, 45, 40, 40, 35, 35, 30, 30, 20, 20, 15, 15],
@@ -44,6 +48,93 @@ const probabilities = {
         }
     }
 };
+
+const refinestone = {
+    refinestone : {
+        shadow: ['Elunium', 'Elunium', 'Elunium', 'Elunium'],
+        shadoww: ['Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon'],
+        armor1: ['Elunium', 'Elunium', 'Elunium', 'Elunium', 'Elunium', 'Elunium', 'Elunium', 'Elunium', 'Elunium', 'Elunium',
+                'Carnium', 'Carnium', 'Carnium', 'Carnium', 'Carnium', 'Carnium', 'Carnium', 'Carnium', 'Carnium', 'Carnium'
+                ],
+        weapon1: ['Phracon', 'Phracon', 'Phracon', 'Phracon', 'Phracon', 'Phracon', 'Phracon', 'Phracon', 'Phracon', 'Phracon',
+                'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium'
+                ],
+        weapon2: ['Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon', 'Emveretarcon',
+                'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium'
+                ],
+        weapon3: ['Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon',
+                'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium'
+                ],
+        weapon4: ['Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon', 'Oridecon',
+                'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium', 'Bradium'
+                ],
+        weapon5: ['Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 'Etherdeocon', 
+                'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium', 'Etel_Bradium' 
+                ],
+        armor2: ['Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 'Ethernium', 
+                'HD_Ethernium', 'HD_Ethernium', 'HD_Ethernium', 'HD_Ethernium', 'HD_Ethernium', 'Etel_Carnium', 'Etel_Carnium', 'Etel_Carnium', 'Etel_Carnium', 'Etel_Carnium'
+        ],
+    },
+    refinecash : {
+        shadow: ['Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'HD_Elunium', 'HD_Elunium', 'HD_Elunium', 'HD_Elunium', 'HD_Elunium', 'HD_Elunium'],
+        shadoww: ['Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon'],
+        armor1: ['Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 'Enriched_Elunium', 
+                'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium', 'HD_Carnium'
+                ],
+        weapon1: ['Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 
+                'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium'
+                ],
+        weapon2: ['Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 
+                'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium'
+                ],
+        weapon3: ['Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 
+                'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium'
+                ],
+        weapon4: ['Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 'Enriched_Oridecon', 
+                'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium', 'HD_Bradium'
+                ],
+        weapon5: ['Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 'Enriched_Etherdeocon', 
+                'HD_Etherdeocon', 'HD_Etherdeocon', 'HD_Etherdeocon', 'HD_Etherdeocon', 'HD_Etherdeocon', 'HD_Etel_Bradium', 'HD_Etel_Bradium', 'HD_Etel_Bradium', 'HD_Etel_Bradium', 'HD_Etel_Bradium'
+        ],
+        armor2: ['Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 'Enriched_Ethernium', 
+                'Etel_Carnium', 'Etel_Carnium', 'Etel_Carnium', 'Etel_Carnium', 'Etel_Carnium', 'HD_Etel_Carnium', 'HD_Etel_Carnium', 'HD_Etel_Carnium', 'HD_Etel_Carnium', 'HD_Etel_Carnium'
+        ],
+    }
+}
+
+const refinecost = {
+    normal : {
+        shadow: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000],
+        armor1: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 
+                100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000
+                ],
+        weapon1: [1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 
+                100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000
+                ],
+        weapon2: [2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 2000, 
+                100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000
+                ],
+        weapon3: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 
+                100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000
+                ],
+        weapon4: [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 
+                100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000, 100000
+                ],
+        weapon5: [],
+        armor2: [],
+    },
+    cash : {
+        shadow: [],
+        armor1: [],
+        weapon1: [],
+        weapon2: [],
+        weapon3: [],
+        weapon4: [],
+        weapon5: [],
+        armor2: [],
+    }
+}
+
 
 const blessingUsageMap = {
     7: 1,
