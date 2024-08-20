@@ -4497,8 +4497,8 @@ var data = [
     {
         charname: "쿠왕인슈노",
         job: "Hyper Novice",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "한계돌파",
         stats: {
             str: 120,
@@ -4507,12 +4507,12 @@ var data = [
             int: 30,
             dex: 60,
             luk: 125,
-            pow: 100,
+            pow: 110,
             sta: 0,
             wis: 0,
             spl: 0,
             con: 0,
-            crt: 21
+            crt: 49
         },
         items: {
             headt:{
@@ -4540,10 +4540,10 @@ var data = [
                 desc: [""],
             },
             weapon: {
-                name: "",
-                id: "",
+                name: "+11 글레이시아 베이직 나이프",
+                id: "510062",
                 grade: "", 
-                desc: [""],
+                desc: ["설화 마력(물리-속성)", "설화 마력(물리-크기)", "설화 마력(물리-종족)", "설화 마력(ATK)"],
             },
             shield: {
                 name: "",
