@@ -69,7 +69,7 @@ function generateCharacterInfo(charData) {
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
             img.className = "itemimg";
-            img.src = item.id ? 'https://www.divine-pride.net/img/items/item/kROS/' + item.id : '../src/img/none.png';
+            img.src = item.id ? 'https://www.divine-pride.net/img/items/item/kROM/' + item.id : '../src/img/none.png';
             var itemgradeimg = document.createElement('img')
             itemgradeimg.className = "itemgrade";
             if (item.grade == "D"){
@@ -115,7 +115,7 @@ function generateCharacterInfo(charData) {
             var img = document.createElement('img');
             var itembottom = document.createElement('div');
             itembottom.className = "itembottom";
-            img.src = item.id ? 'https://www.divine-pride.net/img/items/item/kROS/' + item.id : '../src/img/none.png';
+            img.src = item.id ? 'https://www.divine-pride.net/img/items/item/kROM/' + item.id : '../src/img/none.png';
             img.className = "itemimg";
             var itemdesc = document.createElement('div');
             if (Array.isArray(item.desc)) {
