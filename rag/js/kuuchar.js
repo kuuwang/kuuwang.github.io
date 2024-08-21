@@ -844,10 +844,10 @@ var data = [
                 desc: ["CRI + 5"],
             },
             cgarment: {
-                name: "",
-                id: "",
+                name: "의상 인비지블 망토",
+                id: "20506",
                 grade: "", 
-                desc: [""],
+                desc: ["치명(걸칠것)", "크리티컬 스톤(듀얼)"],
             },
             sshoose: {
                 name: "+10 풀 페니트레이션 슈즈 쉐도우",
