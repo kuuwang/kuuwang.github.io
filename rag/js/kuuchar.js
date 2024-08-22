@@ -4787,8 +4787,8 @@ var data = [
     {
         charname: "쿠왕인리벨",
         job: "Night Watch",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "오토 파이어링 런쳐",
         stats: {
             str: 1,
@@ -4797,11 +4797,11 @@ var data = [
             int: 120,
             dex: 125,
             luk: 1,
-            pow: 21,
+            pow: 49,
             sta: 0,
             wis: 0,
             spl: 0,
-            con: 100,
+            con: 110,
             crt: 0
         },
         items: {
