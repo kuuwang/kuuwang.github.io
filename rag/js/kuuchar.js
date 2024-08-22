@@ -2111,6 +2111,68 @@ var data = [
                 desc: ["디스폴 카드", "지혜의 인장 3Lv", "생명의 증표"],
             },
         },
+        itemsb:{
+            cheadt:{
+                name: "의상 룬 헬름",
+                id: "31160",
+                grade: "", 
+                desc: ["로얄가드 스톤(상단)"],
+            },
+            cheadm: {
+                name: "의상 천사의 날개귀",
+                id: "19781",
+                grade: "", 
+                desc: ["로얄가드 스톤(중단)"],
+            },
+            cheadb: {
+                name: "의상 임페리얼 글로리",
+                id: "420029",
+                grade: "", 
+                desc: ["로얄가드 스톤(하단)"],
+            },
+            sarmor: {
+                name: "+10 M.임페리얼 가드 아머 쉐도우",
+                id: "24804",
+                grade: "", 
+                desc: [""],
+            },
+            sweapon: {
+                name: "+10 마스터 웨폰 쉐도우",
+                id: "24792",
+                grade: "", 
+                desc: [""],
+            },
+            sshield: {
+                name: "+? 마스터 쉴드 쉐도우",
+                id: "24793",
+                grade: "", 
+                desc: [""],
+            },
+            cgarment: {
+                name: "의상 인비지블 망토",
+                id: "20506",
+                grade: "", 
+                desc: ["임페리얼가드 스톤(걸칠것)"],
+            },
+            sshoose: {
+                name: "+10 M.임페리얼 가드 슈즈 쉐도우",
+                id: "24805",
+                grade: "", 
+                desc: [""],
+            },
+            saccr: {
+                name: "+10 M.임페리얼 가드 이어링 쉐도우",
+                id: "24806",
+                grade: "", 
+                desc: [""],
+            },
+            saccl: {
+                name: "+10 M.임페리얼 가드 펜던트 쉐도우",
+                id: "24807",
+                grade: "", 
+                desc: [""],
+            },
+        },
     },
     {
         charname: "쿠왕인로가",
