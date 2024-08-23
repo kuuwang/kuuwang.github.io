@@ -3917,8 +3917,8 @@ var data = [
     {
         charname: "쿠왕인성제",
         job: "천제",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "천명낙성",
         stats: {
             str: 130,
@@ -3927,11 +3927,11 @@ var data = [
             int: 50,
             dex: 110,
             luk: 1,
-            pow: 100,
+            pow: 110,
             sta: 0,
             wis: 0,
             spl: 0,
-            con: 21,
+            con: 49,
             crt: 0
         },
         items: {
