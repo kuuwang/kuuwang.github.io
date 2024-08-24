@@ -2177,9 +2177,9 @@ var data = [
     {
         charname: "쿠왕인로가",
         job: "Imperial Guard",
-        clvl: 230,
-        jlvl: 45,
-        battlestyle: "오버 슬래쉬",
+        clvl: 240,
+        jlvl: 54,
+        battlestyle: "래디언트 스피어",
         stats: {
             str: 120,
             agi: 60,
@@ -2187,7 +2187,7 @@ var data = [
             int: 100,
             dex: 110,
             luk: 100,
-            pow: 100,
+            pow: 110,
             sta: 0,
             wis: 0,
             spl: 0,
