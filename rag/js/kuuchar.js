@@ -5222,8 +5222,8 @@ var data = [
     {
         charname: "쿠왕인카게",
         job: "Shinkiro",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "풍마수리검",
         stats: {
             str: 120,
@@ -5232,11 +5232,11 @@ var data = [
             int: 50,
             dex: 120,
             luk: 90,
-            pow: 100,
+            pow: 110,
             sta: 0,
             wis: 0,
             spl: 0,
-            con: 21,
+            con: 49,
             crt: 0
         },
         items: {
