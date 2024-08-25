@@ -5367,8 +5367,8 @@ var data = [
     {
         charname: "쿠왕인오보",
         job: "Shiranui",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "쿠나이",
         stats: {
             str: 120,
@@ -5377,11 +5377,11 @@ var data = [
             int: 50,
             dex: 120,
             luk: 90,
-            pow: 100,
+            pow: 110,
             sta: 0,
             wis: 0,
             spl: 0,
-            con: 21,
+            con: 49,
             crt: 0
         },
         items: {
