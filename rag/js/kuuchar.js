@@ -5657,8 +5657,8 @@ var data = [
     {
         charname: "쿠왕인도람",
         job: "Spirit Handler",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "호고공 난타",
         stats: {
             str: 110,
@@ -5667,7 +5667,7 @@ var data = [
             int: 70,
             dex: 100,
             luk: 125,
-            pow: 100,
+            pow: 110,
             sta: 0,
             wis: 0,
             spl: 0,
