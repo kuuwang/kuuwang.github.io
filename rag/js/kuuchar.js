@@ -6553,10 +6553,10 @@ var data = [
         },
         items: {
             headt:{
-                name: "물어뜯는 라이드워드 [1]",
-                id: "19404",
+                name: "라이징 서클릿 [1]",
+                id: "400715",
                 grade: "", 
-                desc: [""],
+                desc: ["","","캐스터5Lv","라이징 파티클(궁수계열)"],
             },
             headm: {
                 name: "부스터 가면 A타입 [1]",
@@ -6698,10 +6698,10 @@ var data = [
         },
         items: {
             headt:{
-                name: "물어뜯는 라이드워드 [1]",
-                id: "19404",
+                name: "라이징 서클릿 [1]",
+                id: "400715",
                 grade: "", 
-                desc: [""],
+                desc: ["","","캐스터5Lv","라이징 파티클(궁수계열)"],
             },
             headm: {
                 name: "부스터 가면 A타입 [1]",
@@ -6843,20 +6843,20 @@ var data = [
         },
         items: {
             headt:{
-                name: "",
-                id: "",
+                name: "라이징 서클릿 [1]",
+                id: "400715",
                 grade: "", 
-                desc: [""],
+                desc: ["","","캐스터5Lv","라이징 파티클(소환사계열)"],
             },
             headm: {
-                name: "",
-                id: "",
+                name: "부스터 가면 A타입 [1]",
+                id: "410018",
                 grade: "", 
                 desc: [""],
             },
             headb: {
-                name: "",
-                id: "",
+                name: "부스터 스카프 A타입",
+                id: "420153",
                 grade: "", 
                 desc: [""],
             },
@@ -6988,20 +6988,20 @@ var data = [
         },
         items: {
             headt:{
-                name: "",
-                id: "",
+                name: "라이징 서클릿 [1]",
+                id: "400715",
                 grade: "", 
-                desc: [""],
+                desc: ["","","캐스터5Lv","라이징 파티클(소환사계열)"],
             },
             headm: {
-                name: "",
-                id: "",
+                name: "부스터 가면 A타입 [1]",
+                id: "410018",
                 grade: "", 
                 desc: [""],
             },
             headb: {
-                name: "",
-                id: "",
+                name: "부스터 스카프 B타입",
+                id: "420154",
                 grade: "", 
                 desc: [""],
             },
