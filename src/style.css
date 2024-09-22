@@ -640,7 +640,7 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 100%;
     border: 1px solid rgba(128,128,128,0.5);
 }
-#charStatus table .statusTableBlank{
+#charStatus table .stBlank{
     width: 5px !important;
 }
 
@@ -661,24 +661,24 @@ input[type="number"]::-webkit-inner-spin-button {
     text-align: right;
     padding: 1px;
 }
-#charStatus .statusTableBorderT{
+#charStatus .stBorderT{
     border-top: 1px solid rgba(198,198,198,1);
     height: 2px;
 }
-#charStatus .statusTableBorderB{
+#charStatus .stBorderB{
     border-bottom: 1px solid rgba(198,198,198,1);
 }
-#charStatus .statusTableBorderL{
+#charStatus .stBorderL{
     border-left: 1px solid rgba(198,198,198,1);
 }
-#charStatus .statusTableBorderR{
+#charStatus .stBorderR{
     border-right: 1px solid rgba(198,198,198,1);
 }
-#charStatus .statusTablePlus{
+#charStatus .stPlus{
     width: 5px;
 }
 
-#charStatus .statusTableBG{
+#charStatus .stBG{
     background-color: rgba(240,240,240,0.5);
 }
 
