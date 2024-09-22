@@ -555,3 +555,163 @@ html, body, table{
 input[type="radio"]:checked + label .btn_bg {
     content: url('../src/img/refining/slot_select_blue0.png');
 }
+
+/* simulator */
+#joblist{
+    display:flow-root;
+    float: left;
+    width: 180px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    margin-top: 3px;
+}
+#joblist table{
+    margin: auto;
+    width: 100%;
+}
+#joblist tr td{
+    text-align: center;
+}
+
+#joblist img:hover{
+    cursor: pointer;
+}
+
+
+#statusContainer{
+    margin-left: 200px;
+}
+
+
+input[type="number"]{
+    background: transparent;
+    border: hidden;
+    padding: 0;
+    width: 30px;
+    text-align:right;
+    font-size: 12px;
+    font-family: 'dotum';
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+#charImg{
+    float: left;
+}
+
+
+#charInfo{
+    float: left;
+}
+
+
+#charInfo table{
+    border: 1px solid rgb(206,206,206);
+    border-collapse: collapse;
+    width: 360px;
+}
+
+
+
+
+.classtdContainer{
+    width: 110px;
+    height: 10px;
+}
+
+#statusContainer{
+    float: left;
+    width: 500px;
+    padding: 20px;
+}
+#charStatus{
+    float: left;
+    clear: both;
+}
+
+#charStatus table{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid rgba(128,128,128,0.5);
+}
+#charStatus table .statusTableBlank{
+    width: 5px !important;
+}
+
+#charStatus table .statusInc{
+    color: #adbde7;
+    -webkit-text-stroke:0.5px #6b737b;
+    width: 10px;
+    text-align:center;
+}
+#charStatus table .statusJobBonuses{
+    color: rgba(128, 128, 128, 1);
+    text-align: right;
+}
+#charStatus table td{
+    width: 30px;
+    font-family: "Dotum";
+    font-size: 1em;
+    text-align: right;
+    padding: 1px;
+}
+#charStatus .statusTableBorderT{
+    border-top: 1px solid rgba(198,198,198,1);
+    height: 2px;
+}
+#charStatus .statusTableBorderB{
+    border-bottom: 1px solid rgba(198,198,198,1);
+}
+#charStatus .statusTableBorderL{
+    border-left: 1px solid rgba(198,198,198,1);
+}
+#charStatus .statusTableBorderR{
+    border-right: 1px solid rgba(198,198,198,1);
+}
+#charStatus .statusTablePlus{
+    width: 5px;
+}
+
+#charStatus .statusTableBG{
+    background-color: rgba(240,240,240,0.5);
+}
+
+#charStatus .statusName{
+    font-weight: bold;
+    text-align: left;
+}
+#charStatus .TstatusName{
+    background: linear-gradient(to bottom, 
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255)
+);
+}
+
+#skillContainer{
+    float: right;
+    margin-right: 150px;
+}
