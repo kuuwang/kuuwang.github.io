@@ -144,277 +144,278 @@
             </tr>
           </table>
         </div>
+    </div>
+    <div id="simulatorContainer">
+      <div id="statusContainer">
+        <!-- 직업 이미지 -->
+        <!-- 직업 정보 -->
+        <div id="charInfo">
+          <table>
+            <tr>
+              <td class="titlebar"><input id="charName" value="캐릭터명"></td>
+            </tr>
+            <tr>
+              <td>　Lv. <input type="number" id="baseLV" value="1">　/　<span id="Jobname">Novice</span>　/　J Lv. <input type="number" id="jobLV" value="1"></td>
+            </tr>
+            <tr>
+              <td>　HP. <span id="statHP">55</span>　|　SP. <span id="statSP">11</span></td>
+            </tr>
+          </table>
+        </div>
+        <!-- 직업 스테이터스 -->
+        <div id="charStatus">
+          <table>
+            <tr>
+              <td colspan="19" class="statusName titlebar"><div class="circle"></div>스테이터스</td>
+            </tr>
+            <tr>
+              <td colspan="15"></td>
+            </tr>
+            <tr>
+              <td rowspan="12" class="stBlank"></td>
+              <td class="statusName">Str</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSTR" value="1"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSTR" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costSTR">2</span></td>
+              <td rowspan="12" class="stBlank"></td>
+              <td class="statusName">Atk</td>
+              <td><span id="statATK">1</span></td>
+              <td>+</td>
+              <td>0</td>
+              <td rowspan="11" class="stBlank"></td>
+              <td class="statusName">Def</td>
+              <td><span id="statDEF">1</span></td>
+              <td>+</td>
+              <td>0</td>
+              <td rowspan="12" class="stBlank"></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Agi</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statAGI" value="1"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemAGI" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costAGI">2</span></td>
+              <td class="statusName">Matk</td>
+              <td><span id="statMATK">1</span></td>
+              <td>+</td>
+              <td id="itemATK">0</td>
+              <td class="statusName">Mdef</td>
+              <td><span id="statMDEF">1</span></td>
+              <td>+</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Vit</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statVIT" value="1"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemVIT" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costVIT">2</span></td>
+              <td class="statusName">Hit</td>
+              <td colspan="3"><span id="statHIT">177</span></td>
+              <td class="statusName">Flee</td>
+              <td><span id="statFLEE">102</span></td>
+              <td>+</td>
+              <td><span id="statPERFECTDODGE">1</span></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Int</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statINT" value="1"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemINT" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costINT">2</span></td>
+              <td class="statusName">Critical</td>
+              <td colspan="3"><span id="statCRIT">1</span></td>
+              <td class="statusName">ASPD</td>
+              <td class="statusJobBonuses" colspan="2">(<span id="weaponASPD">156</span>)</td>
+              <td><span id="aspd">156</span></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Dex</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statDEX" value="1"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemDEX" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costDEX">2</span></td>
+              <td class="statusName">Heal</td>
+              <td><span id="statHEALmin">1</span></td>
+              <td id="statATK">~</td>
+              <td><span id="statHEALmax">1</span></td>
+              <td class="statusName">Casting</td>
+              <td id="statATK" class="statusJobBonuses" colspan="2">(<span id="statCasting">1</span>%)</td>
+              <td><span id="totalCasting">1</span></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Luk</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statLUK" value="1"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemLUK" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costLUK">2</span></td>
+              <td class="statusName" colspan="4">Status Point</td>
+              <td colspan="4"><span id="statpoint">48</span></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="9" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td colspan="19" class="statusName TstatusName stBorderT stBorderB"><i class="fa-solid fa-angles-down"></i> 특성 스테이터스</td>
+            </tr>
+            <tr>
+              <td colspan="15"></td>
+            </tr>
+            <tr>
+              <td rowspan="15" class="stBlank"></td>
+              <td class="statusName">Pow</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statPOW" value="0"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemPOW" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
+              <td rowspan="15" class="stBlank"></td>
+              <td class="statusName">P.Atk</td>
+              <td colspan="3"><span id="statPATK">0</span></td>
+              <td rowspan="11" class="stBlank"></td>
+              <td class="statusName">Res</td>
+              <td colspan="3"><span id="statRES">0</span></td>
+              <td rowspan="15" class="stBlank"></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Sta</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSTA" value="0"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSTA" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
+              <td class="statusName">S.Matk</td>
+              <td colspan="3"><span id="statSMATK">0</span></td>
+              <td class="statusName">Mres</td>
+              <td colspan="3"><span id="statMRES">0</span></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4" class="stBorderT"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Wis</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statWIS" value="0"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemWIS" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
+              <td class="statusName">H.Plus</td>
+              <td colspan="3"><span id="statHPLUS">0</span></td>
+              <td class="statusName" colspan="4"></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Spl</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSPL" value="0"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSPL" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
+              <td class="statusName">C.Rate</td>
+              <td colspan="3"><span id="statCRATE">0</span></td>
+              <td class="statusName" colspan="4"></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Con</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statCON" value="0"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemCON" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
+              <td colspan="4"></td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="4" class="stBorderT"></td>
+              <td colspan="4"></td>
+            </tr>
+            <tr>
+              <td class="statusName">Crt</td>
+              <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statCRT" value="0"></td>
+              <td class="stBorderT stBorderB stBG stPlus">+</td>
+              <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
+              <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemCRT" value="0"></td>
+              <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
+              <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
+              <td class="statusName" colspan="4">T.Status Point</td>
+              <td colspan="4"><span id="tstatpoint">0</span></td>
+            </tr>
+            <tr>
+              <td colspan="7"></td>
+              <td colspan="11" class="stBorderT"></td>
+            </tr>
+          </table>
+        </div>
       </div>
-    <div id="statusContainer">
-      <!-- 직업 이미지 -->
-      <!-- 직업 정보 -->
-      <div id="charInfo">
-        <table>
-          <tr>
-            <td class="titlebar"><input id="charName" value="캐릭터명"></td>
-          </tr>
-          <tr>
-            <td>　Lv. <input type="number" id="baseLV" value="1">　/　<span id="Jobname">Novice</span>　/　J Lv. <input type="number" id="jobLV" value="1"></td>
-          </tr>
-          <tr>
-            <td>　HP. <span id="statHP">55</span>　|　SP. <span id="statSP">11</span></td>
-          </tr>
-        </table>
-      </div>
-      <!-- 직업 스테이터스 -->
-      <div id="charStatus">
-        <table>
-          <tr>
-            <td colspan="19" class="statusName titlebar"><div class="circle"></div>스테이터스</td>
-          </tr>
-          <tr>
-            <td colspan="15"></td>
-          </tr>
-          <tr>
-            <td rowspan="12" class="stBlank"></td>
-            <td class="statusName">Str</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSTR" value="1"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSTR" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costSTR">2</span></td>
-            <td rowspan="12" class="stBlank"></td>
-            <td class="statusName">Atk</td>
-            <td><span id="statATK">1</span></td>
-            <td>+</td>
-            <td>0</td>
-            <td rowspan="11" class="stBlank"></td>
-            <td class="statusName">Def</td>
-            <td><span id="statDEF">1</span></td>
-            <td>+</td>
-            <td>0</td>
-            <td rowspan="12" class="stBlank"></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Agi</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statAGI" value="1"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemAGI" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costAGI">2</span></td>
-            <td class="statusName">Matk</td>
-            <td><span id="statMATK">1</span></td>
-            <td>+</td>
-            <td id="itemATK">0</td>
-            <td class="statusName">Mdef</td>
-            <td><span id="statMDEF">1</span></td>
-            <td>+</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Vit</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statVIT" value="1"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemVIT" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costVIT">2</span></td>
-            <td class="statusName">Hit</td>
-            <td colspan="3"><span id="statHIT">177</span></td>
-            <td class="statusName">Flee</td>
-            <td><span id="statFLEE">102</span></td>
-            <td>+</td>
-            <td><span id="statPERFECTDODGE">1</span></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Int</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statINT" value="1"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemINT" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costINT">2</span></td>
-            <td class="statusName">Critical</td>
-            <td colspan="3"><span id="statCRIT">1</span></td>
-            <td class="statusName">ASPD</td>
-            <td class="statusJobBonuses" colspan="2">(<span id="weaponASPD">156</span>)</td>
-            <td><span id="aspd">156</span></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Dex</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statDEX" value="1"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemDEX" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costDEX">2</span></td>
-            <td class="statusName">Heal</td>
-            <td><span id="statHEALmin">1</span></td>
-            <td id="statATK">~</td>
-            <td><span id="statHEALmax">1</span></td>
-            <td class="statusName">Casting</td>
-            <td id="statATK" class="statusJobBonuses" colspan="2">(<span id="statCasting">1</span>%)</td>
-            <td><span id="totalCasting">1</span></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Luk</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statLUK" value="1"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemLUK" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costLUK">2</span></td>
-            <td class="statusName" colspan="4">Status Point</td>
-            <td colspan="4"><span id="statpoint">48</span></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="9" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td colspan="19" class="statusName TstatusName stBorderT stBorderB"><i class="fa-solid fa-angles-down"></i> 특성 스테이터스</td>
-          </tr>
-          <tr>
-            <td colspan="15"></td>
-          </tr>
-          <tr>
-            <td rowspan="15" class="stBlank"></td>
-            <td class="statusName">Pow</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statPOW" value="0"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemPOW" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-            <td rowspan="15" class="stBlank"></td>
-            <td class="statusName">P.Atk</td>
-            <td colspan="3"><span id="statPATK">0</span></td>
-            <td rowspan="11" class="stBlank"></td>
-            <td class="statusName">Res</td>
-            <td colspan="3"><span id="statRES">0</span></td>
-            <td rowspan="15" class="stBlank"></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Sta</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSTA" value="0"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSTA" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-            <td class="statusName">S.Matk</td>
-            <td colspan="3"><span id="statSMATK">0</span></td>
-            <td class="statusName">Mres</td>
-            <td colspan="3"><span id="statMRES">0</span></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4" class="stBorderT"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Wis</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statWIS" value="0"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemWIS" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-            <td class="statusName">H.Plus</td>
-            <td colspan="3"><span id="statHPLUS">0</span></td>
-            <td class="statusName" colspan="4"></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Spl</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSPL" value="0"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSPL" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-            <td class="statusName">C.Rate</td>
-            <td colspan="3"><span id="statCRATE">0</span></td>
-            <td class="statusName" colspan="4"></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Con</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statCON" value="0"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemCON" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-            <td colspan="4"></td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="4" class="stBorderT"></td>
-            <td colspan="4"></td>
-          </tr>
-          <tr>
-            <td class="statusName">Crt</td>
-            <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statCRT" value="0"></td>
-            <td class="stBorderT stBorderB stBG stPlus">+</td>
-            <td class="statusJobBonuses stBorderT stBorderB stBG">(0)</td>
-            <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemCRT" value="0"></td>
-            <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
-            <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-            <td class="statusName" colspan="4">T.Status Point</td>
-            <td colspan="4"><span id="tstatpoint">0</span></td>
-          </tr>
-          <tr>
-            <td colspan="7"></td>
-            <td colspan="11" class="stBorderT"></td>
-          </tr>
-        </table>
+      <div id="skillContainer">
       </div>
     </div>
-    </div>
-    <div id="skillContainer">
-
-    </div>
-    <script src="./js/jobdata.js"></script>
+    <script src="./js/jobdata.js"></script>  
+    <script src="./js/job.js"></script>
+    <script src="./js/skilldata.js"></script> 
+    <script src="./js/skill.js"></script>   
     <script src="./js/statusdata.js"></script>
     <script src="./js/status.js"></script>
-    <script src="./js/skilldata.js"></script>
-    <script src="./js/skill.js"></script>
 </body>
 </html>

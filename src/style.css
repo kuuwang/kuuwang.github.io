@@ -578,7 +578,7 @@ input[type="radio"]:checked + label .btn_bg {
 }
 
 
-#statusContainer{
+#simulatorContainer{
     margin-left: 200px;
 }
 
@@ -628,8 +628,8 @@ input[type="number"]::-webkit-inner-spin-button {
 #statusContainer{
     float: left;
     width: 500px;
-    padding: 20px;
 }
+
 #charStatus{
     float: left;
     clear: both;
@@ -710,8 +710,27 @@ input[type="number"]::-webkit-inner-spin-button {
     rgb(255, 255, 255)
 );
 }
-
 #skillContainer{
-    float: right;
-    margin-right: 150px;
+
+    float: left;
+    width: 700px;
+}
+
+.skillTable{
+    border: 1px solid rgb(170,170,170)
+}
+
+.skillBlock{
+    display: inline-block;
+    width: 70px;
+    height: 50px;
+    text-align: center;
+}
+
+
+
+
+.skillBlock .skillName{
+    font-size: 11px;
+    color: rgb(99,99,99)
 }
