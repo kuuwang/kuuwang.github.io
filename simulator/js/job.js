@@ -19,7 +19,6 @@ function updateJob(image) {
     const jobname = image.alt;
     const jobIdString = image.dataset.db; 
     const jobIds = JOBID[jobIdString]; 
-    console.log(jobIds)
     
     // 직업 계층 구조 가져오기
     const JobInherit = getJobInherit(jobIds);
@@ -34,7 +33,6 @@ function updateJob(image) {
     // 직업 계층에 따라 모든 스킬 ID를 가져오는 로직
     JobInherit.forEach(job => {
         const skills = SKILL_TREEVIEW_FOR_JOB[job];
-        console.log(Object.keys(skills))
         if (skills) {
             for (const skillId in skills) {
                 skillIds.push(skills[skillId]); // 스킬 ID를 배열에 추가
@@ -42,5 +40,5 @@ function updateJob(image) {
         }
     });
     // 스킬 트리 표시
-    createSkillGrid(JobInherit, skillIds); // 스킬 그리드 생성 함수 호출
+    createSkillGrid(JobInherit); // 스킬 그리드 생성 함수 호출
 }
