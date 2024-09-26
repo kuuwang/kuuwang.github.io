@@ -18,17 +18,19 @@ function getJobInherit(jobId) {
 function updateJob(image) {
     const jobIdString = image.dataset.db; 
     const jobIds = JOBID[jobIdString]; 
-    console.log(jobIds)
-
     const JobInherit = getJobInherit(jobIds);
-    JobInherit.splice(0, 1);
-        
-    if (JOBGROUP_H.includes(JobInherit[2])) {
-        JobInherit.splice(1, 1); 
-    }
 
+    JobInherit.splice(0, 1);        
+    if (JOBGROUP_H.includes(JobInherit[2])) {
+       JobInherit.splice(1, 1); 
+    }
     const charClass = document.getElementById("Jobname");
     charClass.innerText = PCJobNameTable[jobIds];
+    var charValue = JOB_SETTING[jobIds];
+    const charBaseLV = document.getElementById("baseLV");
+    charBaseLV.value = charValue[0];
+    const charJobLV = document.getElementById("jobLV");
+    charJobLV.value = charValue[1];
 
     const skillIds = [];
 
