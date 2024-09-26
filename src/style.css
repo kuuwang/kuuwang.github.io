@@ -711,20 +711,58 @@ input[type="number"]::-webkit-inner-spin-button {
 );
 }
 #skillContainer{
-
     float: left;
-    width: 700px;
 }
 
+.jobContainer{
+    border: 10px;
+    padding: 2px;
+    border: 1px solid rgb(198,198,198);
+    border-radius: 5px;
+}
+
+.jobName{
+    font-weight: bold;
+    background: linear-gradient(to bottom, 
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255)
+);
+}
+
+
 .skillTable{
-    border: 1px solid rgb(170,170,170)
+    border: 1px solid rgb(198,198,198);
 }
 
 .skillBlock{
-    display: inline-block;
+    display: table-cell;
+    vertical-align: middle;
     width: 70px;
-    height: 50px;
+    height: 60px;
     text-align: center;
+    border-radius: 5px;
+}
+
+.skillBlock:hover{
+    background-color: rgba(67, 111, 201, 0.3);
 }
 
 
@@ -732,5 +770,104 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .skillBlock .skillName{
     font-size: 11px;
-    color: rgb(99,99,99)
+    color: rgb(99,99,99);
+}
+
+.skillBlock .skillLevel{
+    font-weight: bold;
+    font-size: 11px;
+    color: rgb(99,99,99);
+}
+
+.totalSkillPoints{
+    text-align: right;
+    background: linear-gradient(to bottom, 
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255)
+);
+}
+
+#resetAllSkills{
+    background: linear-gradient(to bottom, 
+    rgb(222,222,222),
+    rgb(239,239,239),
+    rgb(239,239,239),
+    rgb(247,247,247),
+    rgb(222,222,222),
+    rgb(239,239,239),
+    rgb(239,239,239),
+    rgb(247,247,247),
+    rgb(247,247,247),
+    rgb(255,255,255),
+    rgb(255,255,255),
+    rgb(255,255,255),
+    rgb(255,255,255),
+    rgb(255,255,255),
+    rgb(255,255,255),
+    rgb(247,247,247),
+    rgb(255,255,255)
+    );
+    border: 1px solid rgb(173,173,173);
+    border-radius: 3px;
+}
+#resetAllSkills:hover{
+    background: linear-gradient(to bottom, 
+    rgb(198,206,222),
+    rgb(206,214,239),
+    rgb(198,214,239),
+    rgb(189,206,239),
+    rgb(165,181,214),
+    rgb(173,189,231),
+    rgb(165,189,231),
+    rgb(165,189,231),
+    rgb(165,189,239),
+    rgb(165,189,239),
+    rgb(173,198,247),
+    rgb(173,198,247),
+    rgb(181,206,247),
+    rgb(181,206,247),
+    rgb(206,222,255),
+    rgb(206,222,255),
+    rgb(222,231,247)
+    );
+}
+#resetAllSkills:active{
+    margin: 1px 0 0 1px;
+    background: linear-gradient(to bottom, 
+    rgb(198,206,222),
+    rgb(206,214,239),
+    rgb(198,214,239),
+    rgb(189,206,239),
+    rgb(165,181,214),
+    rgb(173,189,231),
+    rgb(165,189,231),
+    rgb(165,189,231),
+    rgb(165,189,239),
+    rgb(165,189,239),
+    rgb(173,198,247),
+    rgb(173,198,247),
+    rgb(181,206,247),
+    rgb(181,206,247),
+    rgb(206,222,255),
+    rgb(206,222,255),
+    rgb(222,231,247)
+    );
 }
