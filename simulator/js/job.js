@@ -22,7 +22,7 @@ function updateJob(image) {
 
     JobInherit.splice(0, 1);        
     if (JOBGROUP_H.includes(JobInherit[2])) {
-       JobInherit.splice(1, 1); 
+        JobInherit.splice(1, 1); 
     }
     const charClass = document.getElementById("Jobname");
     charClass.innerText = PCJobNameTable[jobIds];
@@ -31,11 +31,8 @@ function updateJob(image) {
     charBaseLV.value = charValue[0];
     const charJobLV = document.getElementById("jobLV");
     charJobLV.value = charValue[1];
-
-    const skillIds = [];
-
     JobInherit.forEach(job => {
-        const skills = SKILL_TREEVIEW_FOR_JOB[job];
+      const skills = SKILL_TREEVIEW_FOR_JOB[job];
         if (skills) {
             for (const skillId in skills) {
                 skillIds.push(skills[skillId]); 
