@@ -73,12 +73,20 @@ function createSkillGrid(JobInherit) {
 
 
                     cell.innerHTML = `
-                        <div class="skillBlock">
+                        <div id="skillDiv_${skillId}"class="skillBlock">
                             <div class="skillName">${skillName}</div>
                             <img src="https://static.divine-pride.net/images/skill/${skillId}.png" alt="${skillInfo.SkillName}" onclick="SkillDisplay(${skillId}, ${job})">
                             <div class="skillLevel">${skillLv}</div>
                         </div>
                     `;
+
+                    cell.addEventListener('mouseover', () => {
+                        highlightPrerequisiteSkills(skillId, job);
+                    });
+        
+                    cell.addEventListener('mouseout', () => {
+                        resetPrerequisiteSkills();
+                    });
                 } else {
                     cell.innerHTML = `<div class="skillBlock"><img src='../src/img/simulator/none.png'></div>`;
                 }
@@ -91,6 +99,42 @@ function createSkillGrid(JobInherit) {
     });
 }
 
+function highlightPrerequisiteSkills(skillId, job) {
+    const skillInfo = SKILL_INFO_LIST[skillId];
+
+    // Highlight prerequisite skills if they exist
+    if (skillInfo.NeedSkillList) {
+        const specificRequirements = skillInfo.NeedSkillList[job];
+        if (specificRequirements) {
+            for (const [requiredSkillId] of specificRequirements) {
+                const requiredSkillElementId = "skillDiv_" + requiredSkillId;
+                const requiredSkillDiv = document.getElementById(requiredSkillElementId);
+                if (requiredSkillDiv) {
+                    requiredSkillDiv.style.backgroundColor = "rgba(255, 100, 100, 0.5)";
+                }
+            }
+        }
+    }
+
+    // Check _NeedSkillList as well
+    if (skillInfo._NeedSkillList) {
+        for (const [requiredSkillId] of skillInfo._NeedSkillList) {
+            const requiredSkillElementId = "skillDiv_" + requiredSkillId;
+            const requiredSkillDiv = document.getElementById(requiredSkillElementId);
+            if (requiredSkillDiv) {
+                requiredSkillDiv.style.backgroundColor = "rgba(255, 100, 100, 0.5)";
+            }
+        }
+    }
+}
+
+function resetPrerequisiteSkills() {
+    // Reset background color for all skill blocks
+    const skillBlocks = document.querySelectorAll('.skillBlock');
+    skillBlocks.forEach(block => {
+        block.style.backgroundColor = ""; // Reset to original background
+    });
+}
 
 
 function SkillDisplay(skillId, job) {
@@ -118,7 +162,6 @@ function checkAndIncreaseSkills(skillId, job) {
     // Check if there is a NeedSkillList for specific job requirements
     if (skillInfo.NeedSkillList) {
         const specificRequirements = skillInfo.NeedSkillList[job];
-        console.log(specificRequirements)
         if (specificRequirements) {
             if (specificRequirements.length === 0) {
                 return; // No skills needed for this job
