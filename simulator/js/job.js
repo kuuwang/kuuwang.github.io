@@ -31,6 +31,9 @@ function updateJob(image) {
     charBaseLV.value = charValue[0];
     const charJobLV = document.getElementById("jobLV");
     charJobLV.value = charValue[1];
+
+    charJobLV.addEventListener("input", calstatBonus.bind(image)); // Bind 'this' (image)
+
     const skillIds = [];
     JobInherit.forEach(job => {
       const skills = SKILL_TREEVIEW_FOR_JOB[job];
@@ -41,4 +44,7 @@ function updateJob(image) {
         }
     });
     createSkillGrid(JobInherit); 
+    calstatBonus.bind(image)();
+    calstatpoint();
+    caltstatpoint();
 }

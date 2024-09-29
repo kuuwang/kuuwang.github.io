@@ -1,4 +1,59 @@
-const charClass = document.getElementById('charClass');
+
+function calstatBonus(){
+    const jobLV = parseFloat(document.getElementById("jobLV").value);
+    const jobName = this.dataset.db;
+
+    const jobData = combinedStatPlusInfo.find(job => job.job === jobName);
+    const bonusStats = {
+        STR: 0,
+        AGI: 0,
+        VIT: 0,
+        INT: 0,
+        DEX: 0,
+        LUK: 0,
+        POW: 0,
+        STA: 0,
+        WIS: 0,
+        SPL: 0,
+        CON: 0,
+        CRT: 0
+    };
+
+    for (let level = 0; level < jobLV; level++) {
+        const levelStats = jobData.stats[level];
+
+        if (levelStats) {
+            for (const stat of levelStats) {
+                if (bonusStats.hasOwnProperty(stat)) {
+                    bonusStats[stat]++;
+                }
+            }
+        }
+    }
+
+    for (const stat in bonusStats) {
+        document.getElementById(`bonus${stat}`).textContent = bonusStats[stat];
+        document.getElementById(`item${stat}`).value = bonusStats[stat];
+    }
+    calstatATK();
+    calstatMATK();
+    calstatDEF();
+    calstatMDEF();
+    calstatHIT();
+    calstatFLEE();
+    calstatPERFECTDODGE();
+    calstatCRIT();
+    calstatHEAL();
+    calstatCasting();
+
+    calstatPATK();
+    calstatSMATK();
+    calstatRES();
+    calstatMRES();
+    calstatHPLUS();
+    calstatCRATE();
+}
+
 
 function calstatATK(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -18,16 +73,10 @@ function calstatATK(){
     var statATK = (baseLV / 4) + (STR) + (DEX/5) + (LUK/3) + (POW * 5)
     document.getElementById('statATK').textContent = Math.floor(statATK)
 }
-document.getElementById("baseLV").addEventListener("input", calstatATK);
-document.getElementById("statSTR").addEventListener("input", calstatATK);
-document.getElementById("itemSTR").addEventListener("input", calstatATK);
-document.getElementById("statDEX").addEventListener("input", calstatATK);
-document.getElementById("itemDEX").addEventListener("input", calstatATK);
-document.getElementById("statLUK").addEventListener("input", calstatATK);
-document.getElementById("itemLUK").addEventListener("input", calstatATK);
-document.getElementById("statPOW").addEventListener("input", calstatATK);
-document.getElementById("itemPOW").addEventListener("input", calstatATK);
-calstatATK();
+
+['baseLV', 'statSTR', 'itemSTR', 'statDEX', 'itemDEX', 'statLUK', 'itemLUK', 'statPOW', 'itemPOW'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatATK);
+});
 
 function calstatMATK(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -47,16 +96,9 @@ function calstatMATK(){
     var statMATK = Math.floor(baseLV / 4) + (INT) + Math.floor(INT/2) + Math.floor(DEX/5) + Math.floor(LUK/3) + (SPL * 5)
     document.getElementById('statMATK').textContent = Math.floor(statMATK)
 }
-document.getElementById("baseLV").addEventListener("input", calstatMATK);
-document.getElementById("statINT").addEventListener("input", calstatMATK);
-document.getElementById("itemINT").addEventListener("input", calstatMATK);
-document.getElementById("statDEX").addEventListener("input", calstatMATK);
-document.getElementById("itemDEX").addEventListener("input", calstatMATK);
-document.getElementById("statLUK").addEventListener("input", calstatMATK);
-document.getElementById("itemLUK").addEventListener("input", calstatMATK);
-document.getElementById("statSPL").addEventListener("input", calstatMATK);
-document.getElementById("itemSPL").addEventListener("input", calstatMATK);
-calstatMATK();
+['baseLV', 'statINT', 'itemINT', 'statDEX', 'itemDEX', 'statLUK', 'itemLUK', 'statSPL', 'itemSPL'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatMATK);
+});
 
 function calstatDEF(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -70,12 +112,9 @@ function calstatDEF(){
     var statDEF = (VIT / 2) + (AGI / 5) + (baseLV / 2)
     document.getElementById('statDEF').textContent = Math.floor(statDEF)
 }
-document.getElementById("baseLV").addEventListener("input", calstatDEF);
-document.getElementById("statAGI").addEventListener("input", calstatDEF);
-document.getElementById("itemAGI").addEventListener("input", calstatDEF);
-document.getElementById("statVIT").addEventListener("input", calstatDEF);
-document.getElementById("itemVIT").addEventListener("input", calstatDEF);
-calstatDEF();
+['baseLV', 'statAGI', 'itemAGI', 'statVIT', 'itemVIT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatDEF);
+});
 
 function calstatMDEF(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -92,14 +131,9 @@ function calstatMDEF(){
     var statMDEF = INT + (VIT / 5) + (DEX / 5) + (baseLV / 4)
     document.getElementById('statMDEF').textContent = Math.floor(statMDEF)
 }
-document.getElementById("baseLV").addEventListener("input", calstatMDEF);
-document.getElementById("statVIT").addEventListener("input", calstatMDEF);
-document.getElementById("itemVIT").addEventListener("input", calstatMDEF);
-document.getElementById("statINT").addEventListener("input", calstatMDEF);
-document.getElementById("itemINT").addEventListener("input", calstatMDEF);
-document.getElementById("statDEX").addEventListener("input", calstatMDEF);
-document.getElementById("itemDEX").addEventListener("input", calstatMDEF);
-calstatMDEF();
+['baseLV', 'statVIT', 'itemVIT', 'statINT', 'itemINT', 'statDEX', 'itemDEX'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatMDEF);
+});
 
 function calstatHIT(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -116,14 +150,9 @@ function calstatHIT(){
     var statHIT = 175 + (baseLV) + (DEX) + Math.floor(LUK / 3) + (CON * 2)
     document.getElementById('statHIT').textContent = Math.floor(statHIT)
 }
-document.getElementById("baseLV").addEventListener("input", calstatHIT);
-document.getElementById("statDEX").addEventListener("input", calstatHIT);
-document.getElementById("itemDEX").addEventListener("input", calstatHIT);
-document.getElementById("statLUK").addEventListener("input", calstatHIT);
-document.getElementById("itemLUK").addEventListener("input", calstatHIT);
-document.getElementById("statCON").addEventListener("input", calstatHIT);
-document.getElementById("itemCON").addEventListener("input", calstatHIT);
-calstatHIT();
+['baseLV', 'statDEX', 'itemDEX', 'statLUK', 'itemLUK', 'statCON', 'itemCON'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatHIT);
+});
 
 function calstatFLEE(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -140,14 +169,9 @@ function calstatFLEE(){
     var statFLEE = 100 + (baseLV) + (AGI) + Math.floor(LUK / 3) + (CON * 2)
     document.getElementById('statFLEE').textContent = Math.floor(statFLEE)
 }
-document.getElementById("baseLV").addEventListener("input", calstatFLEE);
-document.getElementById("statAGI").addEventListener("input", calstatFLEE);
-document.getElementById("itemAGI").addEventListener("input", calstatFLEE);
-document.getElementById("statLUK").addEventListener("input", calstatFLEE);
-document.getElementById("itemLUK").addEventListener("input", calstatFLEE);
-document.getElementById("statCON").addEventListener("input", calstatFLEE);
-document.getElementById("itemCON").addEventListener("input", calstatFLEE);
-calstatFLEE();
+['baseLV', 'statAGI', 'itemAGI', 'statLUK', 'itemLUK', 'statCON', 'itemCON'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatFLEE);
+});
 
 function calstatPERFECTDODGE(){
     const statLUK = parseFloat(document.getElementById("statLUK").value);
@@ -157,9 +181,9 @@ function calstatPERFECTDODGE(){
     var statPERFECTDODGE = 1 + Math.floor(LUK / 10)
     document.getElementById('statPERFECTDODGE').textContent = Math.floor(statPERFECTDODGE)
 }
-document.getElementById("statLUK").addEventListener("input", calstatPERFECTDODGE);
-document.getElementById("itemLUK").addEventListener("input", calstatPERFECTDODGE);
-calstatPERFECTDODGE();
+['statLUK', 'itemLUK'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatPERFECTDODGE);
+});
 
 function calstatCRIT(){
     const statLUK = parseFloat(document.getElementById("statLUK").value);
@@ -169,9 +193,9 @@ function calstatCRIT(){
     var statCRIT = 1 + Math.floor(LUK * 0.3)
     document.getElementById('statCRIT').textContent = Math.floor(statCRIT)
 }
-document.getElementById("statLUK").addEventListener("input", calstatCRIT);
-document.getElementById("itemLUK").addEventListener("input", calstatCRIT);
-calstatCRIT();
+['statLUK', 'itemLUK'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatCRIT);
+});
 
 function calstatHEAL(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -187,16 +211,9 @@ function calstatHEAL(){
     document.getElementById('statHEALmax').textContent = statHEALmax
 
 }
-document.getElementById("baseLV").addEventListener("input", calstatHEAL);
-document.getElementById("statINT").addEventListener("input", calstatHEAL);
-document.getElementById("itemINT").addEventListener("input", calstatHEAL);
-document.getElementById("statDEX").addEventListener("input", calstatHEAL);
-document.getElementById("itemDEX").addEventListener("input", calstatHEAL);
-document.getElementById("statLUK").addEventListener("input", calstatHEAL);
-document.getElementById("itemLUK").addEventListener("input", calstatHEAL);
-document.getElementById("statSPL").addEventListener("input", calstatHEAL);
-document.getElementById("itemSPL").addEventListener("input", calstatHEAL);
-calstatHEAL();
+['baseLV', 'statINT', 'itemINT', 'statDEX', 'itemDEX', 'statLUK', 'itemLUK', 'statSPL', 'itemSPL'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatHEAL);
+});
 
 function calstatCasting(){
     const statINT = parseFloat(document.getElementById("statINT").value);
@@ -212,11 +229,9 @@ function calstatCasting(){
         document.getElementById('statCasting').textContent = '100';
     }
 }
-document.getElementById("statINT").addEventListener("input", calstatCasting);
-document.getElementById("itemINT").addEventListener("input", calstatCasting);
-document.getElementById("statDEX").addEventListener("input", calstatCasting);
-document.getElementById("itemDEX").addEventListener("input", calstatCasting);
-calstatCasting();
+['statINT', 'itemINT', 'statDEX', 'itemDEX'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatCasting);
+});
 
 function calstatpoint(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -227,7 +242,18 @@ function calstatpoint(){
     const statDEX = parseFloat(document.getElementById("statDEX").value);
     const statLUK = parseFloat(document.getElementById("statLUK").value);
 
-    const stat = (baseLV > 200) ? statPoint[199] : statPoint[baseLV - 1]
+    var job = document.getElementById('Jobname').innerText;
+    for(let key in PCJobNameTable){
+        if(PCJobNameTable[key] === job){
+            if(JOBGROUP_N.includes(Number(key))){
+                var stat = (baseLV > 200) ? statPoint[199] : statPoint[baseLV - 1];
+            }else{
+                var stat = (baseLV > 200) ? statPoint[199] + 52 : statPoint[baseLV - 1] + 52;
+            }
+        }
+    }
+
+
     const costSTR = (statSTR > 130) ? stat_cost[129] : stat_cost[statSTR - 1];
     const costAGI = (statAGI > 130) ? stat_cost[129] : stat_cost[statAGI - 1];
     const costVIT = (statVIT > 130) ? stat_cost[129] : stat_cost[statVIT - 1];
@@ -274,19 +300,12 @@ function calstatpoint(){
     }
 
 }
-document.getElementById("baseLV").addEventListener("input", calstatpoint);
-document.getElementById("statSTR").addEventListener("input", calstatpoint);
-document.getElementById("statAGI").addEventListener("input", calstatpoint);
-document.getElementById("statVIT").addEventListener("input", calstatpoint);
-document.getElementById("statINT").addEventListener("input", calstatpoint);
-document.getElementById("statDEX").addEventListener("input", calstatpoint);
-document.getElementById("statLUK").addEventListener("input", calstatpoint);
-calstatpoint();
+['baseLV', 'statSTR', 'statAGI', 'statVIT', 'statINT', 'statDEX', 'statLUK'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatpoint);
+});
 
 
-//==============4차===================
 
-// statPATK
 function calstatPATK(){
     const statPOW = parseFloat(document.getElementById("statPOW").value);
     const itemPOW = parseFloat(document.getElementById("itemPOW").value);
@@ -299,13 +318,10 @@ function calstatPATK(){
     document.getElementById('statPATK').textContent = statPATK;
 
 }
-document.getElementById("statPOW").addEventListener("input", calstatPATK);
-document.getElementById("itemPOW").addEventListener("input", calstatPATK);
-document.getElementById("statCON").addEventListener("input", calstatPATK);
-document.getElementById("itemCON").addEventListener("input", calstatPATK);
-calstatPATK();
+['statPOW', 'itemPOW', 'statCON', 'itemCON'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatPATK);
+});
 
-// statSMATK
 function calstatSMATK(){
     const statSPL = parseFloat(document.getElementById("statSPL").value);
     const itemSPL = parseFloat(document.getElementById("itemSPL").value);
@@ -318,13 +334,10 @@ function calstatSMATK(){
     document.getElementById('statSMATK').textContent = statSMATK;
 
 }
-document.getElementById("statSPL").addEventListener("input", calstatSMATK);
-document.getElementById("itemSPL").addEventListener("input", calstatSMATK);
-document.getElementById("statCON").addEventListener("input", calstatSMATK);
-document.getElementById("itemCON").addEventListener("input", calstatSMATK);
-calstatSMATK();
+['statSPL', 'itemSPL', 'statCON', 'itemCON'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatSMATK);
+});
 
-// statRES
 function calstatRES(){
     const statSTA = parseFloat(document.getElementById("statSTA").value);
     const itemSTA = parseFloat(document.getElementById("itemSTA").value);
@@ -334,11 +347,10 @@ function calstatRES(){
     document.getElementById('statRES').textContent = statRES;
 
 }
-document.getElementById("statSTA").addEventListener("input", calstatRES);
-document.getElementById("itemSTA").addEventListener("input", calstatRES);
-calstatRES();
+['statSTA', 'itemSTA'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatRES);
+});
 
-// statMRES
 function calstatMRES(){
     const statWIS = parseFloat(document.getElementById("statWIS").value);
     const itemWIS = parseFloat(document.getElementById("itemWIS").value);
@@ -348,11 +360,10 @@ function calstatMRES(){
     document.getElementById('statMRES').textContent = statMRES;
 
 }
-document.getElementById("statWIS").addEventListener("input", calstatMRES);
-document.getElementById("itemWIS").addEventListener("input", calstatMRES);
-calstatMRES();
+['statWIS', 'itemWIS'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatMRES);
+});
 
-// statHPLUS
 function calstatHPLUS(){
     const statCRT = parseFloat(document.getElementById("statCRT").value);
     const itemCRT = parseFloat(document.getElementById("itemCRT").value);
@@ -362,11 +373,10 @@ function calstatHPLUS(){
     document.getElementById('statHPLUS').textContent = statHPLUS;
 
 }
-document.getElementById("statCRT").addEventListener("input", calstatHPLUS);
-document.getElementById("itemCRT").addEventListener("input", calstatHPLUS);
-calstatHPLUS();
+['statCRT', 'itemCRT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatHPLUS);
+});
 
-// statCRATE
 function calstatCRATE(){
     const statCRT = parseFloat(document.getElementById("statCRT").value);
     const itemCRT = parseFloat(document.getElementById("itemCRT").value);
@@ -376,11 +386,10 @@ function calstatCRATE(){
     document.getElementById('statCRATE').textContent = statCRATE;
 
 }
-document.getElementById("statCRT").addEventListener("input", calstatCRATE);
-document.getElementById("itemCRT").addEventListener("input", calstatCRATE);
-calstatCRATE();
+['statCRT', 'itemCRT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatCRATE);
+});
 
-//tstatpoint
 function caltstatpoint(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statPOW = parseFloat(document.getElementById("statPOW").value);
@@ -404,12 +413,8 @@ function caltstatpoint(){
     document.getElementById('tstatpoint').textContent = tstatPoint;
 
 }
-document.getElementById("baseLV").addEventListener("input", caltstatpoint);
-document.getElementById("statPOW").addEventListener("input", caltstatpoint);
-document.getElementById("statSTA").addEventListener("input", caltstatpoint);
-document.getElementById("statWIS").addEventListener("input", caltstatpoint);
-document.getElementById("statSPL").addEventListener("input", caltstatpoint);
-document.getElementById("statCON").addEventListener("input", caltstatpoint);
-document.getElementById("statCRT").addEventListener("input", caltstatpoint);
-caltstatpoint();
+['baseLV', 'statPOW', 'statSTA', 'statWIS', 'statSPL', 'statCON', 'statCRT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", caltstatpoint);
+});
 
+caltstatpoint();
