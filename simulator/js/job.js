@@ -40,6 +40,5 @@ function updateJob(image) {
             }
         }
     });
-    // 스킬 트리 표시
     createSkillGrid(JobInherit); 
 }

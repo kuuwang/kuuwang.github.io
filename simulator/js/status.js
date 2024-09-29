@@ -1,14 +1,5 @@
 const charClass = document.getElementById('charClass');
-//const weaponR = document.getElementById('weaponR');
-//const weaponL = document.getElementById('weaponL');
 
-//let validWeapons = []; // validWeapons 변수를 밖에서 선언
-//charClass.addEventListener('change', updateDropdowns);
-//weaponR.addEventListener('change', updateWeaponL);
-//weaponR.addEventListener('change', updateWeaponASPD);
-//weaponL.addEventListener('change', updateWeaponASPD);
-
-// statATK
 function calstatATK(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statSTR = parseFloat(document.getElementById("statSTR").value);
@@ -38,7 +29,6 @@ document.getElementById("statPOW").addEventListener("input", calstatATK);
 document.getElementById("itemPOW").addEventListener("input", calstatATK);
 calstatATK();
 
-// statMATK
 function calstatMATK(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statINT = parseFloat(document.getElementById("statINT").value);
@@ -68,7 +58,6 @@ document.getElementById("statSPL").addEventListener("input", calstatMATK);
 document.getElementById("itemSPL").addEventListener("input", calstatMATK);
 calstatMATK();
 
-// statDEF
 function calstatDEF(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statAGI = parseFloat(document.getElementById("statAGI").value);
@@ -88,7 +77,6 @@ document.getElementById("statVIT").addEventListener("input", calstatDEF);
 document.getElementById("itemVIT").addEventListener("input", calstatDEF);
 calstatDEF();
 
-// statMDEF
 function calstatMDEF(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statVIT = parseFloat(document.getElementById("statVIT").value);
@@ -113,7 +101,6 @@ document.getElementById("statDEX").addEventListener("input", calstatMDEF);
 document.getElementById("itemDEX").addEventListener("input", calstatMDEF);
 calstatMDEF();
 
-// statHIT
 function calstatHIT(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statDEX = parseFloat(document.getElementById("statDEX").value);
@@ -138,7 +125,6 @@ document.getElementById("statCON").addEventListener("input", calstatHIT);
 document.getElementById("itemCON").addEventListener("input", calstatHIT);
 calstatHIT();
 
-// statFLEE
 function calstatFLEE(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statAGI = parseFloat(document.getElementById("statAGI").value);
@@ -163,7 +149,6 @@ document.getElementById("statCON").addEventListener("input", calstatFLEE);
 document.getElementById("itemCON").addEventListener("input", calstatFLEE);
 calstatFLEE();
 
-// statPERFECTDODGE
 function calstatPERFECTDODGE(){
     const statLUK = parseFloat(document.getElementById("statLUK").value);
     const itemLUK = parseFloat(document.getElementById("itemLUK").value);
@@ -176,7 +161,6 @@ document.getElementById("statLUK").addEventListener("input", calstatPERFECTDODGE
 document.getElementById("itemLUK").addEventListener("input", calstatPERFECTDODGE);
 calstatPERFECTDODGE();
 
-// statCRIT
 function calstatCRIT(){
     const statLUK = parseFloat(document.getElementById("statLUK").value);
     const itemLUK = parseFloat(document.getElementById("itemLUK").value);
@@ -189,7 +173,6 @@ document.getElementById("statLUK").addEventListener("input", calstatCRIT);
 document.getElementById("itemLUK").addEventListener("input", calstatCRIT);
 calstatCRIT();
 
-// statHEAL
 function calstatHEAL(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statINT = parseFloat(document.getElementById("statINT").value);
@@ -215,7 +198,6 @@ document.getElementById("statSPL").addEventListener("input", calstatHEAL);
 document.getElementById("itemSPL").addEventListener("input", calstatHEAL);
 calstatHEAL();
 
-// statCasting
 function calstatCasting(){
     const statINT = parseFloat(document.getElementById("statINT").value);
     const itemINT = parseFloat(document.getElementById("itemINT").value);
@@ -236,7 +218,6 @@ document.getElementById("statDEX").addEventListener("input", calstatCasting);
 document.getElementById("itemDEX").addEventListener("input", calstatCasting);
 calstatCasting();
 
-//statpoint
 function calstatpoint(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statSTR = parseFloat(document.getElementById("statSTR").value);

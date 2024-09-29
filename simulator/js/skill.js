@@ -17,7 +17,6 @@ function createSkillGrid(JobInherit) {
         const jobDiv = document.createElement("div");
         jobDiv.className = "jobContainer";
 
-
         const jobNameDiv = document.createElement("div");
         jobNameDiv.className = "jobName";
         jobNameDiv.innerHTML = `
@@ -71,9 +70,8 @@ function createSkillGrid(JobInherit) {
                         skillLv = `<span id="skill_${skillId}">0</span> / <span>${skillInfo.MaxLv}</span>`;
                     }
 
-
                     cell.innerHTML = `
-                        <div id="skillDiv_${skillId}"class="skillBlock">
+                        <div id="skillDiv_${skillId}" class="skillBlock">
                             <div class="skillName">${skillName}</div>
                             <img src="https://static.divine-pride.net/images/skill/${skillId}.png" alt="${skillInfo.SkillName}" onclick="SkillDisplay(${skillId}, ${job})">
                             <div class="skillLevel">${skillLv}</div>
@@ -81,11 +79,11 @@ function createSkillGrid(JobInherit) {
                     `;
 
                     cell.addEventListener('mouseover', () => {
-                        highlightPrerequisiteSkills(skillId, job);
+                        highlightAndCheckSkills(skillId, job); 
                     });
-        
+
                     cell.addEventListener('mouseout', () => {
-                        resetPrerequisiteSkills();
+                        resetPrerequisiteSkills(); 
                     });
                 } else {
                     cell.innerHTML = `<div class="skillBlock"><img src='../src/img/simulator/none.png'></div>`;
@@ -99,43 +97,41 @@ function createSkillGrid(JobInherit) {
     });
 }
 
-function highlightPrerequisiteSkills(skillId, job) {
+function highlightAndCheckSkills(skillId, job) {
     const skillInfo = SKILL_INFO_LIST[skillId];
 
-    // Highlight prerequisite skills if they exist
     if (skillInfo.NeedSkillList) {
         const specificRequirements = skillInfo.NeedSkillList[job];
         if (specificRequirements) {
-            for (const [requiredSkillId] of specificRequirements) {
-                const requiredSkillElementId = "skillDiv_" + requiredSkillId;
-                const requiredSkillDiv = document.getElementById(requiredSkillElementId);
-                if (requiredSkillDiv) {
-                    requiredSkillDiv.style.backgroundColor = "rgba(255, 100, 100, 0.5)";
-                }
+            for (const [requiredSkillId, requiredLevel] of specificRequirements) {
+                highlightSkill(requiredSkillId);
+                highlightAndCheckSkills(requiredSkillId, job); 
             }
         }
     }
 
-    // Check _NeedSkillList as well
     if (skillInfo._NeedSkillList) {
-        for (const [requiredSkillId] of skillInfo._NeedSkillList) {
-            const requiredSkillElementId = "skillDiv_" + requiredSkillId;
-            const requiredSkillDiv = document.getElementById(requiredSkillElementId);
-            if (requiredSkillDiv) {
-                requiredSkillDiv.style.backgroundColor = "rgba(255, 100, 100, 0.5)";
-            }
+        for (const [requiredSkillId, requiredLevel] of skillInfo._NeedSkillList) {
+            highlightSkill(requiredSkillId);
+            highlightAndCheckSkills(requiredSkillId, job); 
         }
+    }
+}
+
+function highlightSkill(skillId) {
+    const skillElementId = "skillDiv_" + skillId;
+    const skillDiv = document.getElementById(skillElementId);
+    if (skillDiv) {
+        skillDiv.style.backgroundColor = "rgba(255, 100, 100, 0.5)"; 
     }
 }
 
 function resetPrerequisiteSkills() {
-    // Reset background color for all skill blocks
     const skillBlocks = document.querySelectorAll('.skillBlock');
     skillBlocks.forEach(block => {
-        block.style.backgroundColor = ""; // Reset to original background
+        block.style.backgroundColor = "";
     });
 }
-
 
 function SkillDisplay(skillId, job) {
     const sk_id = "skill_" + skillId;
@@ -143,60 +139,50 @@ function SkillDisplay(skillId, job) {
     const skillInfo = SKILL_INFO_LIST[skillId];
     let currentLevel = parseInt(sk_id_div.innerText);
 
-
-
     checkAndIncreaseSkills(skillId, job);
-
-    // Increase skill level after all checks
     if (currentLevel < skillInfo.MaxLv) {
         currentLevel++;
         sk_id_div.innerText = currentLevel;
     }
-
     updateTotalSkillPoints(job);
 }
 
-
 function checkAndIncreaseSkills(skillId, job) {
     const skillInfo = SKILL_INFO_LIST[skillId];
-    // Check if there is a NeedSkillList for specific job requirements
+
     if (skillInfo.NeedSkillList) {
         const specificRequirements = skillInfo.NeedSkillList[job];
         if (specificRequirements) {
             if (specificRequirements.length === 0) {
-                return; // No skills needed for this job
+                return; 
             }
             for (const [requiredSkillId, requiredLevel] of specificRequirements) {
                 const requiredSkillElementId = "skill_" + requiredSkillId;
                 const requiredSkillDiv = document.getElementById(requiredSkillElementId);
                 const requiredSkillLevel = parseInt(requiredSkillDiv.innerText);
 
-                // If the required skill level is not met, increase it
                 if (requiredSkillLevel < requiredLevel) {
                     requiredSkillDiv.innerText = requiredLevel;
-                    checkAndIncreaseSkills(requiredSkillId, job);
+                    checkAndIncreaseSkills(requiredSkillId, job); 
                 }
             }
             return;
         }
-        
     }
-    // Check if the skill has a _NeedSkillList
+
     if (skillInfo._NeedSkillList) {
         for (const [requiredSkillId, requiredLevel] of skillInfo._NeedSkillList) {
             const requiredSkillElementId = "skill_" + requiredSkillId;
             const requiredSkillDiv = document.getElementById(requiredSkillElementId);
             const requiredSkillLevel = parseInt(requiredSkillDiv.innerText);
 
-            // If the required skill level is not met, increase it
             if (requiredSkillLevel < requiredLevel) {
                 requiredSkillDiv.innerText = requiredLevel;
-                checkAndIncreaseSkills(requiredSkillId, job);
+                checkAndIncreaseSkills(requiredSkillId, job); 
             }
         }
     }
 }
-
 function updateTotalSkillPoints(job) {
     const joblist = getJobInherit(job);
     
@@ -211,7 +197,7 @@ function updateTotalSkillPoints(job) {
         const totalSkillPointsDiv = document.getElementById(`totalPoints_${element}`);
         if (totalSkillPointsDiv) {
             totalSkillPointsDiv.innerText = `${totalPoints}`;
-            const maxJobLevel = (JOB_SETTING[element][1] - 1) ? JOB_SETTING[element][1] - 1 : 49; // Default to 49 if not defined
+            const maxJobLevel = (JOB_SETTING[element][1] - 1) ? JOB_SETTING[element][1] - 1 : 49;
             if (totalPoints > maxJobLevel) {
                 totalSkillPointsDiv.style.color = 'red';
             } else {
