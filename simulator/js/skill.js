@@ -109,19 +109,22 @@ function highlightAndCheckSkills(skillId, job, visitedSkills = new Set()) {
         const specificRequirements = skillInfo.NeedSkillList[job];
         if (specificRequirements) {
             for (const [requiredSkillId, requiredLevel] of specificRequirements) {
-                highlightSkill(requiredSkillId); // Highlight the required skill
+                
                 highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
+                highlightSkill(requiredSkillId); // Highlight the required skill
+            }
+        }
+    }else{
+        // Check _NeedSkillList as well (for general prerequisites)
+        if (skillInfo._NeedSkillList) {
+            for (const [requiredSkillId, requiredLevel] of skillInfo._NeedSkillList) {
+                
+                highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
+                highlightSkill(requiredSkillId); // Highlight the required skill
             }
         }
     }
 
-    // Check _NeedSkillList as well (for general prerequisites)
-    if (skillInfo._NeedSkillList) {
-        for (const [requiredSkillId, requiredLevel] of skillInfo._NeedSkillList) {
-            highlightSkill(requiredSkillId); // Highlight the required skill
-            highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
-        }
-    }
 }
 
 
