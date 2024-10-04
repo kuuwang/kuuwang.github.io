@@ -716,6 +716,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 #skillContainer{
     float: left;
+    margin-bottom: 100px;
 }
 
 .jobContainer{
