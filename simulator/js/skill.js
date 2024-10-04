@@ -73,7 +73,7 @@ function createSkillGrid(JobInherit) {
                     cell.innerHTML = `
                         <div id="skillDiv_${skillId}" class="skillBlock">
                             <div class="skillName">${skillName}</div>
-                            <img src="https://static.divine-pride.net/images/skill/${skillId}.png" alt="${skillInfo.SkillName}" onclick="SkillDisplay(${skillId}, ${job})">
+                            <img src="../src/img/skill/${skillInfo.SkillDB}.png" alt="${skillInfo.SkillName}" onclick="SkillDisplay(${skillId}, ${job})">
                             <div class="skillLevel">${skillLv}</div>
                         </div>
                     `;
@@ -86,7 +86,7 @@ function createSkillGrid(JobInherit) {
                         resetPrerequisiteSkills(); 
                     });
                 } else {
-                    cell.innerHTML = `<div class="skillBlock"><img src='../src/img/simulator/none.png'></div>`;
+                    cell.innerHTML = `<div class="skillBlock"><img src='../src/img/skill/none.png'></div>`;
                 }
                 row.appendChild(cell);
             }
@@ -97,26 +97,33 @@ function createSkillGrid(JobInherit) {
     });
 }
 
-function highlightAndCheckSkills(skillId, job) {
+function highlightAndCheckSkills(skillId, job, visitedSkills = new Set()) {
+    // Check if we've already visited this skill to prevent infinite recursion
+    if (visitedSkills.has(skillId)) return;
+    visitedSkills.add(skillId); // Mark this skill as visited
+
     const skillInfo = SKILL_INFO_LIST[skillId];
 
+    // Highlight and recursively check NeedSkillList for specific job requirements
     if (skillInfo.NeedSkillList) {
         const specificRequirements = skillInfo.NeedSkillList[job];
         if (specificRequirements) {
             for (const [requiredSkillId, requiredLevel] of specificRequirements) {
-                highlightSkill(requiredSkillId);
-                highlightAndCheckSkills(requiredSkillId, job); 
+                highlightSkill(requiredSkillId); // Highlight the required skill
+                highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
             }
         }
     }
 
+    // Check _NeedSkillList as well (for general prerequisites)
     if (skillInfo._NeedSkillList) {
         for (const [requiredSkillId, requiredLevel] of skillInfo._NeedSkillList) {
-            highlightSkill(requiredSkillId);
-            highlightAndCheckSkills(requiredSkillId, job); 
+            highlightSkill(requiredSkillId); // Highlight the required skill
+            highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
         }
     }
 }
+
 
 function highlightSkill(skillId) {
     const skillElementId = "skillDiv_" + skillId;
@@ -163,7 +170,7 @@ function checkAndIncreaseSkills(skillId, job) {
 
                 if (requiredSkillLevel < requiredLevel) {
                     requiredSkillDiv.innerText = requiredLevel;
-                    checkAndIncreaseSkills(requiredSkillId, job); 
+                    checkAndIncreaseSkills(requiredSkillId, job);
                 }
             }
             return;
