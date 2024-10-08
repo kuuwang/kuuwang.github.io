@@ -104,29 +104,22 @@ function createSkillGrid(JobInherit) {
 }
 
 function highlightAndCheckSkills(skillId, job, visitedSkills = new Set()) {
-    // Check if we've already visited this skill to prevent infinite recursion
     if (visitedSkills.has(skillId)) return;
-    visitedSkills.add(skillId); // Mark this skill as visited
-
+    visitedSkills.add(skillId); 
     const skillInfo = SKILL_INFO_LIST[skillId];
-
-    // Highlight and recursively check NeedSkillList for specific job requirements
     if (skillInfo.NeedSkillList) {
         const specificRequirements = skillInfo.NeedSkillList[job];
         if (specificRequirements) {
             for (const [requiredSkillId, requiredLevel] of specificRequirements) {
-                
-                highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
-                highlightSkill(requiredSkillId); // Highlight the required skill
+                highlightAndCheckSkills(requiredSkillId, job, visitedSkills); 
+                highlightSkill(requiredSkillId); 
             }
         }
     }else{
-        // Check _NeedSkillList as well (for general prerequisites)
         if (skillInfo._NeedSkillList) {
             for (const [requiredSkillId, requiredLevel] of skillInfo._NeedSkillList) {
-                
-                highlightAndCheckSkills(requiredSkillId, job, visitedSkills); // Recursively highlight prerequisites
-                highlightSkill(requiredSkillId); // Highlight the required skill
+                highlightAndCheckSkills(requiredSkillId, job, visitedSkills); 
+                highlightSkill(requiredSkillId); 
             }
         }
     }
@@ -236,10 +229,9 @@ function resetAllSkillLevels() {
 }
 
 function applyColorCodes(description) {
-    // Replace ^{hexcode} with span and style
     return description.replace(/\^([0-9A-Fa-f]{6})/g, (match, hexcode) => {
         return `<span style="color: #${hexcode}">`;
-    }).replace(/\^000000/g, "</span>"); // Closing the color tag
+    }).replace(/\^000000/g, "</span>");
 }
 
 function showSkillDescription(skillId, event) {

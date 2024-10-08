@@ -32,7 +32,7 @@ function updateJob(image) {
     const charJobLV = document.getElementById("jobLV");
     charJobLV.value = charValue[1];
 
-    charJobLV.addEventListener("input", calstatBonus.bind(image)); // Bind 'this' (image)
+    charJobLV.addEventListener("input", calstatBonus.bind(image));
 
     const skillIds = [];
     JobInherit.forEach(job => {
