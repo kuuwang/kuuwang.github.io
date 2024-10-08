@@ -1,6 +1,6 @@
 function createSkillGrid(JobInherit) {
     const skillContainer = document.getElementById("skillContainer");
-    skillContainer.innerHTML = ``; 
+    skillContainer.innerHTML = `<label id="SkillDescriptionChk"><input type="checkbox" id="toggleSkillDescription" checked>스킬 설명 보기</label>`; 
 
     JobInherit.forEach((job) => {
         const cols = 7;
@@ -78,13 +78,19 @@ function createSkillGrid(JobInherit) {
                         </div>
                     `;
 
-                    cell.addEventListener('mouseover', () => {
+                    cell.addEventListener('mouseover', (event) => {
                         highlightAndCheckSkills(skillId, job); 
+                        if (document.getElementById('toggleSkillDescription').checked) {
+                            showSkillDescription(skillId,event);
+                        }
                     });
 
                     cell.addEventListener('mouseout', () => {
                         resetPrerequisiteSkills(); 
+                        hideSkillDescription();
                     });
+
+
                 } else {
                     cell.innerHTML = `<div class="skillBlock"><img src='../src/img/skill/none.png'></div>`;
                 }
@@ -227,4 +233,29 @@ function resetAllSkillLevels() {
         element.innerText = '0';
         element.style.color = '';
     });
+}
+
+function applyColorCodes(description) {
+    // Replace ^{hexcode} with span and style
+    return description.replace(/\^([0-9A-Fa-f]{6})/g, (match, hexcode) => {
+        return `<span style="color: #${hexcode}">`;
+    }).replace(/\^000000/g, "</span>"); // Closing the color tag
+}
+
+function showSkillDescription(skillId, event) {
+    const skillDescriptionDiv = document.getElementById("skillDescription");
+    const descriptionArray = SKILL_DESCRIPT[skillId];
+
+    if (descriptionArray) {
+        const formattedDescription = descriptionArray.map(applyColorCodes).join("<br>");
+        skillDescriptionDiv.innerHTML = formattedDescription;
+        skillDescriptionDiv.style.display = "block";
+        skillDescriptionDiv.style.top = `${event.clientY}px`;
+        skillDescriptionDiv.style.left = `${event.clientX + 25}px`;
+    }
+}
+
+function hideSkillDescription() {
+    const skillDescriptionDiv = document.getElementById("skillDescription");
+    skillDescriptionDiv.style.display = "none";
 }
