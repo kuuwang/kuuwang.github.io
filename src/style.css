@@ -1,6 +1,7 @@
 html, body, table{
     font-family: "Dotum";
     font-size: 12px;
+    height: 100%;
 }
 footer{
     position:fixed;

@@ -251,3 +251,7 @@ function hideSkillDescription() {
     const skillDescriptionDiv = document.getElementById("skillDescription");
     skillDescriptionDiv.style.display = "none";
 }
+
+document.body.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+  });
