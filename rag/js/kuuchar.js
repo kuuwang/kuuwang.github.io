@@ -1307,8 +1307,8 @@ var data = [
     {
         charname: "쿠왕인길크",
         job: "Shadow Cross",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "쉐도우 스탭",
         stats: {
             str: 120,
