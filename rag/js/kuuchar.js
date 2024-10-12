@@ -4207,8 +4207,8 @@ var data = [
     {
         charname: "쿠왕인리퍼",
         job: "영도사",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "사령정화",
         stats: {
             str: 1,
@@ -4220,8 +4220,8 @@ var data = [
             pow: 0,
             sta: 0,
             wis: 0,
-            spl: 100,
-            con: 21,
+            spl: 110,
+            con: 49,
             crt: 0
         },
         items: {
@@ -4288,14 +4288,14 @@ var data = [
         },
         itemsb:{
             cheadt:{
-                name: "",
-                id: "",
+                name: "의상 사또모자",
+                id: "31036",
                 grade: "", 
                 desc: [""],
             },
             cheadm: {
-                name: "",
-                id: "",
+                name: "의상 마왕 모로크의 충실한 종",
+                id: "20430",
                 grade: "", 
                 desc: [""],
             },
