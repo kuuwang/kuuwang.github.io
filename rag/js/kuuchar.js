@@ -1017,8 +1017,8 @@ var data = [
     {
         charname: "쿠왕인워록",
         job: "Arch Mage",
-        clvl: 230,
-        jlvl: 45,
+        clvl: 240,
+        jlvl: 54,
         battlestyle: "미스터리 일루전 + 장판",
         stats: {
             str: 1,
@@ -1030,8 +1030,8 @@ var data = [
             pow: 0,
             sta: 0,
             wis: 0,
-            spl: 100,
-            con: 21,
+            spl: 110,
+            con: 49,
             crt: 0
         },
         items: {
