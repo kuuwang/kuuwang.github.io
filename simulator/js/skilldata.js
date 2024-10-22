@@ -3033,10 +3033,6 @@ const SKILL_INFO_LIST = {
 			],
 			NeedSkillList :
 			{
-				[JOBID.JT_HYPER_NOVICE] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
 				[JOBID.JT_ROGUE] :
 				[
 				],
