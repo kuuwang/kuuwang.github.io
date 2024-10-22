@@ -242,8 +242,25 @@ function showSkillDescription(skillId, event) {
         const formattedDescription = descriptionArray.map(applyColorCodes).join("<br>");
         skillDescriptionDiv.innerHTML = formattedDescription;
         skillDescriptionDiv.style.display = "block";
-        skillDescriptionDiv.style.top = `${event.pageY}px`;
-        skillDescriptionDiv.style.left = `${event.pageX + 25}px`;
+
+        const pageWidth = window.innerWidth;
+        const pageHeight = window.innerHeight;
+        const boxWidth = skillDescriptionDiv.offsetWidth;
+        const boxHeight = skillDescriptionDiv.offsetHeight;
+
+        let xPos = event.pageX + 25;
+        let yPos = event.pageY;
+
+        if (xPos + boxWidth > pageWidth) {
+            xPos = event.pageX - boxWidth - 50;
+        }
+
+        if (yPos + boxHeight > pageHeight) {
+            yPos = event.pageY - boxHeight + 50;
+        }
+
+        skillDescriptionDiv.style.left = `${xPos}px`;
+        skillDescriptionDiv.style.top = `${yPos}px`;
     }
 }
 
