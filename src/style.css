@@ -724,6 +724,12 @@ input[type="number"]::-webkit-inner-spin-button {
 #skillContainer{
     float: left;
     margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#skillContainer.grid{
+    grid-template-columns: 1fr 1fr;
 }
 
 .jobContainer{
@@ -817,7 +823,7 @@ input[type="number"]::-webkit-inner-spin-button {
 );
 }
 
-#resetAllSkills{
+.ragbtn{
     float: right;
     background: linear-gradient(to bottom, 
     rgb(222,222,222),
@@ -840,8 +846,9 @@ input[type="number"]::-webkit-inner-spin-button {
     );
     border: 1px solid rgb(173,173,173);
     border-radius: 3px;
+    height: 22px;
 }
-#resetAllSkills:hover{
+.ragbtn:hover{
     background: linear-gradient(to bottom, 
     rgb(198,206,222),
     rgb(206,214,239),
@@ -862,7 +869,7 @@ input[type="number"]::-webkit-inner-spin-button {
     rgb(222,231,247)
     );
 }
-#resetAllSkills:active{
+.ragbtn:active{
     margin: 1px 0 0 1px;
     background: linear-gradient(to bottom, 
     rgb(198,206,222),

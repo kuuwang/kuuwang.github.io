@@ -255,3 +255,16 @@ function hideSkillDescription() {
 document.body.addEventListener('contextmenu', function(event) {
     event.preventDefault();
   });
+
+function changeGrid(){
+    const skillContainer = document.getElementById("skillContainer");
+    const skillGrid = document.getElementById("skillGrid");
+
+    skillContainer.classList.toggle("grid");
+    if(skillContainer.classList.contains("grid")){
+        skillGrid.innerHTML = `<i class="fa-solid fa-bars"></i>`
+    }else{
+        skillGrid.innerHTML = `<i class="fa-solid fa-grip-vertical"></i>`
+    }
+    
+}
