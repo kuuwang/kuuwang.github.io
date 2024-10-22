@@ -884,3 +884,17 @@ input[type="number"]::-webkit-inner-spin-button {
     rgb(222,231,247)
     );
 }
+
+#SkillDescriptionChk{
+    position:absolute;
+    margin-left: 450px;
+    padding-bottom: 2px;
+}
+#skillDescription{
+    width: 280px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgb(198,198,198);
+    padding: 7px;
+    line-height: 16px;
+}
