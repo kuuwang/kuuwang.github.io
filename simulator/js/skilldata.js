@@ -3033,34 +3033,6 @@ const SKILL_INFO_LIST = {
 			],
 			NeedSkillList :
 			{
-				[JOBID.JT_ARCHER] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
-				[JOBID.JT_HUNTER] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
-				[JOBID.JT_HUNTER_H] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
-				[JOBID.JT_RANGER_H] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
-				[JOBID.JT_WINDHAWK] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
-				[JOBID.JT_SUPERNOVICE] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
-				[JOBID.JT_SUPERNOVICE2] :
-				[
-					[ SKID.AC_OWL, 3, ],
-				],
 				[JOBID.JT_HYPER_NOVICE] :
 				[
 					[ SKID.AC_OWL, 3, ],
