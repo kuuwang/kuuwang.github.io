@@ -1122,6 +1122,20 @@ const SKID = {
     ABC_CHASING_BREAK: 6513,
     ABC_CHASING_SHOT: 6514,
     TR_RHYTHMICAL_WAVE: 6521,
+	DK_DRAGONIC_PIERCE: 6502,
+	IG_IMPERIAL_PRESSURE: 6505,
+	ABC_ABYSS_FLAME: 6515,
+	AG_ENERGY_CONVERSION: 6516,
+	EM_PSYCHIC_STREAM: 6517,
+	CD_DIVINUS_FLOS: 6518,
+	IQ_BLAZING_FLAME_BLAST: 6519,
+	WH_WILD_WALK: 6520,
+	SKE_SKY_SUN: 5502,
+	SKE_SKY_MOON: 5503,
+	SKE_STAR_LIGHT_KICK: 5504,
+	HN_OVERCOMING_CRISIS: 5505,
+	SH_CHUL_HO_BATTERING: 5506,
+	SH_HYUN_ROK_SPIRIT_POWER: 5507
 };
 
 
@@ -2272,6 +2286,7 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[13]: SKID.DK_DRAGONIC_BREATH,
 		[15]: SKID.DK_SERVANT_W_PHANTOM,
 		[17]: SKID.DK_STORMSLASH,
+		[18]: SKID.DK_DRAGONIC_PIERCE,
 		[19]: SKID.DK_MADNESS_CRUSHER,
 		[22]: SKID.DK_SERVANT_W_DEMOL,
 		[24]: SKID.DK_VIGOR,
@@ -2295,7 +2310,8 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[18]: SKID.AG_CRYSTAL_IMPACT,
 		[19]: SKID.AG_DESTRUCTIVE_HURRICANE,
 		[20]: SKID.AG_VIOLENT_QUAKE,
-		[22]: SKID.AG_ASTRAL_STRIKE
+		[22]: SKID.AG_ASTRAL_STRIKE,
+		[23]: SKID.AG_ENERGY_CONVERSION
 	},
 	[JOBID.JT_INQUISITOR]: {
 		[1]: SKID.IQ_WILL_OF_FAITH,
@@ -2314,12 +2330,14 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[27]: SKID.IQ_MASSIVE_F_BLASTER,
 		[31]: SKID.IQ_THIRD_PUNISH,
 		[32]: SKID.IQ_THIRD_CONSECRATION,
-		[33]: SKID.IQ_THIRD_FLAME_BOMB
+		[33]: SKID.IQ_THIRD_FLAME_BOMB,
+		[34]: SKID.IQ_BLAZING_FLAME_BLAST
 	},
 	[JOBID.JT_IMPERIAL_GUARD]: {
 		[1]: SKID.IG_SPEAR_SWORD_M,
 		[4]: SKID.IG_SHIELD_MASTERY,
 		[8]: SKID.IG_ATTACK_STANCE,
+		[10]: SKID.IG_IMPERIAL_PRESSURE,
 		[11]: SKID.IG_GUARD_STANCE,
 		[12]: SKID.IG_CROSS_RAIN,
 		[15]: SKID.IG_OVERSLASH,
@@ -2357,6 +2375,7 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[13]: SKID.CD_PETITIO,
 		[15]: SKID.CD_REPARATIO,
 		[18]: SKID.CD_ARBITRIUM,
+		[19]: SKID.CD_DIVINUS_FLOS,
 		[20]: SKID.CD_EFFLIGO,
 		[21]: SKID.CD_PRESENS_ACIES,
 		[22]: SKID.CD_ARGUTUS_TELUM,
@@ -2395,6 +2414,7 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[12]: SKID.WH_HAWKRUSH,
 		[17]: SKID.WH_FLAMETRAP,
 		[18]: SKID.WH_SWIFTTRAP,
+		[20]: SKID.WH_WILD_WALK,
 		[21]: SKID.WH_CALAMITYGALE,
 		[26]: SKID.WH_HAWKBOOMERANG
 	},
@@ -2448,6 +2468,7 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[16]: SKID.ABC_DEFT_STAB,
 		[17]: SKID.ABC_FRENZY_SHOT,
 		[19]: SKID.ABC_ABYSS_SQUARE,
+		[20]: SKID.ABC_ABYSS_FLAME,
 		[23]: SKID.ABC_ABYSS_SLAYER,
 		[26]: SKID.ABC_ABYSS_STRIKE
 	},
@@ -2484,6 +2505,7 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[18]: SKID.EM_SUMMON_ELEMENTAL_DILUVIO,
 		[19]: SKID.EM_SUMMON_ELEMENTAL_ARDOR,
 		[20]: SKID.EM_SUMMON_ELEMENTAL_PROCELLA,
+		[21]: SKID.EM_PSYCHIC_STREAM,
 		[24]: SKID.EM_INCREASING_ACTIVITY,
 		[26]: SKID.EM_SUMMON_ELEMENTAL_SERPENS,
 		[27]: SKID.EM_SUMMON_ELEMENTAL_TERREMOTUS,
@@ -2502,7 +2524,10 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[24]: SKID.SKE_DAWN_BREAK,
 		[26]: SKID.SKE_STAR_CANNON,
 		[30]: SKID.SKE_ALL_IN_THE_SKY,
-		[32]: SKID.SKE_ENCHANTING_SKY
+		[32]: SKID.SKE_ENCHANTING_SKY,
+		[36]: SKID.SKE_SKY_SUN,
+		[38]: SKID.SKE_SKY_MOON,
+		[40]: SKID.SKE_STAR_LIGHT_KICK
 	},
 	[JOBID.JT_SOUL_ASCETIC]: {
 		[2]: SKID.SOA_SOUL_MASTERY,
@@ -2556,13 +2581,15 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[17]: SKID.HN_GROUND_GRAVITATION,
 		[18]: SKID.HN_NAPALM_VULCAN_STRIKE,
 		[21]: SKID.HN_BREAKINGLIMIT,
-		[24]: SKID.HN_RULEBREAK
+		[24]: SKID.HN_RULEBREAK,
+		[30]: SKID.HN_OVERCOMING_CRISIS
 	},
 	[JOBID.JT_SPIRIT_HANDLER]: {
 		[3]: SKID.SH_MYSTICAL_CREATURE_MASTERY,
 		[8]: SKID.SH_CHUL_HO_SONIC_CLAW,
 		[10]: SKID.SH_KI_SUL_WATER_SPRAYING,
 		[12]: SKID.SH_COLORS_OF_HYUN_ROK,
+		[14]: SKID.SH_CHUL_HO_BATTERING,
 		[15]: SKID.SH_HOWLING_OF_CHUL_HO,
 		[17]: SKID.SH_MARINE_FESTIVAL_OF_KI_SUL,
 		[18]: SKID.SH_SANDY_FESTIVAL_OF_KI_SUL,
@@ -2570,6 +2597,7 @@ SKILL_TREEVIEW_FOR_JOB = {
 		[22]: SKID.SH_HOGOGONG_STRIKE,
 		[24]: SKID.SH_KI_SUL_RAMPAGE,
 		[26]: SKID.SH_HYUN_ROK_CANNON,
+		[27]: SKID.SH_HYUN_ROK_SPIRIT_POWER,
 		[29]: SKID.SH_COMMUNE_WITH_CHUL_HO,
 		[31]: SKID.SH_COMMUNE_WITH_KI_SUL,
 		[33]: SKID.SH_COMMUNE_WITH_HYUN_ROK,
@@ -3042,9 +3070,6 @@ const SKILL_INFO_LIST = {
 					[ SKID.AC_OWL, 3, ],
 				],
 				[JOBID.JT_ROGUE] :
-				[
-				],
-				[JOBID.JT_ROGUE_H] :
 				[
 				],
 			},
@@ -18441,6 +18466,183 @@ const SKILL_INFO_LIST = {
 				[ SKID.SS_ANTENPOU, 5, ],
 			],
 		},
+	[SKID.DK_DRAGONIC_PIERCE] : {
+		SkillDB : "DK_DRAGONIC_PIERCE",
+		SkillName : "드래고닉 피어스",
+		MaxLv : 5,
+		SpAmount : [ 45, 50, 55, 60, 65 ],
+		bSeperateLv : true,
+		AttackRange : [ 7, 7, 7, 7, 7 ],
+		_NeedSkillList : [
+			[ SKID.DK_HACKANDSLASHER, 7 ]
+		]
+	},
+	[SKID.IG_IMPERIAL_PRESSURE] : {
+		SkillDB : "IG_IMPERIAL_PRESSURE",
+		SkillName : "임페리얼 프레셔",
+		MaxLv : 5,
+		SpAmount : [ 89, 93, 97, 101, 105 ],
+		bSeperateLv : true,
+		AttackRange : [ 9, 9, 9, 9, 9 ],
+		_NeedSkillList : [
+			[ SKID.IG_SPEAR_SWORD_M, 7 ],
+			[ SKID.IG_GUARD_STANCE, 3 ]
+		]
+	},
+	[SKID.ABC_ABYSS_FLAME] : {
+		SkillDB : "ABC_ABYSS_FLAME",
+		SkillName : "어비스 플레임",
+		MaxLv : 5,
+		SpAmount : [ 82, 86, 90, 94, 98 ],
+		bSeperateLv : true,
+		AttackRange : [ 9, 9, 9, 9, 9 ],
+		_NeedSkillList : [
+			[ SKID.ABC_MAGIC_SWORD_M, 5 ],
+			[ SKID.ABC_FROM_THE_ABYSS, 3 ]
+		]
+	},
+	[SKID.AG_ENERGY_CONVERSION] : {
+		SkillDB : "AG_ENERGY_CONVERSION",
+		SkillName : "에너지 컨버전",
+		MaxLv : 5,
+		SpAmount : [ 10, 10, 10, 10, 10 ],
+		ApAmount : [ 22, 19, 16, 13, 10 ],
+		bSeperateLv : false,
+		AttackRange : [ 1, 1, 1, 1, 1 ],
+		_NeedSkillList : [
+			[ SKID.WL_RECOGNIZEDSPELL, 2 ],
+			[ SKID.AG_CLIMAX, 1 ]
+		]
+	},
+	[SKID.EM_PSYCHIC_STREAM] : {
+		SkillDB : "EM_PSYCHIC_STREAM",
+		SkillName : "사이킥 스트림",
+		MaxLv : 5,
+		SpAmount : [ 77, 84, 91, 98, 105 ],
+		ApAmount : [ 5, 5, 5, 5, 5 ],
+		bSeperateLv : false,
+		AttackRange : [ 9, 9, 9, 9, 9 ],
+		_NeedSkillList : [
+			[ SKID.EM_MAGIC_BOOK_M, 5 ],
+			[ SKID.EM_DIAMOND_STORM, 3 ],
+			[ SKID.EM_CONFLAGRATION, 3 ],
+			[ SKID.EM_LIGHTNING_LAND, 3 ],
+			[ SKID.EM_TERRA_DRIVE, 3 ],
+			[ SKID.EM_VENOM_SWAMP, 3 ]
+		]
+	},
+	[SKID.CD_DIVINUS_FLOS] : {
+		SkillDB : "CD_DIVINUS_FLOS",
+		SkillName : "디비누스 플로스",
+		MaxLv : 5,
+		SpAmount : [ 99, 103, 107, 111, 115 ],
+		bSeperateLv : true,
+		AttackRange : [ 9, 9, 9, 9, 9 ],
+		_NeedSkillList : [
+			[ SKID.AB_ADORAMUS, 5 ],
+			[ SKID.CD_FRAMEN, 5 ]
+		]
+	},
+	[SKID.IQ_BLAZING_FLAME_BLAST] : {
+		SkillDB : "IQ_BLAZING_FLAME_BLAST",
+		SkillName : "열화기탄",
+		MaxLv : 5,
+		SpAmount : [ 54, 58, 62, 66, 70 ],
+		bSeperateLv : true,
+		AttackRange : [ 7, 7, 7, 7, 7 ],
+		_NeedSkillList : [
+			[ SKID.IQ_MASSIVE_F_BLASTER, 7 ]
+		]
+	},
+	[SKID.WH_WILD_WALK] : {
+		SkillDB : "WH_WILD_WALK",
+		SkillName : "와일드 워크",
+		MaxLv : 5,
+		SpAmount : [ 63, 66, 69, 72, 75 ],
+		ApAmount : [ 5, 5, 5, 5, 5 ],
+		bSeperateLv : false,
+		AttackRange : [ 11, 11, 11, 11, 11 ],
+		_NeedSkillList : [
+			[ SKID.WH_NATUREFRIENDLY, 3 ],
+			[ SKID.WH_HAWKRUSH, 3 ]
+		]
+	},
+	[SKID.SKE_SKY_SUN] : {
+		SkillDB : "SKE_SKY_SUN",
+		SkillName : "천기신양",
+		MaxLv : 5,
+		SpAmount : [ 72, 76, 80, 84, 88 ],
+		bSeperateLv : true,
+		AttackRange : [ 1, 1, 1, 1, 1 ],
+		_NeedSkillList : [
+			[ SKID.SKE_NOON_BLAST, 3 ],
+			[ SKID.SKE_SUNSET_BLAST, 3 ],
+			[ SKID.SKE_ENCHANTING_SKY, 7 ]
+		]
+	},
+	[SKID.SKE_SKY_MOON] : {
+		SkillDB : "SKE_SKY_MOON",
+		SkillName : "천기신월",
+		MaxLv : 5,
+		SpAmount : [ 56, 59, 62, 65, 68 ],
+		bSeperateLv : true,
+		AttackRange : [ 2, 2, 2, 2, 2 ],
+		_NeedSkillList : [
+			[ SKID.SKE_MIDNIGHT_KICK, 3 ],
+			[ SKID.SKE_DAWN_BREAK, 3 ],
+			[ SKID.SKE_ENCHANTING_SKY, 7 ]
+		]
+	},
+	[SKID.SKE_STAR_LIGHT_KICK] : {
+		SkillDB : "SKE_STAR_LIGHT_KICK",
+		SkillName : "천성지행",
+		MaxLv : 5,
+		SpAmount : [ 52, 57, 62, 67, 72 ],
+		bSeperateLv : true,
+		AttackRange : [ 7, 7, 7, 7, 7 ],
+		_NeedSkillList : [
+			[ SKID.SKE_STAR_BURST, 3 ],
+			[ SKID.SKE_STAR_CANNON, 3 ],
+			[ SKID.SKE_ENCHANTING_SKY, 7 ]
+		]
+	},
+	[SKID.HN_OVERCOMING_CRISIS] : {
+		SkillDB : "HN_OVERCOMING_CRISIS",
+		SkillName : "위기 극복",
+		MaxLv : 5,
+		SpAmount : [ 70, 73, 76, 79, 82 ],
+		ApAmount : [ 50, 50, 50, 50, 50 ],
+		bSeperateLv : false,
+		AttackRange : [ 1, 1, 1, 1, 1 ],
+		_NeedSkillList : [
+			[ SKID.HN_SELFSTUDY_TATICS, 5 ],
+			[ SKID.HN_SELFSTUDY_SOCERY, 5 ]
+		]
+	},
+	[SKID.SH_CHUL_HO_BATTERING] : {
+		SkillDB : "SH_CHUL_HO_BATTERING",
+		SkillName : "철호 난무",
+		MaxLv : 7,
+		SpAmount : [ 64, 66, 68, 70, 72, 74, 76 ],
+		bSeperateLv : true,
+		AttackRange : [ 7, 7, 7, 7, 7, 7, 7 ],
+		_NeedSkillList : [
+			[ SKID.SH_MYSTICAL_CREATURE_MASTERY, 7 ],
+			[ SKID.SH_CHUL_HO_SONIC_CLAW, 5 ]
+		]
+	},
+	[SKID.SH_HYUN_ROK_SPIRIT_POWER] : {
+		SkillDB : "SH_HYUN_ROK_SPIRIT_POWER",
+		SkillName : "현록의 영력 발휘",
+		MaxLv : 7,
+		SpAmount : [ 70, 73, 76, 79, 82, 85, 88 ],
+		bSeperateLv : true,
+		AttackRange : [ 9, 9, 9, 9, 9, 9, 9 ],
+		_NeedSkillList : [
+			[ SKID.SH_MYSTICAL_CREATURE_MASTERY, 7 ],
+			[ SKID.SH_HYUN_ROKS_BREEZE, 5 ]
+		]
+	}
 	};
 
 const SKILL_DESCRIPT = {
@@ -38007,5 +38209,283 @@ const SKILL_DESCRIPT = {
 		"/7200%(히든카드:샷건)/6400%(히든카드:개틀링)/6960%(히든카드:런처)/샷건 범위: 7x7셀/개틀링 범위 : 9x9셀/런처 범위: 11x11셀^000000",
 		"[Lv 5] :^7777771회당 ATK 6400%",
 		"/8400%(히든카드:샷건)/7400%(히든카드:개틀링)/8100%(히든카드:런처)/샷건 범위: 7x7셀/개틀링 범위 : 9x9셀/런처 범위: 11x11셀^000000"
+	],
+	[SKID.DK_DRAGONIC_PIERCE] : [
+		"드래고닉 피어스(Dragonic Pierce)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 핵 앤드 슬래셔 7^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777원거리 물리^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777양손창 전용 스킬.",
+		"대상에게 원거리 물리 데미지를 5회 입힌다.",
+		"만약 시전자가 드래고닉 오라 효과를 받고 있는 경우 더 높은 데미지를 입힌다.",
+		"시전자의 베이스 레벨 및 POW에 따라 데미지가 추가로 증가되며, 시전자의 크리티컬 확률에 따라 크리티컬이 적용된다.",
+		"크리티컬 데미지의 경우 크리티컬 데미지 증가 옵션 총합의 절반만큼 적용된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 ATK 1450%/1600%(드래고닉오라)^000000",
+		"[Lv 2] : ^7777771회당 ATK 2050%/2250%(드래고닉오라)^000000",
+		"[Lv 3] : ^7777771회당 ATK 2650%/2900%(드래고닉오라)^000000",
+		"[Lv 4] : ^7777771회당 ATK 3250%/3550%(드래고닉오라)^000000",
+		"[Lv 5] : ^7777771회당 ATK 3850%/4200%(드래고닉오라)^000000"
+	],
+	[SKID.IG_IMPERIAL_PRESSURE] : [
+		"임페리얼 프레셔(Imperial Pressure)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 스피어&소드 마스터리 7, 가드 스탠스 3^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777마법^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777신실한 믿음의 힘으로 대상을 짓누른다.",
+		"대상과 그 주변 범위내 적들에게 무속성 마법 데미지를 입힌다. 만약, 가드 스탠스 중이라면 공격 속성이 성속성으로 적용된다.",
+		"시전자의 베이스 레벨 및 SPL 그리고 습득한 스피어&소드 마스터리 스킬 레벨에 따라 데미지가 추가로 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^777777MATK 7450+(스피어&소드 마스터리Lv x50)%",
+		"효과 범위 : 5x5셀^000000",
+		"[Lv 2] : ^777777MATK 9300+(스피어&소드 마스터리Lv x50)%",
+		"효과 범위 : 5x5셀^000000",
+		"[Lv 3] : ^777777MATK 11150+(스피어&소드 마스터리Lv x50)%",
+		"효과 범위 : 7x7셀^000000",
+		"[Lv 4] : ^777777MATK 13000+(스피어&소드 마스터리Lv x50)%",
+		"효과 범위 : 7x7셀^000000",
+		"[Lv 5] : ^777777MATK 14850+(스피어&소드 마스터리Lv x50)%",
+		"효과 범위 : 9x9셀^000000"
+	],
+	[SKID.ABC_ABYSS_FLAME] : [
+		"어비스 플레임(Abyss Flame)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 매직소드 마스터리 5, 프롬 디 어비스 3^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777마법^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777대상을 중심으로 화염을 일으켜 대상 및 그 주변에 화속성 마법 데미지를 5회 입힙다.",
+		"동시에 자신을 중심으로 어비스의 불꽃을 발산해 자신 주변에 화속성 마법 데미지를 3회 입힌다.",
+		"습득한 매직소드 마스터리 레벨, 시전자의 베이스 레벨 및 SPL에 따라 데미지가 추가로 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 MATK 500 +(매직소드 마스터리Lv x15)%(타겟 주변)",
+		"1회당 MATK 820 +(매직소드 마스터리Lv x30)%(시전자 주변)",
+		"효과 범위 : 5x5셀^000000",
+		"[Lv 2] : ^7777771회당 MATK 1000 +(매직소드 마스터리Lv x30)%(타겟 주변)",
+		"1회당 MATK 1640 +(매직소드 마스터리Lv x60)%(시전자 주변)",
+		"효과 범위 : 5x5셀^000000",
+		"[Lv 3] : ^7777771회당 MATK 1500 +(매직소드 마스터리Lv x45)%(타겟 주변)",
+		"1회당 MATK 2640 +(매직소드 마스터리Lv x90)%(시전자 주변)",
+		"효과 범위 : 5x5셀^000000",
+		"[Lv 4] : ^7777771회당 MATK 2000 +(매직소드 마스터리Lv x60)%(타겟 주변)",
+		"1회당 MATK 3280 +(매직소드 마스터리Lv x120)%(시전자 주변)",
+		"효과 범위 : 7x7셀^000000",
+		"[Lv 5] : ^7777771회당 MATK 2500 +(매직소드 마스터리Lv x75)%(타겟 주변)",
+		"1회당 MATK 4100 +(매직소드 마스터리Lv x150)%(시전자 주변)",
+		"효과 범위 : 7x7셀^000000"
+	],
+	[SKID.AG_ENERGY_CONVERSION] : [
+		"에너지 컨버전(Energy Conversion)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 리코그나이즈드 스펠 2, 클라이막스 1^000000",
+		"계열 : ^3F0099액티브(AP)^000000",
+		"타입 : ^777777회복^000000",
+		"대상 : ^777777자기 자신^000000",
+		"소모 : ^FF0000AP 22 ~ 10^000000",
+		"내용 : ^777777자신의 AP 일부를 에너지 치환을 통해 SP로 전환시킨다^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^777777AP 22 소모 / SP 40 회복^000000",
+		"[Lv 2] : ^777777AP 19 소모 / SP 120 회복^000000",
+		"[Lv 3] : ^777777AP 16 소모 / SP 240 회복^000000",
+		"[Lv 4] : ^777777AP 13 소모 / SP 400 회복^000000",
+		"[Lv 5] : ^777777AP 10 소모 / SP 600 회복^000000"
+	],
+	[SKID.EM_PSYCHIC_STREAM] : [
+		"사이킥 스트림(Psychic Stream)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 매직 북 마스터리 5, 다이아몬드 스톰 3, 컨프래그레이션 3, 라이트닝 랜드 3, 테라 드라이브 3, 베놈 스웜프 3^000000",
+		"계열 : ^3F0099액티브(AP)^000000",
+		"타입 : ^777777마법^000000",
+		"대상 : ^777777대상 1체^000000",
+		"소모 : ^FF0000AP 5^000000",
+		"내용 : ^777777마력의 흐름에 녹아들어 대상을 향해 순간적으로 이동하고 대상 및 그 주변 범위내 적들에게 무속성 마법 데미지를 입힌다.",
+		"마력의 흐름을 이용해야하므로 에너지 코트 효과로 자신을 보호하고 있다면 스킬을 사용할 수 없다.",
+		"시전자의 베이스 레벨 및 SPL에 따라 데미지가 추가로 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^777777MATK 4500%, 효과 범위 : 5x5셀^000000",
+		"[Lv 2] : ^777777MATK 8000%, 효과 범위 : 5x5셀^000000",
+		"[Lv 3] : ^777777MATK 11500%, 효과 범위 : 5x5셀^000000",
+		"[Lv 4] : ^777777MATK 15000%, 효과 범위 : 7x7셀^000000",
+		"[Lv 5] : ^777777MATK 18500%, 효과 범위 : 7x7셀^000000"
+	],
+	[SKID.CD_DIVINUS_FLOS] : [
+		"디비누스 플로스(Divinus Flos)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 아도라무스 5, 플라멘 5^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777마법^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777대상과 그 주변 7x7셀 범위에 성속성 마법 데미지를 입히는 성스러운 꽃을 피운다.",
+		"만약 안실라 효과를 받고 있다면, 공격 속성이 무속성이 된다.",
+		"시전자의 베이스 레벨 및 SPL 그리고 습득한 피두스 아니무스 스킬 레벨에 따라 데미지가 추가로 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^777777MATK 4000+(피두스 아니무스Lv x70)%^000000",
+		"[Lv 2] : ^777777MATK 8000+(피두스 아니무스Lv x70)%^000000",
+		"[Lv 3] : ^777777MATK 12000+(피두스 아니무스Lv x70)%^000000",
+		"[Lv 4] : ^777777MATK 16000+(피두스 아니무스Lv x70)%^000000",
+		"[Lv 5] : ^777777MATK 20000+(피두스 아니무스Lv x70)%^000000"
+	],
+	[SKID.IQ_BLAZING_FLAME_BLAST] : [
+		"열화기탄(Blazing Flame Blast)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 염화멸마신탄 7^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777원거리 물리^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777폭기 상태에서 사용 가능.",
+		"대상에게 원거리 물리 데미지를 입힌다. 만약, 폭기혈 활성화 상태인 경우 더 큰 데미지를 입힌다.",
+		"시전자의 베이스 레벨 및 POW에 따라 데미지가 추가로 증가되며, 시전자의 크리티컬 확률에 따라 크리티컬이 적용된다.",
+		"크리티컬 데미지의 경우 크리티컬 데미지 증가 옵션 총합의 절반만큼 적용된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^777777ATK 5800/7700(폭기혈 활성화)%^000000",
+		"[Lv 2] : ^777777ATK 9600/11900(폭기혈 활성화)%^000000",
+		"[Lv 3] : ^777777ATK 13400/16100(폭기혈 활성화)%^000000",
+		"[Lv 4] : ^777777ATK 17200/20300(폭기혈 활성화)%^000000",
+		"[Lv 5] : ^777777ATK 21000/24500(폭기혈 활성화)%^000000"
+	],
+	[SKID.WH_WILD_WALK] : [
+		"와일드 워크(Wild Walk)",
+		"MAX Lv : 5",
+		"^777777습득조건 : 자연 친화 3, 호크 러쉬 3^000000",
+		"계열 : ^3F0099액티브(AP)^000000",
+		"타입 : ^777777원거리 물리^000000",
+		"대상 : ^777777대상 1체^000000",
+		"소모 : ^FF0000AP 5^000000",
+		"내용 : ^777777매를 이용하여 대상에게 원거리 물리 데미지를 3회 입힌다.",
+		"매가 일으킨 돌풍을 이용해 짧은 시간동안 자신의 회피율과 이동속도를 끌어올린다.",
+		"습득한 스틸 크로 및 자연 친화 스킬 레벨과 시전자의 베이스 레벨 및 CON에 따라 데미지가 추가로 증가되며, 시전자의 크리티컬 확률에 따라 크리티컬이 적용된다.",
+		"크리티컬 데미지의 경우 크리티컬 데미지 증가 옵션 총합의 절반만큼 적용된다.",
+		"워그 기승 상태에서도 사용 가능하다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 ATK 4600%",
+		"Flee +100, 이동속도 +25%, 지속시간 : 6초^000000",
+		"[Lv 2] : ^7777771회당 ATK 7400%",
+		"Flee +150, 이동속도 +25%, 지속시간 : 9초^000000",
+		"[Lv 3] : ^7777771회당 ATK 10200%",
+		"Flee +200, 이동속도 +50%, 지속시간 : 12초^000000",
+		"[Lv 4] : ^7777771회당 ATK 13000%",
+		"Flee +250, 이동속도 +50%, 지속시간 : 15초^000000",
+		"[Lv 5] : ^7777771회당 ATK 15800%",
+		"Flee +300, 이동속도 +75%, 지속시간 : 18초^000000"
+	],
+	[SKID.SKE_SKY_SUN] : [
+		"천기신양",
+		"MAX Lv : 5",
+		"^777777습득조건 : 태천일양 3, 천양 3, 천기지신 7^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777근접 물리^000000",
+		"대상 : ^777777즉시 시전^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777천기합일 상태일 때 사용 가능.",
+		"타오르는 태양의 힘을 일순간 방출하여 자신 주변 범위내 적들에게 근접 물리 데미지를 입힌다.",
+		"천기 수련 습득 레벨, 시전자의 베이스 레벨 및 POW에 따라 데미지가 추가로 증가된다.",
+		"시전자의 크리티컬 확률에 따라 크리티컬 데미지가 적용되며, 크리티컬 데미지의 경우 크리티컬 데미지 증가 옵션 총합의 절반만큼 적용된다.^000000",
+		"[Lv 1] : ^777777ATK 1500+(천기 수련Lv x7)%/3x3셀^000000",
+		"[Lv 2] : ^777777ATK 3000+(천기 수련Lv x14)%/3x3셀^000000",
+		"[Lv 3] : ^777777ATK 4500+(천기 수련Lv x21)%/5x5셀^000000",
+		"[Lv 4] : ^777777ATK 6000+(천기 수련Lv x28)%/5x5셀^000000",
+		"[Lv 5] : ^777777ATK 7500+(천기 수련Lv x35)%/7x7셀^000000"
+	],
+	[SKID.SKE_SKY_MOON] : [
+		"천기신월",
+		"MAX Lv : 5",
+		"^777777습득조건 : 태천일월 3, 천월 3, 천기지신 7^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777근접 물리^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777천기합일 상태일 때 사용 가능.",
+		"월광을 발산하여 대상 및 그 주변 범위내 적들에게 근접 물리 데미지를 3회 입힌다.",
+		"천기 수련 습득 레벨, 시전자의 베이스 레벨 및 POW에 따라 데미지가 추가로 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 ATK 1650+(천기 수련Lv x9)%/5x5셀^000000",
+		"[Lv 2] : ^7777771회당 ATK 2100+(천기 수련Lv x18)%/5x5셀^000000",
+		"[Lv 3] : ^7777771회당 ATK 2550+(천기 수련Lv x27)%/7x7셀^000000",
+		"[Lv 4] : ^7777771회당 ATK 3000+(천기 수련Lv x36)%/7x7셀^000000",
+		"[Lv 5] : ^7777771회당 ATK 3450+(천기 수련Lv x45)%/9x9셀^000000"
+	],
+	[SKID.SKE_STAR_LIGHT_KICK] : [
+		"천성지행",
+		"MAX Lv : 5",
+		"^777777습득조건 : 천명낙성 3, 천성 3, 천기지신 7^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777근접 물리^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 2^000000",
+		"내용 : ^777777천기합일 상태일 때 사용 가능.",
+		"대상을 향해 빠르게 접근하여 대상 및 그 주변 범위내 적들에게 근접 물리 데미지를 7회 입힌다.",
+		"천기 수련 습득 레벨, 시전자의 베이스 레벨 및 POW에 따라 데미지가 추가로 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 ATK 600+(천기 수련Lv x5)%/5x5셀^000000",
+		"[Lv 2] : ^7777771회당 ATK 800+(천기 수련Lv x10)%/5x5셀^000000",
+		"[Lv 3] : ^7777771회당 ATK 1000+(천기 수련Lv x15)%/5x5셀^000000",
+		"[Lv 4] : ^7777771회당 ATK 1200+(천기 수련Lv x20)%/7x7셀^000000",
+		"[Lv 5] : ^7777771회당 ATK 1400+(천기 수련Lv x25)%/7x7셀^000000"
+	],
+	[SKID.HN_OVERCOMING_CRISIS] : [
+		"위기 극복",
+		"MAX Lv : 5",
+		"^777777습득조건 : 독학-전투학 5, 독학-마도학 5^000000",
+		"계열 : ^3F0099액티브(AP)^000000",
+		"타입 : ^777777버프^000000",
+		"대상 : ^777777자기 자신^000000",
+		"소모 : ^FF0000AP 50^000000",
+		"내용 : ^777777300초간 자신의 HP를 증가시킨다.",
+		"시전 시, HP가 즉시 회복되며 효과가 지속되는 동안 P.ATK과 S.MATK 도 증가된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^777777MHP +15000, P.ATK & S.MATK +3^000000",
+		"[Lv 2] : ^777777MHP +30000, P.ATK & S.MATK +6^000000",
+		"[Lv 3] : ^777777MHP +45000, P.ATK & S.MATK +9^000000",
+		"[Lv 4] : ^777777MHP +60000, P.ATK & S.MATK +12^000000",
+		"[Lv 5] : ^777777MHP +75000, P.ATK & S.MATK +15^000000"
+	],
+	[SKID.SH_CHUL_HO_BATTERING] : [
+		"철호 난무",
+		"MAX Lv : 7",
+		"^777777습득조건 : 영물 이해 7, 철호 허공할퀴기 5^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777원거리 물리^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 1^000000",
+		"내용 : ^777777철호의 날카로운 발톱 마구 할퀴어으로 대상 및 그 주변 적에게 원거리 물리 데미지를 5회 입힌다.",
+		"영물 이해 스킬 레벨 및 시전자의 베이스 레벨 및 POW에 따라 데미지가 추가로 증가된다.",
+		"시전자의 크리티컬 확률에 따라 크리티컬 데미지가 적용되며, 크리티컬 데미지의 경우 크리티컬 데미지 증가 옵션 총합의 절반만큼 적용된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 ATK 640+(영물 이해Lv x70)%/5x5셀^000000",
+		"[Lv 2] : ^7777771회당 ATK 800+(영물 이해Lv x70)%/5x5셀^000000",
+		"[Lv 3] : ^7777771회당 ATK 960+(영물 이해Lv x70)%/5x5셀^000000",
+		"[Lv 4] : ^7777771회당 ATK 1120+(영물 이해Lv x70)%/5x5셀^000000",
+		"[Lv 5] : ^7777771회당 ATK 1280+(영물 이해Lv x70)%/7x7셀^000000",
+		"[Lv 6] : ^7777771회당 ATK 1440+(영물 이해Lv x70)%/7x7셀^000000",
+		"[Lv 7] : ^7777771회당 ATK 1600+(영물 이해Lv x70)%/7x7셀^000000"
+	],
+	[SKID.SH_HYUN_ROK_SPIRIT_POWER] : [
+		"현록의 영력 발휘",
+		"MAX Lv : 7",
+		"^777777습득조건 : 영물 이해 7, 현록의 잎새바람 5^000000",
+		"계열 : ^993300액티브^000000",
+		"타입 : ^777777마법^000000",
+		"대상 : ^777777대상 1체^000000",
+		"회복 : ^0054FFAP 1^000000",
+		"내용 : ^777777현록의 강력한 영력을 발휘시켜 대상 및 그 주변 적에게 무속성 마법 데미지를 7회 입힌다.",
+		"영물 이해 스킬 레벨 및 시전자의 베이스 레벨 및 SPL에 따라 데미지가 추가로 증가된다.",
+		"현록의 오색뿔에 따라 데미지 속성이 변경된다.^000000",
+		"^ffffff_^000000",
+		"[Lv 1] : ^7777771회당 MATK 550+(영물 이해Lv x30)%/5x5셀^000000",
+		"[Lv 2] : ^7777771회당 MATK 750+(영물 이해Lv x30)%/5x5셀^000000",
+		"[Lv 3] : ^7777771회당 MATK 950+(영물 이해Lv x30)%/5x5셀^000000",
+		"[Lv 4] : ^7777771회당 MATK 1150+(영물 이해Lv x30)%/7x7셀^000000",
+		"[Lv 5] : ^7777771회당 MATK 1350+(영물 이해Lv x30)%/7x7셀^000000",
+		"[Lv 6] : ^7777771회당 MATK 1550+(영물 이해Lv x30)%/7x7셀^000000",
+		"[Lv 7] : ^7777771회당 MATK 1750+(영물 이해Lv x30)%/9x9셀^000000"
 	]
 };
