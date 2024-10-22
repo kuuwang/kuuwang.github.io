@@ -20,6 +20,21 @@ function updateJob(image) {
     const jobIds = JOBID[jobIdString]; 
     const JobInherit = getJobInherit(jobIds);
 
+    var charimg_m = document.getElementById("charsource_M")
+    var charimg_f = document.getElementById("charsource_F")
+    
+    if(jobIdString == "JT_BARD" || jobIdString == "JT_BARD_H" || jobIdString == "JT_MINSTREL_H" || jobIdString == "JT_TROUBADOUR" || jobIdString == "JT_KAGEROU" || jobIdString == "JT_SHINKIRO")  {
+        charimg_m.src = "../src/img/job/M/" + jobIdString + ".gif"
+        charimg_f.src = ""    
+    }else if(jobIdString == "JT_DANCER" || jobIdString == "JT_DANCER_H" || jobIdString == "JT_WANDERER_H" || jobIdString == "JT_TROUVERE" || jobIdString == "JT_OBORO" || jobIdString == "JT_SHIRANUI")  {
+        charimg_m.src = ""
+        charimg_f.src = "../src/img/job/F/" + jobIdString + ".gif" 
+    }
+    else{
+        charimg_m.src = "../src/img/job/M/" + jobIdString + ".gif"
+        charimg_f.src = "../src/img/job/F/" + jobIdString + ".gif"    
+    }
+
     JobInherit.splice(0, 1);        
     if (JOBGROUP_H.includes(JobInherit[2])) {
         JobInherit.splice(1, 1); 

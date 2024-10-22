@@ -1,7 +1,6 @@
 html, body, table{
     font-family: "Dotum";
     font-size: 12px;
-    height: 100%;
 }
 footer{
     position:fixed;
@@ -587,6 +586,13 @@ input[type="radio"]:checked + label .btn_bg {
     margin-left: 200px;
 }
 
+#charimg{
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+
+
 
 input[type="number"]{
     background: transparent;
@@ -877,19 +883,4 @@ input[type="number"]::-webkit-inner-spin-button {
     rgb(206,222,255),
     rgb(222,231,247)
     );
-}
-
-#SkillDescriptionChk{
-    position:absolute;
-    margin-left: 450px;
-    padding-bottom: 2px;
-}
-
-#skillDescription{
-    width: 280px;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid rgb(198,198,198);
-    padding: 7px;
-    line-height: 16px;
 }
