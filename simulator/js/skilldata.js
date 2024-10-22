@@ -3065,9 +3065,6 @@ const SKILL_INFO_LIST = {
 				[
 					[ SKID.AC_OWL, 3, ],
 				],
-				[JOBID.JT_ROGUE_H] :
-				[
-				],
 				[JOBID.JT_ROGUE] :
 				[
 				],
