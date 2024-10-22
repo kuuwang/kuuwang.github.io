@@ -242,8 +242,8 @@ function showSkillDescription(skillId, event) {
         const formattedDescription = descriptionArray.map(applyColorCodes).join("<br>");
         skillDescriptionDiv.innerHTML = formattedDescription;
         skillDescriptionDiv.style.display = "block";
-        skillDescriptionDiv.style.top = `${event.clientY}px`;
-        skillDescriptionDiv.style.left = `${event.clientX + 25}px`;
+        skillDescriptionDiv.style.top = `${event.pageY}px`;
+        skillDescriptionDiv.style.left = `${event.pageX + 25}px`;
     }
 }
 
