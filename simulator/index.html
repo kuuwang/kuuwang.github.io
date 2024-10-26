@@ -186,26 +186,26 @@
                 <td id="qClementia"><img src="../src/img/skill/AB_CLEMENTIA.png" onclick="toggleClementia()"></td>
                 <td id="qCanto"><img src="../src/img/skill/AB_CANTO.png" onclick="toggleCanto()"></td>
                 <td id="qGloria"><img src="../src/img/skill/PR_GLORIA.png" onclick="toggleGloria()"></td>
-                <td><img src="../src/img/skill/PR_IMPOSITIO.png"></td>
-                <td><img src="../src/img/skill/HP_ASSUMPTIO.png"></td>
-                <td><img src="../src/img/skill/AL_ANGELUS.png"></td>
-                <td><img src="../src/img/skill/CD_BENEDICTUM.png"></td>
-                <td><img src="../src/img/skill/CD_RELIGIO.png"></td>
-                <td><img src="../src/img/skill/CD_COMPETENTIA.png"></td>
+                <td id="qImpositio"><img src="../src/img/skill/PR_IMPOSITIO.png" onclick="toggleImpositio()"></td>
+                <td id="qAssumptio"><img src="../src/img/skill/HP_ASSUMPTIO.png" onclick="toggleAssumptio()"></td>
+                <td id="qAngelus"><img src="../src/img/skill/AL_ANGELUS.png" onclick="toggleAngelus()"></td>
+                <td id="qBenedictum"><img src="../src/img/skill/CD_BENEDICTUM.png" onclick="toggleBenedictum()"></td>
+                <td id="qReligio"><img src="../src/img/skill/CD_RELIGIO.png" onclick="toggleReligio()"></td>
+                <td id="qCompetentia"><img src="../src/img/skill/CD_COMPETENTIA.png" onclick="toggleCompetentia()"></td>
 
               </tr>
             </table>
             <table class="quickslot">
               <tr>
-                <td><img src="../src/img/skill/SO_STRIKING.png"></td>
-                <td><img src="../src/img/skill/EM_SPELL_ENCHANTING.png"></td>
-                <td><img src="../src/img/skill/TR_JAWAII_SERENADE.png"></td>
-                <td><img src="../src/img/skill/TR_PRON_MARCH.png"></td>
+                <td id="qStriking"><img src="../src/img/skill/SO_STRIKING.png" onclick="toggleStriking()"></td>
+                <td id="qSpellenchanting"><img src="../src/img/skill/EM_SPELL_ENCHANTING.png" onclick="toggleSpellenchanting()"></td>
+                <td id="qJawaiiserenade"><img src="../src/img/skill/TR_JAWAII_SERENADE.png" onclick="toggleJawaiiserenade()"></td>
+                <td id="qPronmarch"><img src="../src/img/skill/TR_PRON_MARCH.png" onclick="togglePronmarch()"></td>
                 <td></td>
                 <td></td>
-                <td><img src="../src/img/skill/CD_PRESENS_ACIES.png"></td>
+                <td id="qPresensacies"><img src="../src/img/skill/CD_PRESENS_ACIES.png" onclick="togglePresensacies()"></td>
                 <td></td>
-                <td><img src="../src/img/item/allmighty.png"></td>
+                <td id="qAlmighty"><img src="../src/img/item/Almighty.png" onclick="toggleAlmighty()"></td>
               </tr>
             </table>
             <table class="quickslot">
@@ -255,12 +255,12 @@
               <td class="statusName">Atk</td>
               <td><span id="statATK">1</span></td>
               <td>+</td>
-              <td>0</td>
+              <td><span id="itemATK">0</span></td>
               <td rowspan="11" class="stBlank"></td>
               <td class="statusName">Def</td>
               <td><span id="statDEF">1</span></td>
               <td>+</td>
-              <td>0</td>
+              <td><span id="itemDEF">0</span></td>
               <td rowspan="12" class="stBlank"></td>
             </tr>
             <tr>
@@ -279,11 +279,11 @@
               <td class="statusName">Matk</td>
               <td><span id="statMATK">1</span></td>
               <td>+</td>
-              <td id="itemATK">0</td>
+              <td><span id="itemMATK">0</span></td>
               <td class="statusName">Mdef</td>
               <td><span id="statMDEF">1</span></td>
               <td>+</td>
-              <td>0</td>
+              <td><span id="itemMDEF">0</span></td>
             </tr>
             <tr>
               <td colspan="7"></td>
@@ -342,7 +342,7 @@
               <td id="statATK">~</td>
               <td><span id="statHEALmax">1</span></td>
               <td class="statusName">Casting</td>
-              <td id="statATK" class="statusJobBonuses" colspan="2">(<span id="statCasting">1</span>%)</td>
+              <td id="statATK" class="statusJobBonuses" colspan="2">(<span id="statCasting">0.6</span>%)</td>
               <td><span id="totalCasting">1</span></td>
             </tr>
             <tr>

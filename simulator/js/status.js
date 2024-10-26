@@ -1,4 +1,3 @@
-
 function calstatBonus(){
     const jobLV = parseFloat(document.getElementById("jobLV").value);
     const jobName = this.dataset.db;
@@ -319,6 +318,12 @@ function calstatPATK(){
     var CON = statCON + itemCON;
 
     var statPATK = Math.floor(POW/3) + Math.floor(CON/5);
+    if(CompetentiaActive){
+        statPATK += 50;
+    }
+    if(PronmarchActive){
+        statPATK += 15;
+    }
     document.getElementById('statPATK').textContent = statPATK;
 
 }
@@ -335,6 +340,15 @@ function calstatSMATK(){
     var CON = statCON + itemCON;
 
     var statSMATK = Math.floor(SPL/3) + Math.floor(CON/5);
+    if(CompetentiaActive){
+        statSMATK += 50;
+    }
+    if(SpellenchantingActive){
+        statSMATK += 20;
+    }
+    if(JawaiiserenadeActive){
+        statSMATK += 15;
+    }
     document.getElementById('statSMATK').textContent = statSMATK;
 
 }
@@ -387,6 +401,9 @@ function calstatCRATE(){
     var CRT = statCRT + itemCRT;
 
     var statCRATE = Math.floor(CRT/3);
+    if(PresensaciesActive){
+        statCRATE += 10;
+    }
     document.getElementById('statCRATE').textContent = statCRATE;
 
 }
@@ -427,63 +444,101 @@ caltstatpoint();
 
 
 function toggleReset(){
-    ClementiaActive = false;
-    toggleClementia();
-    toggleClementia();
-    CantoActive = false;
-    toggleCanto();
-    toggleCanto();
-    GloriaActive = false;
-    toggleGloria();
-    toggleGloria();
-    
-}
-
-let ClementiaActive = false;
-function toggleClementia(){
-    const qClementia = document.getElementById("qClementia")
-    var attributes = ["itemSTR", "itemINT", "itemDEX"];
-    var skBonus = 17;
-
+    var attributes = ["itemATK", "itemMATK", "itemDEF", "itemMDEF"];
     attributes.forEach(attributeId=> {
         var element = document.getElementById(attributeId);
-        let currentValue = parseInt(element.value) || 0;
-        currentValue += ClementiaActive ? -skBonus : skBonus;
-        element.value = currentValue;
+        element.innerText = '0';
     })
-    qClementia.style.border = ClementiaActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    ClementiaActive = !ClementiaActive;
-    calStat();
+    const skillNames = [
+        "Clementia", "Canto", "Gloria", "Impositio", 
+        "Assumptio", "Angelus", "Benedictum", 
+        "Religio", "Competentia", "Presensacies", "Almighty",
+        "Striking", "Spellenchanting",
+        "Jawaiiserenade", "Pronmarch"
+    ];
+    CompetentiaActive = false;
+    AngelusActive = false;
+    SpellenchantingActive = false;
+    JawaiiserenadeActive = false;
+    PronmarchActive = false;
+    PresensaciesActive = false;
+    skillNames.forEach(skill => {
+        window[`${skill}Active`] = false;
+        const skillElement = document.getElementById(`q${skill}`);
+        skillElement.style.border = "1px solid rgb(198,198,198)";
+    });
+    calStat(); 
 }
-let CantoActive = false;
-function toggleCanto(){
-    const qCanto = document.getElementById("qCanto")
-    var attributes = ["itemAGI"];
-    var skBonus = 19;
 
-    attributes.forEach(attributeId=> {
-        var element = document.getElementById(attributeId);
-        let currentValue = parseInt(element.value) || 0;
-        currentValue += CantoActive ? -skBonus : skBonus;
-        element.value = currentValue;
-    })
-    qCanto.style.border = CantoActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    CantoActive = !CantoActive;
-    calStat();
+function toggleSkill(skillName, attributes, skBonus) {
+    const skillElement = document.getElementById(`q${skillName}`);
+    const isActive = window[`${skillName}Active`];
+
+    attributes.forEach(attributeId => {
+        const element = document.getElementById(attributeId);
+        let currentValue = parseInt(element.value || element.innerText) || 0;
+        currentValue += isActive ? -skBonus : skBonus;
+        
+        if (element.tagName === "INPUT") {
+            element.value = currentValue;
+        } else {
+            element.innerText = currentValue;
+        }
+    });
+
+    skillElement.style.border = isActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
+    window[`${skillName}Active`] = !isActive;
+    calStat();    
 }
-let GloriaActive = false;
-function toggleGloria(){
-    const qGloria = document.getElementById("qGloria")
-    var attributes = ["itemLUK"];
-    var skBonus = 30;
 
-    attributes.forEach(attributeId=> {
-        var element = document.getElementById(attributeId);
-        let currentValue = parseInt(element.value) || 0;
-        currentValue += GloriaActive ? -skBonus : skBonus;
-        element.value = currentValue;
-    })
-    qGloria.style.border = GloriaActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    GloriaActive = !GloriaActive;
-    calStat();
+
+// Call the function for each skill toggle
+function toggleClementia() { toggleSkill("Clementia", ["itemSTR", "itemINT", "itemDEX"], 17); }
+function toggleCanto() { toggleSkill("Canto", ["itemAGI"], 19); }
+function toggleGloria() { toggleSkill("Gloria", ["itemLUK"], 30); }
+function toggleImpositio() { toggleSkill("Impositio", ["itemATK", "itemMATK"], 25); }
+function toggleAssumptio() { toggleSkill("Assumptio", ["itemDEF"], 250); }
+
+function toggleBenedictum() { toggleSkill("Benedictum", ["itemPOW", "itemCRT", "itemCON"], 10); }
+function toggleReligio() { toggleSkill("Religio", ["itemSPL", "itemWIS", "itemSTA"], 10); }
+function toggleAlmighty() { toggleSkill("Almighty", ["itemSTR", "itemAGI", "itemVIT", "itemINT", "itemDEX", "itemLUK"], 10); }
+function toggleStriking() { toggleSkill("Striking", ["itemATK"], 100); }
+
+function toggleActive(skillName, isActive) {
+    const skillElement = document.getElementById(`q${skillName}`);
+    skillElement.style.border = isActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
+    return !isActive;
+}
+
+let CompetentiaActive = false;
+function toggleCompetentia() { CompetentiaActive = toggleActive("Competentia", CompetentiaActive); calStat(); }
+let SpellenchantingActive = false;
+function toggleSpellenchanting() { SpellenchantingActive = toggleActive("Spellenchanting", SpellenchantingActive); calStat(); }
+let JawaiiserenadeActive = false;
+function toggleJawaiiserenade() { JawaiiserenadeActive = toggleActive("Jawaiiserenade", JawaiiserenadeActive); calStat(); }
+let PronmarchActive = false;
+function togglePronmarch() { PronmarchActive = toggleActive("Pronmarch", PronmarchActive); calStat(); }
+let PresensaciesActive = false;
+function togglePresensacies() { PresensaciesActive = toggleActive("Presensacies", PresensaciesActive); calStat(); }
+
+
+let AngelusActive = false;
+let originalStatDef = 0
+function toggleAngelus(){
+    const qAngelus = document.getElementById("qAngelus");
+    const statDEFElement = document.getElementById("statDEF");
+    const statVIT = parseFloat(document.getElementById("statVIT").value);
+    const itemVIT = parseFloat(document.getElementById("itemVIT").value);
+    var VIT = statVIT + itemVIT;
+
+    let currentStatDEF = parseInt(statDEFElement.innerText) || 0;
+
+    if (AngelusActive) {
+        calStat();
+    } else {
+        currentStatDEF += (VIT * 1.5 / 2) - (VIT / 2);
+        statDEFElement.innerText = Math.floor(currentStatDEF);
+    }
+    qAngelus.style.border = AngelusActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
+    AngelusActive = !AngelusActive;
 }
