@@ -279,9 +279,9 @@ function changeGrid(){
 
     skillContainer.classList.toggle("grid");
     if(skillContainer.classList.contains("grid")){
-        skillGrid.innerHTML = `<i class="fa-solid fa-bars"></i>`
-    }else{
         skillGrid.innerHTML = `<i class="fa-solid fa-grip-vertical"></i>`
+    }else{
+        skillGrid.innerHTML = `<i class="fa-solid fa-bars"></i>`
     }
     
 }

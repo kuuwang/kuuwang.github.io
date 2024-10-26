@@ -147,29 +147,92 @@
     </div>
     <div id="simulatorContainer">
       <div id="statusContainer">
-        <!-- 직업 정보 -->
-        <div id="charInfo">
-          <table>
-            <tr>
-              <td class="titlebar"><input id="charName" value="캐릭터명"></td>
-            </tr>
-            <tr>
-              <td>　Lv. <input type="number" id="baseLV" value="1">　/　<span id="Jobname">Novice</span>　/　J Lv. <input type="number" id="jobLV" value="1"></td>
-            </tr>
-            <tr>
-              <td>　HP. <span id="statHP">55</span>　|　SP. <span id="statSP">11</span></td>
-            </tr>
-          </table>
+        <div id="charContainer">
+          <!-- 직업 정보 -->
+          <div id="charInfo">
+            <table>
+              <tr>
+                <td class="titlebar"><div class="circle"></div>기본정보</td>
+              </tr>
+              <tr>
+                <td><input id="charName" placeholder="캐릭터명"></td>
+              </tr>
+              <tr>
+                <td style="text-indent: 5px;"><span id="Jobname">Novice</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div id="lvContainer">
+                    <table>
+                      <tr>
+                        <td>Base Lv.</td>
+                        <td><input type="number" id="baseLV" value="1"></td>
+                      </tr>
+                      <tr>
+                        <td>Job Lv.</td>
+                        <td><input type="number" id="jobLV" value="1"></td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+                  
+
+          <div id="quickslot">
+            <table class="quickslot">
+              <tr>
+                <td><img src="../src/img/skill/AB_CLEMENTIA.png"></td>
+                <td><img src="../src/img/skill/AB_CANTO.png"></td>
+                <td><img src="../src/img/skill/PR_GLORIA.png"></td>
+                <td><img src="../src/img/skill/PR_IMPOSITIO.png"></td>
+                <td><img src="../src/img/skill/HP_ASSUMPTIO.png"></td>
+                <td><img src="../src/img/skill/AL_ANGELUS.png"></td>
+                <td><img src="../src/img/skill/CD_BENEDICTUM.png"></td>
+                <td><img src="../src/img/skill/CD_RELIGIO.png"></td>
+                <td><img src="../src/img/skill/CD_COMPETENTIA.png"></td>
+
+              </tr>
+            </table>
+            <table class="quickslot">
+              <tr>
+                <td><img src="../src/img/skill/SO_STRIKING.png"></td>
+                <td><img src="../src/img/skill/EM_SPELL_ENCHANTING.png"></td>
+                <td><img src="../src/img/skill/TR_JAWAII_SERENADE.png"></td>
+                <td><img src="../src/img/skill/TR_PRON_MARCH.png"></td>
+                <td></td>
+                <td></td>
+                <td><img src="../src/img/skill/CD_PRESENS_ACIES.png"></td>
+                <td></td>
+                <td><img src="../src/img/item/allmighty.png"></td>
+              </tr>
+            </table>
+            <table class="quickslot">
+              <tr>
+                <td><img src="../src/img/skill/SP_SOULSHADOW.png"></td>
+                <td><img src="../src/img/skill/SP_SOULFAIRY.png"></td>
+                <td><img src="../src/img/skill/SP_SOULFALCON.png"></td>
+                <td><img src="../src/img/skill/SP_SOULGOLEM.png"></td>
+                <td><img src="../src/img/skill/SOA_TALISMAN_OF_WARRIOR.png"></td>
+                <td><img src="../src/img/skill/SOA_TALISMAN_OF_MAGICIAN.png"></td>
+                <td></td>
+                <td></td>
+                <td><img src="../src/img/skill/ALL_FULL_THROTTLE.png"></td>
+              </tr>
+            </table>
+          </div>
         </div>
+                <!--초기화 버튼-->
+                <button id="resetAllSkills" class="ragbtn" onclick="resetAllSkillLevels()">스킬 초기화</button>
+                <button id="skillGrid" class="ragbtn" style="width: 30px;" onclick="changeGrid()"><i class="fa-solid fa-bars"></i></button>
         
-        <!--초기화 버튼-->
-        <button id="resetAllSkills" class="ragbtn" onclick="resetAllSkillLevels()">스킬 초기화</button>
-        <button id="skillGrid" class="ragbtn" style="width: 30px;" onclick="changeGrid()"><i class="fa-solid fa-grip-vertical"></i></button>
         <!-- 직업 이미지 -->
-        <div id="charimg">
+        <div id="charImg">
           <img src="../src/img/job/M/JT_NOVICE.gif" id="charsource_M">
           <img src="../src/img/job/F/JT_NOVICE.gif" id="charsource_F">
         </div>
+
         <!-- 직업 스테이터스 -->
         <div id="charStatus">
           <table>
@@ -432,8 +495,8 @@
 </body>
 <footer>
   <pre>
-© <a href="https://www.gravity.co.kr/">Gravity Co., LTD</a> & Lee MyoungJin(studio DTDS). All Rights Reserved.
-© <a href="https://www.gungho.co.jp/">GungHo Online Entertainment, Inc.</a> All Rights Reserved. 
-© <a href="https://www.youtube.com/@kuuwang/">Kuuwang</a> All Rights Reserved.  </pre>
+© <a href="https://www.gravity.co.kr/">Gravity Co., Ltd.</a> & Lee MyoungJin (studio DTDS). All rights reserved.
+© <a href="https://www.gungho.co.jp/">GungHo Online Entertainment, Inc.</a> All Rights Reserved.
+Copyright(c) 2024 Kuuwang All Rights Reserved.  </pre>
 </footer>
 </html>

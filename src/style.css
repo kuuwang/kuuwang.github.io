@@ -586,10 +586,91 @@ input[type="radio"]:checked + label .btn_bg {
     margin-left: 200px;
 }
 
-#charimg{
+#charContainer{
+    display: flex;
     clear: both;
-    width: 100%;
+    justify-content: space-between;
+}
+
+#charInfo{
+    float: left;
+}
+
+
+#charInfo table{
+    border: 1px solid rgb(206,206,206);
+    border-collapse: collapse;
+    width: 205px;
+}
+
+#lvContainer{
+    margin: 5px;
+    padding: 3px;
+    background-color: rgba(231,231,239,1);
+    border-radius: 8px;
+}
+
+#lvContainer table{
+    border-collapse: collapse;
+    border: 0px;
+}
+#lvContainer table tr td:nth-child(1){
+    width: 55px;
+}
+
+#charName{
+    border: 0px;
+    font-family: "Dotum"
+}
+
+
+.quickslot{
+    border: 1px solid rgb(198,198,198);
+    border-radius: 3px;
+    padding: 1px 10px;
+    background: linear-gradient(to bottom, 
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(247, 247, 247)
+);
+}
+
+.quickslot tr td{
+    border: 1px solid rgb(198,198,198);
+    width: 24px;
+    height: 24px;
+    background-color: white;
     text-align: center;
+    font-size: 2px;
+    padding: 0px;
+}
+
+.quickslot tr td img{
+    width: 24px;
+    height: 24px;
 }
 
 
@@ -613,21 +694,15 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 #charImg{
-    float: left;
+    text-align: center;
+    width: 100%;
+    clear:both;
 }
 
 
-#charInfo{
-    float: left;
+#charImg img{
+    text-align: center;
 }
-
-
-#charInfo table{
-    border: 1px solid rgb(206,206,206);
-    border-collapse: collapse;
-    width: 360px;
-}
-
 
 
 
@@ -725,11 +800,11 @@ input[type="number"]::-webkit-inner-spin-button {
     float: left;
     margin-bottom: 100px;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 #skillContainer.grid{
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .jobContainer{
