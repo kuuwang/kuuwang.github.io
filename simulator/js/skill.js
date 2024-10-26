@@ -282,6 +282,5 @@ function changeGrid(){
         skillGrid.innerHTML = `<i class="fa-solid fa-grip-vertical"></i>`
     }else{
         skillGrid.innerHTML = `<i class="fa-solid fa-bars"></i>`
-    }
-    
+    }    
 }

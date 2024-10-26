@@ -35,6 +35,10 @@ function calstatBonus(){
         document.getElementById(`bonus${stat}`).textContent = bonusStats[stat];
         document.getElementById(`item${stat}`).value = bonusStats[stat];
     }
+    calStat();
+}
+
+function calStat(){
     calstatATK();
     calstatMATK();
     calstatDEF();
@@ -418,3 +422,68 @@ function caltstatpoint(){
 });
 
 caltstatpoint();
+
+
+
+
+function toggleReset(){
+    ClementiaActive = false;
+    toggleClementia();
+    toggleClementia();
+    CantoActive = false;
+    toggleCanto();
+    toggleCanto();
+    GloriaActive = false;
+    toggleGloria();
+    toggleGloria();
+    
+}
+
+let ClementiaActive = false;
+function toggleClementia(){
+    const qClementia = document.getElementById("qClementia")
+    var attributes = ["itemSTR", "itemINT", "itemDEX"];
+    var skBonus = 17;
+
+    attributes.forEach(attributeId=> {
+        var element = document.getElementById(attributeId);
+        let currentValue = parseInt(element.value) || 0;
+        currentValue += ClementiaActive ? -skBonus : skBonus;
+        element.value = currentValue;
+    })
+    qClementia.style.border = ClementiaActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
+    ClementiaActive = !ClementiaActive;
+    calStat();
+}
+let CantoActive = false;
+function toggleCanto(){
+    const qCanto = document.getElementById("qCanto")
+    var attributes = ["itemAGI"];
+    var skBonus = 19;
+
+    attributes.forEach(attributeId=> {
+        var element = document.getElementById(attributeId);
+        let currentValue = parseInt(element.value) || 0;
+        currentValue += CantoActive ? -skBonus : skBonus;
+        element.value = currentValue;
+    })
+    qCanto.style.border = CantoActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
+    CantoActive = !CantoActive;
+    calStat();
+}
+let GloriaActive = false;
+function toggleGloria(){
+    const qGloria = document.getElementById("qGloria")
+    var attributes = ["itemLUK"];
+    var skBonus = 30;
+
+    attributes.forEach(attributeId=> {
+        var element = document.getElementById(attributeId);
+        let currentValue = parseInt(element.value) || 0;
+        currentValue += GloriaActive ? -skBonus : skBonus;
+        element.value = currentValue;
+    })
+    qGloria.style.border = GloriaActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
+    GloriaActive = !GloriaActive;
+    calStat();
+}

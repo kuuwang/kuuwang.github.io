@@ -62,4 +62,5 @@ function updateJob(image) {
     calstatBonus.bind(image)();
     calstatpoint();
     caltstatpoint();
+    toggleReset()
 }
