@@ -153,6 +153,7 @@ function SkillDisplay(skillId, job) {
         currentLevel++;
         sk_id_div.innerText = currentLevel;
     }
+    calStat();
     updateTotalSkillPoints(job);
 }
 

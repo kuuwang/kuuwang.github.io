@@ -228,11 +228,37 @@
                 <button id="skillGrid" class="ragbtn" style="width: 30px;" onclick="changeGrid()"><i class="fa-solid fa-bars"></i></button>
         
         <!-- 직업 이미지 -->
-        <div id="charImg">
-          <img src="../src/img/job/M/JT_NOVICE.gif" id="charsource_M">
-          <img src="../src/img/job/F/JT_NOVICE.gif" id="charsource_F">
+        <div id="equipmentContainer">
+          <div class="equipmentBox" id="rightHand">
+            <div class="equipmentBox-selected" id="equipmentBoxSelected">
+              <img src="../src/img/item/Dagger.png" alt="Selected">
+              <span>맨손</span>
+            </div>
+            <div class="equipmentBox-options" id="rightHandList">
+              <div class="equipmentBox-option" data-value="option1">
+                <img src="../src/img/item/Dagger.png" alt="Option 1">
+                <span>Option 1</span>
+              </div>
+              <div class="equipmentBox-option" data-value="option2">
+                <img src="../src/img/item/Dagger.png" alt="Option 2">
+                <span>Option 2</span>
+              </div>
+              <div class="equipmentBox-option" data-value="option3">
+                <img src="../src/img/item/Dagger.png" alt="Option 3">
+                <span>Option 3</span>
+              </div>
+            </div>
+          </div>
+          <div id="charImg">
+            <img src="../src/img/job/M/JT_NOVICE.gif" id="charsource_M">
+            <img src="../src/img/job/F/JT_NOVICE.gif" id="charsource_F">
+          </div>
+          <div>
+            <select id="leftHand" class="equipmentBox">
+              <option value="Shield">방패</option>
+            </select>
+          </div>
         </div>
-
         <!-- 직업 스테이터스 -->
         <div id="charStatus">
           <table>

@@ -349,6 +349,10 @@ function calstatSMATK(){
     if(JawaiiserenadeActive){
         statSMATK += 15;
     }
+    if(document.getElementById("skill_5228")) { // Arch Mage : Twohandstaff Mastery
+        console.log(document.getElementById("skill_5228").innerText)
+        statSMATK += parseInt(document.getElementById("skill_5228").innerText)*2;
+    } 
     document.getElementById('statSMATK').textContent = statSMATK;
 
 }
@@ -541,4 +545,96 @@ function toggleAngelus(){
     }
     qAngelus.style.border = AngelusActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
     AngelusActive = !AngelusActive;
+}
+
+
+
+const weaponInfo = [
+    { name: "맨손", image: "../src/img/item/Dagger.png" },
+    { name: "단검", image: "../src/img/item/Dagger.png" },
+    { name: "한손검", image: "../src/img/item/Dagger.png" },
+    { name: "양손검", image: "../src/img/item/Dagger.png" },
+    { name: "창", image: "../src/img/item/Dagger.png" },
+    { name: "양손창", image: "../src/img/item/Dagger.png" },
+    { name: "도끼", image: "../src/img/item/Dagger.png" },
+    { name: "양도끼", image: "../src/img/item/Dagger.png" },
+    { name: "메이스", image: "../src/img/item/Dagger.png" },
+    { name: "양손메이스", image: "../src/img/item/Dagger.png" },
+    { name: "한손지팡이", image: "../src/img/item/Dagger.png" },
+    { name: "활", image: "../src/img/item/Dagger.png" },
+    { name: "너클", image: "../src/img/item/Dagger.png" },
+    { name: "악기", image: "../src/img/item/Dagger.png" },
+    { name: "채찍", image: "../src/img/item/Dagger.png" },
+    { name: "책", image: "../src/img/item/Dagger.png" },
+    { name: "카타르", image: "../src/img/item/Dagger.png" },
+    { name: "권총", image: "../src/img/item/Dagger.png" },
+    { name: "라이플", image: "../src/img/item/Dagger.png" },
+    { name: "개틀링", image: "../src/img/item/Dagger.png" },
+    { name: "샷건", image: "../src/img/item/Dagger.png" },
+    { name: "그레네이드", image: "../src/img/item/Dagger.png" },
+    { name: "수리검", image: "../src/img/item/Dagger.png" },
+    { name: "양손지팡이", image: "../src/img/item/Dagger.png" },
+    { name: "방패", image: "../src/img/item/Dagger.png" },
+];
+
+const equipmentBox = document.getElementById('rightHand');
+const equipmentBoxSelected = document.getElementById('equipmentBoxSelected');
+const rightHandList = document.getElementById('rightHandList');
+
+// Toggle the equipmentBox display
+equipmentBoxSelected.addEventListener('click', () => {
+  rightHandList.style.display = rightHandList.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close equipmentBox when clicking outside
+document.addEventListener('click', (event) => {
+  if (!equipmentBox.contains(event.target)) {
+    rightHandList.style.display = 'none';
+  }
+});
+
+// Function to add click listeners to each option
+function addOptionListeners() {
+  const options = document.querySelectorAll('.equipmentBox-option');
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const img = option.querySelector('img').src;
+      const text = option.querySelector('.weaponName').textContent;
+      equipmentBoxSelected.querySelector('img').src = img;
+      equipmentBoxSelected.querySelector('span').textContent = text;
+      rightHandList.style.display = 'none';
+    });
+  });
+}
+
+// Function to update weapon options based on the selected job
+function updateWeaponR(job) {
+  const rightHandSelect = document.getElementById("rightHandList");
+  rightHandSelect.innerHTML = ""; // Clear current options
+  const jobWeapons = weaponData[job.substring(3)].slice(0, -1); // Remove last element if needed
+
+  if (job.substring(3) == "TAEKWON") {
+    const weaponOption = document.createElement("div");
+    weaponOption.className = "equipmentBox-option";
+    weaponOption.innerHTML = `
+      <img src="${weaponInfo[0].image}" class="weaponImg" alt="${weaponInfo[0].name}">
+      <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(198,198,198)">(ASPD: -40)</span></span>
+    `;
+    rightHandSelect.appendChild(weaponOption);
+  } else {
+    jobWeapons.forEach((value, index) => {
+      if (value < 200 && weaponInfo[index].name != "양손메이스") {
+        const weaponList = document.createElement("div");
+        weaponList.className = "equipmentBox-option";
+        weaponList.innerHTML = `
+          <img src="${weaponInfo[index].image}" class="weaponImg" alt="${weaponInfo[index].name}">
+          <span class="weaponName">${weaponInfo[index].name}</span>
+        `;
+        rightHandSelect.appendChild(weaponList);
+      }
+    });
+  }
+  
+  // Re-add click listeners to new options
+  addOptionListeners();
 }

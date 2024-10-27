@@ -671,7 +671,6 @@ input[type="radio"]:checked + label .btn_bg {
 .quickslot tr td img{
     width: 24px;
     height: 24px;
-    cursor: pointer;
 }
 
 
@@ -692,18 +691,79 @@ input[type="number"]::-webkit-inner-spin-button {
     -moz-appearance: none;
     appearance: none;
 }
+#equipmentContainer{
+    text-align: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 5px;
+    align-items:center;
+}
 
+.equipmentBox{
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid rgb(198,198,198);
+}
+
+/* Display selected option */
+.equipmentBox-selected {
+display: flex;
+align-items: center;
+}
+
+.equipmentBox-selected img {
+width: 20px;
+height: 20px;
+margin-right: 10px;
+}
+
+/* equipmentBox items */
+.equipmentBox-options {
+display: none; /* Hidden by default */
+position: absolute;
+top: 100%;
+left: 0;
+width: 100%;
+border: 1px solid #ccc;
+border-top: none;
+background-color: white;
+z-index: 10;
+}
+
+.equipmentBox-option {
+display: flex;
+align-items: center;
+padding: 8px 10px;
+cursor: pointer;
+}
+
+.equipmentBox-option img {
+width: 20px;
+height: 20px;
+margin-right: 10px;
+}
+
+/* Option hover effect */
+.equipmentBox-option:hover {
+background-color: #f0f0f0;
+}
+#leftHand{
+    text-align: right;
+    direction: rtl
+}
 
 #charImg{
     text-align: center;
     width: 100%;
-    clear:both;
 }
 
 
-#charImg img{
-    text-align: center;
-}
 
 
 

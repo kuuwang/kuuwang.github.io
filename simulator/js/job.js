@@ -58,7 +58,9 @@ function updateJob(image) {
             }
         }
     });
+
     createSkillGrid(JobInherit); 
+    updateWeaponR(jobIdString)
     calstatBonus.bind(image)();
     calstatpoint();
     caltstatpoint();
