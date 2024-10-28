@@ -48,6 +48,7 @@ function calStat(){
     calstatCRIT();
     calstatHEAL();
     calstatCasting();
+    calstatASPD();
 
     calstatPATK();
     calstatSMATK();
@@ -350,7 +351,6 @@ function calstatSMATK(){
         statSMATK += 15;
     }
     if(document.getElementById("skill_5228")) { // Arch Mage : Twohandstaff Mastery
-        console.log(document.getElementById("skill_5228").innerText)
         statSMATK += parseInt(document.getElementById("skill_5228").innerText)*2;
     } 
     document.getElementById('statSMATK').textContent = statSMATK;
@@ -636,7 +636,7 @@ function updateWeaponR(job) {
         const index0Value = jobWeapons[0];
         equipmentBoxSelectedR.innerHTML = `
             <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-            <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)">${index0Value}</span></span>
+            <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDR">${index0Value}</span></span>
         `;
     if (value < 200 && weaponInfo[index].name != "양손메이스") {
         const weaponList = document.createElement("div");
@@ -665,7 +665,7 @@ function updateWeaponL(job) {
             const index0Value = jobWeapons[0];
             equipmentBoxSelectedL.innerHTML = `
                 <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-                <span class="weaponName"><span style="color: rgb(254,254,254)">${index0Value}</span>${weaponInfo[0].name}</span>
+                <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDR">${index0Value}</span>${weaponInfo[0].name}</span>
             `;
         if (value < 200 && (weaponInfo[index].name != "양손메이스" && weaponInfo[index].name != "카타르" && weaponInfo[index].name != "수리검")) {
             const weaponList = document.createElement("div");
@@ -686,7 +686,7 @@ function updateWeaponL(job) {
             if (index === 0) {
                 equipmentBoxSelectedL.innerHTML = `
                     <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
-                    <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
+                    <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDL">${value}</span>${weaponInfoItem.name} </span>
                 `;
             }
     
@@ -702,3 +702,20 @@ function updateWeaponL(job) {
     }
     addOptionListenersL();
 }
+
+
+function calstatASPD(){
+    const baseLV = parseFloat(document.getElementById("baseLV").value);
+    const statDEX = parseFloat(document.getElementById("statDEX").value);
+    const itemDEX = parseFloat(document.getElementById("itemDEX").value);
+    const statAGI = parseFloat(document.getElementById("statAGI").value);
+    const itemAGI = parseFloat(document.getElementById("itemAGI").value);
+    var AGI = statAGI + itemAGI;
+    var DEX = statDEX + itemDEX;
+
+    var statASPD = 195 + ((AGI*2+DEX)/10)-(80)+(baseLV/10)-((baseLV-AGI)/20)
+    document.getElementById('statASPD').textContent = Math.floor(statASPD)
+}
+['baseLV', 'statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatASPD);
+});
