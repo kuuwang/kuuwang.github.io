@@ -550,31 +550,31 @@ function toggleAngelus(){
 
 
 const weaponInfo = [
-    { name: "맨손", image: "../src/img/item/Dagger.png" },
-    { name: "단검", image: "../src/img/item/Dagger.png" },
-    { name: "한손검", image: "../src/img/item/Dagger.png" },
-    { name: "양손검", image: "../src/img/item/Dagger.png" },
-    { name: "창", image: "../src/img/item/Dagger.png" },
-    { name: "양손창", image: "../src/img/item/Dagger.png" },
-    { name: "도끼", image: "../src/img/item/Dagger.png" },
-    { name: "양도끼", image: "../src/img/item/Dagger.png" },
-    { name: "메이스", image: "../src/img/item/Dagger.png" },
-    { name: "양손메이스", image: "../src/img/item/Dagger.png" },
-    { name: "한손지팡이", image: "../src/img/item/Dagger.png" },
-    { name: "활", image: "../src/img/item/Dagger.png" },
-    { name: "너클", image: "../src/img/item/Dagger.png" },
-    { name: "악기", image: "../src/img/item/Dagger.png" },
-    { name: "채찍", image: "../src/img/item/Dagger.png" },
-    { name: "책", image: "../src/img/item/Dagger.png" },
-    { name: "카타르", image: "../src/img/item/Dagger.png" },
-    { name: "권총", image: "../src/img/item/Dagger.png" },
-    { name: "라이플", image: "../src/img/item/Dagger.png" },
-    { name: "개틀링", image: "../src/img/item/Dagger.png" },
-    { name: "샷건", image: "../src/img/item/Dagger.png" },
-    { name: "그레네이드", image: "../src/img/item/Dagger.png" },
-    { name: "수리검", image: "../src/img/item/Dagger.png" },
-    { name: "양손지팡이", image: "../src/img/item/Dagger.png" },
-    { name: "방패", image: "../src/img/item/Dagger.png" },
+    { name: "맨손", value: "NOW"},
+    { name: "단검", value: "DAG"},
+    { name: "한손검", value: "SWO"},
+    { name: "양손검", value: "SW2"},
+    { name: "창", value: "SPE"},
+    { name: "양손창", value: "SP2"},
+    { name: "도끼", value: "AXE"},
+    { name: "양손도끼", value: "AX2"},
+    { name: "메이스", value: "MAC"},
+    { name: "양손메이스", value: "MA2"},
+    { name: "한손지팡이", value: "ROD"},
+    { name: "활", value: "BOW"},
+    { name: "너클", value: "KNU"},
+    { name: "악기", value: "INS"},
+    { name: "채찍", value: "WHI"},
+    { name: "책", value: "BOK"},
+    { name: "카타르", value: "KAT"},
+    { name: "권총", value: "HGU"},
+    { name: "라이플", value: "RIF"},
+    { name: "개틀링", value: "GAT"},
+    { name: "샷건", value: "SGU"},
+    { name: "그레네이드", value: "GRE"},
+    { name: "수리검", value: "HUU"},
+    { name: "양손지팡이", value: "RO2"},
+    { name: "방패", value: "SHI"},
 ];
 
 const equipmentBox = document.getElementById('rightHand');
@@ -583,58 +583,53 @@ const rightHandList = document.getElementById('rightHandList');
 
 // Toggle the equipmentBox display
 equipmentBoxSelected.addEventListener('click', () => {
-  rightHandList.style.display = rightHandList.style.display === 'block' ? 'none' : 'block';
+    rightHandList.style.display = rightHandList.style.display === 'block' ? 'none' : 'block';
 });
 
 // Close equipmentBox when clicking outside
 document.addEventListener('click', (event) => {
-  if (!equipmentBox.contains(event.target)) {
+    if (!equipmentBox.contains(event.target)) {
     rightHandList.style.display = 'none';
-  }
+    }
 });
 
 // Function to add click listeners to each option
 function addOptionListeners() {
-  const options = document.querySelectorAll('.equipmentBox-option');
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      const img = option.querySelector('img').src;
-      const text = option.querySelector('.weaponName').textContent;
-      equipmentBoxSelected.querySelector('img').src = img;
-      equipmentBoxSelected.querySelector('span').textContent = text;
-      rightHandList.style.display = 'none';
+    const options = document.querySelectorAll('.equipmentBox-option');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const img = option.querySelector('img').src;
+            const text = option.querySelector('.weaponName').innerHTML;
+            equipmentBoxSelected.querySelector('img').src = img;
+            equipmentBoxSelected.querySelector('span').innerHTML = text;
+            rightHandList.style.display = 'none';
+        });
     });
-  });
 }
 
 // Function to update weapon options based on the selected job
 function updateWeaponR(job) {
-  const rightHandSelect = document.getElementById("rightHandList");
-  rightHandSelect.innerHTML = ""; // Clear current options
-  const jobWeapons = weaponData[job.substring(3)].slice(0, -1); // Remove last element if needed
+    const rightHandSelect = document.getElementById("rightHandList");
+    rightHandSelect.innerHTML = ""; // Clear current options
+    const jobWeapons = weaponData[job.substring(3)].slice(0, -1); // Remove last element if needed
 
-  if (job.substring(3) == "TAEKWON") {
-    const weaponOption = document.createElement("div");
-    weaponOption.className = "equipmentBox-option";
-    weaponOption.innerHTML = `
-      <img src="${weaponInfo[0].image}" class="weaponImg" alt="${weaponInfo[0].name}">
-      <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(198,198,198)">(ASPD: -40)</span></span>
-    `;
-    rightHandSelect.appendChild(weaponOption);
-  } else {
+    const equipmentBoxSelected = document.getElementById("equipmentBoxSelected");
+
     jobWeapons.forEach((value, index) => {
-      if (value < 200 && weaponInfo[index].name != "양손메이스") {
+        const index0Value = jobWeapons[0];
+        equipmentBoxSelected.innerHTML = `
+            <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
+            <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(198,198,198)">-${index0Value}</span></span>
+        `;
+    if (value < 200 && weaponInfo[index].name != "양손메이스") {
         const weaponList = document.createElement("div");
         weaponList.className = "equipmentBox-option";
         weaponList.innerHTML = `
-          <img src="${weaponInfo[index].image}" class="weaponImg" alt="${weaponInfo[index].name}">
-          <span class="weaponName">${weaponInfo[index].name}</span>
+            <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
+            <span class="weaponName">${weaponInfo[index].name}  <span style="color: rgb(198,198,198)">-${value}</span></span>
         `;
         rightHandSelect.appendChild(weaponList);
-      }
+    }
     });
-  }
-  
-  // Re-add click listeners to new options
-  addOptionListeners();
+    addOptionListeners();
 }
