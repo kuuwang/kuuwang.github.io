@@ -655,30 +655,50 @@ function updateWeaponR(job) {
 function updateWeaponL(job) {
     const leftHandSelect = document.getElementById("leftHandList");
     leftHandSelect.innerHTML = ""; // Clear current options
-    const jobWeapons = weaponData[job.substring(3)].slice(0, -1); 
+    const jobWeapons = weaponData[job.substring(3)]; 
 
     const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
 
-    [0, 24].forEach((index) => {
-        const value = jobWeapons[index];
-        const weaponInfoItem = weaponInfo[index];
 
-        if (index === 0) {
+    if(job.substring(3) == "ASSASSIN" || job.substring(3) == "ASSASSIN_H" || job.substring(3) == "GUILLOTINE_CROSS_H" || job.substring(3) == "SHADOW_CROSS" || job.substring(3) == "KAGEROU" || job.substring(3) == "OBORO" || job.substring(3) == "SHINKIRO" || job.substring(3) == "SHIRANUI"){
+        jobWeapons.forEach((value, index) => {
+            const index0Value = jobWeapons[0];
             equipmentBoxSelectedL.innerHTML = `
+                <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
+                <span class="weaponName"><span style="color: rgb(254,254,254)">${index0Value}</span>${weaponInfo[0].name}</span>
+            `;
+        if (value < 200 && (weaponInfo[index].name != "양손메이스" && weaponInfo[index].name != "카타르" && weaponInfo[index].name != "수리검")) {
+            const weaponList = document.createElement("div");
+            weaponList.className = "equipmentBox-option equipmentBoxL-option";
+            
+            weaponList.innerHTML = `
+                <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
+                <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfo[index].name}</span>
+            `;
+            leftHandSelect.appendChild(weaponList);
+        }
+        });
+    } else {
+        [0, 24].forEach((index) => {
+            const value = jobWeapons[index];
+            const weaponInfoItem = weaponInfo[index];
+    
+            if (index === 0) {
+                equipmentBoxSelectedL.innerHTML = `
+                    <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
+                    <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
+                `;
+            }
+    
+            const weaponList = document.createElement("div");
+            weaponList.className = "equipmentBox-option equipmentBoxL-option";
+            
+            weaponList.innerHTML = `
                 <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
                 <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
             `;
-        }
-
-        const weaponList = document.createElement("div");
-        weaponList.className = "equipmentBox-option equipmentBoxL-option";
-        
-        weaponList.innerHTML = `
-            <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
-            <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
-        `;
-        leftHandSelect.appendChild(weaponList);
-    });
-
+            leftHandSelect.appendChild(weaponList);
+        });
+    }
     addOptionListenersL();
 }
