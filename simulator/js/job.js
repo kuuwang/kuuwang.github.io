@@ -60,7 +60,8 @@ function updateJob(image) {
     });
 
     createSkillGrid(JobInherit); 
-    updateWeaponR(jobIdString)
+    updateWeaponR(jobIdString);
+    updateWeaponL(jobIdString);
     calstatBonus.bind(image)();
     calstatpoint();
     caltstatpoint();

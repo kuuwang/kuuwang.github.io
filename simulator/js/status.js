@@ -577,59 +577,108 @@ const weaponInfo = [
     { name: "방패", value: "SHI"},
 ];
 
-const equipmentBox = document.getElementById('rightHand');
-const equipmentBoxSelected = document.getElementById('equipmentBoxSelected');
+const equipmentBoxR = document.getElementById('rightHand');
+const equipmentBoxSelectedR = document.getElementById('equipmentBoxSelectedR');
 const rightHandList = document.getElementById('rightHandList');
-
-// Toggle the equipmentBox display
-equipmentBoxSelected.addEventListener('click', () => {
+equipmentBoxSelectedR.addEventListener('click', () => {
     rightHandList.style.display = rightHandList.style.display === 'block' ? 'none' : 'block';
 });
-
-// Close equipmentBox when clicking outside
 document.addEventListener('click', (event) => {
-    if (!equipmentBox.contains(event.target)) {
+    if (!equipmentBoxR.contains(event.target)) {
     rightHandList.style.display = 'none';
     }
 });
-
-// Function to add click listeners to each option
-function addOptionListeners() {
-    const options = document.querySelectorAll('.equipmentBox-option');
+function addOptionListenersR() {
+    const options = document.querySelectorAll('.equipmentBoxR-option');
     options.forEach(option => {
         option.addEventListener('click', () => {
             const img = option.querySelector('img').src;
             const text = option.querySelector('.weaponName').innerHTML;
-            equipmentBoxSelected.querySelector('img').src = img;
-            equipmentBoxSelected.querySelector('span').innerHTML = text;
+            equipmentBoxSelectedR.querySelector('img').src = img;
+            equipmentBoxSelectedR.querySelector('span').innerHTML = text;
             rightHandList.style.display = 'none';
         });
     });
 }
+const equipmentBoxL = document.getElementById('leftHand');
+const equipmentBoxSelectedL = document.getElementById('equipmentBoxSelectedL');
+const leftHandList = document.getElementById('leftHandList');
+equipmentBoxSelectedL.addEventListener('click', () => {
+    leftHandList.style.display = leftHandList.style.display === 'block' ? 'none' : 'block';
+});
+document.addEventListener('click', (event) => {
+    if (!equipmentBoxL.contains(event.target)) {
+    leftHandList.style.display = 'none';
+    }
+});
+function addOptionListenersL() {
+    const options = document.querySelectorAll('.equipmentBoxL-option');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const img = option.querySelector('img').src;
+            const text = option.querySelector('.weaponName').innerHTML;
+            equipmentBoxSelectedL.querySelector('img').src = img;
+            equipmentBoxSelectedL.querySelector('span').innerHTML = text;
+            leftHandList.style.display = 'none';
+        });
+    });
+}
 
-// Function to update weapon options based on the selected job
+
 function updateWeaponR(job) {
     const rightHandSelect = document.getElementById("rightHandList");
-    rightHandSelect.innerHTML = ""; // Clear current options
-    const jobWeapons = weaponData[job.substring(3)].slice(0, -1); // Remove last element if needed
+    rightHandSelect.innerHTML = ""; 
+    const jobWeapons = weaponData[job.substring(3)].slice(0, -1); 
 
-    const equipmentBoxSelected = document.getElementById("equipmentBoxSelected");
+    const equipmentBoxSelectedR = document.getElementById("equipmentBoxSelectedR");
 
     jobWeapons.forEach((value, index) => {
         const index0Value = jobWeapons[0];
-        equipmentBoxSelected.innerHTML = `
+        equipmentBoxSelectedR.innerHTML = `
             <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-            <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(198,198,198)">-${index0Value}</span></span>
+            <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)">${index0Value}</span></span>
         `;
     if (value < 200 && weaponInfo[index].name != "양손메이스") {
         const weaponList = document.createElement("div");
-        weaponList.className = "equipmentBox-option";
+        weaponList.className = "equipmentBox-option equipmentBoxR-option";
+        
         weaponList.innerHTML = `
             <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
-            <span class="weaponName">${weaponInfo[index].name}  <span style="color: rgb(198,198,198)">-${value}</span></span>
+            <span class="weaponName">${weaponInfo[index].name}  <span style="color: rgb(254,254,254)">${value}</span></span>
         `;
         rightHandSelect.appendChild(weaponList);
     }
     });
-    addOptionListeners();
+    addOptionListenersR();
+}
+
+function updateWeaponL(job) {
+    const leftHandSelect = document.getElementById("leftHandList");
+    leftHandSelect.innerHTML = ""; // Clear current options
+    const jobWeapons = weaponData[job.substring(3)].slice(0, -1); 
+
+    const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
+
+    [0, 24].forEach((index) => {
+        const value = jobWeapons[index];
+        const weaponInfoItem = weaponInfo[index];
+
+        if (index === 0) {
+            equipmentBoxSelectedL.innerHTML = `
+                <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
+                <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
+            `;
+        }
+
+        const weaponList = document.createElement("div");
+        weaponList.className = "equipmentBox-option equipmentBoxL-option";
+        
+        weaponList.innerHTML = `
+            <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
+            <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
+        `;
+        leftHandSelect.appendChild(weaponList);
+    });
+
+    addOptionListenersL();
 }

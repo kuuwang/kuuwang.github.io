@@ -229,37 +229,37 @@
         
         <!-- 직업 이미지 -->
         <div id="equipmentContainer">
-          <div class="equipmentBox" id="rightHand">
-            <div class="equipmentBox-selected" id="equipmentBoxSelected">
+          <div class="equipmentBox equipmentBoxR" id="rightHand">
+            <div class="equipmentBox-selected equipmentBoxR-selected" id="equipmentBoxSelectedR">
               <img src="../src/img/item/NOW.png" class="weaponImg" alt="Selected">
-              <span>맨손</span>
+              <span class="weaponName">맨손</span>
             </div>
             <div class="equipmentBox-options" id="rightHandList">
-              <div class="equipmentBox-option" data-value="option1">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option1">
                 <img src="../src/img/item/NOW.png" class="weaponImg" alt="Option 1">
                 <span class="weaponName">맨손</span>
               </div>
-              <div class="equipmentBox-option" data-value="option2">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option2">
                 <img src="../src/img/item/DAG.png" class="weaponImg" alt="Option 2">
                 <span class="weaponName">단검</span>
               </div>
-              <div class="equipmentBox-option" data-value="option3">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option3">
                 <img src="../src/img/item/SWO.png" class="weaponImg" alt="Option 3">
                 <span class="weaponName">한손검</span>
               </div>
-              <div class="equipmentBox-option" data-value="option4">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option4">
                 <img src="../src/img/item/AXE.png" class="weaponImg" alt="Option 4">
                 <span class="weaponName">도끼</span>
               </div>
-              <div class="equipmentBox-option" data-value="option5">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option5">
                 <img src="../src/img/item/MAC.png" class="weaponImg" alt="Option 5">
                 <span class="weaponName">메이스</span>
               </div>
-              <div class="equipmentBox-option" data-value="option6">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option6">
                 <img src="../src/img/item/ROD.png" class="weaponImg" alt="Option 6">
                 <span class="weaponName">한손지팡이</span>
               </div>
-              <div class="equipmentBox-option" data-value="option7">
+              <div class="equipmentBox-option equipmentBoxR-option" data-value="option7">
                 <img src="../src/img/item/RO2.png" class="weaponImg" alt="Option 7">
                 <span class="weaponName">양손지팡이</span>
               </div>
@@ -269,10 +269,18 @@
             <img src="../src/img/job/M/JT_NOVICE.gif" id="charsource_M">
             <img src="../src/img/job/F/JT_NOVICE.gif" id="charsource_F">
           </div>
-          <div>
-            <select id="leftHand" class="equipmentBox">
-              <option value="Shield">방패</option>
-            </select>
+          <div class="equipmentBox equipmentBoxL" id="leftHand">
+            <div class="equipmentBox-selected" id="equipmentBoxSelectedL">
+              <img src="../src/img/item/NOW.png" class="weaponImg" style="  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);" alt="Selected">
+              <span>맨손</span>
+            </div>
+            <div class="equipmentBox-options" id="leftHandList">
+              <div class="equipmentBox-option equipmentBoxL-option" data-value="option1">
+                <img src="../src/img/item/NOW.png" class="weaponImg" alt="Option 1">
+                <span class="weaponName">맨손</span>
+              </div>
+            </div>
           </div>
         </div>
         <!-- 직업 스테이터스 -->
