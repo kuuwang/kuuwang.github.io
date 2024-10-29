@@ -1,6 +1,6 @@
 function calstatBonus(){
     const jobLV = parseFloat(document.getElementById("jobLV").value);
-    const jobName = this.dataset.db;
+    const jobName = "JT_" + selectedJobDB;
 
     const jobData = combinedStatPlusInfo.find(job => job.job === jobName);
     const bonusStats = {
@@ -38,6 +38,7 @@ function calstatBonus(){
 }
 
 function calStat(){
+    caloriginalVal()
     calstatATK();
     calstatMATK();
     calstatDEF();
@@ -57,6 +58,41 @@ function calStat(){
     calstatHPLUS();
     calstatCRATE();
 }
+
+function caloriginalVal(){
+    caloriginalMHP();
+    caloriginalMSP();
+}
+
+function caloriginalMHP(){
+    const baseLV = parseFloat(document.getElementById("baseLV").value);
+    const jobMHP = MaxHP[selectedJobDB];
+
+    var maxHP = document.getElementById('MaxHP')
+
+    if(selectedJobDB.slice(-2) === "_H"){
+        var baseMHP = Math.floor(jobMHP[baseLV - 1] * 1.25);
+    }else{
+        var baseMHP = jobMHP[baseLV - 1];
+    }
+    maxHP.innerText = baseMHP;
+}
+function caloriginalMSP(){
+    const baseLV = parseFloat(document.getElementById("baseLV").value);
+    const jobMSP = MaxSP[selectedJobDB];
+
+    var maxSP = document.getElementById('MaxSP')
+
+    if(selectedJobDB.slice(-2) === "_H"){
+        var baseMSP = Math.floor(jobMSP[baseLV - 1] * 1.25);
+    }else{
+        var baseMSP = jobMSP[baseLV - 1];
+    }
+    maxSP.innerText = baseMSP;
+}
+['baseLV', 'statVIT', 'itemVIT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", caloriginalVal);
+});
 
 
 function calstatATK(){
@@ -658,7 +694,10 @@ function updateWeaponL(job) {
     const jobWeapons = weaponData[job.substring(3)]; 
 
     const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
-
+    equipmentBoxSelectedL.innerHTML = `
+    <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
+    <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDR">${jobWeapons[0]}</span></span>
+`;
 
     if(job.substring(3) == "ASSASSIN" || job.substring(3) == "ASSASSIN_H" || job.substring(3) == "GUILLOTINE_CROSS_H" || job.substring(3) == "SHADOW_CROSS" || job.substring(3) == "KAGEROU" || job.substring(3) == "OBORO" || job.substring(3) == "SHINKIRO" || job.substring(3) == "SHIRANUI"){
         jobWeapons.forEach((value, index) => {
@@ -710,10 +749,13 @@ function calstatASPD(){
     const itemDEX = parseFloat(document.getElementById("itemDEX").value);
     const statAGI = parseFloat(document.getElementById("statAGI").value);
     const itemAGI = parseFloat(document.getElementById("itemAGI").value);
+    const weaponASPDR = parseFloat(document.getElementById("weaponASPDR").innerText)
+    const weaponASPDL = parseFloat(document.getElementById("weaponASPDL").innerText)
+
     var AGI = statAGI + itemAGI;
     var DEX = statDEX + itemDEX;
 
-    var statASPD = 195 + ((AGI*2+DEX)/10)-(80)+(baseLV/10)-((baseLV-AGI)/20)
+    var statASPD = 195 + ((AGI*2+DEX)/10)-(weaponASPDR+weaponASPDL)-(baseLV/10)-((baseLV-AGI)/20)
     document.getElementById('statASPD').textContent = Math.floor(statASPD)
 }
 ['baseLV', 'statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
