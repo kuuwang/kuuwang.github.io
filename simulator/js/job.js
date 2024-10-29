@@ -15,10 +15,14 @@ function getJobInherit(jobId) {
     return hierarchy.reverse();
 }
 
+var selectedJobDB = '';
+
 function updateJob(image) {
     const jobIdString = image.dataset.db; 
     const jobIds = JOBID[jobIdString]; 
     const JobInherit = getJobInherit(jobIds);
+
+    selectedJobDB = jobIdString.substring(3);
 
     var charimg_m = document.getElementById("charsource_M")
     var charimg_f = document.getElementById("charsource_F")
@@ -62,7 +66,8 @@ function updateJob(image) {
     createSkillGrid(JobInherit); 
     updateWeaponR(jobIdString);
     updateWeaponL(jobIdString);
-    calstatBonus.bind(image)();
+    calstatBonus();
+    caloriginalVal();
     calstatpoint();
     caltstatpoint();
     toggleReset()
