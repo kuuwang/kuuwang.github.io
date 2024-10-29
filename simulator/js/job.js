@@ -73,10 +73,6 @@ function updateJob(image) {
     calStat();
 }
 
-const tooltip = document.createElement("div");
-tooltip.classList.add("tooltip");
-document.body.appendChild(tooltip);
-
 document.querySelectorAll(".classIcon").forEach(img => {
     img.addEventListener("mouseover", event => {
         tooltip.textContent = img.alt;
