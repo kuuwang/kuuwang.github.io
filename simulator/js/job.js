@@ -74,6 +74,7 @@ function updateJob(image) {
 }
 
 document.querySelectorAll(".classIcon").forEach(img => {
+    tooltip = document.getElementById('tooltip')
     img.addEventListener("mouseover", event => {
         tooltip.textContent = img.alt;
         tooltip.style.display = "block";
