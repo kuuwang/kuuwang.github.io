@@ -54,8 +54,6 @@ function updateJob(image) {
     const charJobLV = document.getElementById("jobLV");
     charJobLV.value = charValue[1];
 
-    charJobLV.addEventListener("input", calstatBonus.bind(image));
-
     const skillIds = [];
     JobInherit.forEach(job => {
       const skills = SKILL_TREEVIEW_FOR_JOB[job];
