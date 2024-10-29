@@ -36,6 +36,9 @@ function calstatBonus(){
     }
     
 }
+['jobLV'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatBonus);
+});
 
 function calStat(){
     calstatMHP();
@@ -733,7 +736,7 @@ function updateWeaponL(job) {
             
             weaponList.innerHTML = `
                 <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
-                <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfo[index].name}</span>
+                <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDL">${value}</span>${weaponInfo[index].name}</span>
             `;
             leftHandSelect.appendChild(weaponList);
         }

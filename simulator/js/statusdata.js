@@ -328,7 +328,7 @@ const MaxSP = {
 }
 
 const combinedStatPlusInfo = [
-	{ "job": "JT_Novice",
+	{ "job": "JT_NOVICE",
 	"stats": [
 		[],
 		["LUK"],
