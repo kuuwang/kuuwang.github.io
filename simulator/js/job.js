@@ -75,3 +75,23 @@ function updateJob(image) {
     toggleReset();
     calStat();
 }
+
+const tooltip = document.createElement("div");
+tooltip.classList.add("tooltip");
+document.body.appendChild(tooltip);
+
+document.querySelectorAll(".classIcon").forEach(img => {
+    img.addEventListener("mouseover", event => {
+        tooltip.textContent = img.alt;
+        tooltip.style.display = "block";
+    });
+
+    img.addEventListener("mousemove", event => {
+        tooltip.style.left = `${event.pageX}px`;
+        tooltip.style.top = `${event.pageY}px`;
+    });
+
+    img.addEventListener("mouseout", () => {
+        tooltip.style.display = "none";
+    });
+});

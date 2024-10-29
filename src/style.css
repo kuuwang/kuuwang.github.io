@@ -124,14 +124,6 @@ footer{
     text-indent: 2px;
 }
 
-.classIcon { 
-    opacity: 0.5;
-}
-
-.active { 
-    opacity: 1;
-}
-
 .charlvl{
     background-color: rgb(231,231,239);
     border-radius: 5px;
@@ -602,6 +594,27 @@ input[type="radio"]:checked + label .btn_bg {
     cursor: pointer;
 }
 
+.classIcon { 
+    opacity: 0.5;
+}
+
+.active { 
+    opacity: 1;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    pointer-events: none; 
+    transform: translate(-50%, -150%);
+    white-space: nowrap;
+    display: none;
+    z-index: 10;
+}
 
 #simulatorContainer{
     margin-left: 200px;
