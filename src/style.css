@@ -124,6 +124,14 @@ footer{
     text-indent: 2px;
 }
 
+.classIcon { 
+    opacity: 0.5;
+}
+
+.active { 
+    opacity: 1;
+}
+
 .charlvl{
     background-color: rgb(231,231,239);
     border-radius: 5px;

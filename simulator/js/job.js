@@ -18,6 +18,9 @@ function getJobInherit(jobId) {
 var selectedJobDB = '';
 
 function updateJob(image) {
+    document.querySelectorAll(".classIcon").forEach(img => img.classList.remove("active"))
+    image.classList.add("active")
+
     const jobIdString = image.dataset.db; 
     const jobIds = JOBID[jobIdString]; 
     const JobInherit = getJobInherit(jobIds);
