@@ -1,3 +1,16 @@
+*{
+    cursor: url(./cursor.gif), auto;
+}
+* img:hover{
+    cursor: url(./hover.gif), auto;
+
+}
+
+* input:hover{
+    cursor: url(./hover.gif), auto;
+
+}
+
 html, body, table{
     font-family: "Dotum";
     font-size: 12px;
@@ -601,6 +614,28 @@ input[type="radio"]:checked + label .btn_bg {
     border: 1px solid rgb(206,206,206);
     border-collapse: collapse;
     width: 205px;
+}
+
+#HSPContainer table{
+    border-collapse: collapse;
+    border: 0px;
+}
+
+#HSPContainer table tr td:nth-child(1){
+    width: 55px;
+    text-indent: 10px;
+}
+
+#HSPContainer table tr td:nth-child(2){
+    
+    text-align: center;
+}
+.HSPBar{
+    border: 1px solid rgb(206,206,206);
+    border-radius: 50px;
+    background-color: rgba(156, 181, 239, 0.5);
+    display: block;
+    height: 12px;
 }
 
 #lvContainer{
