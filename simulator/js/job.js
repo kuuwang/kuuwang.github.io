@@ -15,7 +15,7 @@ function getJobInherit(jobId) {
     return hierarchy.reverse();
 }
 
-var selectedJobDB = '';
+var selectedJobDB = 'NOVICE';
 
 function updateJob(image) {
     document.querySelectorAll(".classIcon").forEach(img => img.classList.remove("active"))
@@ -65,10 +65,9 @@ function updateJob(image) {
             }
         }
     });
-
     createSkillGrid(JobInherit); 
-    updateWeaponR(jobIdString);
-    updateWeaponL(jobIdString);
+    updateWeaponR(selectedJobDB);
+    updateWeaponL(selectedJobDB);
     calstatBonus();
     calstatpoint();
     caltstatpoint();

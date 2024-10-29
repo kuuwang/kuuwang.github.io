@@ -681,11 +681,11 @@ function addOptionListenersL() {
     });
 }
 
-
 function updateWeaponR(job) {
     const rightHandSelect = document.getElementById("rightHandList");
     rightHandSelect.innerHTML = ""; 
-    const jobWeapons = weaponData[job.substring(3)].slice(0, -1); 
+    const jobWeapons = weaponData[job].slice(0, -1); 
+    
 
     const equipmentBoxSelectedR = document.getElementById("equipmentBoxSelectedR");
 
@@ -712,7 +712,7 @@ function updateWeaponR(job) {
 function updateWeaponL(job) {
     const leftHandSelect = document.getElementById("leftHandList");
     leftHandSelect.innerHTML = ""; // Clear current options
-    const jobWeapons = weaponData[job.substring(3)]; 
+    const jobWeapons = weaponData[job]; 
 
     const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
     equipmentBoxSelectedL.innerHTML = `
@@ -720,7 +720,7 @@ function updateWeaponL(job) {
     <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDR">${jobWeapons[0]}</span></span>
 `;
 
-    if(job.substring(3) == "ASSASSIN" || job.substring(3) == "ASSASSIN_H" || job.substring(3) == "GUILLOTINE_CROSS_H" || job.substring(3) == "SHADOW_CROSS" || job.substring(3) == "KAGEROU" || job.substring(3) == "OBORO" || job.substring(3) == "SHINKIRO" || job.substring(3) == "SHIRANUI"){
+    if(job == "ASSASSIN" || job == "ASSASSIN_H" || job == "GUILLOTINE_CROSS_H" || job == "SHADOW_CROSS" || job == "KAGEROU" || job == "OBORO" || job == "SHINKIRO" || job == "SHIRANUI"){
         jobWeapons.forEach((value, index) => {
             const index0Value = jobWeapons[0];
             equipmentBoxSelectedL.innerHTML = `

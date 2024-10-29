@@ -249,34 +249,6 @@
               <span class="weaponName">맨손</span>
             </div>
             <div class="equipmentBox-options" id="rightHandList">
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option1">
-                <img src="../src/img/item/NOW.png" class="weaponImg" alt="Option 1">
-                <span class="weaponName">맨손</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option2">
-                <img src="../src/img/item/DAG.png" class="weaponImg" alt="Option 2">
-                <span class="weaponName">단검</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option3">
-                <img src="../src/img/item/SWO.png" class="weaponImg" alt="Option 3">
-                <span class="weaponName">한손검</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option4">
-                <img src="../src/img/item/AXE.png" class="weaponImg" alt="Option 4">
-                <span class="weaponName">도끼</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option5">
-                <img src="../src/img/item/MAC.png" class="weaponImg" alt="Option 5">
-                <span class="weaponName">메이스</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option6">
-                <img src="../src/img/item/ROD.png" class="weaponImg" alt="Option 6">
-                <span class="weaponName">한손지팡이</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxR-option" data-value="option7">
-                <img src="../src/img/item/RO2.png" class="weaponImg" alt="Option 7">
-                <span class="weaponName">양손지팡이</span>
-              </div>
             </div>
           </div>
           <div id="charImg">
@@ -290,14 +262,6 @@
               <span>맨손</span>
             </div>
             <div class="equipmentBox-options" id="leftHandList">
-              <div class="equipmentBox-option equipmentBoxL-option" data-value="option1">
-                <img src="../src/img/item/NOW.png" class="weaponImg" alt="Option 1">
-                <span class="weaponName">맨손</span>
-              </div>
-              <div class="equipmentBox-option equipmentBoxL-option" data-value="option1">
-                <img src="../src/img/item/SHI.png" class="weaponImg" alt="Option 1">
-                <span class="weaponName">방패</span>
-              </div>
             </div>
           </div>
         </div>
@@ -559,7 +523,12 @@
     <script src="./js/skill.js"></script>   
     <script src="./js/statusdata.js"></script>
     <script src="./js/status.js"></script>
-    <script>createSkillGrid([0]);</script>
+    <script>
+        updateWeaponR(selectedJobDB);
+        updateWeaponL(selectedJobDB);
+        createSkillGrid([0]);
+    </script>
+
 </body>
 <footer>
   <pre>
