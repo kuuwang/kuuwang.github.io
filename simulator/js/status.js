@@ -34,11 +34,13 @@ function calstatBonus(){
         document.getElementById(`bonus${stat}`).textContent = bonusStats[stat];
         document.getElementById(`item${stat}`).value = bonusStats[stat];
     }
-    calStat();
+    
 }
 
 function calStat(){
-    caloriginalVal()
+    calstatMHP();
+    calstatMSP();
+
     calstatATK();
     calstatMATK();
     calstatDEF();
@@ -59,41 +61,60 @@ function calStat(){
     calstatCRATE();
 }
 
-function caloriginalVal(){
-    caloriginalMHP();
-    caloriginalMSP();
-}
 
-function caloriginalMHP(){
+
+function calstatMHP(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
+    const statVIT = parseFloat(document.getElementById("statVIT").value);
+    const itemVIT = parseFloat(document.getElementById("itemVIT").value);
+    var VIT = statVIT + itemVIT;
     const jobMHP = MaxHP[selectedJobDB];
 
+    var baseHP = document.getElementById('baseHP')
     var maxHP = document.getElementById('MaxHP')
+    var baseMHP = 0;
 
     if(selectedJobDB.slice(-2) === "_H"){
+        var baseMHP = Math.floor(jobMHP[baseLV - 1] * 1.25);
+    }else if(JOBGROUP_4th.includes(selectedJobDB)){
         var baseMHP = Math.floor(jobMHP[baseLV - 1] * 1.25);
     }else{
         var baseMHP = jobMHP[baseLV - 1];
     }
-    maxHP.innerText = baseMHP;
+    var statMHP = Math.floor(baseMHP * (1 + (VIT * 0.01)))
+    maxHP.innerText = statMHP;
+    baseHP.innerText = "(" + baseMHP + ")";
 }
-function caloriginalMSP(){
+['baseLV', 'statVIT', 'itemVIT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatMHP);
+});
+
+function calstatMSP(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
+    const statINT = parseFloat(document.getElementById("statINT").value);
+    const itemINT = parseFloat(document.getElementById("itemINT").value);
+    var INT = statINT + itemINT;
     const jobMSP = MaxSP[selectedJobDB];
 
+    var baseSP = document.getElementById('baseSP')
     var maxSP = document.getElementById('MaxSP')
+    var baseMSP = 0;
 
     if(selectedJobDB.slice(-2) === "_H"){
+        var baseMSP = Math.floor(jobMSP[baseLV - 1] * 1.25);
+    }else if(JOBGROUP_4th.includes(selectedJobDB)){
         var baseMSP = Math.floor(jobMSP[baseLV - 1] * 1.25);
     }else{
         var baseMSP = jobMSP[baseLV - 1];
     }
-    maxSP.innerText = baseMSP;
-}
-['baseLV', 'statVIT', 'itemVIT'].forEach(id => {
-    document.getElementById(id).addEventListener("input", caloriginalVal);
-});
 
+    var statMSP = Math.floor(baseMSP * (1 + (INT * 0.01)))
+    maxSP.innerText = statMSP;
+    baseSP.innerText = "(" + baseMSP + ")";
+}
+['baseLV', 'statINT', 'itemINT'].forEach(id => {
+    document.getElementById(id).addEventListener("input", calstatMSP);
+});
 
 function calstatATK(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);

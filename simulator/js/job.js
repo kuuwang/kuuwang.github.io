@@ -67,8 +67,8 @@ function updateJob(image) {
     updateWeaponR(jobIdString);
     updateWeaponL(jobIdString);
     calstatBonus();
-    caloriginalVal();
     calstatpoint();
     caltstatpoint();
-    toggleReset()
+    toggleReset();
+    calStat();
 }
