@@ -701,7 +701,7 @@ function updateWeaponR(job) {
         
         weaponList.innerHTML = `
             <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
-            <span class="weaponName">${weaponInfo[index].name}  <span style="color: rgb(254,254,254)">${value}</span></span>
+            <span class="weaponName">${weaponInfo[index].name}  <span style="color: rgb(254,254,254)" id="weaponASPDR">${value}</span></span>
         `;
         rightHandSelect.appendChild(weaponList);
     }
@@ -717,7 +717,7 @@ function updateWeaponL(job) {
     const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
     equipmentBoxSelectedL.innerHTML = `
     <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-    <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDR">${jobWeapons[0]}</span></span>
+    <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDL">${jobWeapons[0]}</span></span>
 `;
 
     if(job == "ASSASSIN" || job == "ASSASSIN_H" || job == "GUILLOTINE_CROSS_H" || job == "SHADOW_CROSS" || job == "KAGEROU" || job == "OBORO" || job == "SHINKIRO" || job == "SHIRANUI"){
@@ -725,7 +725,7 @@ function updateWeaponL(job) {
             const index0Value = jobWeapons[0];
             equipmentBoxSelectedL.innerHTML = `
                 <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-                <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDR">${index0Value}</span>${weaponInfo[0].name}</span>
+                <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDL">${index0Value}</span>${weaponInfo[0].name}</span>
             `;
         if (value < 200 && (weaponInfo[index].name != "양손메이스" && weaponInfo[index].name != "카타르" && weaponInfo[index].name != "수리검")) {
             const weaponList = document.createElement("div");
@@ -770,8 +770,8 @@ function calstatASPD(){
     const itemDEX = parseFloat(document.getElementById("itemDEX").value);
     const statAGI = parseFloat(document.getElementById("statAGI").value);
     const itemAGI = parseFloat(document.getElementById("itemAGI").value);
-    const weaponASPDR = parseFloat(document.getElementById("weaponASPDR").innerText)
-    const weaponASPDL = parseFloat(document.getElementById("weaponASPDL").innerText)
+    const weaponASPDR = parseFloat(document.getElementById("weaponASPDR").innerHTML)
+    const weaponASPDL = parseFloat(document.getElementById("weaponASPDL").innerHTML)
 
     var AGI = statAGI + itemAGI;
     var DEX = statDEX + itemDEX;
