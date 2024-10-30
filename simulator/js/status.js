@@ -643,11 +643,21 @@ const rightHandList = document.getElementById('rightHandList');
 equipmentBoxSelectedR.addEventListener('click', () => {
     rightHandList.style.display = rightHandList.style.display === 'block' ? 'none' : 'block';
 });
+const equipmentBoxL = document.getElementById('leftHand');
+const equipmentBoxSelectedL = document.getElementById('equipmentBoxSelectedL');
+const leftHandList = document.getElementById('leftHandList');
+equipmentBoxSelectedL.addEventListener('click', () => {
+    leftHandList.style.display = leftHandList.style.display === 'block' ? 'none' : 'block';
+});
 document.addEventListener('click', (event) => {
     if (!equipmentBoxR.contains(event.target)) {
-    rightHandList.style.display = 'none';
+        rightHandList.style.display = 'none';
+    }
+    if (!equipmentBoxL.contains(event.target)) {
+        leftHandList.style.display = 'none';
     }
 });
+
 function addOptionListenersR() {
     const options = document.querySelectorAll('.equipmentBoxR-option');
     options.forEach(option => {
@@ -660,17 +670,8 @@ function addOptionListenersR() {
         });
     });
 }
-const equipmentBoxL = document.getElementById('leftHand');
-const equipmentBoxSelectedL = document.getElementById('equipmentBoxSelectedL');
-const leftHandList = document.getElementById('leftHandList');
-equipmentBoxSelectedL.addEventListener('click', () => {
-    leftHandList.style.display = leftHandList.style.display === 'block' ? 'none' : 'block';
-});
-document.addEventListener('click', (event) => {
-    if (!equipmentBoxL.contains(event.target)) {
-    leftHandList.style.display = 'none';
-    }
-});
+
+
 function addOptionListenersL() {
     const options = document.querySelectorAll('.equipmentBoxL-option');
     options.forEach(option => {
@@ -686,85 +687,150 @@ function addOptionListenersL() {
 
 function updateWeaponR(job) {
     const rightHandSelect = document.getElementById("rightHandList");
-    rightHandSelect.innerHTML = ""; 
+    rightHandSelect.innerHTML = ``; 
     const jobWeapons = weaponData[job].slice(0, -1); 
     
-
     const equipmentBoxSelectedR = document.getElementById("equipmentBoxSelectedR");
 
+    // Create main selected equipment box for the right hand
+    const firstWeaponValue = jobWeapons[0];
+    const selectedWeaponImg = document.createElement("img");
+    selectedWeaponImg.src = `../src/img/item/${weaponInfo[0].value}.png`;
+    selectedWeaponImg.className = "weaponImg";
+    selectedWeaponImg.alt = weaponInfo[0].name;
+
+    const selectedWeaponName = document.createElement("span");
+    selectedWeaponName.className = "weaponName";
+    selectedWeaponName.textContent = weaponInfo[0].name;
+
+    const weaponASPDR = document.createElement("span");
+    weaponASPDR.id = "weaponASPDR";
+    weaponASPDR.style.color = "rgb(254,254,254)";
+    weaponASPDR.textContent = firstWeaponValue;
+
+    // Append elements to create the selected weapon box
+
+    equipmentBoxSelectedR.innerHTML = ``;
+    selectedWeaponName.appendChild(weaponASPDR);
+    equipmentBoxSelectedR.appendChild(selectedWeaponImg);
+    equipmentBoxSelectedR.appendChild(selectedWeaponName);
+
+    // Populate weapon list options for right hand
     jobWeapons.forEach((value, index) => {
-        const index0Value = jobWeapons[0];
-        equipmentBoxSelectedR.innerHTML = `
-            <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-            <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDR">${index0Value}</span></span>
-        `;
-    if (value < 200 && weaponInfo[index].name != "양손메이스") {
-        const weaponList = document.createElement("div");
-        weaponList.className = "equipmentBox-option equipmentBoxR-option";
-        
-        weaponList.innerHTML = `
-            <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
-            <span class="weaponName">${weaponInfo[index].name}  <span style="color: rgb(254,254,254)" id="weaponASPDR">${value}</span></span>
-        `;
-        rightHandSelect.appendChild(weaponList);
-    }
+        if (value < 200 && weaponInfo[index].name != "양손메이스") {
+            const weaponList = document.createElement("div");
+            weaponList.className = "equipmentBox-option equipmentBoxR-option";
+
+            const weaponImg = document.createElement("img");
+            weaponImg.src = `../src/img/item/${weaponInfo[index].value}.png`;
+            weaponImg.className = "weaponImg";
+            weaponImg.alt = weaponInfo[index].name;
+
+            const weaponName = document.createElement("span");
+            weaponName.className = "weaponName";
+            weaponName.textContent = weaponInfo[index].name;
+
+            const weaponASPDRValue = document.createElement("span");
+            weaponASPDRValue.style.color = "rgb(254,254,254)";
+            weaponASPDRValue.textContent = value;
+
+            // Append elements to create each weapon option
+            weaponName.appendChild(weaponASPDRValue);
+            weaponList.appendChild(weaponImg);
+            weaponList.appendChild(weaponName);
+            rightHandSelect.appendChild(weaponList);
+        }
     });
+
     addOptionListenersR();
 }
 
 function updateWeaponL(job) {
     const leftHandSelect = document.getElementById("leftHandList");
-    leftHandSelect.innerHTML = ""; // Clear current options
+    leftHandSelect.innerHTML = ``; 
     const jobWeapons = weaponData[job]; 
 
     const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
-    equipmentBoxSelectedL.innerHTML = `
-    <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-    <span class="weaponName">${weaponInfo[0].name} <span style="color: rgb(254,254,254)" id="weaponASPDL">${jobWeapons[0]}</span></span>
-`;
 
-    if(job == "ASSASSIN" || job == "ASSASSIN_H" || job == "GUILLOTINE_CROSS_H" || job == "SHADOW_CROSS" || job == "KAGEROU" || job == "OBORO" || job == "SHINKIRO" || job == "SHIRANUI"){
+    const firstWeaponValue = jobWeapons[0];
+    const selectedWeaponImg = document.createElement("img");
+    selectedWeaponImg.src = `../src/img/item/${weaponInfo[0].value}.png`;
+    selectedWeaponImg.className = "weaponImg";
+    selectedWeaponImg.alt = weaponInfo[0].name;
+
+    const selectedWeaponName = document.createElement("span");
+    selectedWeaponName.className = "weaponName";
+    selectedWeaponName.textContent = weaponInfo[0].name;
+
+    const weaponASPDL = document.createElement("span");
+    weaponASPDL.id = "weaponASPDL";
+    weaponASPDL.style.color = "rgb(254,254,254)";
+    weaponASPDL.textContent = firstWeaponValue;
+
+    equipmentBoxSelectedL.innerHTML = ``;
+    selectedWeaponName.appendChild(weaponASPDL);
+    equipmentBoxSelectedL.appendChild(selectedWeaponImg);
+    equipmentBoxSelectedL.appendChild(selectedWeaponName);
+
+    if (["ASSASSIN", "ASSASSIN_H", "GUILLOTINE_CROSS_H", "SHADOW_CROSS", "KAGEROU", "OBORO", "SHINKIRO", "SHIRANUI"].includes(job)) {
         jobWeapons.forEach((value, index) => {
-            const index0Value = jobWeapons[0];
-            equipmentBoxSelectedL.innerHTML = `
-                <img src="../src/img/item/${weaponInfo[0].value}.png" class="weaponImg" alt="${weaponInfo[0].name}">
-                <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDL">${index0Value}</span>${weaponInfo[0].name}</span>
-            `;
-        if (value < 200 && (weaponInfo[index].name != "양손메이스" && weaponInfo[index].name != "카타르" && weaponInfo[index].name != "수리검")) {
-            const weaponList = document.createElement("div");
-            weaponList.className = "equipmentBox-option equipmentBoxL-option";
-            
-            weaponList.innerHTML = `
-                <img src="../src/img/item/${weaponInfo[index].value}.png" class="weaponImg" alt="${weaponInfo[index].name}">
-                <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDL">${value}</span>${weaponInfo[index].name}</span>
-            `;
-            leftHandSelect.appendChild(weaponList);
-        }
+            if (value < 200 && !["양손메이스", "카타르", "수리검"].includes(weaponInfo[index].name)) {
+                const weaponList = document.createElement("div");
+                weaponList.className = "equipmentBox-option equipmentBoxL-option";
+
+                const weaponImg = document.createElement("img");
+                weaponImg.src = `../src/img/item/${weaponInfo[index].value}.png`;
+                weaponImg.className = "weaponImg";
+                weaponImg.alt = weaponInfo[index].name;
+
+                const weaponName = document.createElement("span");
+                weaponName.className = "weaponName";
+                weaponName.textContent = weaponInfo[index].name;
+
+                const weaponASPDLValue = document.createElement("span");
+                //weaponASPDLValue.id = "weaponASPDL";
+                weaponASPDLValue.style.color = "rgb(254,254,254)";
+                weaponASPDLValue.textContent = value;
+
+                weaponName.appendChild(weaponASPDLValue);
+                weaponList.appendChild(weaponImg);
+                weaponList.appendChild(weaponName);
+                leftHandSelect.appendChild(weaponList);
+            }
         });
     } else {
         [0, 24].forEach((index) => {
             const value = jobWeapons[index];
             const weaponInfoItem = weaponInfo[index];
-    
-            if (index === 0) {
-                equipmentBoxSelectedL.innerHTML = `
-                    <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
-                    <span class="weaponName"><span style="color: rgb(254,254,254)" id="weaponASPDL">${value}</span>${weaponInfoItem.name} </span>
-                `;
-            }
-    
+
             const weaponList = document.createElement("div");
             weaponList.className = "equipmentBox-option equipmentBoxL-option";
-            
-            weaponList.innerHTML = `
-                <img src="../src/img/item/${weaponInfoItem.value}.png" class="weaponImg" alt="${weaponInfoItem.name}">
-                <span class="weaponName"><span style="color: rgb(254,254,254)">${value}</span>${weaponInfoItem.name} </span>
-            `;
+
+            const weaponImg = document.createElement("img");
+            weaponImg.src = `../src/img/item/${weaponInfoItem.value}.png`;
+            weaponImg.className = "weaponImg";
+            weaponImg.alt = weaponInfoItem.name;
+
+            const weaponName = document.createElement("span");
+            weaponName.className = "weaponName";
+            weaponName.textContent = weaponInfoItem.name;
+
+            const weaponASPDLValue = document.createElement("span");
+            //weaponASPDLValue.id = "weaponASPDL";
+            weaponASPDLValue.style.color = "rgb(254,254,254)";
+            weaponASPDLValue.textContent = value;
+
+            weaponName.appendChild(weaponASPDLValue);
+            weaponList.appendChild(weaponImg);
+            weaponList.appendChild(weaponName);
             leftHandSelect.appendChild(weaponList);
+
         });
     }
+
     addOptionListenersL();
 }
+
 
 
 function calstatASPD(){
