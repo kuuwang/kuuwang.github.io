@@ -637,27 +637,15 @@ const weaponInfo = [
     { name: "방패", value: "SHI"},
 ];
 
+
+
+
 const equipmentBoxR = document.getElementById('rightHand');
 const equipmentBoxSelectedR = document.getElementById('equipmentBoxSelectedR');
 const rightHandList = document.getElementById('rightHandList');
 equipmentBoxSelectedR.addEventListener('click', () => {
     rightHandList.style.display = rightHandList.style.display === 'block' ? 'none' : 'block';
 });
-const equipmentBoxL = document.getElementById('leftHand');
-const equipmentBoxSelectedL = document.getElementById('equipmentBoxSelectedL');
-const leftHandList = document.getElementById('leftHandList');
-equipmentBoxSelectedL.addEventListener('click', () => {
-    leftHandList.style.display = leftHandList.style.display === 'block' ? 'none' : 'block';
-});
-document.addEventListener('click', (event) => {
-    if (!equipmentBoxR.contains(event.target)) {
-        rightHandList.style.display = 'none';
-    }
-    if (!equipmentBoxL.contains(event.target)) {
-        leftHandList.style.display = 'none';
-    }
-});
-
 function addOptionListenersR() {
     const options = document.querySelectorAll('.equipmentBoxR-option');
     options.forEach(option => {
@@ -666,33 +654,20 @@ function addOptionListenersR() {
             const text = option.querySelector('.weaponName').innerHTML;
             equipmentBoxSelectedR.querySelector('img').src = img;
             equipmentBoxSelectedR.querySelector('span').innerHTML = text;
+            equipmentBoxSelectedR.querySelectorAll('span')[1].id = "weaponASPDR";
             rightHandList.style.display = 'none';
-        });
-    });
-}
-
-
-function addOptionListenersL() {
-    const options = document.querySelectorAll('.equipmentBoxL-option');
-    options.forEach(option => {
-        option.addEventListener('click', () => {
-            const img = option.querySelector('img').src;
-            const text = option.querySelector('.weaponName').innerHTML;
-            equipmentBoxSelectedL.querySelector('img').src = img;
-            equipmentBoxSelectedL.querySelector('span').innerHTML = text;
-            leftHandList.style.display = 'none';
+            calStat();
         });
     });
 }
 
 function updateWeaponR(job) {
-    const rightHandSelect = document.getElementById("rightHandList");
-    rightHandSelect.innerHTML = ``; 
+    const rightHandList = document.getElementById("rightHandList");
+    rightHandList.innerHTML = ``; 
     const jobWeapons = weaponData[job].slice(0, -1); 
     
     const equipmentBoxSelectedR = document.getElementById("equipmentBoxSelectedR");
 
-    // Create main selected equipment box for the right hand
     const firstWeaponValue = jobWeapons[0];
     const selectedWeaponImg = document.createElement("img");
     selectedWeaponImg.src = `../src/img/item/${weaponInfo[0].value}.png`;
@@ -705,17 +680,14 @@ function updateWeaponR(job) {
 
     const weaponASPDR = document.createElement("span");
     weaponASPDR.id = "weaponASPDR";
-    weaponASPDR.style.color = "rgb(254,254,254)";
+    weaponASPDR.style.display = "none";
     weaponASPDR.textContent = firstWeaponValue;
-
-    // Append elements to create the selected weapon box
 
     equipmentBoxSelectedR.innerHTML = ``;
     selectedWeaponName.appendChild(weaponASPDR);
     equipmentBoxSelectedR.appendChild(selectedWeaponImg);
     equipmentBoxSelectedR.appendChild(selectedWeaponName);
 
-    // Populate weapon list options for right hand
     jobWeapons.forEach((value, index) => {
         if (value < 200 && weaponInfo[index].name != "양손메이스") {
             const weaponList = document.createElement("div");
@@ -731,23 +703,47 @@ function updateWeaponR(job) {
             weaponName.textContent = weaponInfo[index].name;
 
             const weaponASPDRValue = document.createElement("span");
-            weaponASPDRValue.style.color = "rgb(254,254,254)";
+            weaponASPDRValue.className = "weaponASPDR"
+            weaponASPDRValue.style.display = "none";
             weaponASPDRValue.textContent = value;
 
-            // Append elements to create each weapon option
             weaponName.appendChild(weaponASPDRValue);
             weaponList.appendChild(weaponImg);
             weaponList.appendChild(weaponName);
-            rightHandSelect.appendChild(weaponList);
+            rightHandList.appendChild(weaponList);
         }
     });
 
     addOptionListenersR();
 }
 
+const equipmentBoxL = document.getElementById('leftHand');
+const equipmentBoxSelectedL = document.getElementById('equipmentBoxSelectedL');
+const leftHandList = document.getElementById('leftHandList');
+equipmentBoxSelectedL.addEventListener('click', () => {
+    leftHandList.style.display = leftHandList.style.display === 'block' ? 'none' : 'block';
+});
+
+function addOptionListenersL() {
+    const options = document.querySelectorAll('.equipmentBoxL-option');
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            const img = option.querySelector('img').src;
+            const text = option.querySelector('.weaponName').innerHTML;
+            equipmentBoxSelectedL.querySelector('img').src = img;
+            equipmentBoxSelectedL.querySelector('span').innerHTML = text;
+            equipmentBoxSelectedL.querySelectorAll('span')[1].id = "weaponASPDL";
+            leftHandList.style.display = 'none';
+            calStat();
+        });
+    });
+}
+
+
+
 function updateWeaponL(job) {
-    const leftHandSelect = document.getElementById("leftHandList");
-    leftHandSelect.innerHTML = ``; 
+    const leftHandList = document.getElementById("leftHandList");
+    leftHandList.innerHTML = ``; 
     const jobWeapons = weaponData[job]; 
 
     const equipmentBoxSelectedL = document.getElementById("equipmentBoxSelectedL");
@@ -763,8 +759,9 @@ function updateWeaponL(job) {
     selectedWeaponName.textContent = weaponInfo[0].name;
 
     const weaponASPDL = document.createElement("span");
+
     weaponASPDL.id = "weaponASPDL";
-    weaponASPDL.style.color = "rgb(254,254,254)";
+    weaponASPDL.style.display = "none";
     weaponASPDL.textContent = firstWeaponValue;
 
     equipmentBoxSelectedL.innerHTML = ``;
@@ -788,14 +785,13 @@ function updateWeaponL(job) {
                 weaponName.textContent = weaponInfo[index].name;
 
                 const weaponASPDLValue = document.createElement("span");
-                //weaponASPDLValue.id = "weaponASPDL";
-                weaponASPDLValue.style.color = "rgb(254,254,254)";
+                weaponASPDLValue.style.display = "none";
                 weaponASPDLValue.textContent = value;
 
                 weaponName.appendChild(weaponASPDLValue);
                 weaponList.appendChild(weaponImg);
                 weaponList.appendChild(weaponName);
-                leftHandSelect.appendChild(weaponList);
+                leftHandList.appendChild(weaponList);
             }
         });
     } else {
@@ -816,21 +812,27 @@ function updateWeaponL(job) {
             weaponName.textContent = weaponInfoItem.name;
 
             const weaponASPDLValue = document.createElement("span");
-            //weaponASPDLValue.id = "weaponASPDL";
-            weaponASPDLValue.style.color = "rgb(254,254,254)";
+            weaponASPDLValue.style.display = "none";
             weaponASPDLValue.textContent = value;
 
             weaponName.appendChild(weaponASPDLValue);
             weaponList.appendChild(weaponImg);
             weaponList.appendChild(weaponName);
-            leftHandSelect.appendChild(weaponList);
+            leftHandList.appendChild(weaponList);
 
         });
     }
-
     addOptionListenersL();
 }
 
+document.addEventListener('click', (event) => {
+    if (!equipmentBoxR.contains(event.target)) {
+        rightHandList.style.display = 'none';
+    }
+    if (!equipmentBoxL.contains(event.target)) {
+        leftHandList.style.display = 'none';
+    }
+});
 
 
 function calstatASPD(){
@@ -839,8 +841,8 @@ function calstatASPD(){
     const itemDEX = parseFloat(document.getElementById("itemDEX").value);
     const statAGI = parseFloat(document.getElementById("statAGI").value);
     const itemAGI = parseFloat(document.getElementById("itemAGI").value);
-    const weaponASPDR = parseFloat(document.getElementById("weaponASPDR").innerHTML)
-    const weaponASPDL = parseFloat(document.getElementById("weaponASPDL").innerHTML)
+    var weaponASPDR = parseFloat(document.getElementById("weaponASPDR").innerText);
+    var weaponASPDL = parseFloat(document.getElementById("weaponASPDL").innerText);
 
     var AGI = statAGI + itemAGI;
     var DEX = statDEX + itemDEX;
