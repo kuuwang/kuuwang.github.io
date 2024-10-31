@@ -894,11 +894,15 @@ input[type="number"]::-webkit-inner-spin-button {
     text-align: left;
 }
 
+#charStatus .statusTitle{
+    text-align: left;
+}
+
 .statusScript{
     display: none;
 }
 
-#charStatus .TstatusName{
+#charStatus #TstatusName{
     background: linear-gradient(to bottom, 
     rgb(247, 247, 247),
     rgb(247, 247, 247),
