@@ -665,6 +665,7 @@ function addOptionListenersR() {
                 equipmentBoxSelectedL.querySelector('span').innerHTML = text;
                 equipmentBoxSelectedL.querySelectorAll('span')[0].id = "weaponNameL";
                 equipmentBoxSelectedL.querySelectorAll('span')[1].id = "weaponASPDL";
+                equipmentBoxSelectedL.querySelectorAll('span')[1].innerHTML = "0";
                 twohandWeapon = true;
             }else{
                 twohandWeapon = false;
@@ -881,13 +882,14 @@ function calstatASPD(){
     var weaponASPDR = parseFloat(document.getElementById("weaponASPDR").innerText);
     var weaponASPDL = parseFloat(document.getElementById("weaponASPDL").innerText);
 
-    
-
     var AGI = statAGI + itemAGI;
     var DEX = statDEX + itemDEX;
 
-    var statASPD = 195 + ((AGI*2+DEX)/10)-(weaponASPDR+weaponASPDL)-(baseLV/10)-((baseLV-AGI)/20)
-    document.getElementById('statASPD').textContent = Math.floor(statASPD)
+    var baseASPD = 196 - (weaponASPDR + weaponASPDL);
+    var statASPD = Math.sqrt(((AGI ** 2) / 2) + ((DEX ** 2) / 5)) / 4;
+    var totalASPD = baseASPD + statASPD;
+    document.getElementById('weaponASPD').textContent = Math.floor(baseASPD)
+    document.getElementById('statASPD').textContent = Math.floor(totalASPD)
 }
 ['baseLV', 'statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
     document.getElementById(id).addEventListener("input", calstatASPD);
