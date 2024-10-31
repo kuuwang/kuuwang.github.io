@@ -272,7 +272,9 @@
             </tr>
             <tr>
               <td rowspan="12" class="stBlank"></td>
-              <td class="statusName">Str</td>
+              <td class="statusName">Str
+                <span class="statusScript">힘 파라메터<br><span style="color: red">근접 물리 공격력</span>, 소지무게</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSTR" value="1"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusSTR">0</span>)</td>
@@ -280,12 +282,16 @@
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costSTR">2</span></td>
               <td rowspan="12" class="stBlank"></td>
-              <td class="statusName">Atk</td>
+              <td class="statusName">Atk
+                <span class="statusScript">물리 공격력</span>
+              </td>
               <td><span id="statATK">1</span></td>
               <td>+</td>
               <td><span id="itemATK">0</span></td>
               <td rowspan="11" class="stBlank"></td>
-              <td class="statusName">Def</td>
+              <td class="statusName">Def
+                <span class="statusScript">물리 방어력</span>
+              </td>
               <td><span id="statDEF">1</span></td>
               <td>+</td>
               <td><span id="itemDEF">0</span></td>
@@ -297,18 +303,24 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Agi</td>
+              <td class="statusName">Agi
+                <span class="statusScript">민첩성 파라메터<br><span style="color: red">공격 속도</span>, 회피율, 물리 방어력</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statAGI" value="1"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusAGI">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemAGI" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costAGI">2</span></td>
-              <td class="statusName">Matk</td>
+              <td class="statusName">Matk
+                <span class="statusScript">마법 공격력</span>
+              </td>
               <td><span id="statMATK">1</span></td>
               <td>+</td>
               <td><span id="itemMATK">0</span></td>
-              <td class="statusName">Mdef</td>
+              <td class="statusName">Mdef
+                <span class="statusScript">마법 방어력</span>
+              </td>
               <td><span id="statMDEF">1</span></td>
               <td>+</td>
               <td><span id="itemMDEF">0</span></td>
@@ -319,16 +331,22 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Vit</td>
+              <td class="statusName">Vit
+                <span class="statusScript">체력 파라메터<br><span style="color: red">최대 체력</span>, 물리 방어력, 마법 방어력</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statVIT" value="1"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusVIT">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemVIT" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costVIT">2</span></td>
-              <td class="statusName">Hit</td>
+              <td class="statusName">Hit
+                <span class="statusScript">명중률</span>
+              </td>
               <td colspan="3"><span id="statHIT">177</span></td>
-              <td class="statusName">Flee</td>
+              <td class="statusName">Flee
+                <span class="statusScript">회피율</span>
+              </td>
               <td><span id="statFLEE">102</span></td>
               <td>+</td>
               <td><span id="statPERFECTDODGE">1</span></td>
@@ -339,16 +357,22 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Int</td>
+              <td class="statusName">Int
+                <span class="statusScript">지력 파라메터<br><span style="color: red">마법 공격력</span>, 캐스팅 시간, 마법 방어력</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statINT" value="1"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusINT">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemINT" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costINT">2</span></td>
-              <td class="statusName">Critical</td>
+              <td class="statusName">Critical
+                <span class="statusScript">치명타율</span>
+              </td>
               <td colspan="3"><span id="statCRIT">1</span></td>
-              <td class="statusName">ASPD</td>
+              <td class="statusName">Aspd
+                <span class="statusScript">공격 속도</span>
+              </td>
               <td class="statusJobBonuses" colspan="2">(<span id="weaponASPD">156</span>)</td>
               <td><span id="statASPD">156</span></td>
             </tr>
@@ -358,18 +382,24 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Dex</td>
+              <td class="statusName">Dex
+                <span class="statusScript">손재주 파라메터<br><span style="color: red">원거리 물리 공격력</span>, 명중률, 캐스팅 시간, 마법 공격력</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statDEX" value="1"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusDEX">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemDEX" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costDEX">2</span></td>
-              <td class="statusName">Heal</td>
+              <td class="statusName">Heal
+                <span class="statusScript">힐량</span>
+              </td>
               <td><span id="statHEALmin">1</span></td>
               <td id="statATK">~</td>
               <td><span id="statHEALmax">1</span></td>
-              <td class="statusName">Casting</td>
+              <td class="statusName">Casting
+                <span class="statusScript">캐스팅 시간 감소율</span>
+              </td>
               <td id="statATK" class="statusJobBonuses" colspan="2">(<span id="statCasting">0.6</span>%)</td>
               <td><span id="totalCasting">1</span></td>
             </tr>
@@ -379,14 +409,18 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Luk</td>
+              <td class="statusName">Luk
+                <span class="statusScript">운 파라메터<br><span style="color: red">치명타율</span>, 명중률, 물리공격력, 마법공격력, 회피율</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statLUK" value="1"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusLUK">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemLUK" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL"><span id="costLUK">2</span></td>
-              <td class="statusName" colspan="4">Status Point</td>
+              <td class="statusName" colspan="4">Status Point
+                <span class="statusScript">각 파라메터 레벨업에 사용되는 포인트</span>
+              </td>
               <td colspan="4"><span id="statpoint">48</span></td>
             </tr>
             <tr>
@@ -401,7 +435,9 @@
             </tr>
             <tr>
               <td rowspan="15" class="stBlank"></td>
-              <td class="statusName">Pow</td>
+              <td class="statusName">Pow
+                <span class="statusScript">파워 파라메터<br><span style="color: red">물리 공격력, 특성 물리 공격력</span>증가</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statPOW" value="0"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusPOW">0</span>)</td>
@@ -409,10 +445,14 @@
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
               <td rowspan="15" class="stBlank"></td>
-              <td class="statusName">P.Atk</td>
+              <td class="statusName">P.Atk
+                <span class="statusScript">특성 물리 공격력</span>
+              </td>
               <td colspan="3"><span id="statPATK">0</span></td>
               <td rowspan="11" class="stBlank"></td>
-              <td class="statusName">Res</td>
+              <td class="statusName">Res
+                <span class="statusScript">물리 저항력</span>
+              </td>
               <td colspan="3"><span id="statRES">0</span></td>
               <td rowspan="15" class="stBlank"></td>
             </tr>
@@ -422,16 +462,22 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Sta</td>
+              <td class="statusName">Sta
+                <span class="statusScript">스테미나 파라메터<br><span style="color: red">물리 저항력</span>증가</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSTA" value="0"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusSTA">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSTA" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-              <td class="statusName">S.Matk</td>
+              <td class="statusName">S.Matk
+                <span class="statusScript">특성 마법 공격력</span>
+              </td>
               <td colspan="3"><span id="statSMATK">0</span></td>
-              <td class="statusName">Mres</td>
+              <td class="statusName">Mres
+                <span class="statusScript">마법 저항력</span>
+              </td>
               <td colspan="3"><span id="statMRES">0</span></td>
             </tr>
             <tr>
@@ -440,14 +486,18 @@
               <td colspan="4" class="stBorderT"></td>
             </tr>
             <tr>
-              <td class="statusName">Wis</td>
+              <td class="statusName">Wis
+                <span class="statusScript">위즈덤 파라메터<br><span style="color: red">마법 저항력</span>증가</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statWIS" value="0"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusWIS">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemWIS" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-              <td class="statusName">H.Plus</td>
+              <td class="statusName">H.Plus
+                <span class="statusScript">특성 힐 회복량</span>
+              </td>
               <td colspan="3"><span id="statHPLUS">0</span></td>
               <td class="statusName" colspan="4"></td>
             </tr>
@@ -457,14 +507,18 @@
               <td colspan="4"></td>
             </tr>
             <tr>
-              <td class="statusName">Spl</td>
+              <td class="statusName">Spl
+                <span class="statusScript">스펠 파라메터<br><span style="color: red">마법 공격력, 특성 마법 공격력</span>증가</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statSPL" value="0"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusSPL">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemSPL" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-              <td class="statusName">C.Rate</td>
+              <td class="statusName">C.Rate
+                <span class="statusScript">크리티컬 데미지 비율</span>
+              </td>
               <td colspan="3"><span id="statCRATE">0</span></td>
               <td class="statusName" colspan="4"></td>
             </tr>
@@ -474,7 +528,9 @@
               <td colspan="4"></td>
             </tr>
             <tr>
-              <td class="statusName">Con</td>
+              <td class="statusName">Con
+                <span class="statusScript">컨센트레이션 파라메터<br><span style="color: red">명중률, 회피율, 특성 물리/마법</span> 공격력 증가</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statCON" value="0"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusCON">0</span>)</td>
@@ -490,14 +546,18 @@
               <td colspan="4"></td>
             </tr>
             <tr>
-              <td class="statusName">Crt</td>
+              <td class="statusName">Crt
+                <span class="statusScript">크리에이티브 파라메터<br><span style="color: red">특성 힐 회복량, 크리티컬 데미지</span>비율 증가</span>
+              </td>
               <td class="stBorderT stBorderB stBorderL stBG"><input type="number" id="statCRT" value="0"></td>
               <td class="stBorderT stBorderB stBG stPlus">+</td>
               <td class="statusJobBonuses stBorderT stBorderB stBG">(<span id="bonusCRT">0</span>)</td>
               <td class="stBorderT stBorderB stBorderR stBG"><input type="number" id="itemCRT" value="0"></td>
               <td class="stBorderT stBorderB stBG statusInc"><i class="fas fa-caret-right" aria-hidden="true"></i></td>
               <td class="stBorderT stBorderB stBorderR stBorderL">1</td>
-              <td class="statusName" colspan="4">T.Status Point</td>
+              <td class="statusName" colspan="4">T.Status Point
+                <span class="statusScript">특성 파라메터 레벨업에 사용되는 포인트</span>
+              </td>
               <td colspan="4"><span id="tstatpoint">0</span></td>
             </tr>
             <tr>

@@ -89,3 +89,21 @@ document.querySelectorAll(".classIcon").forEach(img => {
         tooltip.style.display = "none";
     });
 });
+
+document.querySelectorAll(".statusName").forEach(txt => {
+    tooltip = document.getElementById('tooltip')
+    txt.addEventListener("mouseover", event => {
+        const statusScriptText = txt.querySelector('.statusScript').innerHTML;
+        tooltip.innerHTML = statusScriptText;
+        tooltip.style.display = "block";
+    });
+
+    txt.addEventListener("mousemove", event => {
+        tooltip.style.left = `${event.pageX}px`;
+        tooltip.style.top = `${event.pageY}px`;
+    });
+
+    txt.addEventListener("mouseout", () => {
+        tooltip.style.display = "none";
+    });
+});
