@@ -884,14 +884,17 @@ function calstatASPD(){
 
     var AGI = statAGI + itemAGI;
     var DEX = statDEX + itemDEX;
+
+    const weaponTypeRange = ["활", "권총", "라이플", "개틀링", "샷건", "그레네이드"];
     const weaponNameR = document.getElementById("weaponNameR").innerText;
-    if(["활", "권총", "라이플", "개틀링", "샷건", "그레네이드"].includes(weaponNameR)){
+    if(weaponTypeRange.includes(weaponNameR)){
         var statASPD = Math.sqrt(((AGI ** 2) / 2) + ((DEX ** 2) / 7)) / 4;
     }else{
         var statASPD = Math.sqrt(((AGI ** 2) / 2) + ((DEX ** 2) / 5)) / 4;
     }
+    const weaponLeftAble = ["단검", "한손검", "도끼"];
     const weaponNameL = document.getElementById("weaponNameR").innerText;
-    if(["단검", "한손검", "도끼"].includes(weaponNameL)){
+    if(weaponLeftAble.includes(weaponNameL)){
         var baseASPD = 196 - (weaponASPDR + weaponASPDL/4);
     }else{
         var baseASPD = 196 - (weaponASPDR + weaponASPDL);
