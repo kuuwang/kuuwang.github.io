@@ -1,3 +1,28 @@
+function calStat(){
+    calstatMHP();
+    calstatMSP();
+
+    calstatATK();
+    calstatMATK();
+    calstatDEF();
+    calstatMDEF();
+    calstatHIT();
+    calstatFLEE();
+    calstatPERFECTDODGE();
+    calstatCRIT();
+    calstatHEAL();
+    calstatCasting();
+    calstatASPD();
+
+    calstatPATK();
+    calstatSMATK();
+    calstatRES();
+    calstatMRES();
+    calstatHPLUS();
+    calstatCRATE();
+}
+
+
 function calstatBonus(){
     const jobLV = parseFloat(document.getElementById("jobLV").value);
     const jobName = "JT_" + selectedJobDB;
@@ -34,37 +59,12 @@ function calstatBonus(){
         document.getElementById(`bonus${stat}`).textContent = bonusStats[stat];
         document.getElementById(`item${stat}`).value = bonusStats[stat];
     }
-    
+
+    calStat();
 }
 ['jobLV'].forEach(id => {
     document.getElementById(id).addEventListener("input", calstatBonus);
 });
-
-function calStat(){
-    calstatMHP();
-    calstatMSP();
-
-    calstatATK();
-    calstatMATK();
-    calstatDEF();
-    calstatMDEF();
-    calstatHIT();
-    calstatFLEE();
-    calstatPERFECTDODGE();
-    calstatCRIT();
-    calstatHEAL();
-    calstatCasting();
-    calstatASPD();
-
-    calstatPATK();
-    calstatSMATK();
-    calstatRES();
-    calstatMRES();
-    calstatHPLUS();
-    calstatCRATE();
-}
-
-
 
 function calstatMHP(){
     const baseLV = parseFloat(document.getElementById("baseLV").value);
@@ -410,7 +410,8 @@ function calstatSMATK(){
     if(JawaiiserenadeActive){
         statSMATK += 15;
     }
-    if(document.getElementById("skill_5228")) { // Arch Mage : Twohandstaff Mastery
+    const weaponNameR = document.getElementById("weaponNameR").innerText;
+    if(weaponNameR == "양손지팡이" && document.getElementById("skill_5228")) { // Arch Mage : Twohandstaff Mastery
         statSMATK += parseInt(document.getElementById("skill_5228").innerText)*2;
     } 
     document.getElementById('statSMATK').textContent = statSMATK;
@@ -505,8 +506,6 @@ function caltstatpoint(){
 caltstatpoint();
 
 
-
-
 function toggleReset(){
     var attributes = ["itemATK", "itemMATK", "itemDEF", "itemMDEF"];
     attributes.forEach(attributeId=> {
@@ -555,8 +554,8 @@ function toggleSkill(skillName, attributes, skBonus) {
     calStat();    
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
-// Call the function for each skill toggle
 function toggleClementia() { toggleSkill("Clementia", ["itemSTR", "itemINT", "itemDEX"], 17); }
 function toggleCanto() { toggleSkill("Canto", ["itemAGI"], 19); }
 function toggleGloria() { toggleSkill("Gloria", ["itemLUK"], 30); }
@@ -716,6 +715,7 @@ function updateWeaponR(job) {
             weaponImg.alt = weaponInfo[index].name;
 
             const weaponName = document.createElement("span");
+            weaponName.id = "weaponNameR";
             weaponName.className = "weaponName";
             weaponName.textContent = weaponInfo[index].name;
 
@@ -785,6 +785,7 @@ function updateWeaponL(job) {
     selectedWeaponImg.alt = weaponInfo[0].name;
 
     const selectedWeaponName = document.createElement("span");
+    selectedWeaponName.Id = "weaponNameL";
     selectedWeaponName.className = "weaponName";
     selectedWeaponName.textContent = weaponInfo[0].name;
 
