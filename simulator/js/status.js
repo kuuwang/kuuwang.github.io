@@ -656,12 +656,14 @@ function addOptionListenersR() {
             const text = option.querySelector('.weaponName').innerHTML;
             equipmentBoxSelectedR.querySelector('img').src = img;
             equipmentBoxSelectedR.querySelector('span').innerHTML = text;
+            equipmentBoxSelectedR.querySelectorAll('span')[0].id = "weaponNameR";
             equipmentBoxSelectedR.querySelectorAll('span')[1].id = "weaponASPDR";
             rightHandList.style.display = 'none';
             const righthand = option.querySelector('img').alt;
             if(["양손검", "양손창", "양손도끼", "활", "카타르", "권총", "라이플", "개틀링", "샷건", "그레네이드", "수리검", "양손지팡이"].includes(righthand)){
                 equipmentBoxSelectedL.querySelector('img').src = img;
                 equipmentBoxSelectedL.querySelector('span').innerHTML = text;
+                equipmentBoxSelectedL.querySelectorAll('span')[0].id = "weaponNameL";
                 equipmentBoxSelectedL.querySelectorAll('span')[1].id = "weaponASPDL";
                 twohandWeapon = true;
             }else{
@@ -747,7 +749,9 @@ function addOptionListenersL() {
         if(previousTwohandWeapon && !twohandWeapon){
             equipmentBoxSelectedL.querySelector('img').src = options[0].querySelector('img').src;
             equipmentBoxSelectedL.querySelector('span').innerHTML = options[0].querySelector('.weaponName').innerHTML;
+            equipmentBoxSelectedL.querySelectorAll('span')[0].id = "weaponNameL";
             equipmentBoxSelectedL.querySelectorAll('span')[1].id = "weaponASPDL";
+            equipmentBoxSelectedL.querySelectorAll('span')[1].innerHTML = "0";
             calStat();
         }
         option.addEventListener('click', () => {
@@ -755,6 +759,7 @@ function addOptionListenersL() {
             const text = option.querySelector('.weaponName').innerHTML;
             equipmentBoxSelectedL.querySelector('img').src = img;
             equipmentBoxSelectedL.querySelector('span').innerHTML = text;
+            equipmentBoxSelectedL.querySelectorAll('span')[0].id = "weaponNameL";
             equipmentBoxSelectedL.querySelectorAll('span')[1].id = "weaponASPDL";
             leftHandList.style.display = 'none';
 
@@ -786,7 +791,7 @@ function updateWeaponL(job) {
 
     weaponASPDL.id = "weaponASPDL";
     weaponASPDL.style.display = "none";
-    weaponASPDL.textContent = firstWeaponValue;
+    weaponASPDL.textContent = '0';
 
     equipmentBoxSelectedL.innerHTML = ``;
     selectedWeaponName.appendChild(weaponASPDL);
@@ -798,6 +803,10 @@ function updateWeaponL(job) {
             if (value < 200 && !["양손메이스", "카타르", "수리검"].includes(weaponInfo[index].name)) {
                 const weaponList = document.createElement("div");
                 weaponList.className = "equipmentBox-option equipmentBoxL-option";
+
+                if(index == 0){
+                    value = 0;
+                }
 
                 const weaponImg = document.createElement("img");
                 weaponImg.src = `../src/img/item/${weaponInfo[index].value}.png`;
@@ -820,9 +829,12 @@ function updateWeaponL(job) {
         });
     } else {
         [0, 24].forEach((index) => {
-            const value = jobWeapons[index];
+            let value = jobWeapons[index];
             const weaponInfoItem = weaponInfo[index];
 
+            if(index == 0){
+                value = 0;
+            }
             const weaponList = document.createElement("div");
             weaponList.className = "equipmentBox-option equipmentBoxL-option";
 
@@ -837,6 +849,7 @@ function updateWeaponL(job) {
 
             const weaponASPDLValue = document.createElement("span");
             weaponASPDLValue.style.display = "none";
+
             weaponASPDLValue.textContent = value;
 
             weaponName.appendChild(weaponASPDLValue);
