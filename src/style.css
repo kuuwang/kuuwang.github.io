@@ -658,6 +658,13 @@ input[type="radio"]:checked + label .btn_bg {
     display: block;
     height: 12px;
 }
+.APBar{
+    border: 1px solid rgb(206,206,206);
+    border-radius: 50px;
+    background-color: rgba(255, 73, 49, 0.3);
+    display: block;
+    height: 12px;
+}
 
 #lvContainer{
     margin: 5px;

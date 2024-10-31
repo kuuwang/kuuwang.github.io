@@ -26,6 +26,12 @@ function updateJob(image) {
     const JobInherit = getJobInherit(jobIds);
 
     selectedJobDB = jobIdString.substring(3);
+    const APBar = document.getElementById("APBar")
+    if(JOBGROUP_AP.includes(selectedJobDB)){
+        APBar.style.display= "";
+    }else{
+        APBar.style.display= "none";
+    }
 
     var charimg_m = document.getElementById("charsource_M")
     var charimg_f = document.getElementById("charsource_F")
