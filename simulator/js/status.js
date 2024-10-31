@@ -874,7 +874,6 @@ document.addEventListener('click', (event) => {
 
 
 function calstatASPD(){
-    const baseLV = parseFloat(document.getElementById("baseLV").value);
     const statDEX = parseFloat(document.getElementById("statDEX").value);
     const itemDEX = parseFloat(document.getElementById("itemDEX").value);
     const statAGI = parseFloat(document.getElementById("statAGI").value);
@@ -901,6 +900,6 @@ function calstatASPD(){
     document.getElementById('weaponASPD').textContent = baseASPD
     document.getElementById('statASPD').textContent = Math.floor(totalASPD)
 }
-['baseLV', 'statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
+['statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
     document.getElementById(id).addEventListener("input", calstatASPD);
 });
