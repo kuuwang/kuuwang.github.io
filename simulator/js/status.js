@@ -884,11 +884,21 @@ function calstatASPD(){
 
     var AGI = statAGI + itemAGI;
     var DEX = statDEX + itemDEX;
-
-    var baseASPD = 196 - (weaponASPDR + weaponASPDL);
-    var statASPD = Math.sqrt(((AGI ** 2) / 2) + ((DEX ** 2) / 5)) / 4;
-    var totalASPD = baseASPD + statASPD;
-    document.getElementById('weaponASPD').textContent = Math.floor(baseASPD)
+    const weaponNameR = document.getElementById("weaponNameR").innerText;
+    if(["활", "권총", "라이플", "개틀링", "샷건", "그레네이드"].includes(weaponNameR)){
+        var statASPD = Math.sqrt(((AGI ** 2) / 2) + ((DEX ** 2) / 7)) / 4;
+    }else{
+        var statASPD = Math.sqrt(((AGI ** 2) / 2) + ((DEX ** 2) / 5)) / 4;
+    }
+    const weaponNameL = document.getElementById("weaponNameR").innerText;
+    if(["단검", "한손검", "도끼"].includes(weaponNameL)){
+        var baseASPD = 196 - (weaponASPDR + weaponASPDL/4);
+    }else{
+        var baseASPD = 196 - (weaponASPDR + weaponASPDL);
+    }
+    
+    var totalASPD = Math.ceil(baseASPD) + statASPD;
+    document.getElementById('weaponASPD').textContent = baseASPD
     document.getElementById('statASPD').textContent = Math.floor(totalASPD)
 }
 ['baseLV', 'statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
