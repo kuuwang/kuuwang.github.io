@@ -15,10 +15,44 @@ html, body, table{
     font-family: "Dotum";
     font-size: 12px;
 }
+
 footer{
+    color: white;
+    
+}
+
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
+#chattitle{
+    position:fixed;
+    bottom:77px;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(127,127,127);
+    
+    padding: 5px;
+    border: 1px solid rgba(197,197,197,1);
+    border-bottom: 1px solid rgb(127,127,127);
+    border-radius: 5px 5px 0 0;
+    font-family: "Dotum";
+    text-align: center;
+}
+
+#chatbox{
     position:fixed;
     bottom:0;
+    width: 540px;
+    background-color: rgb(127,127,127);
+    padding: 5px;
+    border: 1px solid rgba(197,197,197,1);
+    border-bottom: 1px solid black(0,0,0,0.5);
+    border-radius: 0 5px 0 0;
+    font-family: "Dotum";
 }
+
 #left{
     width: 200px;
     position:fixed;
