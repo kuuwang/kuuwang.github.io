@@ -651,6 +651,13 @@ function toggleReligio() {
     ]); 
 }
 
+
+function toggleStriking() { 
+    toggleSkill("Striking", [
+        ["itemATK", 100]
+    ]); 
+}
+
 function toggleAlmighty() { 
     toggleSkill("Almighty", [
         ["bonusSTR", 10], 
@@ -668,12 +675,6 @@ function toggleAlmighty() {
     ]); 
 }
 
-function toggleStriking() { 
-    toggleSkill("Striking", [
-        ["itemATK", 100]
-    ]); 
-}
-
 let TyrsBlessingActive = false;
 function toggleTyrsBlessing(){
     toggleSkill("TyrsBlessing", [
@@ -683,6 +684,43 @@ function toggleTyrsBlessing(){
     TyrsBlessingActive = toggleActive("TyrsBlessing", TyrsBlessingActive); calStat();
 }
 
+function toggleAlmighty() { 
+    toggleSkill("Almighty", [
+        ["bonusSTR", 10], 
+        ["itemSTR", 10], 
+        ["bonusAGI", 10], 
+        ["itemAGI", 10], 
+        ["bonusVIT", 10], 
+        ["itemVIT", 10], 
+        ["bonusINT", 10], 
+        ["itemINT", 10], 
+        ["bonusDEX", 10], 
+        ["itemDEX", 10], 
+        ["bonusLUK", 10], 
+        ["itemLUK", 10]
+    ]); 
+}
+
+function togglePowerBooster(){
+    toggleSkill("PowerBooster", [
+        ["itemATK", 30],
+        ["itemMATK", 30]
+    ])
+}
+
+function togglePowerBooster(){
+    toggleSkill("PowerBooster", [
+        ["itemATK", 30],
+        ["itemMATK", 30]
+    ])
+}
+
+function toggleRedBooster(){
+    toggleSkill("RedBooster", [
+        ["itemATK", 30],
+        ["itemMATK", 30]
+    ])
+}
 
 function toggleActive(skillName, isActive) {
     const skillElement = document.getElementById(`q${skillName}`);
