@@ -189,8 +189,12 @@ function calstatDEF(){
     var AGI = statAGI + itemAGI;
     var VIT = statVIT + itemVIT;
 
-    var statDEF = (VIT / 2) + (AGI / 5) + (baseLV / 2)
-    document.getElementById('statDEF').textContent = Math.floor(statDEF)
+    var angelusDEF = 0;
+    if(AngelusActive){
+        angelusDEF += (VIT * 1.5 / 2) - (VIT / 2);
+    }
+    var statDEF = Math.floor((VIT / 2) + (AGI / 5) + (baseLV / 2) + angelusDEF)
+    document.getElementById('statDEF').textContent = statDEF
 }
 ['baseLV', 'statAGI', 'itemAGI', 'statVIT', 'itemVIT'].forEach(id => {
     document.getElementById(id).addEventListener("input", calstatDEF);
@@ -780,27 +784,10 @@ let PronmarchActive = false;
 function togglePronmarch() { PronmarchActive = toggleActive("Pronmarch", PronmarchActive); calStat(); }
 let PresensaciesActive = false;
 function togglePresensacies() { PresensaciesActive = toggleActive("Presensacies", PresensaciesActive); calStat(); }
-
 let AngelusActive = false;
-let originalStatDef = 0
-function toggleAngelus(){
-    const qAngelus = document.getElementById("qAngelus");
-    const statDEFElement = document.getElementById("statDEF");
-    const statVIT = parseFloat(document.getElementById("statVIT").value);
-    const itemVIT = parseFloat(document.getElementById("itemVIT").value);
-    var VIT = statVIT + itemVIT;
+function toggleAngelus() { AngelusActive = toggleActive("Angelus", AngelusActive); calStat(); }
 
-    let currentStatDEF = parseInt(statDEFElement.innerText) || 0;
 
-    if (AngelusActive) {
-        calStat();
-    } else {
-        currentStatDEF += (VIT * 1.5 / 2) - (VIT / 2);
-        statDEFElement.innerText = Math.floor(currentStatDEF);
-    }
-    qAngelus.style.border = AngelusActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    AngelusActive = !AngelusActive;
-}
 
 
 
