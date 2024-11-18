@@ -88,6 +88,10 @@ function calstatMHP(){
     if(InfinityDrinkActive){
         itemMHP += 5;
     }
+    if(RedBoosterActive){
+        itemMHP -= 10;
+    }
+
     var statMHP = Math.floor(Math.floor(baseMHP * (1 + (VIT * 0.01))) * (1 + itemMHP / 100))
     maxHP.innerText = statMHP;
     baseHP.innerText = "(" + baseMHP + ")";
@@ -118,6 +122,9 @@ function calstatMSP(){
     var itemMSP = 0;
     if(InfinityDrinkActive){
         itemMSP += 5;
+    }
+    if(RedBoosterActive){
+        itemMSP -= 10;
     }
 
     var statMSP = Math.floor(Math.floor(baseMSP * (1 + (INT * 0.01))) * (1 + itemMSP / 100))
@@ -224,6 +231,9 @@ function calstatHIT(){
     if(TyrsBlessingActive){
         statHIT += 30;
     }
+    if(PowerBoosterActive){
+        statHIT += 30;
+    }
     document.getElementById('statHIT').textContent = Math.floor(statHIT)
 }
 ['baseLV', 'statDEX', 'itemDEX', 'statLUK', 'itemLUK', 'statCON', 'itemCON'].forEach(id => {
@@ -245,6 +255,12 @@ function calstatFLEE(){
     var statFLEE = 100 + (baseLV) + (AGI) + Math.floor(LUK / 3) + (CON * 2)
     if(TyrsBlessingActive){
         statFLEE += 30;
+    }
+    if(PowerBoosterActive){
+        statFLEE += 30;
+    }
+    if(SpeedBoosterActive){
+        statFLEE += 50;
     }
     document.getElementById('statFLEE').textContent = Math.floor(statFLEE)
 }
@@ -400,6 +416,9 @@ function calstatPATK(){
     if(PronmarchActive){
         statPATK += 15;
     }
+    if(ForceBoosterActive){
+        statPATK += 10;
+    }
     document.getElementById('statPATK').textContent = statPATK;
 
 }
@@ -424,6 +443,9 @@ function calstatSMATK(){
     }
     if(JawaiiserenadeActive){
         statSMATK += 15;
+    }
+    if(ForceBoosterActive){
+        statSMATK += 10;
     }
     const weaponNameR = document.getElementById("weaponNameR").innerText;
     if(weaponNameR == "양손지팡이" && document.getElementById("skill_5228")) { // Arch Mage : Twohandstaff Mastery
@@ -533,7 +555,8 @@ function toggleReset(){
         "Religio", "Competentia", "Presensacies", 
         "Striking", "Spellenchanting",
         "Jawaiiserenade", "Pronmarch",
-        "Almighty", "DEFScroll", "TyrsBlessing"
+        "Almighty", "DEFScroll", "TyrsBlessing", "InfinityDrink", "PowerBooster", "RedBooster",
+        "ForceBooster", "SpeedBooster"
     ];
     CompetentiaActive = false;
     AngelusActive = false;
@@ -542,6 +565,11 @@ function toggleReset(){
     PronmarchActive = false;
     PresensaciesActive = false;
     TyrsBlessingActive = false;
+    InfinityDrinkActive = false;
+    PowerBoosterActive = false;
+    RedBoosterActive = false;
+    ForceBoosterActive = false;
+    SpeedBoosterActive = false;
     skillNames.forEach(skill => {
         window[`${skill}Active`] = false;
         const skillElement = document.getElementById(`q${skill}`);
@@ -622,13 +650,6 @@ function toggleAssumptio() {
     ]);
 }
 
-function toggleDEFScroll() {
-    toggleSkill("DEFScroll", [
-        ["itemDEF", 500],
-        ["itemMDEF", 200]
-    ]);
-}
-
 function toggleBenedictum() { 
     toggleSkill("Benedictum", [
         ["bonusPOW", 10], 
@@ -650,7 +671,6 @@ function toggleReligio() {
         ["itemSTA", 10]
     ]); 
 }
-
 
 function toggleStriking() { 
     toggleSkill("Striking", [
@@ -675,51 +695,73 @@ function toggleAlmighty() {
     ]); 
 }
 
+function toggleDEFScroll() {
+    toggleSkill("DEFScroll", [
+        ["itemDEF", 500],
+        ["itemMDEF", 200]
+    ]);
+}
+
 let TyrsBlessingActive = false;
 function toggleTyrsBlessing(){
     toggleSkill("TyrsBlessing", [
         ["itemATK", 20],
         ["itemMATK", 20],
     ])
-    TyrsBlessingActive = toggleActive("TyrsBlessing", TyrsBlessingActive); calStat();
+    TyrsBlessingActive = toggleActive("TyrsBlessing", TyrsBlessingActive); 
+    calStat();
 }
 
-function toggleAlmighty() { 
-    toggleSkill("Almighty", [
-        ["bonusSTR", 10], 
-        ["itemSTR", 10], 
-        ["bonusAGI", 10], 
-        ["itemAGI", 10], 
-        ["bonusVIT", 10], 
-        ["itemVIT", 10], 
-        ["bonusINT", 10], 
-        ["itemINT", 10], 
-        ["bonusDEX", 10], 
-        ["itemDEX", 10], 
-        ["bonusLUK", 10], 
-        ["itemLUK", 10]
-    ]); 
+let InfinityDrinkActive = false;
+function toggleInfinityDrink() { 
+    InfinityDrinkActive = toggleActive("InfinityDrink", InfinityDrinkActive); 
+    calStat(); 
 }
 
+let PowerBoosterActive = false;
 function togglePowerBooster(){
     toggleSkill("PowerBooster", [
         ["itemATK", 30],
         ["itemMATK", 30]
     ])
+    PowerBoosterActive = toggleActive("PowerBooster", PowerBoosterActive); 
+    calStat();
 }
 
-function togglePowerBooster(){
-    toggleSkill("PowerBooster", [
-        ["itemATK", 30],
-        ["itemMATK", 30]
-    ])
-}
-
+let RedBoosterActive = false;
 function toggleRedBooster(){
     toggleSkill("RedBooster", [
         ["itemATK", 30],
         ["itemMATK", 30]
     ])
+    RedBoosterActive = toggleActive("RedBooster", RedBoosterActive); 
+    calStat();
+}
+
+let ForceBoosterActive = false;
+function toggleForceBooster(){
+    toggleSkill("ForceBooster", [
+        ["bonusPOW", 5],
+        ["itemPOW", 5],
+        ["bonusSTA", 5],
+        ["itemSTA", 5],
+        ["bonusWIS", 5],
+        ["itemWIS", 5],
+        ["bonusSPL", 5],
+        ["itemSPL", 5],
+        ["bonusCON", 5],
+        ["itemCON", 5],
+        ["bonusCRT", 5],
+        ["itemCRT", 5]
+    ])
+    ForceBoosterActive = toggleActive("ForceBooster", ForceBoosterActive);
+    calStat();
+}
+
+let SpeedBoosterActive = false;
+function toggleSpeedBooster(){
+    SpeedBoosterActive = toggleActive("SpeedBooster", SpeedBoosterActive);
+    calStat();
 }
 
 function toggleActive(skillName, isActive) {
@@ -738,9 +780,6 @@ let PronmarchActive = false;
 function togglePronmarch() { PronmarchActive = toggleActive("Pronmarch", PronmarchActive); calStat(); }
 let PresensaciesActive = false;
 function togglePresensacies() { PresensaciesActive = toggleActive("Presensacies", PresensaciesActive); calStat(); }
-let InfinityDrinkActive = false;
-function toggleInfinityDrink() { InfinityDrinkActive = toggleActive("InfinityDrink", InfinityDrinkActive); calStat(); }
-
 
 let AngelusActive = false;
 let originalStatDef = 0
@@ -1056,10 +1095,15 @@ function calstatASPD(){
     }else{
         var baseASPD = 196 - (weaponASPDR + weaponASPDL);
     }
+
+    var itemASPD = 0;
+    if(PowerBoosterActive){
+        itemASPD += 1;
+    }
     
     var totalASPD = Math.ceil(baseASPD) + statASPD;
     document.getElementById('weaponASPD').textContent = baseASPD
-    document.getElementById('statASPD').textContent = Math.floor(totalASPD)
+    document.getElementById('statASPD').textContent = Math.floor(totalASPD) + itemASPD
 }
 ['statDEX', 'itemDEX', 'statAGI', 'itemAGI'].forEach(id => {
     document.getElementById(id).addEventListener("input", calstatASPD);
