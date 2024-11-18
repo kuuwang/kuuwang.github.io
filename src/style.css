@@ -34,13 +34,13 @@ footer table{
 }
 
 .chattitle{
-    width: 80px;
+    width: 70px;
     text-align: center;
     border-radius: 3px 3px 0 0;
 }
 
 .chatbox{
-    padding-left: 4px;
+    padding-left: 3px;
     width: 540px;
     border-radius: 0 3px 0 0;
 }
