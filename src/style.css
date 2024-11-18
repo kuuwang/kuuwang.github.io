@@ -3,7 +3,10 @@
 }
 * img:hover{
     cursor: url(./hover.gif), auto;
+}
 
+* a:hover{
+    cursor: url(./hover.gif), auto;
 }
 
 * input:hover{
