@@ -625,10 +625,6 @@ input[type="radio"]:checked + label .btn_bg {
     text-align: center;
 }
 
-#joblist img:hover{
-    cursor: pointer;
-}
-
 .classIcon { 
     opacity: 0.5;
 }
