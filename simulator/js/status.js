@@ -56,7 +56,7 @@ function calstatBonus(){
     }
 
     for (const stat in bonusStats) {
-        document.getElementById(`bonus${stat}`).textContent = bonusStats[stat];
+        document.getElementById(`bonus${stat}`).value = bonusStats[stat];
         document.getElementById(`item${stat}`).value = bonusStats[stat];
     }
 
