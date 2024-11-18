@@ -84,7 +84,11 @@ function calstatMHP(){
     }else{
         var baseMHP = jobMHP[baseLV - 1];
     }
-    var statMHP = Math.floor(baseMHP * (1 + (VIT * 0.01)))
+    var itemMHP = 0;
+    if(InfinityDrinkActive){
+        itemMHP += 5;
+    }
+    var statMHP = Math.floor(Math.floor(baseMHP * (1 + (VIT * 0.01))) * (1 + itemMHP / 100))
     maxHP.innerText = statMHP;
     baseHP.innerText = "(" + baseMHP + ")";
 }
@@ -111,7 +115,12 @@ function calstatMSP(){
         var baseMSP = jobMSP[baseLV - 1];
     }
 
-    var statMSP = Math.floor(baseMSP * (1 + (INT * 0.01)))
+    var itemMSP = 0;
+    if(InfinityDrinkActive){
+        itemMSP += 5;
+    }
+
+    var statMSP = Math.floor(Math.floor(baseMSP * (1 + (INT * 0.01))) * (1 + itemMSP / 100))
     maxSP.innerText = statMSP;
     baseSP.innerText = "(" + baseMSP + ")";
 }
@@ -212,6 +221,9 @@ function calstatHIT(){
     var CON = statCON + itemCON;
 
     var statHIT = 175 + (baseLV) + (DEX) + Math.floor(LUK / 3) + (CON * 2)
+    if(TyrsBlessingActive){
+        statHIT += 30;
+    }
     document.getElementById('statHIT').textContent = Math.floor(statHIT)
 }
 ['baseLV', 'statDEX', 'itemDEX', 'statLUK', 'itemLUK', 'statCON', 'itemCON'].forEach(id => {
@@ -231,6 +243,9 @@ function calstatFLEE(){
     var CON = statCON + itemCON;
 
     var statFLEE = 100 + (baseLV) + (AGI) + Math.floor(LUK / 3) + (CON * 2)
+    if(TyrsBlessingActive){
+        statFLEE += 30;
+    }
     document.getElementById('statFLEE').textContent = Math.floor(statFLEE)
 }
 ['baseLV', 'statAGI', 'itemAGI', 'statLUK', 'itemLUK', 'statCON', 'itemCON'].forEach(id => {
@@ -515,9 +530,10 @@ function toggleReset(){
     const skillNames = [
         "Clementia", "Canto", "Gloria", "Impositio", 
         "Assumptio", "Angelus", "Benedictum", 
-        "Religio", "Competentia", "Presensacies", "Almighty",
+        "Religio", "Competentia", "Presensacies", 
         "Striking", "Spellenchanting",
-        "Jawaiiserenade", "Pronmarch"
+        "Jawaiiserenade", "Pronmarch",
+        "Almighty", "DEFScroll", "TyrsBlessing"
     ];
     CompetentiaActive = false;
     AngelusActive = false;
@@ -525,6 +541,7 @@ function toggleReset(){
     JawaiiserenadeActive = false;
     PronmarchActive = false;
     PresensaciesActive = false;
+    TyrsBlessingActive = false;
     skillNames.forEach(skill => {
         window[`${skill}Active`] = false;
         const skillElement = document.getElementById(`q${skill}`);
@@ -533,15 +550,26 @@ function toggleReset(){
     calStat(); 
 }
 
-function toggleSkill(skillName, attributes, skBonus) {
+function toggleSkill(skillName, attributes) {
     const skillElement = document.getElementById(`q${skillName}`);
     const isActive = window[`${skillName}Active`];
 
-    attributes.forEach(attributeId => {
+    attributes.forEach(([attributeId, bonus]) => {
         const element = document.getElementById(attributeId);
+        if (!element) {
+            console.error(`Element with ID '${attributeId}' not found.`);
+            return; 
+        }
+
         let currentValue = parseInt(element.value || element.innerText) || 0;
-        currentValue += isActive ? -skBonus : skBonus;
-        
+
+        if (typeof bonus !== "number" || isNaN(bonus)) {
+            console.error(`Bonus for attribute '${attributeId}' is not a valid number.`);
+            return; 
+        }
+
+        currentValue += isActive ? -bonus : bonus;
+
         if (element.tagName === "INPUT") {
             element.value = currentValue;
         } else {
@@ -551,21 +579,110 @@ function toggleSkill(skillName, attributes, skBonus) {
 
     skillElement.style.border = isActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
     window[`${skillName}Active`] = !isActive;
-    calStat();    
+    calStat();
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function toggleClementia() { toggleSkill("Clementia", ["bonusSTR", "itemSTR", "bonusINT", "itemINT", "bonusDEX", "itemDEX"], 17); }
-function toggleCanto() { toggleSkill("Canto", ["bonusAGI", "itemAGI"], 19); }
-function toggleGloria() { toggleSkill("Gloria", ["bonusLUK", "itemLUK"], 30); }
-function toggleImpositio() { toggleSkill("Impositio", ["itemATK", "itemMATK"], 25); }
-function toggleAssumptio() { toggleSkill("Assumptio", ["itemDEF"], 250); }
+function toggleClementia() {
+    toggleSkill("Clementia", [
+        ["bonusSTR", 17],
+        ["itemSTR", 17],
+        ["bonusINT", 17],
+        ["itemINT", 17],
+        ["bonusDEX", 17],
+        ["itemDEX", 17]
+    ]);
+}
 
-function toggleBenedictum() { toggleSkill("Benedictum", ["bonusPOW", "itemPOW", "bonusCRT", "itemCRT", "bonusCON", "itemCON"], 10); }
-function toggleReligio() { toggleSkill("Religio", ["bonusSPL", "itemSPL", "bonusWIS", "itemWIS", "bonusSTA", "itemSTA"], 10); }
-function toggleAlmighty() { toggleSkill("Almighty", ["bonusSTR", "itemSTR", "bonusAGI", "itemAGI", "bonusVIT", "itemVIT", "bonusINT", "itemINT", "bonusDEX", "itemDEX", "bonusLUK", "itemLUK"], 10); }
-function toggleStriking() { toggleSkill("Striking", ["itemATK"], 100); }
+function toggleCanto() {
+    toggleSkill("Canto", [
+        ["bonusAGI", 19],
+        ["itemAGI", 19]
+    ]);
+}
+
+function toggleGloria() {
+    toggleSkill("Gloria", [
+        ["bonusLUK", 30],
+        ["itemLUK", 30]
+    ]);
+}
+
+function toggleImpositio() {
+    toggleSkill("Impositio", [
+        ["itemATK", 25],
+        ["itemMATK", 25]
+    ]);
+}
+
+function toggleAssumptio() {
+    toggleSkill("Assumptio", [
+        ["itemDEF", 250]
+    ]);
+}
+
+function toggleDEFScroll() {
+    toggleSkill("DEFScroll", [
+        ["itemDEF", 500],
+        ["itemMDEF", 200]
+    ]);
+}
+
+function toggleBenedictum() { 
+    toggleSkill("Benedictum", [
+        ["bonusPOW", 10], 
+        ["itemPOW", 10], 
+        ["bonusCRT", 10], 
+        ["itemCRT", 10], 
+        ["bonusCON", 10], 
+        ["itemCON", 10]
+    ]); 
+}
+
+function toggleReligio() { 
+    toggleSkill("Religio", [
+        ["bonusSPL", 10], 
+        ["itemSPL", 10], 
+        ["bonusWIS", 10], 
+        ["itemWIS", 10], 
+        ["bonusSTA", 10], 
+        ["itemSTA", 10]
+    ]); 
+}
+
+function toggleAlmighty() { 
+    toggleSkill("Almighty", [
+        ["bonusSTR", 10], 
+        ["itemSTR", 10], 
+        ["bonusAGI", 10], 
+        ["itemAGI", 10], 
+        ["bonusVIT", 10], 
+        ["itemVIT", 10], 
+        ["bonusINT", 10], 
+        ["itemINT", 10], 
+        ["bonusDEX", 10], 
+        ["itemDEX", 10], 
+        ["bonusLUK", 10], 
+        ["itemLUK", 10]
+    ]); 
+}
+
+function toggleStriking() { 
+    toggleSkill("Striking", [
+        ["itemATK", 100]
+    ]); 
+}
+
+let TyrsBlessingActive = false;
+function toggleTyrsBlessing(){
+    toggleSkill("TyrsBlessing", [
+        ["itemATK", 20],
+        ["itemMATK", 20],
+    ])
+    TyrsBlessingActive = toggleActive("TyrsBlessing", TyrsBlessingActive); calStat();
+}
+
 
 function toggleActive(skillName, isActive) {
     const skillElement = document.getElementById(`q${skillName}`);
@@ -583,6 +700,8 @@ let PronmarchActive = false;
 function togglePronmarch() { PronmarchActive = toggleActive("Pronmarch", PronmarchActive); calStat(); }
 let PresensaciesActive = false;
 function togglePresensacies() { PresensaciesActive = toggleActive("Presensacies", PresensaciesActive); calStat(); }
+let InfinityDrinkActive = false;
+function toggleInfinityDrink() { InfinityDrinkActive = toggleActive("InfinityDrink", InfinityDrinkActive); calStat(); }
 
 
 let AngelusActive = false;
