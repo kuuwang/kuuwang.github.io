@@ -1100,7 +1100,9 @@ function calstatASPD(){
     if(PowerBoosterActive){
         itemASPD += 1;
     }
-    
+    if(SpeedBoosterActive){
+        itemASPD += 1;
+    }
     var totalASPD = Math.ceil(baseASPD) + statASPD;
     document.getElementById('weaponASPD').textContent = baseASPD
     document.getElementById('statASPD').textContent = Math.floor(totalASPD) + itemASPD
