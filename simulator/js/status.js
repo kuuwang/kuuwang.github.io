@@ -556,15 +556,15 @@ function toggleSkill(skillName, attributes, skBonus) {
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-function toggleClementia() { toggleSkill("Clementia", ["itemSTR", "itemINT", "itemDEX"], 17); }
-function toggleCanto() { toggleSkill("Canto", ["itemAGI"], 19); }
-function toggleGloria() { toggleSkill("Gloria", ["itemLUK"], 30); }
+function toggleClementia() { toggleSkill("Clementia", ["bonusSTR", "itemSTR", "bonusINT", "itemINT", "bonusDEX", "itemDEX"], 17); }
+function toggleCanto() { toggleSkill("Canto", ["bonusAGI", "itemAGI"], 19); }
+function toggleGloria() { toggleSkill("Gloria", ["bonusLUK", "itemLUK"], 30); }
 function toggleImpositio() { toggleSkill("Impositio", ["itemATK", "itemMATK"], 25); }
 function toggleAssumptio() { toggleSkill("Assumptio", ["itemDEF"], 250); }
 
-function toggleBenedictum() { toggleSkill("Benedictum", ["itemPOW", "itemCRT", "itemCON"], 10); }
-function toggleReligio() { toggleSkill("Religio", ["itemSPL", "itemWIS", "itemSTA"], 10); }
-function toggleAlmighty() { toggleSkill("Almighty", ["itemSTR", "itemAGI", "itemVIT", "itemINT", "itemDEX", "itemLUK"], 10); }
+function toggleBenedictum() { toggleSkill("Benedictum", ["bonusPOW", "itemPOW", "bonusCRT", "itemCRT", "bonusCON", "itemCON"], 10); }
+function toggleReligio() { toggleSkill("Religio", ["bonusSPL", "itemSPL", "bonusWIS", "itemWIS", "bonusSTA", "itemSTA"], 10); }
+function toggleAlmighty() { toggleSkill("Almighty", ["bonusSTR", "itemSTR", "bonusAGI", "itemAGI", "bonusVIT", "itemVIT", "bonusINT", "itemINT", "bonusDEX", "itemDEX", "bonusLUK", "itemLUK"], 10); }
 function toggleStriking() { toggleSkill("Striking", ["itemATK"], 100); }
 
 function toggleActive(skillName, isActive) {
