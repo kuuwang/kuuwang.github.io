@@ -26,15 +26,11 @@ footer table{
     border-collapse: collapse;
 }
 
-footer a{
-    color: white;
-    text-decoration: none;
-}
-
 .footer{
     color: white;
     background-color: rgb(127,127,127);
    
+    
 }
 
 .chattitle{
@@ -48,6 +44,10 @@ footer a{
     border-radius: 0 3px 0 0;
 }
 
+footer a{
+    color: white;
+    text-decoration: none;
+}
 
 
 #left{
@@ -204,6 +204,11 @@ footer a{
     padding-right: 1px;
     border: 1px solid rgb(198,198,198);
     background-color: rgba(247,247,247);
+}
+
+.statbonus{
+    width: 14px !important;
+    color: rgba(128, 128, 128, 1);
 }
 
 .itembox{
