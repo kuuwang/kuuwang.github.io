@@ -206,11 +206,6 @@ footer a{
     background-color: rgba(247,247,247);
 }
 
-.statbonus{
-    width: 12px !important;
-    color: rgba(128, 128, 128, 1);
-}
-
 .itembox{
     width: 24px;
     height: 28px;
@@ -932,6 +927,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #charStatus .statusTitle{
     text-align: left;
+}
+
+.statbonus{
+    width: 12px !important;
+    color: rgba(128, 128, 128, 1);
 }
 
 .statusScript{
