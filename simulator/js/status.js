@@ -551,7 +551,7 @@ const quickslotList = [
     "Assumptio", "Angelus", "Benedictum", 
     "Religio", "Competentia", "Presensacies", 
     "Striking", "Spellenchanting",
-    "Jawaiiserenade", "Pronmarch",
+    "Jawaiiserenade", "Pronmarch", "FullThrottle",
     "Almighty", "DEFScroll", "TyrsBlessing", "InfinityDrink", "PowerBooster", "RedBooster",
     "ForceBooster", "SpeedBooster"
 ];
@@ -774,6 +774,45 @@ function togglePresensacies() {
 function toggleAngelus() {
     toggleSkill("Angelus", []);
 }
+
+
+
+function deactiveSoul(){
+
+}
+
+function toggleFullThrottle(){
+    const statSTR = parseFloat(document.getElementById("statSTR").value);
+    const statAGI = parseFloat(document.getElementById("statAGI").value);
+    const statVIT = parseFloat(document.getElementById("statVIT").value);
+    const statINT = parseFloat(document.getElementById("statINT").value);
+    const statDEX = parseFloat(document.getElementById("statDEX").value);
+    const statLUK = parseFloat(document.getElementById("statLUK").value);
+    
+    var ftSTR = Math.floor(statSTR / 20);
+    var ftAGI = Math.floor(statAGI / 20);
+    var ftVIT = Math.floor(statVIT / 20);
+    var ftINT = Math.floor(statINT / 20);
+    var ftDEX = Math.floor(statDEX / 20);
+    var ftLUK = Math.floor(statLUK / 20);
+    
+    toggleSkill("FullThrottle", [
+        ["bonusSTR", ftSTR], 
+        ["itemSTR", ftSTR], 
+        ["bonusAGI", ftAGI], 
+        ["itemAGI", ftAGI], 
+        ["bonusVIT", ftVIT], 
+        ["itemVIT", ftVIT], 
+        ["bonusINT", ftINT], 
+        ["itemINT", ftINT], 
+        ["bonusDEX", ftDEX], 
+        ["itemDEX", ftDEX], 
+        ["bonusLUK", ftLUK], 
+        ["itemLUK", ftLUK]
+    ]);
+    console.log("asdf")
+}
+
 
 
 const weaponInfo = [
