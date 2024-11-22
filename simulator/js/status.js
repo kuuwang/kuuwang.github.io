@@ -546,7 +546,7 @@ function caltstatpoint(){
 
 caltstatpoint();
 
-const buffNames = [
+const quickslotList = [
     "Clementia", "Canto", "Gloria", "Impositio", 
     "Assumptio", "Angelus", "Benedictum", 
     "Religio", "Competentia", "Presensacies", 
@@ -556,22 +556,17 @@ const buffNames = [
     "ForceBooster", "SpeedBooster"
 ];
 
-buffNames.forEach(skillName => {
+quickslotList.forEach(skillName => {
     if (typeof window[`${skillName}Active`] === "undefined") {
-        window[`${skillName}Active`] = false; // Default to false if undefined
+        window[`${skillName}Active`] = false; 
     }
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-    // Object to hold the active state for each skill
     let skillActiveStates = {};
 
-    buffNames.forEach(skillName => {
-        // Retrieve the active state from the global window object
+    quickslotList.forEach(skillName => {
         skillActiveStates[skillName] = window[`${skillName}Active`];
-        
-        // You can now use skillActiveStates[skillName] to access the active state
-        console.log(`${skillName} is active: ${skillActiveStates[skillName]}`);
     });
 });
 
@@ -582,7 +577,7 @@ function toggleReset(){
         element.innerText = '0';
     })
 
-    buffNames.forEach(skill => {
+    quickslotList.forEach(skill => {
         window[`${skill}Active`] = false;
         const skillElement = document.getElementById(`q${skill}`);
         skillElement.style.border = "1px solid rgb(198,198,198)";
@@ -593,7 +588,6 @@ function toggleReset(){
 function toggleSkill(skillName, attributes) {
     const skillElement = document.getElementById(`q${skillName}`);
     let isActive = window[`${skillName}Active`];
-
 
     attributes.forEach(([attributeId, bonus]) => {
         const element = document.getElementById(attributeId);
@@ -619,15 +613,12 @@ function toggleSkill(skillName, attributes) {
     });
 
     skillElement.style.border = isActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    
     isActive = !isActive;
     window[`${skillName}Active`] = isActive;
 
     calStat();
     return isActive;
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////
 
 function toggleClementia() {
     toggleSkill("Clementia", [
