@@ -97,7 +97,8 @@ document.querySelectorAll(".classIcon").forEach(img => {
 });
 
 document.querySelectorAll(".statusName").forEach(txt => {
-    tooltip = document.getElementById('tooltip')
+    const tooltip = document.getElementById('tooltip');
+
     txt.addEventListener("mouseover", event => {
         const statusScriptText = txt.querySelector('.statusScript').innerHTML;
         tooltip.innerHTML = statusScriptText;
@@ -105,11 +106,33 @@ document.querySelectorAll(".statusName").forEach(txt => {
     });
 
     txt.addEventListener("mousemove", event => {
-        tooltip.style.left = `${event.pageX}px`;
-        tooltip.style.top = `${event.pageY}px`;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const tooltipWidth = tooltip.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+
+        let tooltipX = event.pageX;
+        let tooltipY = event.pageY;
+
+        if (tooltipX + tooltipWidth > windowWidth) {
+            tooltipX = windowWidth - tooltipWidth - 10;
+        }
+        if (tooltipY + tooltipHeight > windowHeight) {
+            tooltipY = windowHeight - tooltipHeight - 10;
+        }
+
+        const tooltipTooHigh = tooltipY - tooltipHeight < 0;
+
+        tooltip.style.left = `${tooltipX}px`;
+        tooltip.style.top = `${tooltipY}px`;
+
+        if (tooltipTooHigh) {
+            tooltip.style.transform = `translate(-50%, 30%)`;
+        }
     });
 
     txt.addEventListener("mouseout", () => {
         tooltip.style.display = "none";
+        tooltip.style.transform = `translate(-50%, -150%)`;
     });
 });
