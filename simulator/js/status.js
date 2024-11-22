@@ -546,6 +546,34 @@ function caltstatpoint(){
 
 caltstatpoint();
 
+const buffNames = [
+    "Clementia", "Canto", "Gloria", "Impositio", 
+    "Assumptio", "Angelus", "Benedictum", 
+    "Religio", "Competentia", "Presensacies", 
+    "Striking", "Spellenchanting",
+    "Jawaiiserenade", "Pronmarch",
+    "Almighty", "DEFScroll", "TyrsBlessing", "InfinityDrink", "PowerBooster", "RedBooster",
+    "ForceBooster", "SpeedBooster"
+];
+
+buffNames.forEach(skillName => {
+    if (typeof window[`${skillName}Active`] === "undefined") {
+        window[`${skillName}Active`] = false; // Default to false if undefined
+    }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    // Object to hold the active state for each skill
+    let skillActiveStates = {};
+
+    buffNames.forEach(skillName => {
+        // Retrieve the active state from the global window object
+        skillActiveStates[skillName] = window[`${skillName}Active`];
+        
+        // You can now use skillActiveStates[skillName] to access the active state
+        console.log(`${skillName} is active: ${skillActiveStates[skillName]}`);
+    });
+});
 
 function toggleReset(){
     var attributes = ["itemATK", "itemMATK", "itemDEF", "itemMDEF"];
@@ -553,28 +581,8 @@ function toggleReset(){
         var element = document.getElementById(attributeId);
         element.innerText = '0';
     })
-    const skillNames = [
-        "Clementia", "Canto", "Gloria", "Impositio", 
-        "Assumptio", "Angelus", "Benedictum", 
-        "Religio", "Competentia", "Presensacies", 
-        "Striking", "Spellenchanting",
-        "Jawaiiserenade", "Pronmarch",
-        "Almighty", "DEFScroll", "TyrsBlessing", "InfinityDrink", "PowerBooster", "RedBooster",
-        "ForceBooster", "SpeedBooster"
-    ];
-    CompetentiaActive = false;
-    AngelusActive = false;
-    SpellenchantingActive = false;
-    JawaiiserenadeActive = false;
-    PronmarchActive = false;
-    PresensaciesActive = false;
-    TyrsBlessingActive = false;
-    InfinityDrinkActive = false;
-    PowerBoosterActive = false;
-    RedBoosterActive = false;
-    ForceBoosterActive = false;
-    SpeedBoosterActive = false;
-    skillNames.forEach(skill => {
+
+    buffNames.forEach(skill => {
         window[`${skill}Active`] = false;
         const skillElement = document.getElementById(`q${skill}`);
         skillElement.style.border = "1px solid rgb(198,198,198)";
@@ -584,7 +592,8 @@ function toggleReset(){
 
 function toggleSkill(skillName, attributes) {
     const skillElement = document.getElementById(`q${skillName}`);
-    const isActive = window[`${skillName}Active`];
+    let isActive = window[`${skillName}Active`];
+
 
     attributes.forEach(([attributeId, bonus]) => {
         const element = document.getElementById(attributeId);
@@ -610,8 +619,12 @@ function toggleSkill(skillName, attributes) {
     });
 
     skillElement.style.border = isActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    window[`${skillName}Active`] = !isActive;
+    
+    isActive = !isActive;
+    window[`${skillName}Active`] = isActive;
+
     calStat();
+    return isActive;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -706,43 +719,32 @@ function toggleDEFScroll() {
     ]);
 }
 
-let TyrsBlessingActive = false;
 function toggleTyrsBlessing(){
     toggleSkill("TyrsBlessing", [
         ["itemATK", 20],
         ["itemMATK", 20],
     ])
-    TyrsBlessingActive = toggleActive("TyrsBlessing", TyrsBlessingActive); 
-    calStat();
 }
 
-let InfinityDrinkActive = false;
 function toggleInfinityDrink() { 
-    InfinityDrinkActive = toggleActive("InfinityDrink", InfinityDrinkActive); 
-    calStat(); 
+    toggleSkill("InfinityDrink", [
+    ]); 
 }
 
-let PowerBoosterActive = false;
 function togglePowerBooster(){
     toggleSkill("PowerBooster", [
         ["itemATK", 30],
         ["itemMATK", 30]
     ])
-    PowerBoosterActive = toggleActive("PowerBooster", PowerBoosterActive); 
-    calStat();
 }
 
-let RedBoosterActive = false;
 function toggleRedBooster(){
     toggleSkill("RedBooster", [
         ["itemATK", 30],
         ["itemMATK", 30]
     ])
-    RedBoosterActive = toggleActive("RedBooster", RedBoosterActive); 
-    calStat();
 }
 
-let ForceBoosterActive = false;
 function toggleForceBooster(){
     toggleSkill("ForceBooster", [
         ["bonusPOW", 5],
@@ -758,37 +760,29 @@ function toggleForceBooster(){
         ["bonusCRT", 5],
         ["itemCRT", 5]
     ])
-    ForceBoosterActive = toggleActive("ForceBooster", ForceBoosterActive);
-    calStat();
 }
 
-let SpeedBoosterActive = false;
 function toggleSpeedBooster(){
-    SpeedBoosterActive = toggleActive("SpeedBooster", SpeedBoosterActive);
-    calStat();
+    toggleSkill("SpeedBooster", []);
 }
-
-function toggleActive(skillName, isActive) {
-    const skillElement = document.getElementById(`q${skillName}`);
-    skillElement.style.border = isActive ? "1px solid rgb(198,198,198)" : "1px solid rgb(205, 0, 0)";
-    return !isActive;
+function toggleCompetentia() {
+    toggleSkill("Competentia", []); 
 }
-
-let CompetentiaActive = false;
-function toggleCompetentia() { CompetentiaActive = toggleActive("Competentia", CompetentiaActive); calStat(); }
-let SpellenchantingActive = false;
-function toggleSpellenchanting() { SpellenchantingActive = toggleActive("Spellenchanting", SpellenchantingActive); calStat(); }
-let JawaiiserenadeActive = false;
-function toggleJawaiiserenade() { JawaiiserenadeActive = toggleActive("Jawaiiserenade", JawaiiserenadeActive); calStat(); }
-let PronmarchActive = false;
-function togglePronmarch() { PronmarchActive = toggleActive("Pronmarch", PronmarchActive); calStat(); }
-let PresensaciesActive = false;
-function togglePresensacies() { PresensaciesActive = toggleActive("Presensacies", PresensaciesActive); calStat(); }
-let AngelusActive = false;
-function toggleAngelus() { AngelusActive = toggleActive("Angelus", AngelusActive); calStat(); }
-
-
-
+function toggleSpellenchanting() {
+    toggleSkill("Spellenchanting", []);  
+}
+function toggleJawaiiserenade() {
+    toggleSkill("Jawaiiserenade", []); 
+}
+function togglePronmarch() {
+    toggleSkill("Pronmarch", []);
+}
+function togglePresensacies() {
+    toggleSkill("Presensacies", []);
+}
+function toggleAngelus() {
+    toggleSkill("Angelus", []);
+}
 
 
 const weaponInfo = [
