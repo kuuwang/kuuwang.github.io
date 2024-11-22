@@ -62,7 +62,7 @@ footer a{
     justify-content: center;
     margin-left: 200px;
 }
-.titlebar {/* 타이틀바 색상 */
+.titlebar {
     height: 16px; 
     background: linear-gradient(to bottom, 
         rgb(181, 198, 222),
@@ -511,7 +511,7 @@ footer a{
     width: 260px;
     background-image: url('../src/img/refining/bg_refining_wait.png');
     border-collapse: separate;
-    border-spacing: 3px; /* Gutter of 5px */
+    border-spacing: 3px;
     
 }
 #refineimg img{
@@ -523,7 +523,6 @@ footer a{
     
 }
 
-/* Editable row heights */
 .row-1 { height: 10px; }
 .row-1 td { 
     text-align: center; 
@@ -540,28 +539,28 @@ footer a{
 
 .btn_container{
     position: relative;
-    width: 46px; /* Adjust width to fit the images */
-    height: 52px; /* Adjust height to fit the images */
+    width: 46px;
+    height: 52px; 
 }
 
 .btn_bg {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1; /* Lower z-index for the first image */
+    z-index: 1;
 }
 
 .btn_blessing {
     position: absolute;
     top: 14px;
     left: 10px;
-    z-index: 2; /* Higher z-index for the second image */
+    z-index: 2; 
 }
 .btn_evt{
     position: absolute;
     top: 15px;
     left: 3px;
-    z-index: 2; /* Higher z-index for the second image */
+    z-index: 2; 
 }
 
 .topbtn{
@@ -581,25 +580,25 @@ footer a{
     font-weight: bold;
     width: 95px;
     height: 32px;
-    border: 1px solid rgb(102, 110, 113); /* Border color */
+    border: 1px solid rgb(102, 110, 113);
     border-radius: 3px;
     background: linear-gradient(to bottom,
         rgb(255, 255, 255) 0%,
         rgb(142, 187, 242) 25%,
         rgb(87, 111, 197) 100%
-    ); /* Gradient from first to last color */
+    ); 
 }
 
 .trybtn:active {
     width: 95px;
     height: 32px;
-    border: 1px solid rgb(102, 110, 113); /* Border color */
+    border: 1px solid rgb(102, 110, 113);
     border-radius: 3px;
     background: linear-gradient(to bottom,
         rgb(103, 132, 208) 0%,
         rgb(109, 142, 213) 25%,
         rgb(118, 156, 219) 100%
-    ); /* Gradient from first to last color */
+    ); 
 }
 
 input[type="radio"]:checked + label .btn_bg {
