@@ -579,8 +579,10 @@ function toggleReset(){
 
     quickslotList.forEach(skill => {
         window[`${skill}Active`] = false;
-        const skillElement = document.getElementById(`q${skill}`);
-        skillElement.style.border = "1px solid rgb(198,198,198)";
+        var skillElement = document.getElementById(`q${skill}`);
+        if (skillElement) {
+            skillElement.style.border = "1px solid rgb(198,198,198)";
+        }
     });
     calStat(); 
 }
