@@ -117,11 +117,11 @@ function generateCraftingInfo(craftData) {
     content.appendChild(craftinfo);
     content.appendChild(sub);
 
-    var split_box = document.createElement('div');
-    split_box.className = "split";
+    var container__bottom = document.createElement('div');
+    container__bottom.className = "container__bottom";
 
     box.appendChild(content);
-    box.appendChild(split_box);
+    box.appendChild(container__bottom);
 
     return box;
 }

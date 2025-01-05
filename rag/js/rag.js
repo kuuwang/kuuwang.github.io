@@ -16,38 +16,38 @@ function generateCharacterInfo(charData) {
     var container__content = document.createElement('main');
     container__content.className = 'container__content';
 
-    var charinfo = document.createElement('article');
-    charinfo.className = 'charinfo';
+    var container__data = document.createElement('article');
+    container__data.className = 'container__data';
     var job = document.createElement('span');
     job.className = 'job';
     job.textContent = charData.job;
     var battlestyle = document.createElement('span');
     battlestyle.className = 'battlestyle';
-    var charlvl = document.createElement('section');
-    charlvl.className = 'charlvl';
-    charlvl.innerHTML = '<span class="battlestyle">' + charData.battlestyle + '</span> <br> <span class="lvlname">Lv </span><span class="clvl">' + charData.clvl + '</span> / <span class="lvlname">J.Lv <span class="jlvl">' + charData.jlvl + '</span></span>';
-    var charstat = document.createElement('section');
-    charstat.className = 'charstat';
+    var container__info = document.createElement('section');
+    container__info.className = 'container__info';
+    container__info.innerHTML = '<span class="battlestyle">' + charData.battlestyle + '</span> <br> <span class="lvlname">Lv </span><span class="clvl">' + charData.clvl + '</span> / <span class="lvlname">J.Lv <span class="jlvl">' + charData.jlvl + '</span></span>';
+    var container__stats = document.createElement('section');
+    container__stats.className = 'container__stats';
 
     Object.keys(charData.stats).forEach(function(stat) {
-        var statbox = document.createElement('span');
-        statbox.className = 'statbox';
-        var statname = document.createElement('span');
-        statname.className = 'statname';
-        statname.textContent = stat.charAt(0).toUpperCase() + stat.slice(1);
-        var statval = document.createElement('span');
-        statval.className = 'statval';
-        statval.className += ' var_' + stat;
-        statval.textContent = charData.stats[stat];
-        statbox.appendChild(statname);
-        statbox.appendChild(statval);
-        charstat.appendChild(statbox);
+        var container__statbox = document.createElement('span');
+        container__statbox.className = 'container__statbox';
+        var container__statname = document.createElement('span');
+        container__statname.className = 'container__statname';
+        container__statname.textContent = stat.charAt(0).toUpperCase() + stat.slice(1);
+        var container__statvalue = document.createElement('span');
+        container__statvalue.className = 'container__statvalue';
+        container__statvalue.className += ' var_' + stat;
+        container__statvalue.textContent = charData.stats[stat];
+        container__statbox.appendChild(container__statname);
+        container__statbox.appendChild(container__statvalue);
+        container__stats.appendChild(container__statbox);
     });
-    charinfo.appendChild(job);
-    charinfo.appendChild(battlestyle);
-    charinfo.appendChild(charlvl);
-    charinfo.appendChild(charstat);
-    container__content.appendChild(charinfo);
+    container__data.appendChild(job);
+    container__data.appendChild(battlestyle);
+    container__data.appendChild(container__info);
+    container__data.appendChild(container__stats);
+    container__content.appendChild(container__data);
 
     var iteminfo = document.createElement('aside');
     iteminfo.className = 'iteminfo';
@@ -142,11 +142,11 @@ function generateCharacterInfo(charData) {
     iteminfo.style.backgroundImage = "url('../src/img/char/" + charData.charname + ".gif')";
     iteminfo.appendChild(table2);
     container__content.appendChild(iteminfo);
-    var split_box = document.createElement('div');
-    split_box.className = "split";
+    var container__bottom = document.createElement('div');
+    container__bottom.className = "container__bottom";
 
     box.appendChild(container__content);
-    box.appendChild(split_box);
+    box.appendChild(container__bottom);
 
     var itemImages = box.querySelectorAll('.itemimg');
     itemImages.forEach(function(img) {

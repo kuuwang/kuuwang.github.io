@@ -99,23 +99,6 @@ footer a{
     float:left;
     margin: 2px 0px 0px 2px;
 }
-.split{
-    height: 20px;
-    background:  linear-gradient(to bottom, 
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247),
-    rgb(255, 255, 255),
-    rgb(247, 247, 247)
-    );
-    border-top: 1px solid rgba(198,198,198,1);
-}
-
 
 /* ./rag */
 #sidebar__table{
@@ -155,48 +138,65 @@ footer a{
     text-indent: 2px;
 }
 
-.charlvl{
+.container__bottom {
+    height: 20px;
+    background:  linear-gradient(to bottom, 
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247),
+    rgb(255, 255, 255),
+    rgb(247, 247, 247)
+    );
+    border-top: 1px solid rgba(198,198,198,1);
+}
+
+.container__info {
     background-color: rgb(231,231,239);
     border-radius: 5px;
     padding: 2px;
     text-align: center;
 }
-.charinfo{
+.container__data {
     float: left;
     width: 150px;
     padding: 4px;
 }
-.charstat {
+.container__stats {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.statbox{
+.container__statbox{
     width: calc(50% - 6px);
     margin: 3px 0;
 }
-.statbox:nth-child(1) { order: 1; }     /* STR */
-.statbox:nth-child(2) { order: 3; }     /* AGI */
-.statbox:nth-child(3) { order: 5; }     /* VIT */
-.statbox:nth-child(4) { order: 7; }     /* INT */
-.statbox:nth-child(5) { order: 9; }     /* DEX */
-.statbox:nth-child(6) { order: 11; }    /* LUK */
-.statbox:nth-child(7) { order: 2; }     /* POW */
-.statbox:nth-child(8) { order: 4; }     /* STA */
-.statbox:nth-child(9) { order: 6; }     /* WIS */
-.statbox:nth-child(10) { order: 8; }    /* SPL */
-.statbox:nth-child(11) { order: 10; }   /* CON */
-.statbox:nth-child(12) { order: 12; }   /* CRT */
+.container__statbox:nth-child(1) { order: 1; }     /* STR */
+.container__statbox:nth-child(2) { order: 3; }     /* AGI */
+.container__statbox:nth-child(3) { order: 5; }     /* VIT */
+.container__statbox:nth-child(4) { order: 7; }     /* INT */
+.container__statbox:nth-child(5) { order: 9; }     /* DEX */
+.container__statbox:nth-child(6) { order: 11; }    /* LUK */
+.container__statbox:nth-child(7) { order: 2; }     /* POW */
+.container__statbox:nth-child(8) { order: 4; }     /* STA */
+.container__statbox:nth-child(9) { order: 6; }     /* WIS */
+.container__statbox:nth-child(10) { order: 8; }    /* SPL */
+.container__statbox:nth-child(11) { order: 10; }   /* CON */
+.container__statbox:nth-child(12) { order: 12; }   /* CRT */
 
-.statname{
+.container__statname{
     width: 44%;
     display: inline-block;
     font-weight: bold;
     color: rgb(49, 74, 107);
     margin-left: 5px;
 }
-.statval{
+.container__statvalue{
     display:  inline-block;
     width: 38%;
     font-size: 11px;
