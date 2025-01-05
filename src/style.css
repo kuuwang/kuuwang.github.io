@@ -100,6 +100,11 @@ footer a{
     margin: 2px 0px 0px 2px;
 }
 
+.titlebar_content {
+    float:left;
+    text-indent: 2px;
+}
+
 /* ./rag */
 #sidebar__table{
     display:flow-root;
@@ -133,10 +138,7 @@ footer a{
     margin-bottom: 10px;
 }
 
-.container__title {
-    float:left;
-    text-indent: 2px;
-}
+
 
 .container__bottom {
     height: 20px;
@@ -273,14 +275,6 @@ footer a{
 }
 #craftsearch::placeholder {
     font-size: 12px;
-}
-
-.craftbox {
-    width: 370px;
-    border: 1px solid rgb(198,198,198);
-    border-radius: 3px;
-    float: left;
-    margin: 3px;
 }
 
 .craftinfo{

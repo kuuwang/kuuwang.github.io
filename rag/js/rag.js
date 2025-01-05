@@ -6,11 +6,11 @@ function generateCharacterInfo(charData) {
     titlebar.className = 'titlebar';
     var titlebar__icon = document.createElement('div');
     titlebar__icon.className = 'titlebar__icon';
-    var container__title = document.createElement('span');
-    container__title.className = 'container__title';
-    container__title.textContent = charData.charname;
+    var titlebar_content = document.createElement('span');
+    titlebar_content.className = 'titlebar_content';
+    titlebar_content.textContent = charData.charname;
     titlebar.appendChild(titlebar__icon);
-    titlebar.appendChild(container__title);
+    titlebar.appendChild(titlebar_content);
     box.appendChild(titlebar);
 
     var container__content = document.createElement('main');

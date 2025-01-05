@@ -1,6 +1,6 @@
 function generateCraftingInfo(craftData) {
-    var box = document.createElement('div');
-    box.className = "craftbox";
+    var container__box = document.createElement('div');
+    container__box.className = "container__box";
 
     var titlebar = document.createElement('header');
     titlebar.className = 'titlebar';
@@ -12,7 +12,7 @@ function generateCraftingInfo(craftData) {
 
     titlebar.appendChild(titlebar__icon);
     titlebar.appendChild(craftname);
-    box.appendChild(titlebar);
+    container__box.appendChild(titlebar);
 
     var content = document.createElement('main');
     content.className = 'content';
@@ -120,10 +120,10 @@ function generateCraftingInfo(craftData) {
     var container__bottom = document.createElement('div');
     container__bottom.className = "container__bottom";
 
-    box.appendChild(content);
-    box.appendChild(container__bottom);
+    container__box.appendChild(content);
+    container__box.appendChild(container__bottom);
 
-    return box;
+    return container__box;
 }
 
 
