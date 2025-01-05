@@ -1,6 +1,6 @@
 function createSkillGrid(JobInherit) {
-    const skillContainer = document.getElementById("skillContainer");
-    skillContainer.innerHTML = `<label id="SkillDescriptionChk"><input type="checkbox" id="toggleSkillDescription" checked>스킬 설명 보기</label>`; 
+    const skill__container = document.getElementById("skill__container");
+    skill__container.innerHTML = `<label id="skill__description-enable"><input type="checkbox" id="toggleSkillDescription" checked>스킬 설명 보기</label>`; 
 
     JobInherit.forEach((job) => {
         const cols = 7;
@@ -99,7 +99,7 @@ function createSkillGrid(JobInherit) {
             table.appendChild(row);
         }
         jobDiv.appendChild(table);
-        skillContainer.appendChild(jobDiv);
+        skill__container.appendChild(jobDiv);
     });
 }
 
@@ -236,18 +236,18 @@ function applyColorCodes(description) {
 }
 
 function showSkillDescription(skillId, event) {
-    const skillDescriptionDiv = document.getElementById("skillDescription");
+    const skill__description = document.getElementById("skill__description");
     const descriptionArray = SKILL_DESCRIPT[skillId];
 
     if (descriptionArray) {
         const formattedDescription = descriptionArray.map(applyColorCodes).join("<br>");
-        skillDescriptionDiv.innerHTML = formattedDescription;
-        skillDescriptionDiv.style.display = "block";
+        skill__description.innerHTML = formattedDescription;
+        skill__description.style.display = "block";
 
         const pageWidth = window.innerWidth;
         const pageHeight = window.innerHeight;
-        const boxWidth = skillDescriptionDiv.offsetWidth;
-        const boxHeight = skillDescriptionDiv.offsetHeight;
+        const boxWidth = skill__description.offsetWidth;
+        const boxHeight = skill__description.offsetHeight;
 
         let xPos = event.pageX + 25;
         let yPos = event.pageY;
@@ -260,14 +260,14 @@ function showSkillDescription(skillId, event) {
             yPos = event.pageY - boxHeight + 50;
         }
 
-        skillDescriptionDiv.style.left = `${xPos}px`;
-        skillDescriptionDiv.style.top = `${yPos}px`;
+        skill__description.style.left = `${xPos}px`;
+        skill__description.style.top = `${yPos}px`;
     }
 }
 
 function hideSkillDescription() {
-    const skillDescriptionDiv = document.getElementById("skillDescription");
-    skillDescriptionDiv.style.display = "none";
+    const skill__description = document.getElementById("skill__description");
+    skill__description.style.display = "none";
 }
 
 document.body.addEventListener('contextmenu', function(event) {
@@ -275,11 +275,11 @@ document.body.addEventListener('contextmenu', function(event) {
   });
 
 function changeGrid(){
-    const skillContainer = document.getElementById("skillContainer");
+    const skill__container = document.getElementById("skill__container");
     const skillGrid = document.getElementById("skillGrid");
 
-    skillContainer.classList.toggle("grid");
-    if(skillContainer.classList.contains("grid")){
+    skill__container.classList.toggle("grid");
+    if(skill__container.classList.contains("grid")){
         skillGrid.innerHTML = `<i class="fa-solid fa-grip-vertical"></i>`
     }else{
         skillGrid.innerHTML = `<i class="fa-solid fa-bars"></i>`
