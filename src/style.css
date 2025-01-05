@@ -118,7 +118,7 @@ footer a{
 
 
 /* ./rag */
-#chartable{
+#sidebar__table{
     display:flow-root;
     float: left;
     width: 180px;
@@ -126,23 +126,19 @@ footer a{
     border-radius: 3px;
     margin-top: 3px;
 }
-#chartable table{
+#sidebar__table table{
     margin: auto;
     width: 100%;
 }
-#chartable table tr:nth-child(even){
+#sidebar__table table tr:nth-child(even){
     background-color: rgba(231, 239, 255, 1);
 }
 
-#chartable tr td{
+#sidebar__table tr td{
     text-align: center;
 }
 
-.charcontent {
-    margin-bottom: 10px;
-}
-
-.charbox {
+.container__box {
     width: 370px;
     border: 1px solid rgb(198,198,198);
     border-radius: 3px;
@@ -150,7 +146,11 @@ footer a{
     margin: 3px;
 }
 
-.charname{
+.container__content {
+    margin-bottom: 10px;
+}
+
+.container__title {
     float:left;
     text-indent: 2px;
 }

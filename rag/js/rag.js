@@ -1,20 +1,20 @@
 function generateCharacterInfo(charData) {
     var box = document.createElement('div');
-    box.className = 'charbox';
+    box.className = 'container__box';
 
     var titlebar = document.createElement('header');
     titlebar.className = 'titlebar';
     var titlebar__icon = document.createElement('div');
     titlebar__icon.className = 'titlebar__icon';
-    var charname = document.createElement('span');
-    charname.className = 'charname';
-    charname.textContent = charData.charname;
+    var container__title = document.createElement('span');
+    container__title.className = 'container__title';
+    container__title.textContent = charData.charname;
     titlebar.appendChild(titlebar__icon);
-    titlebar.appendChild(charname);
+    titlebar.appendChild(container__title);
     box.appendChild(titlebar);
 
-    var charcontent = document.createElement('main');
-    charcontent.className = 'charcontent';
+    var container__content = document.createElement('main');
+    container__content.className = 'container__content';
 
     var charinfo = document.createElement('article');
     charinfo.className = 'charinfo';
@@ -47,7 +47,7 @@ function generateCharacterInfo(charData) {
     charinfo.appendChild(battlestyle);
     charinfo.appendChild(charlvl);
     charinfo.appendChild(charstat);
-    charcontent.appendChild(charinfo);
+    container__content.appendChild(charinfo);
 
     var iteminfo = document.createElement('aside');
     iteminfo.className = 'iteminfo';
@@ -141,11 +141,11 @@ function generateCharacterInfo(charData) {
     iteminfo.appendChild(table1);
     iteminfo.style.backgroundImage = "url('../src/img/char/" + charData.charname + ".gif')";
     iteminfo.appendChild(table2);
-    charcontent.appendChild(iteminfo);
+    container__content.appendChild(iteminfo);
     var split_box = document.createElement('div');
     split_box.className = "split";
 
-    box.appendChild(charcontent);
+    box.appendChild(container__content);
     box.appendChild(split_box);
 
     var itemImages = box.querySelectorAll('.itemimg');
@@ -234,7 +234,7 @@ function calculateAverage(clvlCounts) {
 }
 
 function displayClvlCounts(clvlCounts) {
-    var table = document.querySelector('#chartable table');
+    var table = document.querySelector('#sidebar__table table');
     var sortedClvls = Object.keys(clvlCounts).sort(function(a, b) {
         return b - a;
     });``
