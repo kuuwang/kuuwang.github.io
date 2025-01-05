@@ -4,13 +4,13 @@ function generateCraftingInfo(craftData) {
 
     var titlebar = document.createElement('header');
     titlebar.className = 'titlebar';
-    var circle = document.createElement('div');
-    circle.className = 'circle';
+    var titlebar__icon = document.createElement('div');
+    titlebar__icon.className = 'titlebar__icon';
     var craftname = document.createElement('span');
     craftname.className = 'craftname';
     craftname.textContent = craftData.result[0];
 
-    titlebar.appendChild(circle);
+    titlebar.appendChild(titlebar__icon);
     titlebar.appendChild(craftname);
     box.appendChild(titlebar);
 

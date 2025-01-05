@@ -4,12 +4,12 @@ function generateCharacterInfo(charData) {
 
     var titlebar = document.createElement('header');
     titlebar.className = 'titlebar';
-    var circle = document.createElement('div');
-    circle.className = 'circle';
+    var titlebar__icon = document.createElement('div');
+    titlebar__icon.className = 'titlebar__icon';
     var charname = document.createElement('span');
     charname.className = 'charname';
     charname.textContent = charData.charname;
-    titlebar.appendChild(circle);
+    titlebar.appendChild(titlebar__icon);
     titlebar.appendChild(charname);
     box.appendChild(titlebar);
 

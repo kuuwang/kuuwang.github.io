@@ -20,7 +20,7 @@ function createSkillGrid(JobInherit) {
         const jobNameDiv = document.createElement("div");
         jobNameDiv.className = "jobName";
         jobNameDiv.innerHTML = `
-            <div class="circle"></div>
+            <div class="titlebar__icon"></div>
             ${PCJobNameTable[job]} (<span id="totalPoints_${job}">0</span> / <span id="jobMaxlevel_${job}">${JOB_SETTING[job][1] - 1}</span>)
         `;
         jobDiv.appendChild(jobNameDiv);
