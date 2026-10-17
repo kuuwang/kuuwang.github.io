@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>포켓몬 지역 도감 박스 정리</title>
+<style>
+:root{--bg:#f3f5f9;--card:#fff;--tx:#1d2330;--mut:#7a8294;--ac:#e53935;--bd:#dde2ec;--slot:#eef1f7}
+@media(prefers-color-scheme:dark){:root{--bg:#12151c;--card:#1c212c;--tx:#e8ebf2;--mut:#8b93a7;--bd:#2c3342;--slot:#262d3b}}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--tx);display:flex;min-height:100vh}
+aside{width:240px;flex:none;background:var(--card);border-right:1px solid var(--bd);height:100vh;position:sticky;top:0;overflow-y:auto;padding:16px 10px}
+aside{transition:width .2s}
+.top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.top h1{font-size:16px;margin:0;white-space:nowrap}
+#tg{flex:none;width:36px;height:36px;border:1px solid var(--bd);background:var(--slot);color:var(--tx);border-radius:8px;cursor:pointer;font-size:18px}
+body.fold aside{width:60px;padding:16px 11px}
+body.fold .top h1,body.fold #nav{display:none}
+aside h2{font-size:11px;color:var(--mut);margin:14px 8px 4px;letter-spacing:.05em}
+#nav button{display:block;width:100%;text-align:left;border:0;background:none;color:var(--tx);padding:8px 10px;border-radius:8px;font-size:13px;cursor:pointer}
+#nav button:hover{background:var(--slot)}
+#nav button.on{background:var(--ac);color:#fff}
+main{flex:1;min-width:0;padding:20px}
+header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+header h2{margin:0 0 2px;font-size:20px}
+#q{width:260px;max-width:100%;padding:9px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font-size:14px}
+#q:focus{outline:2px solid var(--ac);border-color:transparent}
+header p{margin:0 0 16px;color:var(--mut);font-size:13px}
+#boxes{display:grid;grid-template-columns:repeat(auto-fill,minmax(max(260px,calc((100% - 42px)/4)),1fr));gap:14px}
+.box{min-width:0;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px}
+.box h3{margin:0 0 8px;font-size:13px;display:flex;justify-content:space-between}
+.box h3 span{color:var(--mut);font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:3px}
+.slot{aspect-ratio:1;background:var(--slot);border-radius:6px;position:relative;cursor:pointer}
+.slot img{display:block;width:100%;height:100%;max-width:100%;image-rendering:pixelated;object-fit:contain}
+.slot i{position:absolute;left:2px;bottom:1px;font-size:8px;font-style:normal;color:var(--mut)}
+.slot.empty{opacity:.4;cursor:default}
+.slot{transition:opacity .15s,filter .15s}
+.searching .slot{opacity:.2;filter:grayscale(1)}
+.searching .slot.hit{opacity:1;filter:none;outline:3px solid var(--ac);outline-offset:-2px;z-index:1}
+#tip{position:fixed;pointer-events:none;background:#000e;color:#fff;font-size:12px;line-height:1.45;padding:8px 10px;border-radius:8px;display:none;z-index:9;max-width:340px}
+#tip .v{margin-top:3px}#tip .v b{color:#ffd54f}#tip .n{opacity:.7;margin-top:3px}
+@media(max-width:900px){body{flex-direction:column}aside,body.fold aside{width:100%;height:auto;position:static}}
+</style></head><body>
+<aside><div class="top"><button id="tg" aria-label="사이드바 접기/펼치기">☰</button><h1>📦 지역 도감 박스</h1></div><div id="nav"></div></aside>
+<main><header><div><h2 id="t"></h2><p id="s"></p></div><input id="q" type="search" placeholder="🔍 포켓몬 이름 검색 (한글·영문)" autocomplete="off"></header><div id="boxes"></div></main>
+<div id="tip"></div>
+<script>
+const REGIONS={
+"1세대":[["관동 (레드·그린·블루·FRLG)",2],["레츠고 관동 (피카츄·이브이)",26]],
+"2세대":[["성도 (금·은·크리스탈)",3],["성도 (HGSS)",7]],
+"3세대":[["호연 (루비·사파이어·에메랄드)",4],["호연 (ORAS)",15]],
+"4세대":[["신오 (다이아몬드·펄)",5],["신오 (플래티넘)",6]],
+"5세대":[["하나 (블랙·화이트)",8],["하나 (블랙2·화이트2)",9]],
+"6세대":[["칼로스 센트럴",12],["칼로스 코스트",13],["칼로스 마운틴",14]],
+"7세대":[["알로라 (썬·문)",16],["알로라 (울트라썬·울트라문)",21]],
+"8세대":[["가라르 (소드·실드)",27],["갑옷섬",28],["왕관설원",29],["히스이 (레전드 아르세우스)",30]],
+"9세대":[["팔데아 (스칼렛·바이올렛)",31],["키타카미",32],["블루베리",33]]
+};
+const API="https://pokeapi.co/api/v2/",SPR=id=>`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+const W=6,H=5,PER=W*H, nav=document.getElementById("nav"), tip=document.getElementById("tip");
+const cache={},names={};let curList=[],base='',qTok=0,gqlTried=false,tm;
+const qi=document.getElementById('q');
+{const b=document.createElement("button");b.textContent="🌏 전국도감";b.dataset.id=1;b.onclick=()=>load("전국도감",1,b);nav.appendChild(b)}
+for(const g in REGIONS){
+  nav.insertAdjacentHTML("beforeend",`<h2>${g}</h2>`);
+  REGIONS[g].forEach(([n,id])=>{const b=document.createElement("button");b.textContent=n;b.onclick=()=>load(n,id,b);nav.appendChild(b);b.dataset.id=id});
+}
+async function load(name,id,btn){
+  document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("on"));btn.classList.add("on");
+  t.textContent=name;s.textContent="불러오는 중…";boxes.innerHTML="";
+  try{
+    if(!cache[id]){const r=await (await fetch(API+"pokedex/"+id)).json();
+      cache[id]=r.pokemon_entries.sort((a,b)=>a.entry_number-b.entry_number).map(e=>({no:e.entry_number,sp:+e.pokemon_species.url.match(/species\/(\d+)/)[1],en:e.pokemon_species.name}))}
+    render(name,cache[id]);
+  }catch(e){s.textContent="도감을 불러오지 못했습니다. 네트워크를 확인해 주세요."}
+}
+function render(name,list){
+  const n=Math.ceil(list.length/PER);
+  curList=list;base=`총 ${list.length}마리 · ${n}박스 (가로 ${W} × 세로 ${H})`;s.textContent=base;
+  let h="";
+  for(let b=0;b<n;b++){
+    const part=list.slice(b*PER,(b+1)*PER);
+    h+=`<div class="box"><h3>BOX ${b+1}<span>${part[0].no}–${part[part.length-1].no}</span></h3><div class="grid">`;
+    for(let i=0;i<PER;i++){const p=part[i];
+      h+=p?`<div class="slot" data-sp="${p.sp}" data-en="${p.en}"><img loading="lazy" src="${SPR(p.sp)}" alt="${p.en}"><i>${String(p.no).padStart(3,"0")}</i></div>`:`<div class="slot empty"></div>`}
+    h+=`</div></div>`;
+  }
+  boxes.innerHTML=h;applySearch();
+}
+const VER={"red":"레드","green":"그린","blue":"블루","yellow":"피카츄","gold":"금","silver":"은","crystal":"크리스탈","ruby":"루비","sapphire":"사파이어","emerald":"에메랄드","firered":"파이어레드","leafgreen":"리프그린","diamond":"다이아몬드","pearl":"펄","platinum":"플래티넘","heartgold":"하트골드","soulsilver":"소울실버","black":"블랙","white":"화이트","black-2":"블랙2","white-2":"화이트2","x":"X","y":"Y","omega-ruby":"오메가루비","alpha-sapphire":"알파사파이어","sun":"썬","moon":"문","ultra-sun":"울트라썬","ultra-moon":"울트라문","lets-go-pikachu":"레츠고 피카츄","lets-go-eevee":"레츠고 이브이","sword":"소드","shield":"실드"};
+const enc={};
+async function koName(sp,en){
+  if(names[sp])return names[sp];
+  try{const r=await (await fetch(API+"pokemon-species/"+sp)).json();
+    names[sp]=(r.names.find(x=>x.language.name==="ko")||{}).name||en}catch(e){names[sp]=en}
+  return names[sp];
+}
+async function encounters(sp){
+  if(sp in enc)return enc[sp];
+  try{const r=await (await fetch(API+"pokemon/"+sp+"/encounters")).json(),m={};
+    r.forEach(a=>a.version_details.forEach(v=>{(m[v.version.name]=m[v.version.name]||new Set()).add(a.location_area.name.replace(/-area$/,"").replace(/-/g," "))}));
+    enc[sp]=m}catch(e){enc[sp]=null}
+  return enc[sp];
+}
+function place(sl){
+  const r=sl.getBoundingClientRect();tip.style.display="block";const t=tip.getBoundingClientRect();
+  let x=Math.max(8,Math.min(r.left,innerWidth-t.width-8)),y=r.bottom+6;
+  if(y+t.height>innerHeight-8)y=Math.max(8,r.top-t.height-6);
+  tip.style.left=x+"px";tip.style.top=y+"px";
+}
+async function ensureNames(list,tok){
+  let miss=list.map(p=>p.sp).filter((v,i,a)=>!names[v]&&a.indexOf(v)===i);
+  if(!miss.length)return;
+  if(!gqlTried){gqlTried=true;try{
+    const r=await fetch("https://beta.pokeapi.co/graphql/v1beta",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query:"{pokemon_v2_pokemonspeciesname(where:{language_id:{_eq:3}}){name pokemon_species_id}}"})});
+    (await r.json()).data.pokemon_v2_pokemonspeciesname.forEach(x=>names[x.pokemon_species_id]=x.name);
+  }catch(e){}}
+  miss=miss.filter(v=>!names[v]);
+  const total=miss.length;let done=0;
+  const worker=async()=>{while(miss.length){if(tok!==qTok)return;await koName(miss.pop(),"");done++;s.textContent=`${base} · 이름 불러오는 중 ${done}/${total}`}};
+  await Promise.all(Array.from({length:8},worker));
+}
+async function applySearch(){
+  const q=qi.value.trim().toLowerCase(),tok=++qTok;
+  const sl=[...boxes.querySelectorAll(".slot")];
+  boxes.classList.toggle("searching",!!q);
+  if(!q){sl.forEach(x=>x.classList.remove("hit"));s.textContent=base;return}
+  await ensureNames(curList,tok);
+  if(tok!==qTok)return;
+  let n=0;
+  sl.forEach(x=>{const sp=x.dataset.sp;
+    const ok=!!sp&&((names[sp]||"").toLowerCase().includes(q)||x.dataset.en.replace(/-/g," ").includes(q));
+    x.classList.toggle("hit",ok);if(ok)n++});
+  s.textContent=`${base} · 검색 결과 ${n}마리`;
+}
+qi.addEventListener("input",()=>{clearTimeout(tm);tm=setTimeout(applySearch,200)});
+qi.addEventListener("keydown",e=>{if(e.key==="Enter"){const h=boxes.querySelector(".slot.hit");if(h)h.scrollIntoView({behavior:"smooth",block:"center"})}});
+document.getElementById("tg").onclick=()=>document.body.classList.toggle("fold");
+let cur=null;
+boxes.addEventListener("mouseover",async e=>{
+  const sl=e.target.closest(".slot[data-sp]");
+  if(!sl){tip.style.display="none";cur=null;return}
+  if(sl===cur)return;cur=sl;
+  const sp=sl.dataset.sp,en=sl.dataset.en;
+  tip.innerHTML="<b>"+en+"</b><div class='n'>불러오는 중…</div>";place(sl);
+  const [n,m]=await Promise.all([koName(sp,en),encounters(sp)]);
+  if(cur!==sl)return;
+  let h=`<b>${n}</b> <span style="opacity:.6">#${sp}</span>`;
+  if(!m)h+="<div class='n'>정보를 불러오지 못했습니다</div>";
+  else{
+    const ks=Object.keys(VER).filter(k=>m[k]);
+    if(!ks.length)h+="<div class='n'>PokeAPI에 포획 지역 정보가 없습니다<br>(진화·교환·이벤트, 8~9세대 등)</div>";
+    else ks.forEach(k=>{const L=[...m[k]];h+=`<div class="v"><b>${VER[k]}</b> ${L.slice(0,3).join(", ")}${L.length>3?` 외 ${L.length-3}곳`:""}</div>`});
+  }
+  tip.innerHTML=h;place(sl);
+});
+boxes.addEventListener("mouseleave",()=>{tip.style.display="none";cur=null});
+document.querySelector("#nav button[data-id='1']").click();
+</script></body></html>
