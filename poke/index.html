@@ -31,8 +31,9 @@ header p{margin:0 0 16px;color:var(--mut);font-size:13px}
 .slot.empty{opacity:.4;cursor:default}
 .searching .slot{opacity:.2;filter:grayscale(1)}
 .searching .slot.hit{opacity:1;filter:none;outline:3px solid var(--ac);outline-offset:-2px;z-index:1}
-#tip{position:fixed;pointer-events:none;background:#000e;color:#fff;font-size:12px;line-height:1.45;padding:8px 10px;border-radius:8px;display:none;z-index:30;max-width:340px}
-#tip .v{margin-top:3px}#tip .v b{color:#ffd54f}#tip .n{opacity:.7;margin-top:3px}
+#tip{position:fixed;pointer-events:none;background:var(--card);color:var(--tx);border:1px solid var(--bd);box-shadow:0 8px 24px #0003;font-size:12px;line-height:1.45;padding:9px 11px;border-radius:10px;display:none;z-index:30;width:320px;max-width:calc(100vw - 16px)}
+#tip .v{margin-top:3px}#tip .v b,#tip .acq b{color:var(--ac)}#tip .n{color:var(--mut);margin-top:3px}
+#tip .acq{padding-bottom:6px;margin-bottom:6px;border-bottom:1px solid var(--bd)}#tip .acq div{margin-top:2px}#tip .num{color:var(--mut)}
 </style></head><body>
 <div id="bar"><button id="tg" aria-label="메뉴">☰</button><div id="nav"></div><input id="q" type="search" placeholder="🔍 포켓몬 이름 검색 (한글·영문)" autocomplete="off"></div>
 <main><header><h2 id="t"></h2><p id="s"></p></header><div id="boxes"></div></main>
@@ -83,11 +84,85 @@ function render(name,list){
 }
 const VER={"red":"레드","green":"그린","blue":"블루","yellow":"피카츄","gold":"금","silver":"은","crystal":"크리스탈","ruby":"루비","sapphire":"사파이어","emerald":"에메랄드","firered":"파이어레드","leafgreen":"리프그린","diamond":"다이아몬드","pearl":"펄","platinum":"플래티넘","heartgold":"하트골드","soulsilver":"소울실버","black":"블랙","white":"화이트","black-2":"블랙2","white-2":"화이트2","x":"X","y":"Y","omega-ruby":"오메가루비","alpha-sapphire":"알파사파이어","sun":"썬","moon":"문","ultra-sun":"울트라썬","ultra-moon":"울트라문","lets-go-pikachu":"레츠고 피카츄","lets-go-eevee":"레츠고 이브이","sword":"소드","shield":"실드"};
 const enc={};
+const spc={},evc={},kc={};
+function speciesData(sp){
+  if(!spc[sp])spc[sp]=fetch(API+"pokemon-species/"+sp).then(r=>r.json()).catch(()=>{delete spc[sp];return null});
+  return spc[sp];
+}
 async function koName(sp,en){
   if(names[sp])return names[sp];
-  try{const r=await (await fetch(API+"pokemon-species/"+sp)).json();
-    names[sp]=(r.names.find(x=>x.language.name==="ko")||{}).name||en}catch(e){names[sp]=en}
+  const r=await speciesData(sp);
+  names[sp]=r?((r.names.find(x=>x.language.name==="ko")||{}).name||en):en;
   return names[sp];
+}
+const pretty=x=>x.replace(/-area$/,"").replace(/-/g," ");
+async function koOf(kind,slug){
+  const k=kind+slug;if(kc[k])return kc[k];
+  try{const r=await (await fetch(API+kind+"/"+slug)).json();kc[k]=(r.names.find(x=>x.language.name==="ko")||{}).name||pretty(slug)}catch(e){kc[k]=pretty(slug)}
+  return kc[k];
+}
+const TRIG={"level-up":"레벨업","trade":"통신교환","use-item":"도구 사용","shed":"탈피(빈 몬스터볼·파티 여유 필요)","spin":"회전","tower-of-darkness":"악의 탑 수행","tower-of-waters":"물의 탑 수행","three-critical-hits":"한 배틀에서 급소 3회","take-damage":"대미지를 받은 뒤","other":"특수 조건","agile-style-move":"빠른 스타일로 기술 사용","strong-style-move":"강한 스타일로 기술 사용","recoil-damage":"반동 대미지 누적"};
+const TOD={day:"낮",night:"밤",dusk:"황혼"};
+async function condText(d){
+  const p=[],t=d.trigger.name;
+  if(!(t==="level-up"&&d.min_level)&&!(t==="use-item"&&d.item))p.push(TRIG[t]||pretty(t));
+  if(d.min_level)p.push(`Lv.${d.min_level} 이상`);
+  if(d.item)p.push((await koOf("item",d.item.name))+" 사용");
+  if(d.held_item)p.push((await koOf("item",d.held_item.name))+" 지닌 채");
+  if(d.known_move)p.push((await koOf("move",d.known_move.name))+" 습득 상태");
+  if(d.used_move)p.push((await koOf("move",d.used_move.name))+" 사용");
+  if(d.known_move_type)p.push(pretty(d.known_move_type.name)+" 타입 기술 습득 상태");
+  if(d.min_happiness)p.push(`친밀도 ${d.min_happiness} 이상`);
+  if(d.min_affection)p.push(`애정도 ${d.min_affection} 이상`);
+  if(d.min_beauty)p.push(`아름다움 ${d.min_beauty} 이상`);
+  if(d.time_of_day)p.push(TOD[d.time_of_day]||d.time_of_day);
+  if(d.gender)p.push(d.gender===1?"암컷":"수컷");
+  if(d.location)p.push("장소: "+pretty(d.location.name));
+  if(d.needs_overworld_rain)p.push("비가 오는 중");
+  if(d.party_species)p.push("파티에 "+pretty(d.party_species.name));
+  if(d.party_type)p.push("파티에 "+pretty(d.party_type.name)+" 타입");
+  if(d.trade_species)p.push("교환 상대: "+pretty(d.trade_species.name));
+  if(d.relative_physical_stats!=null&&d.relative_physical_stats!=="")p.push(({1:"공격 > 방어",0:"공격 = 방어","-1":"공격 < 방어"})[d.relative_physical_stats]||"");
+  if(d.turn_upside_down)p.push("본체를 뒤집은 채");
+  if(d.min_move_count)p.push(`기술 ${d.min_move_count}회 사용`);
+  if(d.min_steps)p.push(`${d.min_steps}걸음 이상`);
+  if(d.min_damage_taken)p.push(`대미지 ${d.min_damage_taken} 이상`);
+  return p.filter(Boolean).join(", ");
+}
+function findNode(n,name){if(n.species.name===name)return n;for(const c of n.evolves_to){const r=findNode(c,name);if(r)return r}return null}
+const idOf=u=>+u.match(/species\/(\d+)/)[1];
+// 특수 부화 조건: [향로, 부모 도감번호들]
+const INC={298:["sea-incense",[183,184]],360:["lax-incense",[202]],458:["wave-incense",[226]],439:["odd-incense",[122]],440:["luck-incense",[113,242]],446:["full-incense",[143]],406:["rose-incense",[315,407]],433:["pure-incense",[358]],438:["rock-incense",[185]]};
+const HNOTE={
+  489:"마나피와 메타몽을 교배 (마나피가 낳은 알은 마나피로 부화)",
+  29:"니드런♀ 계열(니드런♀·니드리나·니드퀸)이 낳은 알에서 ♂·♀ 무작위 부화",
+  32:"니드런♀ 계열(니드런♀·니드리나·니드퀸)이 낳은 알에서 ♂·♀ 무작위 부화",
+  313:"네오비트(암컷)가 낳은 알에서 볼비트·네오비트 무작위 부화",
+  314:"네오비트(암컷)가 낳은 알에서 볼비트·네오비트 무작위 부화"
+};
+async function hatchCond(sp){
+  const k=+sp;
+  if(INC[k]){
+    const [slug,ps]=INC[k];
+    const [item,...pn]=await Promise.all([koOf("item",slug),...ps.map(i=>koName(i,"#"+i))]);
+    return `<b>부화 조건</b> 부모(${pn.join("·")})에게 향로(${item})를 지니게 하고 교배 <span class="num">· 9세대(스칼렛·바이올렛)는 향로 불필요</span>`;
+  }
+  return HNOTE[k]?`<b>부화 조건</b> ${HNOTE[k]}`:"";
+}
+async function acquire(sp){
+  const d=await speciesData(sp),out=[];
+  if(d&&d.evolves_from_species&&d.evolution_chain){
+    const url=d.evolution_chain.url;
+    if(!evc[url])evc[url]=fetch(url).then(r=>r.json()).catch(()=>{delete evc[url];return null});
+    const ch=await evc[url];
+    const pre=await koName(idOf(d.evolves_from_species.url),pretty(d.evolves_from_species.name));
+    const node=ch&&findNode(ch.chain,d.name);
+    let c="";
+    if(node&&node.evolution_details.length)c=(await Promise.all(node.evolution_details.map(condText))).filter(Boolean).join(" / ");
+    out.push(`<b>진화 조건</b> ${pre} → ${c||"조건 정보 없음"}`);
+  }
+  const h=await hatchCond(sp);if(h)out.push(h);
+  return out;
 }
 async function encounters(sp){
   if(sp in enc)return enc[sp];
@@ -97,9 +172,14 @@ async function encounters(sp){
   return enc[sp];
 }
 function place(sl){
-  const r=sl.getBoundingClientRect();tip.style.display="block";const t=tip.getBoundingClientRect();
-  let x=Math.max(8,Math.min(r.left,innerWidth-t.width-8)),y=r.bottom+6;
-  if(y+t.height>innerHeight-8)y=Math.max(8,r.top-t.height-6);
+  const r=sl.getBoundingClientRect(),m=8;tip.style.display="block";
+  const t=tip.getBoundingClientRect(),w=t.width,h=t.height;
+  let x,y;
+  if(r.right+m+w<=innerWidth-m){x=r.right+m;y=r.top}            // 오른쪽에 공간이 있으면 오른쪽
+  else if(r.left-m-w>=m){x=r.left-m-w;y=r.top}                   // 없으면 왼쪽
+  else{x=Math.min(r.left,innerWidth-w-m);y=r.bottom+6;           // 양쪽 다 좁으면(모바일) 아래/위
+    if(y+h>innerHeight-m)y=r.top-h-6}
+  x=Math.max(m,x);y=Math.max(m,Math.min(y,innerHeight-h-m));
   tip.style.left=x+"px";tip.style.top=y+"px";
 }
 async function ensureNames(list,tok){
@@ -138,9 +218,10 @@ boxes.addEventListener("mouseover",async e=>{
   if(sl===cur)return;cur=sl;
   const sp=sl.dataset.sp,en=sl.dataset.en;
   tip.innerHTML="<b>"+en+"</b><div class='n'>불러오는 중…</div>";place(sl);
-  const [n,m]=await Promise.all([koName(sp,en),encounters(sp)]);
+  const [n,m,acq]=await Promise.all([koName(sp,en),encounters(sp),acquire(sp)]);
   if(cur!==sl)return;
-  let h=`<b>${n}</b> <span style="opacity:.6">#${sp}</span>`;
+  let h=`<b>${n}</b> <span class="num">#${sp}</span>`;
+  if(acq.length)h+=`<div class="acq" style="margin-top:6px"><b>획득 조건</b>${acq.map(x=>`<div>${x}</div>`).join("")}</div>`;
   if(!m)h+="<div class='n'>정보를 불러오지 못했습니다</div>";
   else{
     const ks=Object.keys(VER).filter(k=>m[k]);
